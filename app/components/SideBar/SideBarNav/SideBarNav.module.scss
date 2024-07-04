@@ -1,0 +1,22 @@
+@import "../../../Colors/Color.scss";
+
+.mainCont {
+    position: relative;
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 25px;
+
+    .lines {
+        position: absolute;
+        left: -23px;
+        top: -18px;
+    }
+}
+
+.linksWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
