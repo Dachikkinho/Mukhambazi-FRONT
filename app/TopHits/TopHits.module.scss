@@ -1,0 +1,50 @@
+@import '../Colors/Color.scss';
+
+.card {
+    max-width: 231px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 34px 16px;
+    height: 323px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.card:hover {
+    filter: brightness(87%);
+    transform: scale(0.96)
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.container img {
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+
+.name {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 24px;
+    color: $white;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.plays {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: $white;
+}
+
+.pfp {
+    border-radius: 50%;
+}
