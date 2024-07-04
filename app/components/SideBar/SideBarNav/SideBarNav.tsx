@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styles from "./SidebarNav.module.scss"
 import { SidebarNavItems } from "./SidebarNavItems/SidebarNavItems";
-import { it } from "node:test";
 
 type mapItem = {
     name: string,

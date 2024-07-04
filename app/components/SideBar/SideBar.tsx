@@ -6,56 +6,11 @@ import { SideBarHeading } from "./SideBarHeading/SideBarHeading";
 import { sideBarOpenState } from "@/app/states";
 import { useRecoilState } from "recoil";
 import { SidebarNav } from "./SidebarNav/SidebarNav";
+import { forYouItems, mainMenuItems } from "@/public/script";
 
 export function SideBar() {
 
     const [isActive, setIsActive] = useRecoilState(sideBarOpenState)
-
-    const mainMenuItems = [
-        {
-            name: 'Home',
-            img: "home-icon",
-            link: "#"
-        },
-        {
-            name: 'Artists',
-            img: "artists-icon",
-            link: "#"
-        },
-        {
-            name: 'Albums',
-            img: "albums-icon",
-            link: "#"
-        },
-        {
-            name: 'Songs',
-            img: "songs-icon",
-            link: "#"
-        },
-    ]
-
-    const forYouItems = [
-        {
-            name: 'Playlist',
-            img: "my-playlists-icon",
-            link: "#"
-        },
-        {
-            name: 'Specials',
-            img: "my-albums-icon",
-            link: "#"
-        },
-        {
-            name: 'Favorites',
-            img: "favorites-icon",
-            link: "#"
-        },
-        {
-            name: 'Podcasts',
-            img: "podcasts-icon",
-            link: "#"
-        },
-    ]
 
     return (
         <aside className={`${styles.sidebar} ${isActive && styles.active}`}>
