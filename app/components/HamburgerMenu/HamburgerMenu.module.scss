@@ -1,0 +1,43 @@
+.hamburgerMenu {
+    position: fixed;
+    top: 33px;
+    right: 21px;
+    width: 28px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    display: none;
+
+    .lines {
+        width: 100%;
+        height: 4px;
+        background-color: #a04cdc;
+        transition: all 0.3s;
+    }
+
+    &.active .lines:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    &.active .lines:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .hamburgerMenu .lines:nth-child(2) {
+        transition: all 0.7s;
+    }
+
+    &.active .lines:nth-child(2) {
+        transform: translateX(-5px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hamburgerMenu {
+        display: flex;
+    }
+}

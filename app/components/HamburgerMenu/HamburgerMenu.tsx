@@ -1,0 +1,22 @@
+'use client'
+
+import { useRecoilState } from "recoil"
+import styles from "./HamburgerMenu.module.scss"
+import { sideBarOpenState } from "@/app/states"
+
+export function HamburgerMenu() {
+
+    const [isActive, setIsActive] = useRecoilState(sideBarOpenState)
+
+    const changeActive = () => {
+        if (isActive) setIsActive(false); else setIsActive(true);
+    }
+
+    return (
+        <button className={`${styles.hamburgerMenu} ${isActive && styles.active}`} onClick={changeActive}>
+            <div className={styles.lines}></div>
+            <div className={styles.lines}></div>
+            <div className={styles.lines}></div>
+        </button>
+    )
+} 

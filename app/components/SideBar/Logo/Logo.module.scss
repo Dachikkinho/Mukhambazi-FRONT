@@ -1,0 +1,24 @@
+@import "../../../Colors/Color.scss";
+
+.container {
+    max-width: 218px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.logo {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: $primaryColor;
+}
+
+.name {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: #fff;
+    align-self: flex-end;
+}

@@ -1,0 +1,43 @@
+@import "../../../Colors/Color.scss";
+
+.mainCont {
+    position: relative;
+    max-width: 135px;
+    width: 100%;
+    margin-left: 39px;
+
+    .lines {
+        position: absolute;
+        left: -23px;
+        top: -18px;
+    }
+}
+
+.linksWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    width: fit-content;
+
+    p {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    &:hover p {
+        color: #ff00d5;
+    }
+}

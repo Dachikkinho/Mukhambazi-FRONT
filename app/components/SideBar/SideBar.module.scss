@@ -1,0 +1,35 @@
+.sidebar {
+    max-width: 285px;
+    width: 100%;
+    padding: 39px 10px;
+    border-right: 2px solid #a93797;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
+    background-image: url("/images/sidebar-image.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        max-width: 100%;
+        backdrop-filter: blur(30px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: -100%;
+        background-size: cover;
+
+        &.active {
+            left: 0;
+        }
+    }
+}
+
+.navSection {
+    margin: 54px 0;
+}
