@@ -13,23 +13,23 @@ export function SideBar() {
 
     return (
         <aside className={`${styles.sidebar} ${isActive && styles.active}`}>
-            <Logo />
-
-            <div className={styles.navSection}>
-                <SideBarHeading text="Main Menu"/>
-                <SideBarNav 
-                names={['Home', 'Artists', 'Albums', 'Songs']}
-                imgs={['home-icon', 'artists-icon', 'albums-icon', 'songs-icon']}
+            <div className={styles.wrapper}>
+                <Logo />
+                <div className={styles.navSection}>
+                    <SideBarHeading text="Main Menu"/>
+                    <SideBarNav
+                    names={['Home', 'Artists', 'Albums', 'Songs']}
+                    imgs={['home-icon', 'artists-icon', 'albums-icon', 'songs-icon']}
+                    links={["#", "#", "#", "#"]}
+                    />
+                </div>
+                <SideBarHeading text="For You"/>
+                <SideBarNav
+                names={['Playlist', 'Specials', 'Favorites', 'Podcasts']}
+                imgs={['my-playlists-icon', 'my-albums-icon', 'favorites-icon', 'podcasts-icon']}
                 links={["#", "#", "#", "#"]}
                 />
             </div>
-
-            <SideBarHeading text="Your Library"/>
-            <SideBarNav 
-            names={['My Playlist', 'My Albums', 'Favorites', 'Podcasts']}
-            imgs={['my-playlists-icon', 'my-albums-icon', 'favorites-icon', 'podcasts-icon']}
-            links={["#", "#", "#", "#"]}
-            />
         </aside>
     )
 }
