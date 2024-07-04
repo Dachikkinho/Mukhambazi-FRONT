@@ -3,13 +3,59 @@
 import styles from "./SideBar.module.scss"
 import { Logo } from "./Logo/Logo";
 import { SideBarHeading } from "./SideBarHeading/SideBarHeading";
-import { SideBarNav } from "./SideBarNav/SideBarNav";
 import { sideBarOpenState } from "@/app/states";
 import { useRecoilState } from "recoil";
+import { SidebarNav } from "./SidebarNav/SidebarNav";
 
 export function SideBar() {
 
     const [isActive, setIsActive] = useRecoilState(sideBarOpenState)
+
+    const mainMenuItems = [
+        {
+            name: 'Home',
+            img: "home-icon",
+            link: "#"
+        },
+        {
+            name: 'Artists',
+            img: "artists-icon",
+            link: "#"
+        },
+        {
+            name: 'Albums',
+            img: "albums-icon",
+            link: "#"
+        },
+        {
+            name: 'Songs',
+            img: "songs-icon",
+            link: "#"
+        },
+    ]
+
+    const forYouItems = [
+        {
+            name: 'Playlist',
+            img: "my-playlists-icon",
+            link: "#"
+        },
+        {
+            name: 'Specials',
+            img: "my-albums-icon",
+            link: "#"
+        },
+        {
+            name: 'Favorites',
+            img: "favorites-icon",
+            link: "#"
+        },
+        {
+            name: 'Podcasts',
+            img: "podcasts-icon",
+            link: "#"
+        },
+    ]
 
     return (
         <aside className={`${styles.sidebar} ${isActive && styles.active}`}>
@@ -17,18 +63,10 @@ export function SideBar() {
                 <Logo />
                 <div className={styles.navSection}>
                     <SideBarHeading text="Main Menu"/>
-                    <SideBarNav
-                    names={['Home', 'Artists', 'Albums', 'Songs']}
-                    imgs={['home-icon', 'artists-icon', 'albums-icon', 'songs-icon']}
-                    links={["#", "#", "#", "#"]}
-                    />
+                    <SidebarNav navItemsMap={mainMenuItems}/>
                 </div>
                 <SideBarHeading text="For You"/>
-                <SideBarNav
-                names={['Playlist', 'Specials', 'Favorites', 'Podcasts']}
-                imgs={['my-playlists-icon', 'my-albums-icon', 'favorites-icon', 'podcasts-icon']}
-                links={["#", "#", "#", "#"]}
-                />
+                <SidebarNav navItemsMap={forYouItems}/>
             </div>
         </aside>
     )

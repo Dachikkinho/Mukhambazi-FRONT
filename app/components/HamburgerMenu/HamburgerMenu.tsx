@@ -9,7 +9,7 @@ export function HamburgerMenu() {
     const [isActive, setIsActive] = useRecoilState(sideBarOpenState)
 
     const changeActive = () => {
-        if (isActive) setIsActive(false); else setIsActive(true);
+        setIsActive(!isActive);
     }
 
     return (

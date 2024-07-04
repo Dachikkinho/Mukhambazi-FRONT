@@ -10,3 +10,9 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background-image: url("/images/main-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
