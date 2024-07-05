@@ -8,8 +8,16 @@ html,
 body {
   max-width: 100vw;
   background-image: url("/images/Music.png");
+}
+
+body {
+  background-image: url("/images/main-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
+}
+
+.main-components-container {
+  display: flex;
+  justify-content: space-between;
 }

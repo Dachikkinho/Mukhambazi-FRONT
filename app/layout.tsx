@@ -4,6 +4,7 @@ import "./globals.css";
 import { SideBar } from "./components/SideBar/SideBar";
 import { RecoilWrap } from "./components/RecoilWrap/RecoilWrap";
 import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
+import { RightSideBar } from "./components/RightSideBar/RightSideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <RecoilWrap>
-          <SideBar />
-          <HamburgerMenu />
-          {children}
+          <div className={'main-components-container'}>
+            <SideBar />
+            <HamburgerMenu />
+            {children}
+            <RightSideBar />
+          </div>
         </RecoilWrap>
       </body>
     </html>

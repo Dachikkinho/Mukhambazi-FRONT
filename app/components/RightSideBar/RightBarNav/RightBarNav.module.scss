@@ -1,0 +1,33 @@
+@import '../../../Colors/Color.scss';
+
+.container {
+    display: flex;
+    gap: 11px;
+    align-self: flex-end;
+}
+
+.navButton {
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid $purple-400;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navButton:hover {
+    background-color: $gray-100;
+}
+
+.userPfp {
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
