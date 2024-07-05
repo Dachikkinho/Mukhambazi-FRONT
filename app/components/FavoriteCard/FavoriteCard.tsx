@@ -4,19 +4,23 @@ type Props = {
     title: string;
     banner: string;
     icon: string;
+    width: string;
+    height: string;
     
 }
 
-export default function FavoriteCard(props: Props) {
+export default function FavoriteCard({title, banner, icon, width, height}: Props) {
   return (
         <div className={styles.Container}>
-             <img src={props.banner} alt="pfp" width={180} height={180} />
+             <img src={banner} alt="pfp"/>
              <div className={styles.Name}>
                 <div>
-                  <h4>{props.title}</h4>
+                  <h4>{title}</h4>
                 </div>
-                <img src={props.icon} alt="pfp" width={24} height={24} />
+                <img src={icon} alt="pfp" width={width} height={height}/>
              </div>
         </div>
   );
 }
+
+
