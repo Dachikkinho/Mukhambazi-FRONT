@@ -22,10 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <RecoilWrap>
-          <SideBar />
-          <HamburgerMenu />
-          {children}
-          <RightSideBar />
+          <div className={'main-components-container'}>
+            <SideBar />
+            <HamburgerMenu />
+            {children}
+            <RightSideBar />
+          </div>
         </RecoilWrap>
       </body>
     </html>
