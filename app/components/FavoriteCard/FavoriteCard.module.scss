@@ -1,0 +1,21 @@
+@import '../../Colors/Color.scss';
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.Name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Name h4 {
+    font-weight: 500;
+    font-size: 24px;
+    color: $white;
+    line-height: 29.05px;
+}
+
