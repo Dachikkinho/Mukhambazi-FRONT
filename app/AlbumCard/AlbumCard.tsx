@@ -1,7 +1,4 @@
-'use client'
-
 import styles from "./AlbumCard.module.scss"
-
 
 type Props = {
     name: string;
