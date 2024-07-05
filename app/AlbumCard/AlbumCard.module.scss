@@ -1,0 +1,67 @@
+@import '../Colors/Color.scss';
+
+
+.artists {
+    margin-top: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.containers {
+    max-width: 492px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.containers:hover {
+    transform: scale(0.96);
+    filter: brightness(85%)
+}
+
+.spans {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.firstspan {
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    color: $purple-600;
+}
+
+.default {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    color: $white;
+}
+
+
+.container {
+    margin-top: 26px;
+    margin-right: 20.08px;
+}
+
+
+
+.img {
+    width: 466px;
+    border-radius: 20px;
+    height: 315px;
+    
+}
+
+.containers {
+    max-width: 457px;
+}
+
+
+
