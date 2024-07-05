@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      
+      <ArtistCard bgColor={"red"} name={"Irakli Charkviani"} plays={"2131321"} pfp={"ika"} />
     </main>
   );
 }
