@@ -9,7 +9,7 @@
     top: 0;
     border-left: 1px solid $thirdColor;
     overflow-y: scroll;
-    padding: 43px 0;
+    padding: 43px 37px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -32,9 +32,8 @@
 }
 
 .container {
-    max-width: 396px;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
