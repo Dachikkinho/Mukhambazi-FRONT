@@ -1,0 +1,39 @@
+@import '../../Colors/Color.scss';
+
+.Container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.SongName {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    color: $white;
+}
+
+.ArtistName {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    color: $white;
+}
+
+.MusicPlay {
+    display: flex;
+    gap: 7px;
+}
+
+.MusicPlay h4 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    color: $white;
+}
+
+.Text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
