@@ -8,10 +8,10 @@ type Props = {
     banner: string;
     width: string;
     height: string;
-    music: string;
+    duration: string;
 }
 
-export default function Song({songName, artistName, banner, width, height, music}: Props) {
+export default function Song({songName, artistName, banner, width, height, duration}: Props) {
   return (
     <main className={styles.Container}>
         <img src={banner} alt="banner" width={width} height={height}/>
@@ -19,7 +19,7 @@ export default function Song({songName, artistName, banner, width, height, music
             <h4 className={styles.SongName}>{songName}</h4>
             <h5 className={styles.ArtistName}>{artistName}</h5>
             <div className={styles.MusicPlay}>
-                <h4 className={styles.Music}>{music}</h4>
+                <h4 className={styles.Music}>{duration}</h4>
                 <PlayNowButton />
             </div>
         </div>
