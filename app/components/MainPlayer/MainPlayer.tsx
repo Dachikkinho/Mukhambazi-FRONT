@@ -17,7 +17,7 @@ export default function MainPlayer () {
 
     // Phone Controls
 
-    const isMobile = useViewport()
+    const isMobile = useViewport(768);
     
     const mobileControlsBottom = [
         RHAP_UI.MAIN_CONTROLS,
