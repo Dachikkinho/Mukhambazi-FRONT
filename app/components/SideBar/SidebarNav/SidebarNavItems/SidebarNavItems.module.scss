@@ -6,12 +6,12 @@
     width: fit-content;
 
     p {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 20px;
         text-decoration: none;
         color: #fff;
-        transition: all 0.2s;
+        transition: all 0.4s;
         cursor: pointer;
     }
 

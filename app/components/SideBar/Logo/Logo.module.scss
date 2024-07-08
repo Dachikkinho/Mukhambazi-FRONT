@@ -15,9 +15,9 @@
 }
 
 .subName {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-family);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     color: $white;
     text-align: right;
     max-width: 260px;
