@@ -43,3 +43,39 @@ export const forYouItems = [
         link: "#"
     },
 ]
+
+
+// Placeholder until the backend is ready.
+
+export const nextSongPlaceholder = [
+    {
+        isActive: false,
+        artistName: "IV",
+        songName: "Dasi Dodan Domde"
+    },
+    {
+        isActive: true,
+        artistName: "YSN Fab",
+        songName: "Cash"
+    },
+    {
+        isActive: false,
+        artistName: "Underskyz",
+        songName: "Technomagic"
+    },
+    {
+        isActive: false,
+        artistName: "Luna Flowers",
+        songName: "Flower Wild"
+    },
+    {
+        isActive: false,
+        artistName: "KING Topic",
+        songName: "History"
+    },
+    {
+        isActive: false,
+        artistName: "Jansug kakhidze",
+        songName: "Mova Maisi"
+    },
+]

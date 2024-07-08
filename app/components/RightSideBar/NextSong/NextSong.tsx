@@ -1,3 +1,4 @@
+import { nextSongPlaceholder } from "@/public/script"
 import styles from "./NextSong.module.scss"
 import { NextSongCard } from "./NextSongCard/NextSongCard"
 
@@ -9,7 +10,9 @@ export function NextSong() {
                 <img src="/icons/voice-rec-square.svg" alt="" />
             </div>
             <div className={styles.container}>
-                <NextSongCard isActive arsitName="Song" songName="Song"/>
+                {nextSongPlaceholder.map(song => (
+                    <NextSongCard isActive={song.isActive} arsitName={song.artistName} songName={song.songName}/>
+                ))}
             </div>
         </div>
     )
