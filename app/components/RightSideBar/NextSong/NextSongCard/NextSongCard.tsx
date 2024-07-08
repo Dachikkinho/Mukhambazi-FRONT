@@ -1,17 +1,17 @@
 import styles from "./NextSongCard.module.scss"
 
-type Prop = {
+type Props = {
     isActive?: boolean;
     arsitName: string;
     songName: string;
 }
 
-export function NextSongCard ({isActive, arsitName, songName}: Prop) {
-    const normalCard = styles.container;
+export function NextSongCard ({isActive, arsitName, songName}: Props) {
+    const defaultCard = styles.container;
     const activeCard = styles.containerActive;
 
     return (
-        <div className={`${isActive ? activeCard : normalCard}`}>
+        <div className={`${isActive ? activeCard : defaultCard}`}>
             {/* image place holder */}
             <div className={styles.circle}></div>
             <div>
