@@ -4,6 +4,7 @@ import { PreviousNext } from "./PreviousNext/PreviousNext";
 import styles from "./MainPlayer.module.scss"
 import { useState, useEffect } from "react";
 import { Shuffle } from "./Shuffle/Shuffle";
+import useViewport from "@/app/hooks/useViewport";
 
 
 
@@ -16,19 +17,7 @@ export default function MainPlayer () {
 
     // Phone Controls
 
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        setIsMobile(window.innerWidth <= 768)
-        const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-      };
-  
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
+    const isMobile = useViewport()
     
     const mobileControlsBottom = [
         RHAP_UI.MAIN_CONTROLS,
