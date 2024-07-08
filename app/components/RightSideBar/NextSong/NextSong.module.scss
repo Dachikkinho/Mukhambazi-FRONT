@@ -1,0 +1,21 @@
+@import '../../../Colors/Color.scss';
+
+.heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 64px;
+}
+
+.heading p {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    color: $white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
