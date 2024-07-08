@@ -28,20 +28,3 @@ export const Listactivate = ({ title, date, icon, playbtn }: Props) => {
 }
 
 export default Listactivate;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

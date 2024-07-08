@@ -28,20 +28,3 @@ export const Listdisabled = ({ title, date, icon, playbtn }: Props) => {
 }
 
 export default Listdisabled;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
