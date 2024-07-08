@@ -12,7 +12,7 @@ type Props = {
     navItemsMap: mapItem[]
 }
 
-export function SidebarNav({navItemsMap}: Props) {
+export function SideBarNav({navItemsMap}: Props) {
 
     return (
         <nav className={styles.mainCont}>

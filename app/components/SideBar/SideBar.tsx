@@ -5,7 +5,7 @@ import { Logo } from "./Logo/Logo";
 import { SideBarHeading } from "./SideBarHeading/SideBarHeading";
 import { sideBarOpenState } from "@/app/states";
 import { useRecoilState } from "recoil";
-import { SidebarNav } from "./SidebarNav/SidebarNav";
+import { SideBarNav } from "./SideBarNav/SideBarNav";
 import { forYouItems, mainMenuItems } from "@/public/script";
 
 export function SideBar() {
@@ -18,10 +18,10 @@ export function SideBar() {
                 <Logo />
                 <div className={styles.navSection}>
                     <SideBarHeading text="Main Menu"/>
-                    <SidebarNav navItemsMap={mainMenuItems}/>
+                    <SideBarNav navItemsMap={mainMenuItems}/>
                 </div>
                 <SideBarHeading text="For You"/>
-                <SidebarNav navItemsMap={forYouItems}/>
+                <SideBarNav navItemsMap={forYouItems}/>
             </div>
         </aside>
     )
