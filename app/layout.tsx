@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./styles/MainPlayer.scss"
 import { SideBar } from "./components/SideBar/SideBar";
 import { RecoilWrap } from "./components/RecoilWrap/RecoilWrap";
 import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
 import { RightSideBar } from "./components/RightSideBar/RightSideBar";
+import MainPlayer from "./components/MainPlayer/MainPlayer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +29,7 @@ export default function RootLayout({
             <HamburgerMenu />
             {children}
             <RightSideBar />
+            <MainPlayer />
           </div>
         </RecoilWrap>
       </body>
