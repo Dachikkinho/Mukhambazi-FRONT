@@ -2,14 +2,15 @@
 
 .container {
     width: 384px;
-    height: 56px;
-    padding: 16px;
+    height: 72px;
+    padding: 12px;
+    border-radius: 16px;
     gap: 15px;
-    border-radius: 10px;
-    border: 2px solid $fourColor;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    border: 2px solid #a93797 ;
+    background: linear-gradient(180deg, rgba(227, 62, 159, 0.04) 0%, rgba(77, 37, 174, 0.04) 100%);
+
 }
 
 .circle {
@@ -20,24 +21,23 @@
 }
 
 .containerActive {
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
     transition: all 0.2s;
     cursor: pointer;
-    border-radius: 20px;
-    background: $fiveColor;
-    border: 2px solid $fiveColor;
-    border-radius: 10px;
-    padding: 16px;
     width: 384px;
-    height: 56px;
+    height: 72px;
+    padding: 12px;
+    border-radius: 16px;
     gap: 15px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(175deg, rgba(227, 62, 159, 0.5) 0%, rgba(77, 37, 174, 0.5) 100%);
+    border: 2px solid #a93797 ;
 }
 
 .name {
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: 590;
     font-size: 16px;
     color: #fff;
 }

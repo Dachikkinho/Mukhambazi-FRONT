@@ -11,7 +11,7 @@ export function CurrentListening({musicName}: Props) {
         <div>
             <div className={styles.headingContainer}>
                 <h4 className={styles.heading}>Currently Playing</h4>
-                <img src="/icons/voice-rec-square.svg" alt="icon" draggable={false} />
+                <img src="/icons/voice-rec.svg" alt="icon" draggable={false} />
             </div>
 
             <div className={styles.listeningCard}>
