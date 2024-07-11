@@ -1,6 +1,10 @@
 .main {
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  max-width: 1114px;
+  min-width: 0;
   width: 100%;
 }

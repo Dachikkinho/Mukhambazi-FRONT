@@ -1,0 +1,45 @@
+
+@import '../../Colors/Color.scss';
+
+.carouselHeading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    margin: 24px 0;
+}
+
+.carousel {
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.img {
+    width: 500px;
+}
+
+
+
+@media screen and (max-width: 1884px) {
+    
+}
+
+.carousel {
+    max-width: 512px;
+    width: 100%;
+    height: 256px;
+
+    div {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px
+    }
+}
+
+
+
