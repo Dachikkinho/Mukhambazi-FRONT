@@ -1,7 +1,7 @@
 @import '../../Colors/Color.scss';
 
 .sidebar {
-    max-width: 190px;
+    max-width: 300px;
     width: 100%;
     height: 100vh;
     top: 0;
@@ -12,19 +12,29 @@
     position: sticky;
     left: 0;
     align-self: flex-start;
+
+    opacity: 1;
+    mix-blend-mode: hard-light;
     background-image: url("/images/sidebar-image.svg");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
     background-color: #020617;
     opacity: 0.75;
-    mix-blend-mode: hard-light;
 }
 
 .wrapper {
     max-width: 207px;
     width: 100%;
     margin: 0 auto;
+}
+
+.art {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
 }
 
 @media screen and (max-width: 600px) {

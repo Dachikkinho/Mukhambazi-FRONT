@@ -11,7 +11,7 @@ export function SidebarSelected() {
     useEffect(() => {
         switch (path) {
             case "/":
-                setPosition("151px");
+                setPosition("183px");
                 break;
             case "/artists":
                 setPosition("195px");
