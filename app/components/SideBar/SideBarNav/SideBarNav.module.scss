@@ -4,19 +4,22 @@
     position: relative;
     max-width: 160px;
     width: 100%;
-    margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 18px;
+}
 
-    .lines {
-        position: absolute;
-        left: -23px;
-        top: -18px;
+@media screen and (max-width: 600px) {
+    .mainCont {
+        margin: 0 auto;
+        margin-top: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
 .linksWrap {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     list-style: none;
 }

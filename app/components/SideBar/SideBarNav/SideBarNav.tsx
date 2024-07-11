@@ -16,10 +16,9 @@ export function SideBarNav({navItemsMap}: Props) {
 
     return (
         <nav className={styles.mainCont}>
-            <img src="/images/sidebar-lines.svg" alt="lines" className={styles.lines}/>
             <ul className={styles.linksWrap}>
                 {navItemsMap.map(item => (
-                    <SidebarNavItems name={item.name} img={item.img} link={item.link}/>
+                    <SidebarNavItems name={item.name} img={item.img} link={item.link} />
                 ))}
             </ul>
         </nav>

@@ -7,6 +7,7 @@ import { sideBarOpenState } from "@/app/states";
 import { useRecoilState } from "recoil";
 import { SideBarNav } from "./SideBarNav/SideBarNav";
 import { forYouItems, mainMenuItems } from "@/public/script";
+import { SidebarSelected } from "./SidebarSelected/SidebarSelected";
 
 export function SideBar() {
 
@@ -23,6 +24,7 @@ export function SideBar() {
                 <SideBarHeading text="For You"/>
                 <SideBarNav navItemsMap={forYouItems}/>
             </div>
+            <SidebarSelected />
         </aside>
     )
 }
