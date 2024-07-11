@@ -1,0 +1,47 @@
+@import '../../../Colors/Color.scss';
+
+.heading {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 23px;
+    margin-top: 46px;
+    align-items: center;
+}
+
+.heading h5 {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    color: $white;
+}
+
+.artistsWrapper {
+    display: flex;
+    gap: 22px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    
+    
+}
+
+.artistsWrapper::-webkit-scrollbar {
+    height: 5px;
+}
+
+.artistsWrapper::-webkit-scrollbar-thumb {
+    background-color: $purple-300;
+    border-radius: 20px;
+
+}
+
+.artistsWrapper::-webkit-scrollbar-thumb:hover {
+    background-color: $purple-200;
+}
+
+.artistsWrapper * {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    color: $white;
+    font-size: 16px;
+}
