@@ -9,8 +9,6 @@ export function SidebarSelected() {
     const [position, setPosition] = useState("151px");
 
     useEffect(() => {
-        console.log(path);
-
         switch (path) {
             case "/":
                 setPosition("151px");
