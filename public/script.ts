@@ -49,12 +49,12 @@ export const forYouItems = [
 
 export const nextSongPlaceholder = [
     {
-        isActive: false,
+        isActive: true,
         artistName: "IV",
         songName: "Dasi Dodan Domde"
     },
     {
-        isActive: true,
+        isActive: false,
         artistName: "YSN Fab",
         songName: "Cash"
     },
