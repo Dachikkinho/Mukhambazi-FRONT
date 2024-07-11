@@ -1,7 +1,6 @@
 @import '../../Colors/Color.scss';
 
 .sidebar {
-    // no max width needed
     width: 300px;
     height: 100vh;
     top: 0;
@@ -38,6 +37,7 @@
 
         &.active {
             left: 0;
+            width: 430px;
         }
     }
 }

@@ -79,3 +79,42 @@ export const nextSongPlaceholder = [
         songName: "Mova Maisi"
     },
 ]
+
+export const artists = [
+    {
+        name: "Travis Scott",
+        listens: '23',
+        bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
+        img: 'travis'
+    },
+    {
+        name: "Imagine Dragons",
+        listens: '32',
+        bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
+        img: 'imagineDragons'
+    },
+    {
+        name: "TAHA",
+        listens: '1',
+        bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
+        img: 'taha'
+    },
+    {
+        name: "IV-Dasi",
+        listens: '1',
+        bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
+        img: 'dasi'
+    },
+    {
+        name: "Travis Scott",
+        listens: '23',
+        bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
+        img: 'travis'
+    },
+    {
+        name: "Imagine Dragons",
+        listens: '32',
+        bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
+        img: 'imagineDragons'
+    },
+]

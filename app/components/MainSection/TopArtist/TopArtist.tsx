@@ -1,53 +1,10 @@
-
-import Link from "next/link"
-import { ArtistCard } from "./ArtistCard/ArtistCard"
-import styles from "./TopArtist.module.scss"
+import Link from "next/link";
+import { ArtistCard } from "./ArtistCard/ArtistCard";
+import styles from "./TopArtist.module.scss";
+import { artists } from "@/public/script";
+import { Key } from "react";
 
 export const TopArtist = () => {
-
-    // Placeholder until the backend is ready.
-
-
-    const artists = [
-        {
-            name: "Travis Scott",
-            listens: '23',
-            bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
-            img: 'travis'
-        },
-        {
-            name: "Imagine Dragons",
-            listens: '32',
-            bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
-            img: 'imagineDragons'
-        },
-        {
-            name: "TAHA",
-            listens: '1',
-            bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
-            img: 'taha'
-        },
-        {
-            name: "IV-Dasi",
-            listens: '1',
-            bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
-            img: 'dasi'
-        },
-        {
-            name: "Travis Scott",
-            listens: '23',
-            bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
-            img: 'travis'
-        },
-        {
-            name: "Imagine Dragons",
-            listens: '32',
-            bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
-            img: 'imagineDragons'
-        },
-    ]
-
-
     return (
         <div>
             <div>
@@ -57,36 +14,53 @@ export const TopArtist = () => {
                 </div>
             </div>
             <div className={styles.artistsWrapper}>
-                {artists.map(artist => (
-                    <Link href={`/albums?artist=${artist.name}`}>
-                         <ArtistCard name={artist.name} bgColor={artist.bgColor} img={artist.img} plays={artist.listens} />
+                {artists.map((artists: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
+                    <Link key={index} href={`/albums?artist=${artists.name}`}>
+                        <ArtistCard
+                            name={artists.name}
+                            bgColor={artists.bgColor}
+                            img={artists.img}
+                            plays={artists.listens}
+                        />
                     </Link>
                 ))}
             </div>
-
             <div>
                 <div className={styles.heading}>
                     <h5>Top Hits</h5>
                     <img src="/icons/pop.png" alt="tophits-icon" width={36} height={36} />
                 </div>
             </div>
-            <Link className={styles.artistsWrapper} href={"/album?album=${album.group}"}>
-                {artists.map(artist => (
-                    <ArtistCard name={artist.name} bgColor={artist.bgColor} img={artist.img} plays={artist.listens} />
+            <div className={styles.artistsWrapper}>
+                {artists.map((artist: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
+                    <Link key={index} href={`/album?album=${artist.name}`}>
+                        <ArtistCard
+                            name={artist.name}
+                            bgColor={artist.bgColor}
+                            img={artist.img}
+                            plays={artist.listens}
+                        />
+                    </Link>
                 ))}
-            </Link>
-
+            </div>
             <div>
                 <div className={styles.heading}>
                     <h5>Top Charts</h5>
                     <img src="/icons/top.png" alt="profile" width={36} height={36} />
                 </div>
             </div>
-            <Link className={styles.artistsWrapper} href={"/album?album=${album.group}"}>
-                {artists.map(artist => (
-                    <ArtistCard name={artist.name} bgColor={artist.bgColor} img={artist.img} plays={artist.listens} />
+            <div className={styles.artistsWrapper}>
+                {artists.map((artist: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
+                    <Link key={index} href={`/album?album=${artist.name}`}>
+                        <ArtistCard
+                            name={artist.name}
+                            bgColor={artist.bgColor}
+                            img={artist.img}
+                            plays={artist.listens}
+                        />
+                    </Link>
                 ))}
-            </Link>
+            </div>
         </div>
-    )
-}
+    );
+};
