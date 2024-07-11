@@ -25,7 +25,6 @@ export function SideBar() {
                 <SideBarNav navItemsMap={forYouItems}/>
             </div>
             <SidebarSelected />
-            <img src="/images/sideBarArt.svg" alt="art" className={styles.art}/>
         </aside>
     )
 }

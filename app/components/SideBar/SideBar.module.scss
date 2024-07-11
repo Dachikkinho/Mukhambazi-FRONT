@@ -23,8 +23,8 @@
     background-size: contain;
 
     flex-shrink: 0;
-    background-color: #020617;
-    opacity: 0.75;
+    background-color: #4d2461;
+    opacity: 1;
 
     mix-blend-mode: hard-light;
 
@@ -36,13 +36,7 @@
     margin: 0 auto;
 }
 
-.art {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-}
+
 
 @media screen and (max-width: 600px) {
     .sidebar {
@@ -58,7 +52,7 @@
 
         &.active {
             left: 0;
-            width: 430px;
+            width: 100%;
         }
     }
 }
