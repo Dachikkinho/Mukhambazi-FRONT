@@ -9,11 +9,12 @@
 
     p {
         font-family: var(--third-family);
-        font-weight: 500;
+        font-weight: 590;
         line-height: 140%;
         color: #fff;
         cursor: pointer;
         transition: all 0.2s;
+        font-size: 20px;
     }
 
     &:hover p {
