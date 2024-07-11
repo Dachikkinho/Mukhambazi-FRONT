@@ -7,3 +7,9 @@
     color: $white;
     text-align: left;
 }
+
+@media screen and (max-width: 600px) {
+    .heading {
+        text-align: center;
+    }
+}
