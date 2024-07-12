@@ -29,7 +29,7 @@ export function SidebarSelected() {
                 setPosition("451px");
                 break;
             case "/favorites":
-                setPosition("496px");
+                setPosition("546px");
                 break;
             case "/podcasts":
                 setPosition("540px");

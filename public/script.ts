@@ -35,7 +35,7 @@ export const forYouItems = [
     {
         name: 'Favorites',
         img: "favorites-icon",
-        link: "#"
+        link: "/favorites"
     },
     {
         name: 'Podcasts',

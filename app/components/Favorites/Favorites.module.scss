@@ -1,0 +1,59 @@
+@import '../../Colors/Color.scss';
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.SearchBar {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .SearchBar {
+        padding-top: 80px;
+    }
+}
+
+.Title {
+    display: flex;
+    justify-content: baseline;
+    padding-top: 32px;
+}
+
+.heading {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    color: $white;
+}
+
+.headingCont {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 16px;
+}
+
+.Songs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    row-gap: 32px;
+}
+
+@media screen and (max-width: 710px) {
+    .Songs {
+        justify-content: center;
+    }
+}
+
+.noSongs {
+    color: $primaryColor;
+    font-size: 20px;
+    font-weight: 600;
+}
