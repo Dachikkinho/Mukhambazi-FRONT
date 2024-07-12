@@ -1,0 +1,71 @@
+@import '../../../Colors/Color.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    cursor: pointer;
+    max-width: 420px;
+    width: 100%;
+}
+
+.imagePlaceHolder {
+    border-radius: 10px;
+    max-width: 192px;
+    width: 100%;
+    height: 160px;
+    transition: all 0.2s;
+}
+
+.container:hover .imagePlaceHolder {
+    filter: brightness(0.7);
+}
+
+.name {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    color: $white;
+}
+
+.play {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    color: $secondaryColor;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.play:hover {
+    text-decoration: underline;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 250px;
+}
+
+@media screen and (max-width: 715px) {
+    .play {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 350px;
+    }
+}
+
+.infoBottom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
