@@ -1,0 +1,19 @@
+'use client'
+
+import { ArtistsPage } from "../components/Artists/Artists";
+import Playlist from "../components/Playlists/Playlist";
+import styles from "./page.module.scss";
+import { useEffect } from "react";
+
+export default function PlaylistPage() {
+
+  useEffect(() => {
+    document.title= 'Chakrulos | Playlist '
+  },[]);
+
+  return (
+    <main className={styles.main}>
+        <Playlist />
+    </main>
+  );
+}
