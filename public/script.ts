@@ -17,7 +17,7 @@ export const mainMenuItems = [
     {
         name: 'Songs',
         img: "songs-icon",
-        link: "#"
+        link: "/songs"
     },
 ]
 
@@ -119,6 +119,76 @@ export const artists = [
     },
 ]
 
+// songs placeholder
+
+export const songs = [
+    {
+        name: "Chakrulo",
+        group: "Chakrulos",
+        length: "5:22",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Cash",
+        group: "YSN FAB",
+        length: "3:25",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Be My Baby",
+        group: "The Ronettes",
+        length: "2:42",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "California",
+        group: "Mamas & Papas",
+        length: "2:40",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Ben E King",
+        group: "Stand By Me",
+        length: "3:00",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Falling In Love",
+        group: "Elvis Presley",
+        length: "2:58",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Mukhambazi",
+        group: "Jansug Kakhidze",
+        length: "3:43",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Saarshiyo",
+        group: "Jansug Kakhidze",
+        length: "2:01",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Guls Rad Miklav",
+        group: "Revaz Lagidze",
+        length: "2:41",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Turfa",
+        group: "Hamlet Gonashvili",
+        length: "3:21",
+        image: "/images/song-placeholder.svg"
+    },
+    {
+        name: "Believer",
+        group: "Imagine Dragons",
+        length: "2:59",
+        image: "/images/song-placeholder.svg"
+    },
+]
  export const popularArtists = [
     {
         name: "Taylor Swift",

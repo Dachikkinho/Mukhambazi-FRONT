@@ -20,7 +20,7 @@ export function SidebarSelected() {
                 setPosition("240px");
                 break;
             case "/songs":
-                setPosition("284px");
+                setPosition("323px");
                 break;
             case "/playlist":
                 setPosition("407px");
@@ -35,7 +35,7 @@ export function SidebarSelected() {
                 setPosition("540px");
                 break;
             default:
-                setPosition("151px");
+                setPosition("179px");
         }
     }, [path])
 
