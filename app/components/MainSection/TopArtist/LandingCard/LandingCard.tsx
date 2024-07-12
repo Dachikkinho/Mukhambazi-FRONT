@@ -1,4 +1,4 @@
-import styles from "./ArtistCard.module.scss"
+import styles from "../LandingCard/LandingCard.module.scss"
 
 type Props = {
     bgColor: string;
@@ -7,7 +7,7 @@ type Props = {
     img: string;
 }
 
-export const ArtistCard = ({bgColor, name, plays, img}: Props) => {
+export const LandingCard = ({bgColor, name, plays, img}: Props) => {
 
     return (
         <div className={styles.mainContainer} style={{
