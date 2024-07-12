@@ -17,7 +17,7 @@ export function SidebarSelected() {
                 setPosition("228px");
                 break;
             case '/albums':
-                setPosition("275pxa");
+                setPosition("275px");
                 break;
             case "/songs":
                 setPosition("323px");
