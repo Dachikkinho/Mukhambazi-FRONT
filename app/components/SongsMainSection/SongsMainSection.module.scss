@@ -68,16 +68,7 @@
     }
 }
 
-@media screen and (max-width: 1301px) {
-    .topContainer {
-        max-width: 700px;
-        justify-content: space-around;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-}
-
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 600px) {
     .mainContainer {
         padding: 80px 20px;
     }
