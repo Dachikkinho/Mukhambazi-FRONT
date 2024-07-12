@@ -7,7 +7,7 @@ export const mainMenuItems = [
     {
         name: 'Artists',
         img: "artists-icon",
-        link: "#"
+        link: "/artists"
     },
     {
         name: 'Albums',
@@ -188,4 +188,85 @@ export const songs = [
         length: "2:59",
         image: "/images/song-placeholder.svg"
     },
+]
+ export const popularArtists = [
+    {
+        name: "Taylor Swift",
+        plays: "32M",
+        pfp: "taylor",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Twenty one pilots",
+        plays: "31M",
+        pfp: "pilot",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Billie Eilish",
+        plays: "51M",
+        pfp: "billie",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Miyagi",
+        plays: "42M",
+        pfp: "miyagi",
+        bg: "rgb(130 74 145)"
+    },
+]
+
+export const georgianArtists = [
+    {
+        name: "Jgufi 1/4",
+        plays: "2M",
+        pfp: "j1-4",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Jgufi-Yvela",
+        plays: "1M",
+        pfp: "j-yvela",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Jgufi-Bani",
+        plays: "1M",
+        pfp: "j-bani",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "KAYKATA",
+        plays: "1M",
+        pfp: "kaykata",
+        bg: "rgb(130 74 145)"
+    },
+    
+]
+export const europeanArtists = [
+    {
+        name: "Jgufi 1/4ss",
+        plays: "2M",
+        pfp: "j1-4",
+       bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Jgufi-Yvelas",
+        plays: "1M",
+        pfp: "j-yvela",
+       bg: "rgb(130 74 145)"
+    },
+    {
+        name: "Jgufi-Bani",
+        plays: "1M",
+        pfp: "j-bani",
+        bg: "rgb(130 74 145)"
+    },
+    {
+        name: "KAYKATA",
+        plays: "1M",
+        pfp: "kaykata",
+        bg: "rgb(130 74 145)"
+    },
+    
 ]
