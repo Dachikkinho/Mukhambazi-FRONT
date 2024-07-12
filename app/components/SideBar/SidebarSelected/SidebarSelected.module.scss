@@ -12,20 +12,22 @@
     background-color: #808080;
     border-radius: 25px 0 0 26px;
     transition: top 0.2s;
+    
 
     &::before {
         content: '';
         position: absolute;
         width: 20px;
         height: 20px;
-        top: -21.5px;
-        right: 0.5px;
+        top: -21.3px;
+        right: 0.7px;
         border-right: 2px solid $thirdColor;
         border-bottom: 2px solid $thirdColor;
         border-bottom-right-radius: 15px;
         z-index: 3;
         background-color: transparent;
         box-shadow: 1px 9px 0px 1px gray;
+
     }
 
     &::after {
@@ -33,9 +35,8 @@
         position: absolute;
         width: 20px;
         height: 20px;
-        right: 0;
-        bottom: -21.05px;
-        right: 0.5px;
+        bottom: -20.6px;
+        right: 1.5px;
         border-right: 2px solid $thirdColor;
         border-bottom: 2px solid $thirdColor;
         border-bottom-right-radius: 15px;

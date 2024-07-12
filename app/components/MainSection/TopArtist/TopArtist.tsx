@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArtistCard } from "./ArtistCard/ArtistCard";
+import { LandingCard } from "./LandingCard/LandingCard";
 import styles from "./TopArtist.module.scss";
 import { artists } from "@/public/script";
 import { Key } from "react";
@@ -16,7 +16,7 @@ export const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map((artists: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
                     <Link key={index} href={`/albums?artist=${artists.name}`}>
-                        <ArtistCard
+                        <LandingCard
                             name={artists.name}
                             bgColor={artists.bgColor}
                             img={artists.img}
@@ -34,7 +34,7 @@ export const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map((artist: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
                     <Link key={index} href={`/album?album=${artist.name}`}>
-                        <ArtistCard
+                        <LandingCard
                             name={artist.name}
                             bgColor={artist.bgColor}
                             img={artist.img}
@@ -52,7 +52,7 @@ export const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map((artist: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
                     <Link key={index} href={`/album?album=${artist.name}`}>
-                        <ArtistCard
+                        <LandingCard
                             name={artist.name}
                             bgColor={artist.bgColor}
                             img={artist.img}
