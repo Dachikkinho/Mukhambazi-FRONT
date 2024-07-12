@@ -12,7 +12,7 @@ export const mainMenuItems = [
     {
         name: 'Albums',
         img: "albums-icon",
-        link: "#"
+        link: "/albums"
     },
     {
         name: 'Songs',
@@ -189,6 +189,8 @@ export const songs = [
         image: "/images/song-placeholder.svg"
     },
 ]
+
+//artists placeholder
  export const popularArtists = [
     {
         name: "Taylor Swift",
@@ -270,3 +272,4 @@ export const europeanArtists = [
     },
     
 ]
+
