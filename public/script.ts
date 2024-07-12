@@ -119,7 +119,7 @@ export const artists = [
     },
 ]
 
-export const popularArtists = [
+ export const popularArtists = [
     {
         name: "Taylor Swift",
         plays: "32M",
@@ -173,7 +173,6 @@ export const georgianArtists = [
     },
     
 ]
-
 export const europeanArtists = [
     {
         name: "Jgufi 1/4ss",

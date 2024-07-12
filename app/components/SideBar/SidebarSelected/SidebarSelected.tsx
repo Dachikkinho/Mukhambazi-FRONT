@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 export function SidebarSelected() {
 
     const path = usePathname();
-    const [position, setPosition] = useState("151px");
+    const [position, setPosition] = useState("179px");
 
     useEffect(() => {
         switch (path) {

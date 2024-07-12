@@ -2,6 +2,7 @@ import { popularArtists, georgianArtists, europeanArtists } from "@/public/scrip
 import { Search } from "../Header/Search/Search"
 import styles from "./Artists.module.scss"
 import { ArtistCard } from "./ArtistCard/ArtistCard"
+import { ArtistcardHeader } from "./ArtistcardHeader/ArtistcardHeader"
 
 export const ArtistsPage = () => {
 
@@ -16,10 +17,7 @@ export const ArtistsPage = () => {
                     <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
                 </div>
                 <div>
-                    <div className={styles.cardsHeading}>
-                        <h4>Popular Artists</h4>
-                        <img src={`icons/popular.svg`} alt="pfp" width={28} height={28} />
-                    </div>
+                    <ArtistcardHeader title={"Popular Artists"} icon={"popular"} />
                     <div className={styles.cards}>
                         {popularArtists.map(artist => (
                             <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} />
@@ -28,10 +26,7 @@ export const ArtistsPage = () => {
                 </div>
 
                 <div>
-                    <div className={styles.cardsHeading}>
-                        <h4>Georgian Artists</h4>
-                        <img src={`icons/wine-glass-solid.svg`} alt="pfp" width={28} height={28} />
-                    </div>
+                    <ArtistcardHeader title={"Georgian Artists"} icon={"wine-glass-solid"} />
                     <div className={styles.cards}>
                         {georgianArtists.map(artist => (
                             <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} />
@@ -39,10 +34,7 @@ export const ArtistsPage = () => {
                     </div>
                 </div>
                 <div>
-                    <div className={styles.cardsHeading}>
-                        <h4>European Artists</h4>
-                        <img src={`icons/earth-europe-solid.svg`} alt="pfp" width={28} height={28} />
-                    </div>
+                    <ArtistcardHeader title={"European Artists"} icon={"earth-europe-solid"} />
                     <div className={styles.cards}>
                         {europeanArtists.map(artist => (
                             <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} />

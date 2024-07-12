@@ -29,8 +29,9 @@ export default function RootLayout({
             <HamburgerMenu />
             {children}
             <RightSideBar />
-            <MainPlayer />
+            
           </div>
+          <MainPlayer />
         </RecoilWrap>
       </body>
     </html>
