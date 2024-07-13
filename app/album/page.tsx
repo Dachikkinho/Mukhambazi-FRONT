@@ -1,17 +1,15 @@
 'use client'
 
-import Image from "next/image";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
 import Albumsssv2 from "../components/Albumsssv2/page";
 
 
 
 
-export default function Albumssec() {
+export default function albumArtist() {
   useEffect(() => {
-    document.title= 'Chakrulos | Albumssec'
+    document.title= 'Chakrulos | Artist'
   },[]);
   return (
     <main className={styles.main}>

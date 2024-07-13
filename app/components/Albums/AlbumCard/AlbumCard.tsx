@@ -2,12 +2,12 @@ import styles from "./AlbumCard.module.scss"
 
 type Props = {
     name: string;
-    group: string;
+    lastName: string;
     plays: string;
     image: string
 }
 
-export const AlbumCard = ({ name, group, plays, image }: Props) => {
+export const AlbumCard = ({ name, lastName, plays, image }: Props) => {
 
     return (
 
@@ -16,11 +16,10 @@ export const AlbumCard = ({ name, group, plays, image }: Props) => {
                 <img className={styles.img} src={`${image}`} alt="cover" width={492} height={256} />
                 <div className={styles.spans}>
                     <span className={styles.firstspan}>
-                        {name}
+                        {name} {lastName}
                     </span>
                     <span className={styles.default}>{plays}</span>
                 </div>
-                <span className={styles.default}>{group}</span>
             </div>
         </div>
     )

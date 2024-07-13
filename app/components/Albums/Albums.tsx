@@ -22,9 +22,9 @@ export const Albums = () => {
                 <div className={styles.container}>
                
                     <div className={styles.dragons}>
-                        {albums.map((album: { group: string; name: string; plays: string; image: string; }) => (
-                            <Link  href={`/album?album=${album.group}`}>
-                                <AlbumCard name={album.name} group={album.group} plays={album.plays} image={album.image}/>
+                        {albums.map((album: { name: string; lastName: string; plays: string; image: string; }) => (
+                            <Link  href={`/album?album=${album.name}${album.lastName}`}>
+                                <AlbumCard name={album.name}  lastName={album.lastName} plays={album.plays} image={album.image} />
                             </Link>
                         ))}
                     </div> 

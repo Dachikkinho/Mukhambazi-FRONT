@@ -6,7 +6,7 @@ import Albumsartistsv2 from "../Albumsartists/page";
 import { useSearchParams } from "next/navigation";
 
 
-const MyComponentv2 = () => {
+const AlbumSongs = () => {
     let params = useSearchParams();
     let albumParam = params.get('album');
 
@@ -19,11 +19,11 @@ const MyComponentv2 = () => {
 
     return (
         <div>
-            {myAlbum.filter(album => album.group === albumName).map(album => (
-                <Albumsartistsv2 artistName={album.group} songs={album.songs} nationality={album.nationality} image={album.image} src={album.srcs}/>
+            {myAlbum.filter(album => album.name+album.lastName === albumName).map(album => (
+                <Albumsartistsv2 artistName={album.name} artistLastName={album.lastName} songs={album.songs} nationality={album.nationality} image={album.image} src={album.srcs} />
             ))}
         </div>
     );
 }
 
-export default MyComponentv2;
+export default AlbumSongs;

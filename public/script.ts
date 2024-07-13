@@ -80,15 +80,16 @@ export const nextSongPlaceholder = [
     },
 ]
 
+// artists placeholder
 export const artists = [
     {
-        name: "Travis Scott",
+        name: "TravisScott",
         listens: '23',
         bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
         img: 'travis'
     },
     {
-        name: "Imagine Dragons",
+        name: "ImagineDragons",
         listens: '32',
         bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
         img: 'imagineDragons'
@@ -106,13 +107,13 @@ export const artists = [
         img: 'dasi'
     },
     {
-        name: "Travis Scott",
+        name: "TravisScott",
         listens: '23',
         bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
         img: 'travis'
     },
     {
-        name: "Imagine Dragons",
+        name: "ImagineDragons",
         listens: '32',
         bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
         img: 'imagineDragons'

@@ -19,6 +19,9 @@ export function SidebarSelected() {
             case '/albums':
                 setPosition("275px");
                 break;
+                case '/album':
+                    setPosition("275px");
+                    break;
             case "/songs":
                 setPosition("323px");
                 break;
@@ -34,6 +37,7 @@ export function SidebarSelected() {
             case "/podcasts":
                 setPosition("540px");
                 break;
+                
             default:
                 setPosition("179px");
         }

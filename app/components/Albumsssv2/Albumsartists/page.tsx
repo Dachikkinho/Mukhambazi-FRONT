@@ -5,19 +5,20 @@ import styles from "./page.module.scss"
 
 type AlbumsArtistsProps = {
     artistName: string;
+    artistLastName: string;
     songs: string[];
     nationality: string;
     image: string;
     src: string[];
 }
 
-export const Albumsartistsv2 = ({ artistName, songs, nationality, image, src }: AlbumsArtistsProps) => {
+export const Albumsartistsv2 = ({ artistName, songs, nationality, image, artistLastName  }: AlbumsArtistsProps) => {
 
     return (
         <div className={styles.mainContainer}>
             <div className={styles.albums}>
                 <img className={styles.photo} src={image} alt="icon" />
-                <div>{artistName}</div>{nationality}
+                <div>{artistName} {artistLastName}</div>{nationality}
             </div>
             <div className={styles.wrapper}>
                 {songs.map((song, index) => (
