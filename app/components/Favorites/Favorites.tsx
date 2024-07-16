@@ -13,7 +13,7 @@ export const Favorites = () => {
             <div className={styles.Title}>
                 <div className={styles.headingCont}>
                     <h5 className={styles.heading}>Songs</h5>
-                    <img src="/icons/Favorite, Star, Square.svg" alt="icon" />
+                    <img src="/icons/songs-heading-icon.svg" alt="icon" />
                 </div>
             </div>
             <div className={styles.Songs}>
