@@ -1,3 +1,4 @@
+import { LikeButton } from "../../LikeButton/LikeButton";
 import styles from "./Song.module.scss"
 
 type Props = {
@@ -18,6 +19,9 @@ export function Song({name, group, length, imageSrc}: Props) {
                     <p className={styles.name}>{length}</p>
                     <button className={styles.play}>Play Now</button>
                 </div>
+            </div>
+            <div className={styles.like}>
+                <LikeButton />
             </div>
         </div>
     )

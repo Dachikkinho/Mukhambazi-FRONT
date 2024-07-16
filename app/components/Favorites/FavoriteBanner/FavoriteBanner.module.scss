@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    max-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.banner {
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.container:hover .banner {
+    filter: brightness(0.7);
+}
+
+.title h4 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
