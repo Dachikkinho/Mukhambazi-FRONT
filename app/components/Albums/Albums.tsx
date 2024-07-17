@@ -15,7 +15,9 @@ export const Albums = () => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.topContainer}>
+            <div className={styles.Search}>
             <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
+            </div>
                 <h2 className={styles.heading}></h2>
             </div>
             <div className={styles.wrapper}>
