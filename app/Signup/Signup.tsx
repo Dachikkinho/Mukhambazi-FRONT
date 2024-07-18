@@ -1,9 +1,10 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import styles from "./Signup.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; //icon for password hidden
+import styles from "../Signup/Signup.module.scss";
 
 const PLACEHOLDEREMAIL_OBJECT = {
   placeholder: "chakrulos@email.com",
@@ -36,6 +37,9 @@ export const Register = () => {
     formState: { errors },
   } = useForm<RegisterForm>();
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showReenterPassword, setShowReenterPassword] = useState(false);
+
   const onRegisterFinished = (values: RegisterForm) => {
     console.log("FORM SUBMITTED");
   };
@@ -43,16 +47,17 @@ export const Register = () => {
   const password = useRef({});
   password.current = watch("password", "");
 
-  console.log(errors);
+  const reenterPassword = useRef({});
+  reenterPassword.current = watch("reenter", "");
 
   return (
     <div className={styles.main}>
       <div className={styles.mainLogo}>
-        <img className={styles.chakrulo} src={`./logo.png`} alt="icons" />
+        <img className={styles.chakrulo} src="./logo.png" alt="icons" />
       </div>
       <form
         onSubmit={handleSubmit(onRegisterFinished)}
-        className={styles.formContainer}
+        className={classNames(styles.formContainer, styles.fadeIn)}
       >
         <span className={styles.first}>
           Sign up to <span className={styles.second}>CHAKRULOS!</span> <br />
@@ -83,41 +88,62 @@ export const Register = () => {
         </div>
         <div className={styles.password}>
           <p className={styles.paragraph}>Create a password</p>
-          <input
-            {...PLACEHOLDERPASS_OBJECT}
-            className={classNames(styles.firstinput, {
-              [styles.errorBorder]: errors.password,
-            })}
-            {...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password must be at least 6 characters.",
-              },
-            })}
-          />
+          <div className={styles.passwordInput}>
+            <input
+              type={showPassword ? "text" : "password"}
+              {...PLACEHOLDERPASS_OBJECT}
+              className={classNames(styles.firstinput, {
+                [styles.errorBorder]: errors.password,
+              })}
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password must be at least 6 characters.",
+                },
+              })}
+            />
+            <button
+              type="button"
+              className={styles.passwordToggle}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
           {errors.password && (
             <span className={styles.errorText}>{errors.password.message}</span>
           )}
         </div>
         <div className={styles.reenterPassword}>
           <p className={styles.paragraph}>Repeat password</p>
-          <input
-            {...PLACEHOLDERREenter_OBJECT}
-            className={classNames(styles.firstinput, {
-              [styles.errorBorder]: errors.reenter,
-            })}
-            {...register("reenter", {
-              required: "Please repeat your password",
-              validate: (value) =>
-                value === password.current || "The passwords do not match",
-            })}
-          />
+          <div className={styles.passwordInput}>
+            <input
+              type={showReenterPassword ? "text" : "password"}
+              {...PLACEHOLDERREenter_OBJECT}
+              className={classNames(styles.firstinput, {
+                [styles.errorBorder]: errors.reenter,
+              })}
+              {...register("reenter", {
+                required: "Please repeat your password",
+                validate: (value) =>
+                  value === password.current ||
+                  "The passwords do not match",
+              })}
+            />
+            <button
+              type="button"
+              className={styles.passwordToggle}
+              onClick={() => setShowReenterPassword(!showReenterPassword)}
+            >
+              {showReenterPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
           {errors.reenter && (
             <span className={styles.errorText}>{errors.reenter.message}</span>
           )}
         </div>
-        
+
         <div className={styles.check}>
           <span>I Agree to Privacy Policy</span>
           <input
@@ -144,3 +170,4 @@ export const Register = () => {
 };
 
 export default Register;
+

@@ -304,4 +304,154 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .formContainer {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .first {
+      font-size: 1.3rem;
+    }
+  
+    .firstinput {
+      font-size: 0.9rem;
+    }
+  
+    .signin {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main {
+      padding: 10px;
+    }
+  
+    .formContainer {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .first {
+      font-size: 1.2rem;
+    }
+  
+    .firstinput {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  
+    .signin {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .passwordInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .passwordToggle {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $purple-1;
+  }
+  
+  @media (max-width: 768px) {
+    .formContainer {
+      max-width: 90%;
+    }
+  
+    .first {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main {
+      padding: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      bottom: 68px;
+    }
+  
+    .chakrulo {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .mainLogo {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .formContainer {
+      max-width: 100%;
+      padding: 15px;
+      position: relative;
+      bottom: 65px;
+    }
+  
+    .first {
+      font-size: 1.2rem;
+    }
+  
+    .firstinput {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  
+    .signin {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 540px) {
+    .main {
+      padding: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      bottom: 68px;
+    }
+  
+    .chakrulo {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .mainLogo {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .formContainer {
+      max-width: 100%;
+      padding: 15px;
+      position: relative;
+      bottom: 65px;
+    }
+  
+    .first {
+      font-size: 1.2rem;
+    }
+  
+    .firstinput {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  
+    .signin {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
   
