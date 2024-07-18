@@ -60,16 +60,7 @@ export const nextSongPlaceholder = [
         artistName: "Luna Flowers",
         songName: "Flower Wild"
     },
-    {
-        isActive: false,
-        artistName: "KING Topic",
-        songName: "History"
-    },
-    {
-        isActive: false,
-        artistName: "Jansug kakhidze",
-        songName: "Mova Maisi"
-    },
+    
 ]
 
 export const artists = [
