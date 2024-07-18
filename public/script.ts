@@ -14,34 +14,26 @@ export const mainMenuItems = [
         img: "albums-icon",
         link: "#"
     },
-    {
-        name: 'Songs',
-        img: "songs-icon",
-        link: "/songs"
-    },
+   
 ]
 
 export const forYouItems = [
     {
-        name: 'Playlist',
+        name: 'Playlists',
         img: "my-playlists-icon",
-        link: "#"
+        link: "/playlist"
     },
     {
-        name: 'Specials',
-        img: "my-albums-icon",
-        link: "#"
+        name: 'Songs',
+        img: "songs-icon",
+        link: "/songs"
     },
     {
         name: 'Favorites',
         img: "favorites-icon",
         link: "/favorites"
     },
-    {
-        name: 'Podcasts',
-        img: "podcasts-icon",
-        link: "#"
-    },
+    
 ]
 
 

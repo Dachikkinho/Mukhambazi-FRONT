@@ -20,19 +20,13 @@ export function SidebarSelected() {
                 setPosition("240px");
                 break;
             case "/songs":
-                setPosition("323px");
+                setPosition("448px");
                 break;
             case "/playlist":
-                setPosition("407px");
-                break;
-            case "/specials":
-                setPosition("451px");
-                break;
+                setPosition("402px");
+                break;   
             case "/favorites":
                 setPosition("546px");
-                break;
-            case "/podcasts":
-                setPosition("540px");
                 break;
             default:
                 setPosition("179px");

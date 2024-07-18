@@ -1,4 +1,4 @@
-import styles from "./Myplaylist.module.scss"
+import styles from "./Playlist.module.scss"
 
 type Props = {
     title: string,
@@ -7,10 +7,10 @@ type Props = {
     playbtn: string;
 }
 
-export const Listdisabled = ({ title, date, icon, playbtn }: Props) => {
+export const Listactivate = ({ title, date, icon, playbtn }: Props) => {
     return (
         <div className={styles.wrapper}>
-            <div className={styles.listdisabled}>
+            <div className={styles.listactive}>
                 <div>
                     <span className={styles.span}>{title}
                         <p className={styles.paragraph}>
@@ -27,4 +27,4 @@ export const Listdisabled = ({ title, date, icon, playbtn }: Props) => {
     )
 }
 
-export default Listdisabled;
+export default Listactivate;

@@ -3,9 +3,11 @@
 
 .heading {
     font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 22px;
     color: $white;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 26.63px;
+    text-align: left;
 }
 
 .headingCont {
