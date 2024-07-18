@@ -8,8 +8,6 @@ import styles from "./playlist.module.scss"
 
 export const Playlist = () => {
 
-
-
     return (
         <div className={styles.mainContainer}>
             <div className={styles.search}>

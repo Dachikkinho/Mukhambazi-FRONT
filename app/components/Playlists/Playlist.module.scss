@@ -59,7 +59,11 @@
     cursor: pointer;
 }
 
-
+.search {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
 /* Desktop styles */
 @media (min-width: 1025px) {
 
