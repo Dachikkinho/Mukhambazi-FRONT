@@ -17,7 +17,7 @@ export function SongsMainSection() {
                 </div>
                 <div className={styles.songs}>
                     {songs.map((song, i) => (
-                        <Song name={song.name} group={song.group} length={song.length} imageSrc={song.image} id={i}/>
+                        <Song name={song.name} group={song.group} length={song.length} imageSrc={song.image} key={i}/>
                     ))}
                 </div>
             </div>

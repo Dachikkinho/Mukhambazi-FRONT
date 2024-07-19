@@ -11,7 +11,7 @@ export function NextSong() {
             </div>
             <div className={styles.container}>
                 {nextSongPlaceholder.map((song, i) => (
-                    <NextSongCard isActive={song.isActive} arsitName={song.artistName} songName={song.songName} id={i}/>
+                    <NextSongCard isActive={song.isActive} arsitName={song.artistName} songName={song.songName} key={i}/>
                 ))}
             </div>
         </div>

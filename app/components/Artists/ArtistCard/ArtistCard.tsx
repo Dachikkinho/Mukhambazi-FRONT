@@ -5,12 +5,11 @@ type Props = {
     name: string,
     plays: string,
     pfp: string,
-    id: number
 }
 
-export const ArtistCard = ({bgColor, name, plays, pfp, id}: Props) => {
+export const ArtistCard = ({bgColor, name, plays, pfp}: Props) => {
     return (
-        <div key={id} className={styles.card} style={{
+        <div className={styles.card} style={{
             backgroundColor: bgColor
         }}>
             <div className={styles.container}>

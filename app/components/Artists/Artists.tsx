@@ -20,7 +20,7 @@ export const ArtistsPage = () => {
                     <ArtistcardHeader title={"Popular Artists"} icon={"popular"} />
                     <div className={styles.cards}>
                         {popularArtists.map((artist, i) => (
-                            <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} id={i}/>
+                            <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} key={i}/>
                         ))}
                     </div>
                 </div>
@@ -29,7 +29,7 @@ export const ArtistsPage = () => {
                     <ArtistcardHeader title={"Georgian Artists"} icon={"wine-glass-solid"} />
                     <div className={styles.cards}>
                         {georgianArtists.map((artist, i) => (
-                            <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} id={i}/>
+                            <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} key={i}/>
                         ))}
                     </div>
                 </div>
@@ -37,7 +37,7 @@ export const ArtistsPage = () => {
                     <ArtistcardHeader title={"European Artists"} icon={"earth-europe-solid"} />
                     <div className={styles.cards}>
                         {europeanArtists.map((artist, i) => (
-                            <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} id={i}/>
+                            <ArtistCard bgColor={artist.bg} name={artist.name} pfp={artist.pfp} plays={artist.plays} key={i}/>
                         ))}
                     </div>
                 </div>
