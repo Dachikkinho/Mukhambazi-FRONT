@@ -10,7 +10,6 @@ import { albumsState } from "@/app/states";
 
 export const Albums = () => {
 
-    const [albums] = useRecoilState(albumsState)
 
     return (
         <div className={styles.Container}>

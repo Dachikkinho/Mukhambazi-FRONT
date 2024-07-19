@@ -2,7 +2,7 @@
 
 import styles from "./page.module.scss";
 import { useEffect } from "react";
-import Albumsssv2 from "../components/Albumsssv2/page";
+import AlbumsPage from "../albums/page";
 
 
 
@@ -13,7 +13,7 @@ export default function albumArtist() {
   },[]);
   return (
     <main className={styles.main}>
-      <Albumsssv2 />
+      <AlbumsPage />
     </main>
   );
 }
