@@ -17,8 +17,8 @@ export function SideBarNav({navItemsMap}: Props) {
     return (
         <nav className={styles.mainCont}>
             <ul className={styles.linksWrap}>
-                {navItemsMap.map(item => (
-                    <SidebarNavItems name={item.name} img={item.img} link={item.link} />
+                {navItemsMap.map((item, i) => (
+                    <SidebarNavItems name={item.name} img={item.img} link={item.link} id={i}/>
                 ))}
             </ul>
         </nav>

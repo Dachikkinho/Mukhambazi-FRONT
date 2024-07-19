@@ -5,11 +5,12 @@ type Props = {
     link: string,
     img: string,
     name: string,
+    id: number
 }
 
-export function SidebarNavItems({link, img, name}: Props) {
+export function SidebarNavItems({link, img, name, id}: Props) {
     return (
-        <li>
+        <li key={id}>
             <Link href={link} className={styles.link} >
                 <img src={`/icons/${img}.svg`} alt="icon" />
                 <p>{name}</p>

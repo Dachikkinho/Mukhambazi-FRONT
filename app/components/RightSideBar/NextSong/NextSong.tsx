@@ -10,8 +10,8 @@ export function NextSong() {
                 <img src="/icons/voice-rec-square.svg" alt="" />
             </div>
             <div className={styles.container}>
-                {nextSongPlaceholder.map(song => (
-                    <NextSongCard isActive={song.isActive} arsitName={song.artistName} songName={song.songName}/>
+                {nextSongPlaceholder.map((song, i) => (
+                    <NextSongCard isActive={song.isActive} arsitName={song.artistName} songName={song.songName} id={i}/>
                 ))}
             </div>
         </div>

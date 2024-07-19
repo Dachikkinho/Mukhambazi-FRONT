@@ -17,8 +17,8 @@ export const Favorites = () => {
                 </div>
             </div>
             <div className={styles.Songs}>
-                {songs.map(song => (
-                    <FavoriteBanner title={song.name} banner={song.image} />
+                {songs.map((song, i) => (
+                    <FavoriteBanner title={song.name} banner={song.image} id={i}/>
                 ))}
             </div>
        </div>
