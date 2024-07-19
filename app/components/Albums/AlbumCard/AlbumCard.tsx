@@ -13,7 +13,7 @@ export const AlbumCard = ({ name, lastName, plays, image }: Props) => {
 
         <div className={styles.artists}>
             <div className={styles.containers}>
-                <img className={styles.img} src={`${image}`} alt="cover" width={492} height={256} />
+                <img className={styles.img} src={`${image}`} alt="cover" width={512} height={256} />
                 <div className={styles.spans}>
                     <span className={styles.firstspan}>
                         {name} {lastName}
@@ -22,7 +22,7 @@ export const AlbumCard = ({ name, lastName, plays, image }: Props) => {
                 </div>
             </div>
         </div>
-    )
+    ) 
 }
 
 export default AlbumCard;

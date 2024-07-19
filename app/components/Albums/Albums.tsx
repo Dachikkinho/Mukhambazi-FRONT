@@ -1,5 +1,5 @@
 
-import { useRecoilState } from "recoil";
+import { atom, useRecoilState } from "recoil";
 import styles from "./Albums.module.scss"
 import Link from "next/link";
 import AlbumCard from "./AlbumCard/AlbumCard";
@@ -13,26 +13,27 @@ export const Albums = () => {
     const [albums] = useRecoilState(albumsState)
 
     return (
-        <div className={styles.mainContainer}>
-            <div className={styles.topContainer}>
+        <div className={styles.Container}>
+            <div className={styles.responsiveTitle}>
+                <h4>Albums</h4>
+                <img src="/icons/albums-icon.svg" alt="icon" />
+            </div>
             <div className={styles.Search}>
-            <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
+                <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
             </div>
-                <h2 className={styles.heading}></h2>
+
+            <div className={styles.Title}>
+                <h4>Albums</h4>
+                <img src="/icons/albums-icon.svg" alt="icon" />
             </div>
-            <div className={styles.wrapper}>
-                <div className={styles.container}>
-               
-                    <div className={styles.dragons}>
-                        {albums.map((album: { name: string; lastName: string; plays: string; image: string; }) => (
-                            <Link  href={`/album?album=${album.name}${album.lastName}`}>
-                                <AlbumCard name={album.name}  lastName={album.lastName} plays={album.plays} image={album.image} />
-                            </Link>
-                        ))}
-                    </div> 
-                    
-                </div>
+
+            <div className={styles.AlbumsContainer}>
+                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
+                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
+                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
+                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
             </div>
+
         </div>
     )
 }

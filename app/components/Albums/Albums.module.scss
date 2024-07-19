@@ -1,163 +1,108 @@
-@import '../../Colors/Color.scss';
-
-.mainContainer {
-    max-width: 1114px;
-    width: 100%;
-    padding: 44px 20px;
+.Container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
 }
 
-.ResponsiveTitle {
+.Search  {
+    width: 50px;
+    margin-top: 60px;
+    position: relative;
+    width: 366px;
+    margin: 0 auto;
+    margin-top: 65px;
+    margin-bottom: 37px;
+}
+
+.AlbumsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 18px;
+
+}
+
+.Title {
     display: none;
 }
 
-.wrapper {
+.responsiveTitle {
     display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.Album {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    color: $white;
-}
-
-.artists {
-    margin-top: 42px;
-    display: flex;
-    align-items: center;
-}
-
-.containers {
-    max-width: 492px;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-        transform: scale(0.96);
-        filter: brightness(85%);
-    }
-}
-
-.spans {
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.dragons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 38px;
-    margin-left: 15px;
-}
-
-.firstspan {
-    font-size: 20px;
+    font-size: 32px;
+    line-height: 38.73px;
     font-weight: 500;
-    line-height: 29.05px;
-    text-align: left;
-    color: $purple-600;
+    margin-top: 25px;
+    margin-bottom: -50px;
+    margin-left: 20px;
+    gap: 10px;
 }
 
-.default {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 29.05px;
-    text-align: left;
-    color: $white;
-}
 
-.container {
-    margin-top: 26px;
-    margin-right: 20.08px;
-}
 
-.topContainer {
-    display: flex;
-    max-width: 740px;
-    width: 100%;
-    align-items: center;
-    color: $primaryColor;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
-.img {
-    width: 100%;
-    max-width: 466px;
-    border-radius: 20px;
-    height: auto;
-}
 
-@media (max-width: 1024px) {
-    .mainContainer {
-        padding: 32px 15px;
+
+@media screen and (min-width: 1920px) {
+    .Search {
+      width: 704px;
+      margin-left: 208px;
+      margin: 0 auto;
+      margin-top: 40px;
     }
 
-    .topContainer, .wrapper {
-        flex-direction: column;
-    }
-
-    .containers {
-        max-width: 100%;
-    }
-
-    .img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .dragons {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .artists {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .spans {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .firstspan, .default {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    .mainContainer {
-        padding: 20px 10px;
-    }
-
-    .containers {
-        max-width: 100%;
-    }
-
-    .topContainer, .wrapper {
+    .Title {
+        display: flex;
+        font-size: 32px;
+        line-height: 38.73px;
+        font-weight: 500;
+        margin-top: 32px;
+        margin-left: 32.08px;
         gap: 10px;
     }
 
-    .dragons {
-        gap: 20px;
+    .responsiveTitle {
+        display: none;
     }
 
-    .firstspan, .default {
-        font-size: 16px;
+    .AlbumsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: center;
+        margin-top: 18px;
+    
     }
+    
+}
+
+
+@media screen and (max-width: 389px) {
+    .Search {
+        width: 50px;
+
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .Search {
+        width: 300px;
+
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .Search {
+        width: 607px;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    
+    .AlbumsContainer {
+        width: 100%;
+        height: 100%;
+    }
+
 }
