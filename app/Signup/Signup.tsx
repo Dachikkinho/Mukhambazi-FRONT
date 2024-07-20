@@ -5,18 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; //icon for password hidden
 import styles from "../Signup/Signup.module.scss";
+import { PLACEHOLDEREMAIL_OBJECT, PLACEHOLDERPASS_OBJECT, PLACEHOLDERREenter_OBJECT } from "@/public/script";
 
-const PLACEHOLDEREMAIL_OBJECT = {
-  placeholder: "chakrulos@email.com",
-};
 
-const PLACEHOLDERPASS_OBJECT = {
-  placeholder: "At least six characters",
-};
-
-const PLACEHOLDERREenter_OBJECT = {
-  placeholder: "Re-enter password",
-};
 
 interface RegisterForm {
   email: string;
