@@ -14,6 +14,15 @@ export  const PLACEHOLDERREenter_OBJECT = {
   };
 
 
+  export const PLACEHOLDEREMAILLOGIN_OBJECT = {
+    placeholder: "Enter your email",
+  };
+  
+ export const PLACEHOLDERPASSLOGIN_OBJECT = {
+    placeholder: "Enter your password",
+  };
+  
+
 
 export const mainMenuItems = [
     {
