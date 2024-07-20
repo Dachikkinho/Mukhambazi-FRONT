@@ -8,7 +8,6 @@ import styles from "../Login/Login.module.scss"
 import { PLACEHOLDEREMAILLOGIN_OBJECT, PLACEHOLDERPASSLOGIN_OBJECT } from "@/public/script";
 
 
-
 interface LoginForm {
   email: string;
   password: string;
