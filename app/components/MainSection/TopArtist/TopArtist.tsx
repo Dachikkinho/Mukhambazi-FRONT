@@ -15,7 +15,7 @@ export const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map((artists: { name: string; bgColor: string; img: string; listens: string; }, index: Key | null | undefined) => (
-                    <Link key={index} href={`/albums?artist=${artists.name}`}>
+                    <Link key={index} href={`/album?album=${artists.name}`}>
                         <LandingCard
                             name={artists.name}
                             bgColor={artists.bgColor}

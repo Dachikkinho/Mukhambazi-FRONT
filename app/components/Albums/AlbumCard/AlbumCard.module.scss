@@ -1,0 +1,93 @@
+@import '../../../Colors/Color.scss';
+
+
+.artists {
+    display: flex;
+    align-items: center;
+}
+
+.containers {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.containers:hover {
+    transform: scale(0.96);
+    filter: brightness(85%)
+}
+
+.spans {
+    display: flex;
+    justify-content: space-between;
+    max-width: 366px;
+}
+
+
+
+.firstspan {
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    color: $purple-600;
+}
+
+.default {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    color: $white;
+}
+
+
+
+
+.img {
+    width: 366px;
+    border-radius: 15px;
+    height: 256px;
+    
+}
+
+@media screen and (min-width: 1920px) {
+    
+    .img {
+        width: 512px;
+        height: 256px;
+        border-radius: 20px;
+        height: 256px;
+    }
+
+    .spans {
+        display: flex;
+        justify-content: space-between;
+        max-width: 512px;
+    }
+
+    .containers img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 343px) {
+    
+    .img {
+        width: 320px;
+        border-radius: 20px;
+        height: 256px;
+    }
+
+    .spans {
+        display: flex;
+        justify-content: space-between;
+        max-width: 512px;
+    }
+}
+
