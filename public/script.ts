@@ -1,3 +1,11 @@
+export const PLACEHOLDEREMAILLOGIN_OBJECT = {
+    placeholder: "Enter Your Email",
+  };
+  
+export const PLACEHOLDERPASSLOGIN_OBJECT = {
+    placeholder: "Enter Your Password",
+  };
+
 export const mainMenuItems = [
     {
         name: 'Home',
