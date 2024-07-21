@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; //icon for password hidden
-import styles from "../Signup/Signup.module.scss";
+import styles from "../Signup/page.module.scss";
 import { PLACEHOLDEREMAIL_OBJECT, PLACEHOLDERPASS_OBJECT, PLACEHOLDERREenter_OBJECT } from "@/public/script";
 
 

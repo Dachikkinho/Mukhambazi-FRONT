@@ -1,7 +1,7 @@
 'use client'
 
-import Albums from "../components/Albums/Albums";
-import { ArtistsPage } from "../components/Artists/Artists";
+
+import Albums from "@/app/components/Albums/Albums";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
 

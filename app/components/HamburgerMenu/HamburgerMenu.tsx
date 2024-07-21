@@ -2,7 +2,7 @@
 
 import { useRecoilState } from "recoil"
 import styles from "./HamburgerMenu.module.scss"
-import { sideBarOpenState } from "@/app/states"
+import { sideBarOpenState } from "@/app/(authorised)/states"
 
 export function HamburgerMenu() {
 
