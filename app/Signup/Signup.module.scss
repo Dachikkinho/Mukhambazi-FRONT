@@ -1,10 +1,33 @@
 @import "../Colors/Color.scss";
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; 
+  overflow-x: hidden; 
   color: $white;
   padding: 20px;
   animation: fadeIn 1s ease-in-out;
@@ -20,7 +43,7 @@
   max-width: 400px;
   width: 100%;
   gap: 5px;
-  animation: slideIn 1s ease-in-out;
+  animation: slideIn 1s ease-in-out, float 5s infinite; 
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
@@ -28,7 +51,7 @@
 .chakrulo {
   max-width: 100%;
   height: auto;
-  animation: zoomIn 0.5s ease-in-out;
+  animation: zoomIn 0.5s ease-in-out, rotate 10s linear infinite; 
 }
 
 .first {

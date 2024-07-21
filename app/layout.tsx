@@ -8,6 +8,8 @@ import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
 import { RightSideBar } from "./components/RightSideBar/RightSideBar";
 import MainPlayer from "./components/MainPlayer/MainPlayer";
 import Register from "./Signup/Signup";
+import Login from "./Login/Login";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Register />
+     <Login />
       </body>
     </html>
   );
