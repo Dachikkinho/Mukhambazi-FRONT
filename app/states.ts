@@ -8,3 +8,7 @@ export const musicState = atom({
     key: "music",
     default: []
 })
+export const searchState = atom({
+    key: "search",
+    default: []
+})

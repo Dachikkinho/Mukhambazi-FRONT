@@ -5,18 +5,19 @@ type Props = {
     icon: string;
     width: number;
     height: number;
+    onCange: () => void
 
   //We don't need onchage until the search algorithm is ready.
 }
 
-export const Search = ({ placeholder, icon, width, height, }: Props) => {
+export const Search = ({ placeholder, icon, width, height, onCange }: Props) => {
     return (
         <div className={styles.container}>
             <input
                 type="text"
                 placeholder={placeholder}
                 className={styles.mainSearch}
-                
+                onChange={onCange}
             />
             <img
                 src={`icons/${icon}.svg`}
