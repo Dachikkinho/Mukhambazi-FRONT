@@ -6,12 +6,11 @@ type Props = {
     title: string;
     banner: string;
     musicSrc?: string;
-    id: number;
 }
 
 export const FavoriteBanner = (props: Props) => {
     return (
-        <div className={styles.container} key={props.id}>
+        <div className={styles.container}>
             <div className={styles.wrap} >
                 <img className={styles.banner} src={props.banner}/>
                 <div className={styles.title}>

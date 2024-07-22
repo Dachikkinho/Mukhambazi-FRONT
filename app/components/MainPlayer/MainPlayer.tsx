@@ -24,9 +24,9 @@ export default function MainPlayer () {
         RHAP_UI.VOLUME
     ]
 
-    const mobileVolume = !isMobile && RHAP_UI.VOLUME;
+    const mobileVolume = !isMobile ? RHAP_UI.VOLUME : <></>;
 
-    const mobileControls = !isMobile && RHAP_UI.MAIN_CONTROLS;
+    const mobileControls = !isMobile ? RHAP_UI.MAIN_CONTROLS : <></>;
 
     return (
         <H5AudioPlayer 
