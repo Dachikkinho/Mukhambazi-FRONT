@@ -5,7 +5,7 @@ import styles from "./styles/NotFound.module.scss";
 
 const NotFound: React.FC = () => {
   useEffect(() => {
-    document.title = "Page not found";
+    document.title = "Page not found - Chakrulos";
   }, []);
   return (
     <div className={styles.container}>
