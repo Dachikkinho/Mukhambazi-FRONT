@@ -32,6 +32,7 @@ export const Register = () => {
   const [showReenterPassword, setShowReenterPassword] = useState(false);
 
   const onRegisterFinished = (values: RegisterForm) => {
+    console.log("FORM SUBMITTED");
   };
 
   const password = useRef({});
