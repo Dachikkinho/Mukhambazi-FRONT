@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from "react";
-import { MainSection } from "./components/MainSection/MainSection";
+import { MainSection } from "../components/MainSection/MainSection";
 import styles from "./page.module.css";
 
 

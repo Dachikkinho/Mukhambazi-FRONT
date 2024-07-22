@@ -1,5 +1,5 @@
 
-import { albumsState } from "@/app/states";
+import { albumsState } from "@/app/(authorised)/states";
 import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import Albumsartistsv2 from "../Albumsartists/page";

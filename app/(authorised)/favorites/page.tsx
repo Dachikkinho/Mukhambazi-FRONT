@@ -1,9 +1,8 @@
 'use client'
 
+import { Favorites } from "@/app/components/Favorites/Favorites";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
-import { Favorites } from "../components/Favorites/Favorites";
-
 
 
 export default function Artists() {

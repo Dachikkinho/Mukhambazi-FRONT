@@ -1,7 +1,7 @@
 'use client'
 
+import { SongsMainSection } from "@/app/components/SongsMainSection/SongsMainSection";
 import styles from "./page.module.scss";
-import { SongsMainSection } from "../components/SongsMainSection/SongsMainSection";
 import { useEffect } from "react";
 
 export default function Songs() {
