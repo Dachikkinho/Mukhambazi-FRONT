@@ -8,7 +8,6 @@ import styles from "../Signup/page.module.scss";
 import { PLACEHOLDEREMAIL_OBJECT, PLACEHOLDERPASS_OBJECT, PLACEHOLDERREenter_OBJECT } from "@/public/script";
 
 
-
 interface RegisterForm {
   email: string;
   password: string;
@@ -32,7 +31,6 @@ export const Register = () => {
   const [showReenterPassword, setShowReenterPassword] = useState(false);
 
   const onRegisterFinished = (values: RegisterForm) => {
-    console.log("FORM SUBMITTED");
   };
 
   const password = useRef({});

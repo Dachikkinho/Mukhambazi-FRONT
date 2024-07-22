@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import styles from "../Login/Login.module.scss";
+import styles from "./page.module.scss";
 import {
   PLACEHOLDEREMAILLOGIN_OBJECT,
   PLACEHOLDERPASSLOGIN_OBJECT,

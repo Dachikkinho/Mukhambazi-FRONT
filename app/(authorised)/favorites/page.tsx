@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function Artists() {
   useEffect(() => {
-    document.title= 'Chakrulos | Albums'
+    document.title= 'Chakrulos | Favorites'
   },[]);
 
   return (
