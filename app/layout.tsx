@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SideBar } from "./components/SideBar/SideBar";
 import { RecoilWrap } from "./components/RecoilWrap/RecoilWrap";
-import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
-import { RightSideBar } from "./components/RightSideBar/RightSideBar";
-import MainPlayer from "./components/MainPlayer/MainPlayer";
-import Register from "./Signup/Signup";
+import "./styles/MainPlayer.scss"
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,13 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <RecoilWrap>
-          <div className={'main-components-container'}>
-            <SideBar />
-            <HamburgerMenu />
-            {children}
-            <RightSideBar />
-          </div>
-        </RecoilWrap>
+          {children}
+          </RecoilWrap>
       </body>
     </html>
   );
