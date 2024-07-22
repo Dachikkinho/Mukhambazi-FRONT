@@ -31,8 +31,7 @@ export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const onLoginFinished = (values: LoginForm) => {
-    console.log("FORM SUBMITTED", values);
-
+    
     fetch("/api/login", {
       method: "POST",
       headers: {
@@ -69,7 +68,7 @@ export const Login = () => {
           Log in to <span className={styles.second}>CHAKRULOS!</span> <br />
           <div className={styles.container}>
             <span>
-              New to CHAKRULOS? <span className={styles.signup}>Sign up</span>{" "}
+              New to CHAKRULOS? <span className={styles.signup}>Sign up</span>
               now
             </span>
           </div>
