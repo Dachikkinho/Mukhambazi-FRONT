@@ -3,8 +3,11 @@ import styles from "./Favorites.module.scss"
 import { Search } from "../Header/Search/Search";
 import { FavoriteBanner } from "./FavoriteBanner/FavoriteBanner";
 import { songs } from "@/public/script";
+import { useState } from "react";
+import axios from "axios";
 
 export const Favorites = () => {
+
     return (
        <div className={styles.container}>
             <div className={styles.SearchBar}>

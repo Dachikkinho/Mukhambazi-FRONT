@@ -3,9 +3,9 @@ import styles from "./Song.module.scss"
 
 type Props = {
     name: string;
-    group: string;
-    length: string;
-    imageSrc: string;
+    group?: string;
+    length?: string;
+    imageSrc?: string;
 }
 
 export function Song({name, group, length, imageSrc}: Props) {

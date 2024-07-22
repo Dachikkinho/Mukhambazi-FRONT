@@ -2,9 +2,28 @@ import styles from "./SongsMainSection.module.scss"
 import { Song } from "./Song/Song"
 import { Search } from "../Header/Search/Search"
 import { songs } from "@/public/script"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { useRecoilState } from "recoil"
+import { musicState } from "@/app/states"
 
 
 export function SongsMainSection() {
+
+    const [music,setMusic] = useRecoilState(musicState)
+
+    
+    useEffect (() => {
+        axios.get(`http://localhost:3001/music`)
+        .then(result => {
+            setMusic(result.data)
+        })
+        .catch(() => {
+            setMusic([])
+        })
+      }
+    )
+
     return (
         <div className={styles.mainContainer}>
             <div className={styles.topContainer}>
@@ -16,8 +35,9 @@ export function SongsMainSection() {
                     <img src="/icons/note-circle.svg" alt="icon" />
                 </div>
                 <div className={styles.songs}>
-                    {songs.map((song) => (
-                        <Song name={song.name} group={song.group} length={song.length} imageSrc={song.image}/>
+                    {music.map((song) => (
+                        <Song name={song.name} imageSrc={song.image}/>
+                        
                     ))}
                 </div>
             </div>
