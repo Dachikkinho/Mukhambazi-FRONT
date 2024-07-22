@@ -31,25 +31,6 @@ export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const onLoginFinished = (values: LoginForm) => {
-    
-    fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          // Warmatebit Daloginda
-        } else {
-          // Ver gaira login
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
   };
 
   const password = useRef({});
