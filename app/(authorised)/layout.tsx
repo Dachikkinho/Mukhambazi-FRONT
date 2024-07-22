@@ -14,7 +14,9 @@ export default function RootLayout({
       <div className={"main-components-container"}>
         <SideBar />
         <HamburgerMenu />
-        {children}
+        <div className="children-container">
+          {children}
+        </div>
         <RightSideBar />
       </div>
       <MainPlayer />

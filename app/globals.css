@@ -41,3 +41,8 @@ a {
     color-scheme: dark;
   }
 }
+
+.children-container {
+  width: 100%;
+  padding: 0 0 116px 0;
+}
