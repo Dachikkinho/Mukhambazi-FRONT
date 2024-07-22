@@ -3,7 +3,7 @@
 import styles from "./SideBar.module.scss"
 import { Logo } from "./Logo/Logo";
 import { SideBarHeading } from "./SideBarHeading/SideBarHeading";
-import { sideBarOpenState } from "@/app/(authorised)/states";
+import { sideBarOpenState } from "@/app/states";
 import { useRecoilState } from "recoil";
 import { SideBarNav } from "./SideBarNav/SideBarNav";
 import { forYouItems, mainMenuItems } from "@/public/script";

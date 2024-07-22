@@ -4,7 +4,7 @@ import { PreviousNext } from "./PreviousNext/PreviousNext";
 import styles from "./MainPlayer.module.scss"
 import { useState, useEffect } from "react";
 import { Shuffle } from "./Shuffle/Shuffle";
-import useViewport from "@/app/(authorised)/hooks/useViewport";
+import useViewport from "@/app/hooks/useViewport";
 
 
 
