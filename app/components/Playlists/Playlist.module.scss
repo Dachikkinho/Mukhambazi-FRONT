@@ -1,7 +1,17 @@
 @import '../../Colors/Color.scss';
 
+.mainContainer {
+    padding: 0 0 120px 0;
+}
+
+.container {
+    padding: 0 20px;
+}
+
 .wrapper {
     margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .playlist {
@@ -67,15 +77,6 @@
 /* Desktop styles */
 @media (min-width: 1025px) {
 
-    .listactive,
-    .listdisabled {
-        flex-direction: row;
-        height: 76px;
-        padding: 13px 22px;
-        gap: 10px;
-        width: 650px
-    }
-
     .span {
         font-size: 20px;
     }
@@ -91,16 +92,6 @@
 }
 
 @media (min-width: 1920px) {
-
-    .listactive,
-    .listdisabled {
-        flex-direction: row;
-        height: 76px;
-        padding: 13px 22px;
-        gap: 10px;
-        width: 955px
-    }
-
     .span {
         font-size: 20px;
     }
@@ -120,17 +111,6 @@
 
 /* Tablet styles */
 @media (min-width: 601px) and (max-width: 1024px) {
-
-    .listactive,
-    .listdisabled {
-        flex-direction: row;
-        height: 76px;
-        gap: 8px;
-        display: flex;
-        justify-content: space-between;
-        width: 450px;
-    }
-
     .span {
         font-size: 20px;
     }

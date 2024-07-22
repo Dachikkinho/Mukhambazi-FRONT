@@ -4,6 +4,7 @@ import styles from "./Albums.module.scss"
 import Link from "next/link";
 import AlbumCard from "./AlbumCard/AlbumCard";
 import { Search } from "../Header/Search/Search";
+import { albums } from "@/public/script";
 
 
 
@@ -26,10 +27,11 @@ export const Albums = () => {
             </div>
 
             <div className={styles.AlbumsContainer}>
-                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
-                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
-                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
-                <AlbumCard name={"Imagine"} lastName={"Dragon"} plays={"2000"} image={"/images/songCovers/banner.png"} />
+                {albums.map((album, i) => (
+                    <Link href={`/album?id=${album.id}`} key={i}>
+                        <AlbumCard name={album.name} lastName={album.lastName} plays={album.plays} image={album.image} />
+                    </Link>
+                ))}
             </div>
 
         </div>

@@ -283,3 +283,97 @@ export const europeanArtists = [
     
 ]
 
+// albums placeholder
+
+interface Album {
+    name: string;
+    lastName: string;
+    plays: string;
+    image: string;
+    id: number;
+    songs: string[],
+    nationality: string
+  }
+
+export const albums: Album[] = [
+    {
+        name: "Imagine",
+        nationality: "America",
+        lastName: "Dragons",
+        plays: "2000",
+        image: "/images/songCovers/banner.png",
+        id: 1,
+        songs: [
+            "Radioactive",
+            "Demons",
+            "Believer",
+            "Thunder",
+            "Whatever It Takes",
+            "It's Time",
+            "Natural",
+            "On Top of the World",
+            "I Bet My Life",
+            "Gold"
+        ]
+    },
+    {
+        name: "Imagine",
+        nationality: "America",
+        lastName: "Dragons",
+        plays: "2000",
+        image: "/images/songCovers/banner.png",
+        id: 2,
+        songs: [
+            "Radioactive",
+            "Demons",
+            "Believer",
+            "Thunder",
+            "Whatever It Takes",
+            "It's Time",
+            "Natural",
+            "On Top of the World",
+            "I Bet My Life",
+            "Gold"
+        ]
+    },
+    {
+        name: "Imagine",
+        nationality: "America",
+        lastName: "Dragons",
+        plays: "2000",
+        image: "/images/songCovers/banner.png",
+        id: 3,
+        songs: [
+            "Radioactive",
+            "Demons",
+            "Believer",
+            "Thunder",
+            "Whatever It Takes",
+            "It's Time",
+            "Natural",
+            "On Top of the World",
+            "I Bet My Life",
+            "Gold"
+        ]
+    },
+    {
+        name: "Imagine",
+        nationality: "America",
+        lastName: "Dragonssss",
+        plays: "2000",
+        image: "/images/songCovers/banner.png",
+        id: 4,
+        songs: [
+            "Radioactive",
+            "Demons",
+            "Believer",
+            "Thunder",
+            "Whatever It Takes",
+            "It's Time",
+            "Natural",
+            "On Top of the World",
+            "I Bet My Life",
+            "Gold"
+        ]
+    },
+]
