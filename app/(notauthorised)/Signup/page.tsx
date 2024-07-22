@@ -42,7 +42,7 @@ export const Register = () => {
   return (
     <div className={styles.main}>
       <div className={styles.mainLogo}>
-        <img className={styles.chakrulo} src="./logo.png" alt="icons" />
+        <img className={styles.chakrulo} src="./logo.png" alt="icons" draggable={false}/>
       </div>
       <form
         onSubmit={handleSubmit(onRegisterFinished)}
