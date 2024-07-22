@@ -20,11 +20,13 @@ const NotFound: React.FC = () => {
       <div className={styles.content}>
         <h1 className={styles.header}>404</h1>
         <p className={styles.message}>Page not found</p>
-        <p>We can’t seem to find the page you are looking for.</p>
+        <p>Ooops! The page you are looking for does not exist.
+        It might have been moved or deleted.</p>
       </div>
       <div className={styles.back}>
         <Link href="/" className={styles.link}>
-          Home
+        <img src="/icons/backtohome.svg" alt="sdsd" width={24} height={24} />
+          Back to home
         </Link>
       </div>
     </div>
