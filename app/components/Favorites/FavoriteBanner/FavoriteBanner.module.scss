@@ -16,7 +16,8 @@
 }
 
 .banner {
-    width: 180px;
+    max-width: 180px;
+    width: 100%;
     height: 180px;
     cursor: pointer;
     transition: all 0.2s;

@@ -43,6 +43,8 @@ a {
 }
 
 .children-container {
+  max-width: 1114px;
   width: 100%;
   padding: 0 0 116px 0;
+  min-width: 0;
 }

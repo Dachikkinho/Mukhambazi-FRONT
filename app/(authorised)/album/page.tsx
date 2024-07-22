@@ -29,9 +29,6 @@ export default function albumArtist() {
 
 const albumPage: Album = albums.filter(album => album.id === +id)[0];
 
-console.log(albumPage);
-
-
   return (
     <main className={styles.main}>
           <div className={styles.mainContainer}>
