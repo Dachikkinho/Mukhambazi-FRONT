@@ -24,7 +24,7 @@ const NotFound: React.FC = () => {
       </div>
       <div className={styles.back}>
         <Link href="/" className={styles.link}>
-          Home
+          Home 
         </Link>
       </div>
     </div>
