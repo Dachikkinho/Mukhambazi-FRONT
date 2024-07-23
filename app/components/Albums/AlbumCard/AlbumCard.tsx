@@ -7,7 +7,7 @@ type Props = {
     image: string
 }
 
-export const AlbumCard = ({ name, lastName, plays, image }: Props) => {
+export const Albumcard = ({ name, lastName, plays, image }: Props) => {
 
     return (
 
@@ -25,7 +25,7 @@ export const AlbumCard = ({ name, lastName, plays, image }: Props) => {
     ) 
 }
 
-export default AlbumCard;
+export default Albumcard;
 
 
 

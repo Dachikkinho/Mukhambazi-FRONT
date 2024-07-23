@@ -9,6 +9,7 @@ import {
   PLACEHOLDEREMAILLOGIN_OBJECT,
   PLACEHOLDERPASSLOGIN_OBJECT,
 } from "@/public/script";
+import Link from "next/link";
 
 interface LoginForm {
   email: string;
@@ -49,9 +50,9 @@ export const Login = () => {
           Log in to <span className={styles.second}>CHAKRULOS!</span> <br />
           <div className={styles.container}>
             <span>
-              New to CHAKRULOS? <span className={styles.signup}>Sign up</span>
-              now
+              New to CHAKRULOS? <Link href="/signup"><span className={styles.signup}>Sign up</span></Link>
             </span>
+            <span> now </span>
           </div>
         </span>
 

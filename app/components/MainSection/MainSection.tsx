@@ -22,7 +22,7 @@ const topAlbumImages = [
 export const MainSection = () => {
     return (
         <div className={styles.mainContainer}>
-            <div className={styles.topContainer}>
+             <div className={styles.topContainer}>
                 <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
             </div>
             <div className={styles.headingCont}>

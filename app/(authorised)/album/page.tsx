@@ -17,7 +17,7 @@ interface Album {
   nationality: string
 }
 
-export default function albumArtist() {
+export default function Albumartist() {
 
 
   useEffect(() => {

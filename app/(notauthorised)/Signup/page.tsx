@@ -2,11 +2,11 @@
 
 import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import classNames from "classnames";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; //icon for password hidden
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // icon for password hidden
 import styles from "../Signup/page.module.scss";
 import { PLACEHOLDEREMAIL_OBJECT, PLACEHOLDERPASS_OBJECT, PLACEHOLDERREenter_OBJECT } from "@/public/script";
-
 
 interface RegisterForm {
   email: string;
@@ -31,6 +31,7 @@ export const Register = () => {
   const [showReenterPassword, setShowReenterPassword] = useState(false);
 
   const onRegisterFinished = (values: RegisterForm) => {
+    // Handle form submission logic here
   };
 
   const password = useRef({});
@@ -42,7 +43,7 @@ export const Register = () => {
   return (
     <div className={styles.main}>
       <div className={styles.mainLogo}>
-        <img className={styles.chakrulo} src="./logo.png" alt="icons" draggable={false}/>
+        <img className={styles.chakrulo} src="./logo.png" alt="icons" draggable={false} />
       </div>
       <form
         onSubmit={handleSubmit(onRegisterFinished)}
@@ -66,8 +67,7 @@ export const Register = () => {
               },
               pattern: {
                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message:
-                  "Invalid email address. Verify the spelling and try again.",
+                message: "Invalid email address. Verify the spelling and try again.",
               },
             })}
           />
@@ -132,24 +132,9 @@ export const Register = () => {
             <span className={styles.errorText}>{errors.reenter.message}</span>
           )}
         </div>
-
-        <div className={styles.check}>
-          <span>I Agree to Privacy Policy</span>
-          <input
-            id="privacy"
-            type="checkbox"
-            {...register("privacy", {
-              required: "You must accept the privacy policy",
-            })}
-          />
-          <label htmlFor="privacy"></label>
-        </div>
-        {errors.privacy && (
-          <span className={styles.errorText}>{errors.privacy.message}</span>
-        )}
         <div className={styles.flex}>
           <span>
-            Already a member? <span className={styles.login}>Log in</span>
+            Already a member? <Link href="/login"><span className={styles.login}>Log in</span></Link>
           </span>
         </div>
         <input className={styles.signin} type="submit" value={"Sign up"} />
@@ -159,4 +144,3 @@ export const Register = () => {
 };
 
 export default Register;
-

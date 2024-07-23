@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 import { useEffect } from "react";
 
 
-export default function Artists() {
+export default function Favoritesongs() {
   useEffect(() => {
     document.title= 'Chakrulos | Favorites'
   },[]);
