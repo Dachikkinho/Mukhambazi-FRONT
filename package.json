@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
@@ -25,7 +27,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
-    "prettier": "3.3.2",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
     "typescript": "^5"
   }
 }
