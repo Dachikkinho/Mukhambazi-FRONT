@@ -10,10 +10,6 @@ export const ArtistsPage = () => {
         <div className={styles.wrapper}>
             <div className={styles.main}>
                 <div className={styles.topContainer}>
-                    <div className={styles.heading}>
-                        <h2>Artists</h2>
-                        <img src={`icons/artistmain.svg`} alt="pfp" width={24} height={24} />
-                    </div>
                     <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
                 </div>
                 <div>
