@@ -1,4 +1,4 @@
-import styles from "./Search.module.scss"
+import styles from './Search.module.scss';
 
 type Props = {
     placeholder: string;
@@ -6,17 +6,16 @@ type Props = {
     width: number;
     height: number;
 
-  //We don't need onchage until the search algorithm is ready.
-}
+    //We don't need onchage until the search algorithm is ready.
+};
 
-export const Search = ({ placeholder, icon, width, height, }: Props) => {
+export const Search = ({ placeholder, icon, width, height }: Props) => {
     return (
         <div className={styles.container}>
             <input
                 type="text"
                 placeholder={placeholder}
                 className={styles.mainSearch}
-                
             />
             <img
                 src={`icons/${icon}.svg`}
@@ -26,5 +25,5 @@ export const Search = ({ placeholder, icon, width, height, }: Props) => {
                 height={height}
             />
         </div>
-    )
-}
+    );
+};

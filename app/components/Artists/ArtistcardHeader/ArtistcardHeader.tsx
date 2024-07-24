@@ -1,33 +1,23 @@
-import styles from "./ArtistcardHeader.module.scss"
+import styles from './ArtistcardHeader.module.scss';
 
 type Props = {
     title: string;
     icon: string;
-}
+};
 
 export const ArtistcardHeader = ({ title, icon }: Props) => {
-
     return (
         <div className={styles.cardsHeading}>
             <h4>{title}</h4>
-            <img className={styles.img} src={`icons/${icon}.svg`} alt="icon" width={28} height={28} />
+            <img
+                className={styles.img}
+                src={`icons/${icon}.svg`}
+                alt="icon"
+                width={28}
+                height={28}
+            />
         </div>
-
-    )
-}
+    );
+};
 
 export default ArtistcardHeader;
-
-
-
-
-
-
-
-
-
-
-
-
-
-

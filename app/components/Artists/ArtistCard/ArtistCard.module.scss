@@ -12,7 +12,7 @@
 
 .card:hover {
     filter: brightness(87%);
-    transform: scale(0.96)
+    transform: scale(0.96);
 }
 
 .container {
@@ -27,14 +27,12 @@
     margin-bottom: 5px;
 }
 
-
 .name {
     font-family: var(--font-family);
     font-weight: 800;
     font-size: 24px;
     color: $white;
     text-align: center;
-    
 }
 
 .plays {

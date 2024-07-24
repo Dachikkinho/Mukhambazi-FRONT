@@ -1,389 +1,392 @@
-@import "../../Colors/Color.scss";
+@import '../../Colors/Color.scss';
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; 
-  overflow-x: hidden; 
-  color: $white;
-  padding: 20px;
-  animation: fadeIn 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    color: $white;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .formContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 400px;
-  width: 100%;
-  gap: 5px;
-  animation: slideIn 1s ease-in-out, float 5s infinite; 
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    gap: 5px;
+    animation:
+        slideIn 1s ease-in-out,
+        float 5s infinite;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .chakrulo {
-  max-width: 100%;
-  height: auto;
-  animation: zoomIn 0.5s ease-in-out, rotate 10s linear infinite; 
+    max-width: 100%;
+    height: auto;
+    animation:
+        zoomIn 0.5s ease-in-out,
+        rotate 10s linear infinite;
 }
 
 .first {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: center;
-  animation: slideIn 1s ease-in-out;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
 }
 
 .second {
-  color: $purple-1;
-  font-weight: 800;
+    color: $purple-1;
+    font-weight: 800;
 }
 
 .email,
 .password,
 .rememberMe {
-  width: 100%;
-  margin-bottom: 15px;
-  animation: fadeInUp 0.5s ease-in-out;
+    width: 100%;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 .paragraph {
-  margin-bottom: 5px;
-  font-weight: 700;
-  font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .firstinput {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid $purple-1;
-  border-radius: 5px;
-  outline: none;
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $purple-1;
+    border-radius: 5px;
+    outline: none;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .firstinput:focus {
-  border-color: $purple-2;
-  box-shadow: 0 0 5px $purple-1;
+    border-color: $purple-2;
+    box-shadow: 0 0 5px $purple-1;
 }
 
 .signup {
-  color: $purple-1;
-  cursor: pointer;
-  text-decoration: underline;
+    color: $purple-1;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .signin {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background: $purple-1;
-  color: $white;
-  cursor: pointer;
-  font-weight: 600;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
-  animation: fadeInUp 0.5s ease-in-out;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: $purple-1;
+    color: $white;
+    cursor: pointer;
+    font-weight: 600;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 .signin:hover {
-  background-color: $purple-2;
-  transform: scale(1.05);
+    background-color: $purple-2;
+    transform: scale(1.05);
 }
 
 .checkboxContainer {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 14px;
-  user-select: none;
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
 }
 
 .checkboxContainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .checkmark {
-  position: absolute;
-  top: -2px;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border: 1px solid $purple-1;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 1px solid $purple-1;
+    border-radius: 5px;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .checkboxContainer:hover input ~ .checkmark {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 .checkboxContainer input:checked ~ .checkmark {
-  background-color: $purple-1;
+    background-color: $purple-1;
 }
 
 .checkboxContainer .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: '';
+    position: absolute;
+    display: none;
 }
 
 .checkboxContainer input:checked ~ .checkmark:after {
-  display: block;
+    display: block;
 }
 
 .checkboxContainer .checkmark:after {
-  left: 5px;
-  top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }
 
 .errorText {
-  margin: 0 auto;
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: $purple-2;
-  animation: fadeInUp 0.5s ease-in-out;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: $purple-2;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 .errorBorder {
-  border: 1px solid $red-1;
+    border: 1px solid $red-1;
 }
 
 .container {
-  margin-top: 5p;
-  width: 345px;
-  font-size: 16px;
+    margin-top: 5p;
+    width: 345px;
+    font-size: 16px;
 }
 
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes zoomIn {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 768px) {
-  .formContainer {
-    max-width: 90%;
-  }
+    .formContainer {
+        max-width: 90%;
+    }
 
-  .first {
-    font-size: 1.3rem;
-  }
+    .first {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .main {
-    padding: 10px;
-    flex-wrap: wrap;
-    position: relative;
-    bottom: 68px;
-  }
+    .main {
+        padding: 10px;
+        flex-wrap: wrap;
+        position: relative;
+        bottom: 68px;
+    }
 
-  .chakrulo {
-    max-width: 100%;
-    height: auto;
-  }
+    .chakrulo {
+        max-width: 100%;
+        height: auto;
+    }
 
-  .mainLogo {
-    display: flex;
-    justify-content: center;
-  }
+    .mainLogo {
+        display: flex;
+        justify-content: center;
+    }
 
-  .formContainer {
-    max-width: 100%;
-    padding: 15px;
-    position: relative;
-    bottom: 65px;
-  }
+    .formContainer {
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        bottom: 65px;
+    }
 
-  .first {
-    font-size: 1.2rem;
-  }
+    .first {
+        font-size: 1.2rem;
+    }
 
-  .firstinput {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
+    .firstinput {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
 
-  .signin {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
+    .signin {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
 }
-
 
 @media (max-width: 540px) {
     .main {
-      padding: 10px;
-      flex-wrap: wrap;
-      position: relative;
-      bottom: 68px;
+        padding: 10px;
+        flex-wrap: wrap;
+        position: relative;
+        bottom: 68px;
     }
-  
-    .chakrulo {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .mainLogo {
-      display: flex;
-      justify-content: center;
-    }
-  
-    .formContainer {
-      max-width: 100%;
-      padding: 15px;
-      position: relative;
-      bottom: 65px;
-    }
-  
-    .first {
-      font-size: 1.2rem;
-    }
-  
-    .firstinput {
-      padding: 8px;
-      font-size: 0.9rem;
-    }
-  
-    .signin {
-      padding: 8px;
-      font-size: 0.9rem;
-    }
-  }
 
-  @media (max-width: 768px) {
+    .chakrulo {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mainLogo {
+        display: flex;
+        justify-content: center;
+    }
+
     .formContainer {
-      max-width: 90%;
-      padding: 15px;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        bottom: 65px;
     }
-  
+
     .first {
-      font-size: 1.3rem;
+        font-size: 1.2rem;
     }
-  
+
     .firstinput {
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  
+
     .signin {
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 768px) {
+    .formContainer {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .first {
+        font-size: 1.3rem;
+    }
+
+    .firstinput {
+        font-size: 0.9rem;
+    }
+
+    .signin {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
     .main {
-      padding: 10px;
+        padding: 10px;
     }
-  
+
     .formContainer {
-      max-width: 100%;
-      padding: 15px;
+        max-width: 100%;
+        padding: 15px;
     }
-  
+
     .first {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .firstinput {
-      padding: 8px;
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  
+
     .signin {
-      padding: 8px;
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  }
-  
-  .passwordInput {
+}
+
+.passwordInput {
     position: relative;
     display: flex;
     align-items: center;
-  }
-  
-  .passwordToggle {
+}
+
+.passwordToggle {
     background: none;
     border: none;
     position: absolute;
@@ -392,95 +395,94 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: $purple-1;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .formContainer {
-      max-width: 90%;
+        max-width: 90%;
     }
-  
+
     .first {
-      font-size: 1.3rem;
+        font-size: 1.3rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .main {
-      padding: 10px;
-      flex-wrap: wrap;
-      position: relative;
-      bottom: 68px;
+        padding: 10px;
+        flex-wrap: wrap;
+        position: relative;
+        bottom: 68px;
     }
-  
+
     .chakrulo {
-      max-width: 100%;
-      height: auto;
+        max-width: 100%;
+        height: auto;
     }
-  
+
     .mainLogo {
-      display: flex;
-      justify-content: center;
+        display: flex;
+        justify-content: center;
     }
-  
+
     .formContainer {
-      max-width: 100%;
-      padding: 15px;
-      position: relative;
-      bottom: 65px;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        bottom: 65px;
     }
-  
+
     .first {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .firstinput {
-      padding: 8px;
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  
+
     .signin {
-      padding: 8px;
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  }
-  
-  @media (max-width: 540px) {
+}
+
+@media (max-width: 540px) {
     .main {
-      padding: 10px;
-      flex-wrap: wrap;
-      position: relative;
-      bottom: 68px;
+        padding: 10px;
+        flex-wrap: wrap;
+        position: relative;
+        bottom: 68px;
     }
-  
+
     .chakrulo {
-      max-width: 100%;
-      height: auto;
+        max-width: 100%;
+        height: auto;
     }
-  
+
     .mainLogo {
-      display: flex;
-      justify-content: center;
+        display: flex;
+        justify-content: center;
     }
-  
+
     .formContainer {
-      max-width: 100%;
-      padding: 15px;
-      position: relative;
-      bottom: 65px;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        bottom: 65px;
     }
-  
+
     .first {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .firstinput {
-      padding: 8px;
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  
+
     .signin {
-      padding: 8px;
-      font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.9rem;
     }
-  }
-  
+}
