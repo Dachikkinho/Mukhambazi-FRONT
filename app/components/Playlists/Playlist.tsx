@@ -14,7 +14,7 @@ export const Playlist = () => {
                 <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
             </div>
             <div className={styles.container}>
-                <Header title={"Playlists"} icon={"my-playlists-icon"} width={24} height={24} />
+                <Header icon={"my-playlists-icon"} title={"Playlists"}  width={24} height={24} />
             </div>
 
             {/* Placeholder Until Backend is ready. */}

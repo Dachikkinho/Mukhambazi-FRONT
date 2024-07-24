@@ -26,8 +26,6 @@ export const MainSection = () => {
                 <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
             </div>
             <div className={styles.headingCont}>
-                <h2 className={styles.heading}>Home</h2>
-                <img src={`icons/home-icon.svg`} alt="pfp" width={28} height={28} />
             </div>
             <div className={styles.wrapper}>
                 <CarouselSection heading="Popular of the week" icon="/icons/popular.png" images={popularImages} />

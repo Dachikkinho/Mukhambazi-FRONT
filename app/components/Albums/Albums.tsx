@@ -14,12 +14,10 @@ export const Albums = () => {
     return (
         <div className={styles.Container}>
             <div className={styles.responsiveTitle}>
-                <h4>Albums</h4>
-                <img src="/icons/albums-icon.svg" alt="icon" />
             </div>
-            <div className={styles.Search}>
-                <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
-            </div>
+            <div className={styles.topContainer}>
+                    <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
+                </div>
 
             <div className={styles.Title}>
                 <h4>Albums</h4>
