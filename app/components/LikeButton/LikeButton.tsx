@@ -1,17 +1,17 @@
-import { useState } from "react";
-import styles from "./LikeButton.module.scss";
+import { useState } from 'react';
+import styles from './LikeButton.module.scss';
 
 type Props = {
     liked?: boolean;
-}
+};
 
 const LikeButton = ({ liked = false }: Props) => {
     const [isLiked, setIsLiked] = useState(liked);
 
     return (
-        <button 
-            className={styles.button} 
-            draggable={false} 
+        <button
+            className={styles.button}
+            draggable={false}
             onClick={() => setIsLiked(!isLiked)}
         >
             {isLiked ? (
@@ -21,6 +21,6 @@ const LikeButton = ({ liked = false }: Props) => {
             )}
         </button>
     );
-}
+};
 
 export default LikeButton;

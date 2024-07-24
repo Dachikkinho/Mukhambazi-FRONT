@@ -1,38 +1,96 @@
-'use client'
+'use client';
 
-import Header from "../Header/Header";
-import Search from "../Header/Search/Search";
-import Listactivate from "./ListActivate";
-import Listdisabled from "./ListDisabled";
-import styles from "./Playlist.module.scss"
+import Header from '../Header/Header';
+import Search from '../Header/Search/Search';
+import Listactivate from './ListActivate';
+import Listdisabled from './ListDisabled';
+import styles from './Playlist.module.scss';
 
-
- const Playlist = () => {
-
+const Playlist = () => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.search}>
-                <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
+                <Search
+                    placeholder={'Enter keywords to search'}
+                    icon={'search'}
+                    width={24}
+                    height={24}
+                />
             </div>
             <div className={styles.container}>
-                <Header icon={"my-playlists-icon"} title={"Playlists"}  width={24} height={24} />
+                <Header
+                    icon={'my-playlists-icon'}
+                    title={'Playlists'}
+                    width={24}
+                    height={24}
+                />
             </div>
 
             {/* Placeholder Until Backend is ready. */}
             <div className={styles.playlist}>
-                <Listactivate title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
-                <Listdisabled title={"Jansug Kakhidze - Songs"} date={"1960-2016"} icon={"green"} playbtn={"play"} />
+                <Listactivate
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
+                <Listdisabled
+                    title={'Jansug Kakhidze - Songs'}
+                    date={'1960-2016'}
+                    icon={'green'}
+                    playbtn={'play'}
+                />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Playlist;

@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import styles from "./CurrentListening.module.scss"
+import styles from './CurrentListening.module.scss';
 
 type Props = {
-    musicName: string
-}
+    musicName: string;
+};
 
-export function CurrentListening({musicName}: Props) {
+export function CurrentListening({ musicName }: Props) {
     return (
         <div>
             <div className={styles.headingContainer}>
@@ -16,15 +16,19 @@ export function CurrentListening({musicName}: Props) {
 
             <div className={styles.listeningCard}>
                 <div className={styles.listeningIcon}>
-                    <img src="/icons/voice-rec-square-1.svg" alt="icon" draggable={false} />
+                    <img
+                        src="/icons/voice-rec-square-1.svg"
+                        alt="icon"
+                        draggable={false}
+                    />
                 </div>
 
                 <p className={styles.playing}>Currently Playing</p>
-                
+
                 <h3 className={styles.listeningName}>{musicName}</h3>
             </div>
         </div>
-    )
+    );
 }
 
 export default CurrentListening;

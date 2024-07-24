@@ -1,4 +1,4 @@
-import styles from "./RightBarNav.module.scss"
+import styles from './RightBarNav.module.scss';
 
 export function RightBarNav() {
     return (
@@ -6,12 +6,12 @@ export function RightBarNav() {
             <button className={styles.navButton}>
                 <img src="/icons/bell.svg" alt="dark" />
             </button>
-            
+
             <button className={styles.userPfp}>
                 <img src="/images/user_pfp.png" alt="" />
             </button>
         </div>
-    )
+    );
 }
 
 //arshveba aq

@@ -1,6 +1,5 @@
 @import '../../../Colors/Color.scss';
 
-
 .heading {
     display: flex;
     align-items: center;
@@ -22,9 +21,7 @@
 .cards * {
     flex-shrink: 0;
     scroll-snap-align: center;
-
 }
-
 
 .cardsHeading {
     font-family: var(--font-family);
@@ -34,32 +31,23 @@
     display: flex;
     gap: 10px;
     margin-bottom: 16px;
-
 }
 
 .cards::-webkit-scrollbar {
     height: 6px;
-
-
 }
 
 .cards::-webkit-scrollbar-thumb {
-
     background-color: $fiveColor;
     border-radius: 20px;
     display: none;
-
-
 }
 
 .cards::-webkit-scrollbar-thumb:hover {
     background-color: $purplelight;
-
-
 }
 
 @media screen and (max-width: 600px) {
-    
     .main {
         padding: 24px 20px;
     }

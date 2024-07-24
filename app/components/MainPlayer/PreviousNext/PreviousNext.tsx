@@ -1,8 +1,8 @@
-import styles from "./PreviousNext.module.scss";
+import styles from './PreviousNext.module.scss';
 
 type Props = {
     isPrev?: boolean;
-}
+};
 
 const PreviousNext = ({ isPrev = false }: Props) => {
     return (

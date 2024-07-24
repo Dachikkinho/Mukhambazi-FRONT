@@ -1,23 +1,25 @@
-import styles from "../LandingCard/LandingCard.module.scss"
+import styles from '../LandingCard/LandingCard.module.scss';
 
 type Props = {
     bgColor: string;
     name: string;
     plays: string;
     img: string;
-}
+};
 
- const LandingCard = ({bgColor, name, plays, img}: Props) => {
-
+const LandingCard = ({ bgColor, name, plays, img }: Props) => {
     return (
-        <div className={styles.mainContainer} style={{
-            background: bgColor
-        }}>
+        <div
+            className={styles.mainContainer}
+            style={{
+                background: bgColor,
+            }}
+        >
             <img src={`images/artistPfp/${img}.png`} alt="pfp" />
             <h6 className={styles.name}>{name}</h6>
             <p className={styles.plays}>{plays}M Plays</p>
         </div>
-    )
-}
+    );
+};
 
 export default LandingCard;
