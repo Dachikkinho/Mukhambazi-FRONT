@@ -1,10 +1,10 @@
 'use client'
 import styles from "./Favorites.module.scss"
-import { Search } from "../Header/Search/Search";
-import { FavoriteBanner } from "./FavoriteBanner/FavoriteBanner";
 import { songs } from "@/public/script";
+import FavoriteBanner from "./FavoriteBanner/FavoriteBanner";
+import Search from "../Header/Search/Search";
 
-export const Favorites = () => {
+ const Favorites = () => {
     return (
        <div className={styles.container}>
             <div className={styles.SearchBar}>
@@ -24,3 +24,5 @@ export const Favorites = () => {
        </div>
     )
 }
+
+export default Favorites;

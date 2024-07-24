@@ -5,7 +5,7 @@ type Props = {
     icon: string;
 }
 
-export const ArtistcardHeader = ({ title, icon }: Props) => {
+ const ArtistcardHeader = ({ title, icon }: Props) => {
 
     return (
         <div className={styles.cardsHeading}>

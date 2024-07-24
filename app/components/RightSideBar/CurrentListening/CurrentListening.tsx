@@ -26,3 +26,7 @@ export function CurrentListening({musicName}: Props) {
         </div>
     )
 }
+
+export default CurrentListening;
+
+//arshveba aq

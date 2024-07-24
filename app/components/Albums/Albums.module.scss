@@ -5,23 +5,19 @@
     flex-direction: column;
 }
 
-.Search  {
-    width: 50px;
-    margin-top: 60px;
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 65px;
-    margin-bottom: 37px;
+.topContainer {
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .AlbumsContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
-    margin-top: 18px;
+    margin-top: 30px;
 
 }
 
@@ -34,16 +30,10 @@
     font-size: 32px;
     line-height: 38.73px;
     font-weight: 500;
-    margin-top: 25px;
-    margin-bottom: -50px;
     margin-left: 20px;
     gap: 10px;
     color: $white;
 }
-
-
-
-
 
 
 @media screen and (min-width: 1920px) {
@@ -67,6 +57,7 @@
 
     .responsiveTitle {
         display: none;
+        margin-top: 40px;
     }
 
     .AlbumsContainer {
@@ -110,4 +101,10 @@
         height: 100%;
     }
 
+}
+
+@media screen and (max-width: 600px) {
+    .Container {
+        padding: 40px 0px;
+    }
 }

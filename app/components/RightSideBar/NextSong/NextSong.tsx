@@ -1,6 +1,7 @@
 import { nextSongPlaceholder } from "@/public/script"
 import styles from "./NextSong.module.scss"
-import { NextSongCard } from "./NextSongCard/NextSongCard"
+import NextSongCard from "./NextSongCard/NextSongCard"
+
 
 export function NextSong() {
     return (
@@ -17,3 +18,5 @@ export function NextSong() {
         </div>
     )
 }
+
+//arshveba aq

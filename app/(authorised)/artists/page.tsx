@@ -1,11 +1,11 @@
 'use client'
 
 
-import { ArtistsPage } from "@/app/components/Artists/Artists";
+import ArtistsPage from "@/app/components/Artists/Artists";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
 
-export default function Artists() {
+const Artists = () => {
 
   useEffect(() => {
     document.title= 'Chakrulos | Artists '
@@ -17,3 +17,5 @@ export default function Artists() {
     </main>
   );
 }
+
+export default Artists;

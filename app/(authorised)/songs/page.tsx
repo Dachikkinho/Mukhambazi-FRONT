@@ -1,10 +1,10 @@
 'use client'
 
-import { SongsMainSection } from "@/app/components/SongsMainSection/SongsMainSection";
+import SongsMainSection from "@/app/components/SongsMainSection/SongsMainSection";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
 
-export default function Songs() {
+const Songs = () => {
 
   useEffect(() => {
     document.title= 'Chakrulos | Songs'
@@ -16,3 +16,5 @@ export default function Songs() {
     </main>
   );
 }
+
+export default Songs;

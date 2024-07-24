@@ -1,13 +1,14 @@
 'use client'
 
 import styles from "./SideBar.module.scss"
-import { Logo } from "./Logo/Logo";
-import { SideBarHeading } from "./SideBarHeading/SideBarHeading";
 import { sideBarOpenState } from "@/app/states";
 import { useRecoilState } from "recoil";
-import { SideBarNav } from "./SideBarNav/SideBarNav";
 import { forYouItems, mainMenuItems } from "@/public/script";
-import { SidebarSelected } from "./SidebarSelected/SidebarSelected";
+import Logo from "./Logo/Logo";
+import SideBarHeading from "./SideBarHeading/SideBarHeading";
+import SideBarNav from "./SideBarNav/SideBarNav";
+import SidebarSelected from "./SidebarSelected/SidebarSelected";
+
 
 export function SideBar() {
 
@@ -28,3 +29,5 @@ export function SideBar() {
         </aside>
     )
 }
+
+//ar shveba

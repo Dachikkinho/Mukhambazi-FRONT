@@ -1,11 +1,11 @@
-
 import styles from "./PlayNow.module.scss";
 
-
-export default function PlayNowButton() {
+const PlayNowButton = () => {
   return (
     <div className={styles.Container}>
         <button>Play Now</button>
     </div>
   );
 }
+
+export default PlayNowButton;

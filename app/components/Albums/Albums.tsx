@@ -3,23 +3,21 @@ import { atom, useRecoilState } from "recoil";
 import styles from "./Albums.module.scss"
 import Link from "next/link";
 import AlbumCard from "./AlbumCard/AlbumCard";
-import { Search } from "../Header/Search/Search";
 import { albums } from "@/public/script";
+import Search from "../Header/Search/Search";
 
 
 
-export const Albums = () => {
+const Albums = () => {
 
 
     return (
         <div className={styles.Container}>
             <div className={styles.responsiveTitle}>
-                <h4>Albums</h4>
-                <img src="/icons/albums-icon.svg" alt="icon" />
             </div>
-            <div className={styles.Search}>
-                <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
-            </div>
+            <div className={styles.topContainer}>
+                    <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
+                </div>
 
             <div className={styles.Title}>
                 <h4>Albums</h4>

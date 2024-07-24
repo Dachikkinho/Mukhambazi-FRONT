@@ -1,6 +1,6 @@
 'use client'
 
-import { useRecoilState } from "recoil";
+
 import styles from "./page.module.scss"
 
 type AlbumsArtistsProps = {
@@ -12,7 +12,7 @@ type AlbumsArtistsProps = {
     src: string[];
 }
 
-export const Albumsartistsv2 = ({ artistName, songs, nationality, image, artistLastName  }: AlbumsArtistsProps) => {
+ const Albumsartistsv2 = ({ artistName, songs, nationality, image, artistLastName  }: AlbumsArtistsProps) => {
 
     return (
         <div className={styles.mainContainer}>

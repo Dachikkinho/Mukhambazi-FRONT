@@ -1,12 +1,13 @@
 'use client'
-import { Header } from "../Header/Header";
-import { Search } from "../Header/Search/Search";
+
+import Header from "../Header/Header";
+import Search from "../Header/Search/Search";
 import Listactivate from "./ListActivate";
 import Listdisabled from "./ListDisabled";
 import styles from "./Playlist.module.scss"
 
 
-export const Playlist = () => {
+ const Playlist = () => {
 
     return (
         <div className={styles.mainContainer}>
@@ -14,7 +15,7 @@ export const Playlist = () => {
                 <Search placeholder={"Enter keywords to search"} icon={"search"} width={24} height={24} />
             </div>
             <div className={styles.container}>
-                <Header title={"Playlists"} icon={"my-playlists-icon"} width={24} height={24} />
+                <Header icon={"my-playlists-icon"} title={"Playlists"}  width={24} height={24} />
             </div>
 
             {/* Placeholder Until Backend is ready. */}

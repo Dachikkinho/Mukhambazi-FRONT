@@ -1,4 +1,3 @@
-
 import PlayNowButton from "./PlayNow/PlayNow";
 import styles from "./Song.module.scss";
 
@@ -11,10 +10,10 @@ type Props = {
     duration: string;
 }
 
-export default function Song({songName, artistName, banner, width, height, duration}: Props) {
+const Song = ({ songName, artistName, banner, width, height, duration }: Props) => {
   return (
     <main className={styles.Container}>
-        <img src={banner} alt="banner" width={width} height={height}/>
+        <img src={banner} alt="banner" width={width} height={height} />
         <div className={styles.Text}>
             <h4 className={styles.SongName}>{songName}</h4>
             <h5 className={styles.ArtistName}>{artistName}</h5>
@@ -26,3 +25,5 @@ export default function Song({songName, artistName, banner, width, height, durat
     </main>
   );
 }
+
+export default Song;
