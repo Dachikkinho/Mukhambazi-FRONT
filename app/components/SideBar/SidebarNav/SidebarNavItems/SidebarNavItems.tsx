@@ -1,11 +1,11 @@
-import styles from "./SidebarNavItems.module.scss";
-import Link from "next/link";
+import styles from './SidebarNavItems.module.scss';
+import Link from 'next/link';
 
 type Props = {
     link: string;
     img: string;
     name: string;
-}
+};
 
 const SidebarNavItems = ({ link, img, name }: Props) => {
     return (
@@ -16,6 +16,6 @@ const SidebarNavItems = ({ link, img, name }: Props) => {
             </Link>
         </li>
     );
-}
+};
 
 export default SidebarNavItems;

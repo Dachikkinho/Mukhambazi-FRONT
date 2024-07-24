@@ -76,7 +76,6 @@
 }
 /* Desktop styles */
 @media (min-width: 1025px) {
-
     .span {
         font-size: 20px;
     }
@@ -104,10 +103,7 @@
         width: 32.01px;
         height: 32.01px;
     }
-
 }
-
-
 
 /* Tablet styles */
 @media (min-width: 601px) and (max-width: 1024px) {
@@ -128,7 +124,6 @@
         margin-left: -34px;
     }
 }
-
 
 @media screen and (max-width: 600px) {
     .mainContainer {

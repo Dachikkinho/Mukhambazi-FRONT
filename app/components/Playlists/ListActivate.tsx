@@ -1,18 +1,19 @@
-import styles from "./Playlist.module.scss"
+import styles from './Playlist.module.scss';
 
 type Props = {
-    title: string,
-    date: string,
-    icon: string
+    title: string;
+    date: string;
+    icon: string;
     playbtn: string;
-}
+};
 
- const Listactivate = ({ title, date, icon, playbtn }: Props) => {
+const Listactivate = ({ title, date, icon, playbtn }: Props) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.listactive}>
                 <div>
-                    <span className={styles.span}>{title}
+                    <span className={styles.span}>
+                        {title}
                         <p className={styles.paragraph}>
                             <img src={`icons/${icon}.svg`} alt="greenicon" />
                             {date}
@@ -20,11 +21,15 @@ type Props = {
                     </span>
                 </div>
                 <div>
-                    <img className={styles.image} src={`icons/${playbtn}.svg`} alt="icon" />
+                    <img
+                        className={styles.image}
+                        src={`icons/${playbtn}.svg`}
+                        alt="icon"
+                    />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Listactivate;

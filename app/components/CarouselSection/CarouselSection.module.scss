@@ -1,4 +1,3 @@
-
 @import '../../Colors/Color.scss';
 
 .carouselHeading {
@@ -23,10 +22,7 @@
     width: 500px;
 }
 
-
-
 @media screen and (max-width: 1884px) {
-    
 }
 
 .carousel {
@@ -37,12 +33,11 @@
     div {
         width: 100%;
         height: 100%;
-        border-radius: 25px
+        border-radius: 25px;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    
 }
 
 .carousel {
@@ -53,9 +48,6 @@
     div {
         width: 100%;
         height: 100%;
-        border-radius: 25px
+        border-radius: 25px;
     }
 }
-
-
-

@@ -1,17 +1,21 @@
-import LikeButton from "../../LikeButton/LikeButton";
-import styles from "./Song.module.scss";
+import LikeButton from '../../LikeButton/LikeButton';
+import styles from './Song.module.scss';
 
 type Props = {
     name: string;
     group: string;
     length: string;
     imageSrc: string;
-}
+};
 
 const Song = ({ name, group, length, imageSrc }: Props) => {
     return (
         <div className={styles.container}>
-            <img src={imageSrc} alt="song cover" className={styles.imagePlaceHolder} />
+            <img
+                src={imageSrc}
+                alt="song cover"
+                className={styles.imagePlaceHolder}
+            />
             <div className={styles.info}>
                 <p className={styles.name}>{name}</p>
                 <p className={styles.name}>{group}</p>
@@ -25,6 +29,6 @@ const Song = ({ name, group, length, imageSrc }: Props) => {
             </div>
         </div>
     );
-}
+};
 
 export default Song;

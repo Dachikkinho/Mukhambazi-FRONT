@@ -1,4 +1,4 @@
-import styles from "./Logo.module.scss";
+import styles from './Logo.module.scss';
 
 const Logo = () => {
     return (
@@ -7,6 +7,6 @@ const Logo = () => {
             <p className={styles.subName}>By NaVi™</p>
         </div>
     );
-}
+};
 
 export default Logo;

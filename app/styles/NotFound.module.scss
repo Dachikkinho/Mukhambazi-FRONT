@@ -1,190 +1,189 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  background: #36003d;
-  color: #fff;
-  font-family: "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background: #36003d;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
 }
 
 .mainLogo {
-  margin-top: -10rem;
-  margin-bottom: -2rem;
+    margin-top: -10rem;
+    margin-bottom: -2rem;
 }
 
 .chakrulo {
-  max-width: 50%;
-  height: auto;
-  animation:
-    zoomIn 1s ease-in-out,
-    rotate 10s linear infinite;
-  display: flex;
-  margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+    animation:
+        zoomIn 1s ease-in-out,
+        rotate 10s linear infinite;
+    display: flex;
+    margin: 0 auto;
 }
 .back {
-  margin-top: 15px;
-  
+    margin-top: 15px;
 }
 .content {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 25px;
-  max-width: 90%;
-  width: 500px;
-  animation: fadeIn 1s ease-in;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 25px;
+    max-width: 90%;
+    width: 500px;
+    animation: fadeIn 1s ease-in;
 }
 
 .header {
-  font-size: 8rem;
-  margin-bottom: 1rem;
-  color: #782ea5 !important;
-  text-shadow: 5px 5px #b56dc9;
-  animation:
-    pulse 2s infinite,
-    bounce 2s infinite;
+    font-size: 8rem;
+    margin-bottom: 1rem;
+    color: #782ea5 !important;
+    text-shadow: 5px 5px #b56dc9;
+    animation:
+        pulse 2s infinite,
+        bounce 2s infinite;
 }
 
 .message {
-  margin-bottom: 2rem;
-  font-size: 32px;
-  line-height: 44px;
-  font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 700;
 }
 
 .link {
-  font-size: 1.5rem;
-  color: #e0b0ff;
-  text-decoration: none;
-  border: 2px solid #e0b0ff;
-  padding: 0.5rem 1rem;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-  display: inline-block;
-  animation: float 3s ease-in-out infinite;
-  border-radius: 48px;
+    font-size: 1.5rem;
+    color: #e0b0ff;
+    text-decoration: none;
+    border: 2px solid #e0b0ff;
+    padding: 0.5rem 1rem;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+    border-radius: 48px;
 
-  display: flex;
-  align-items: center;
-  gap: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .link:hover {
-  background-color: #e0b0ff;
-  color: #2a0a4a;
+    background-color: #e0b0ff;
+    color: #2a0a4a;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes zoomIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 @media (max-width: 768px) {
-  .header {
-    font-size: 6rem;
-  }
+    .header {
+        font-size: 6rem;
+    }
 
-  .message {
-    font-size: 1.5rem;
-  }
+    .message {
+        font-size: 1.5rem;
+    }
 
-  .link {
-    font-size: 1.2rem;
-  }
+    .link {
+        font-size: 1.2rem;
+    }
 
-  .content {
-    padding: 1.5rem;
-  }
+    .content {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .header {
-    font-size: 4rem;
-  }
+    .header {
+        font-size: 4rem;
+    }
 
-  .message {
-    font-size: 1.2rem;
-  }
+    .message {
+        font-size: 1.2rem;
+    }
 
-  .link {
-    font-size: 1rem;
-    padding: 0.4rem 0.8rem;
-  }
+    .link {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
 
-  .content {
-    width: 90%;
-    padding: 1rem;
-  }
+    .content {
+        width: 90%;
+        padding: 1rem;
+    }
 }

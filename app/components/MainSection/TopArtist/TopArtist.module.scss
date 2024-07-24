@@ -21,8 +21,6 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
-    
-    
 }
 
 .artistsWrapper::-webkit-scrollbar {
@@ -32,7 +30,6 @@
 .artistsWrapper::-webkit-scrollbar-thumb {
     background-color: $purple-300;
     border-radius: 20px;
-
 }
 
 .artistsWrapper::-webkit-scrollbar-thumb:hover {

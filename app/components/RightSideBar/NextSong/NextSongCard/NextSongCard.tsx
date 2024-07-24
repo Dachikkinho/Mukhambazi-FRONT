@@ -1,10 +1,10 @@
-import styles from "./NextSongCard.module.scss";
+import styles from './NextSongCard.module.scss';
 
 type Props = {
     isActive?: boolean;
     arsitName: string;
     songName: string;
-}
+};
 
 const NextSongCard = ({ isActive = false, arsitName, songName }: Props) => {
     const defaultCard = styles.container;
@@ -15,10 +15,12 @@ const NextSongCard = ({ isActive = false, arsitName, songName }: Props) => {
             {/* image placeholder */}
             <div className={styles.circle}></div>
             <div>
-                <p className={styles.name}>{arsitName} - {songName}</p>                   
+                <p className={styles.name}>
+                    {arsitName} - {songName}
+                </p>
             </div>
         </div>
     );
-}
+};
 
 export default NextSongCard;

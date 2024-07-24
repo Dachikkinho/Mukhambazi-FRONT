@@ -18,7 +18,6 @@
     gap: 30px;
     justify-content: center;
     margin-top: 30px;
-
 }
 
 .Title {
@@ -35,13 +34,12 @@
     color: $white;
 }
 
-
 @media screen and (min-width: 1920px) {
     .Search {
-      width: 704px;
-      margin-left: 208px;
-      margin: 0 auto;
-      margin-top: 40px;
+        width: 704px;
+        margin-left: 208px;
+        margin: 0 auto;
+        margin-top: 40px;
     }
 
     .Title {
@@ -66,41 +64,31 @@
         gap: 32px;
         justify-content: center;
         margin-top: 18px;
-    
     }
 
     .AlbumsContainer {
         width: 100%;
         height: 100%;
     }
-    
 }
-
 
 @media screen and (max-width: 390px) {
     .Search {
         width: 300px;
-
     }
-
 }
 
 @media screen and (min-width: 1024px) {
     .Search {
         width: 607px;
     }
-
 }
 
-
-
 @media screen and (min-width: 1280px) {
-    
     .AlbumsContainer {
         width: 100%;
         height: 100%;
     }
-
 }
 
 @media screen and (max-width: 600px) {
