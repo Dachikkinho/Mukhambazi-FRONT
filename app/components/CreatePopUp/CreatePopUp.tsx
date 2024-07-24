@@ -20,25 +20,21 @@ export function CreatePopUp({closeMenuFunction}: Props) {
     function onSubmit(album: Album) {
         axios.post('http://localhost:3001/playlist', album).then(res => {
             reset()
-            closeMenuFunction()
             setSuccess(true)
         })
     }
-
-    useEffect(() => {
-        if (success) {
-          const timer = setTimeout(() => {
-            setSuccess(false);
-          }, 2000);
-    
-          return () => clearTimeout(timer);
-        }
-      }, [success]);
 
     return (
         <>
 
         <div className={styles.overlay} onClick={closeMenuFunction}></div>
+        
+        {success ? 
+        <div className={styles.doneContainer}>
+            <p>Playlist Created Succesfully!</p>
+            <button onClick={closeMenuFunction}>Close</button>
+        </div> 
+        : 
         <div className={styles.mainContainer}>
             <h2 className={styles.heading}>New playlist</h2>
             <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -59,7 +55,7 @@ export function CreatePopUp({closeMenuFunction}: Props) {
                     <button className={styles.create} type="submit">Create</button>
                 </div>
             </form>
-        </div>
+        </div>}
         </>
     )
 }

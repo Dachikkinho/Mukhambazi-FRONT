@@ -1,3 +1,4 @@
+import { AddSongButton } from '../../AddSongButton/AddSongButton';
 import LikeButton from '../../LikeButton/LikeButton';
 import styles from './Song.module.scss';
 
