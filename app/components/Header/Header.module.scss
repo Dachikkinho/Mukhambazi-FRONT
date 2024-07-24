@@ -1,20 +1,18 @@
 @import '../../Colors/Color.scss';
 
-
 .heading {
-    font-family: var(--font-family);
-    color: $white;
-    font-size: 24px;
+    display: flex;
+    font-size: 32px;
+    line-height: 38.73px;
     font-weight: 500;
-    line-height: 26.63px;
-    text-align: left;
+    gap: 10px;
+    color: #ffffff;
+    align-items: center;
 }
 
 .headingCont {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-bottom: 35px;
-    margin-top: 25px;
+    margin-top: 32px;
 }
-

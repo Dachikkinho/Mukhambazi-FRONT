@@ -8,7 +8,7 @@
 .SearchBar {
     display: flex;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 44px;
     width: 100%;
 }
 
@@ -49,6 +49,7 @@
 @media screen and (max-width: 710px) {
     .Songs {
         justify-content: center;
+        gap: 30px;
     }
 }
 

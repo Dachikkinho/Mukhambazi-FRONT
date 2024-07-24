@@ -29,6 +29,15 @@ export const Playlist = () => {
         }
       }, [success]);
 
+'use client';
+
+import Header from '../Header/Header';
+import Search from '../Header/Search/Search';
+import Listactivate from './ListActivate';
+import Listdisabled from './ListDisabled';
+import styles from './Playlist.module.scss';
+
+const Playlist = () => {
     return (
         <>
             {success 

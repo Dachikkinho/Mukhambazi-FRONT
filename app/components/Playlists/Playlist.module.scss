@@ -100,12 +100,11 @@
 .search {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 44px;
 }
 
 /* Desktop styles */
 @media (min-width: 1025px) {
-
     .span {
         font-size: 20px;
     }
@@ -133,7 +132,6 @@
         width: 32.01px;
         height: 32.01px;
     }
-
 }
 
 
@@ -192,5 +190,11 @@
 
     .heading {
         margin-left: -34px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mainContainer {
+        padding: 40px 0px;
     }
 }

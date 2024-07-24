@@ -12,26 +12,24 @@
     background-color: #808080;
     border-radius: 25px 0 0 26px;
     transition: top 0.2s;
-    
 
     &::before {
         content: '';
         position: absolute;
         width: 20px;
         height: 20px;
-        top: -22.3px;
-        right: -0.3px;
+        top: -21.6px;
+        right: 0.5px;
         border-right: 2px solid $thirdColor;
         border-bottom: 2px solid $thirdColor;
         border-bottom-right-radius: 15px;
         z-index: 3;
         background-color: transparent;
         box-shadow: 1px 9px 0px 1px gray;
-
     }
 
     &::after {
-         content: '';
+        content: '';
         position: absolute;
         width: 20px;
         height: 20px;

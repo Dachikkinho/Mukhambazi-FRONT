@@ -1,46 +1,40 @@
-'use client'
-import styles from "./SidebarSelected.module.scss"
-import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+'use client';
 
-export function SidebarSelected() {
+import styles from './SidebarSelected.module.scss';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
+const SidebarSelected = () => {
     const path = usePathname();
-    const [position, setPosition] = useState("179px");
+    const [position, setPosition] = useState('179px');
 
     useEffect(() => {
         switch (path) {
-            case "/":
-                setPosition("179px");
+            case '/':
+                setPosition('179px');
                 break;
-            case "/artists":
-                setPosition("228px");
+            case '/artists':
+                setPosition('228px');
                 break;
             case '/albums':
-                setPosition("275px");
+            case '/album':
+                setPosition('275px');
                 break;
-                case '/album':
-                    setPosition("275px");
-                    break;
-            case "/songs":
-                setPosition("448px");
+            case '/songs':
+                setPosition('448px');
                 break;
-            case "/playlist":
-                setPosition("402px");
-                break;   
-            case "/favorites":
-                setPosition("496px");
+            case '/playlist':
+                setPosition('402px');
                 break;
-                
+            case '/favorites':
+                setPosition('496px');
+                break;
             default:
-                setPosition("179px");
+                setPosition('179px');
         }
-    }, [path])
+    }, [path]);
 
-    return (
-        <div className={styles.main} style={{
-            top: position
-        }}>
-        </div>
-    )
-}
+    return <div className={styles.main} style={{ top: position }}></div>;
+};
+
+export default SidebarSelected;

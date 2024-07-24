@@ -15,7 +15,7 @@
 
     opacity: 1;
     mix-blend-mode: hard-light;
-    background-image: url("/images/sidebar-image.svg");
+    background-image: url('/images/sidebar-image.svg');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
@@ -25,7 +25,6 @@
     opacity: 1;
 
     mix-blend-mode: hard-light;
-
 }
 
 .wrapper {
@@ -33,8 +32,6 @@
     width: 100%;
     margin: 0 auto;
 }
-
-
 
 @media screen and (max-width: 600px) {
     .sidebar {

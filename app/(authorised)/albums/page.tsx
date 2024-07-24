@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
+import Albums from '@/app/components/Albums/Albums';
+import styles from './page.module.scss';
+import { useEffect } from 'react';
 
-import Albums from "@/app/components/Albums/Albums";
-import styles from "./page.module.scss";
-import { useEffect } from "react";
+const Albumspage = () => {
+    useEffect(() => {
+        document.title = 'Chakrulos | Albums';
+    }, []);
 
-export default function AlbumsPage() {
+    return (
+        <main className={styles.main}>
+            <Albums />
+        </main>
+    );
+};
 
-  useEffect(() => {
-    document.title= 'Chakrulos | Albums '
-  },[]);
-
-  return (
-    <main className={styles.main}>
-        <Albums/>
-    </main>
-  );
-}
+export default Albumspage;

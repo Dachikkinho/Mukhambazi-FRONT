@@ -1,13 +1,11 @@
-import styles from "./SideBarHeading.module.scss"
+import styles from './SideBarHeading.module.scss';
 
 type Props = {
-    text: string
-}
+    text: string;
+};
 
-export function SideBarHeading({text}: Props) {
-    return (
-        <h2 className={styles.heading}>
-            {text}
-        </h2>
-    )
-}
+const SideBarHeading = ({ text }: Props) => {
+    return <h2 className={styles.heading}>{text}</h2>;
+};
+
+export default SideBarHeading;
