@@ -1,3 +1,4 @@
+import { AddSongButton } from "../../AddSongButton/AddSongButton";
 import { LikeButton } from "../../LikeButton/LikeButton";
 import styles from "./Song.module.scss"
 
@@ -19,6 +20,9 @@ export function Song({name, group, length, imageSrc}: Props) {
                     <p className={styles.name}>{length}</p>
                     <button className={styles.play}>Play Now</button>
                 </div>
+            </div>
+            <div className={styles.add}>
+                <AddSongButton songId={name}/>
             </div>
             <div className={styles.like}>
                 <LikeButton />
