@@ -92,13 +92,13 @@ export const nextSongPlaceholder = [
 // artists placeholder
 export const artists = [
     {
-        name: "TravisScott",
+        name: "Travis Scott",
         listens: '23',
         bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
         img: 'travis'
     },
     {
-        name: "ImagineDragons",
+        name: "Imagine Dragons",
         listens: '32',
         bgColor: "linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);",
         img: 'imagineDragons'
