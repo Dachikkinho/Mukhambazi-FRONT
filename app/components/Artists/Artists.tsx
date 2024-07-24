@@ -1,10 +1,12 @@
 import { popularArtists, georgianArtists, europeanArtists } from "@/public/script"
-import { Search } from "../Header/Search/Search"
-import styles from "./Artists.module.scss"
-import { ArtistCard } from "./ArtistCard/ArtistCard"
-import { ArtistcardHeader } from "./ArtistcardHeader/ArtistcardHeader"
 
-export const ArtistsPage = () => {
+import styles from "./Artists.module.scss"
+import ArtistCard from "./ArtistCard/ArtistCard"
+import ArtistcardHeader from "./ArtistcardHeader/ArtistcardHeader"
+import Search from "../Header/Search/Search"
+
+
+ const ArtistsPage = () => {
 
     return (
         <div className={styles.wrapper}>
@@ -42,3 +44,5 @@ export const ArtistsPage = () => {
 
     )
 }
+
+export default ArtistsPage

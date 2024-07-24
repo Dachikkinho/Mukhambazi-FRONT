@@ -7,7 +7,7 @@ type Props = {
     img: string;
 }
 
-export const LandingCard = ({bgColor, name, plays, img}: Props) => {
+ const LandingCard = ({bgColor, name, plays, img}: Props) => {
 
     return (
         <div className={styles.mainContainer} style={{
@@ -19,3 +19,5 @@ export const LandingCard = ({bgColor, name, plays, img}: Props) => {
         </div>
     )
 }
+
+export default LandingCard;

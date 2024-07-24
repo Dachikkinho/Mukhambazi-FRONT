@@ -1,12 +1,13 @@
 'use client'
-import { Header } from "../Header/Header";
-import { Search } from "../Header/Search/Search";
+
+import Header from "../Header/Header";
+import Search from "../Header/Search/Search";
 import Listactivate from "./ListActivate";
 import Listdisabled from "./ListDisabled";
 import styles from "./Playlist.module.scss"
 
 
-export const Playlist = () => {
+ const Playlist = () => {
 
     return (
         <div className={styles.mainContainer}>

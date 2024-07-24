@@ -15,7 +15,7 @@ interface RegisterForm {
   privacy: boolean;
 }
 
-export const Register = () => {
+const Signup = () => {
   useEffect(() => {
     document.title = "Sign up - Chakrulos";
   }, []);
@@ -143,4 +143,4 @@ export const Register = () => {
   );
 };
 
-export default Register;
+export default Signup;

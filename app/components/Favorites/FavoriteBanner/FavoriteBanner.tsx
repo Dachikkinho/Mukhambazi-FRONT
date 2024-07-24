@@ -1,5 +1,6 @@
 'use client'
-import { LikeButton } from "../../LikeButton/LikeButton";
+
+import LikeButton from "../../LikeButton/LikeButton";
 import styles from "./FavoriteBanner.module.scss"
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
     musicSrc?: string;
 }
 
-export const FavoriteBanner = (props: Props) => {
+ const FavoriteBanner = (props: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.wrap} >
@@ -21,3 +22,5 @@ export const FavoriteBanner = (props: Props) => {
         </div>
     )
 }
+
+export default FavoriteBanner;

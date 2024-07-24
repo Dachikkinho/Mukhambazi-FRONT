@@ -4,7 +4,7 @@ import Playlist from "@/app/components/Playlists/Playlist";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
 
-export default function Playlistpage() {
+const Playlistpage = () => {
 
   useEffect(() => {
     document.title= 'Chakrulos | Playlist '
@@ -16,3 +16,5 @@ export default function Playlistpage() {
     </main>
   );
 }
+
+export default Playlistpage;

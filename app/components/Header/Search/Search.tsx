@@ -9,7 +9,7 @@ type Props = {
   //We don't need onchage until the search algorithm is ready.
 }
 
-export const Search = ({ placeholder, icon, width, height, }: Props) => {
+ const Search = ({ placeholder, icon, width, height, }: Props) => {
     return (
         <div className={styles.container}>
             <input
@@ -28,3 +28,5 @@ export const Search = ({ placeholder, icon, width, height, }: Props) => {
         </div>
     )
 }
+
+export default Search;

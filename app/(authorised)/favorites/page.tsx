@@ -1,11 +1,12 @@
 'use client'
 
-import { Favorites } from "@/app/components/Favorites/Favorites";
+
+import Favorites from "@/app/components/Favorites/Favorites";
 import styles from "./page.module.scss";
 import { useEffect } from "react";
 
 
-export default function Favoritesongs() {
+const FavoriteSongs = () => {
   useEffect(() => {
     document.title= 'Chakrulos | Favorites'
   },[]);
@@ -16,3 +17,5 @@ export default function Favoritesongs() {
     </main>
   );
 }
+
+export default FavoriteSongs;

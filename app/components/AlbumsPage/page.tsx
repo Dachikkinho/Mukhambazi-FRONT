@@ -3,7 +3,7 @@ import AlbumSongs from "./Songs/page";
 import styles from "./page.module.scss"
 
 
-export const albumsPage = () => {
+ const albumsPage = () => {
 
     return (
         <>
@@ -16,11 +16,8 @@ export const albumsPage = () => {
                 </div>
             <AlbumSongs />
             </div>
-
-
         </>
 
     )
 }
-
 export default albumsPage;

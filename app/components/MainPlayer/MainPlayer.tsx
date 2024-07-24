@@ -1,14 +1,15 @@
 'use client'
 import H5AudioPlayer, { RHAP_UI } from "react-h5-audio-player"
-import { PreviousNext } from "./PreviousNext/PreviousNext";
 import styles from "./MainPlayer.module.scss"
 import { useState, useEffect } from "react";
-import { Shuffle } from "./Shuffle/Shuffle";
+
 import useViewport from "@/app/hooks/useViewport";
+import PreviousNext from "./PreviousNext/PreviousNext";
+import Shuffle from "./Shuffle/Shuffle";
 
 
 
-export default function MainPlayer () {
+ const MainPlayer = () => {
     const [isShuffle, setIsShuffle] = useState(false);
     
     const switchIsShuffle = () => {
@@ -56,3 +57,5 @@ export default function MainPlayer () {
         />
     )
 }
+
+export default MainPlayer;

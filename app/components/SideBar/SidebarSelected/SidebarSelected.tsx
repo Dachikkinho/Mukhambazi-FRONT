@@ -1,10 +1,10 @@
-'use client'
-import styles from "./SidebarSelected.module.scss"
-import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+'use client';
 
-export function SidebarSelected() {
+import styles from "./SidebarSelected.module.scss";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
+const SidebarSelected = () => {
     const path = usePathname();
     const [position, setPosition] = useState("179px");
 
@@ -17,11 +17,9 @@ export function SidebarSelected() {
                 setPosition("228px");
                 break;
             case '/albums':
+            case '/album':
                 setPosition("275px");
                 break;
-                case '/album':
-                    setPosition("275px");
-                    break;
             case "/songs":
                 setPosition("448px");
                 break;
@@ -31,16 +29,15 @@ export function SidebarSelected() {
             case "/favorites":
                 setPosition("496px");
                 break;
-                
             default:
                 setPosition("179px");
         }
-    }, [path])
+    }, [path]);
 
     return (
-        <div className={styles.main} style={{
-            top: position
-        }}>
+        <div className={styles.main} style={{ top: position }}>
         </div>
-    )
+    );
 }
+
+export default SidebarSelected;

@@ -7,7 +7,7 @@ type Props = {
     playbtn: string;
 }
 
-export const Listactivate = ({ title, date, icon, playbtn }: Props) => {
+ const Listactivate = ({ title, date, icon, playbtn }: Props) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.listactive}>

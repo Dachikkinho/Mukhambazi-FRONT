@@ -1,7 +1,10 @@
-import { CarouselSection } from "../CarouselSection/CarouselSection";
-import { Search } from "../Header/Search/Search";
-import { TopArtist } from "./TopArtist/TopArtist";
+
+
+
 import styles from "./MainSection.module.scss";
+import CarouselSection from "../CarouselSection/CarouselSection";
+import Search from "../Header/Search/Search";
+import TopArtist from "./TopArtist/TopArtist";
 
 const popularImages = [
     "images/songCovers/eke.png",
@@ -19,7 +22,7 @@ const topAlbumImages = [
     "images/songCovers/eke.png",
 ];
 
-export const MainSection = () => {
+ const MainSection = () => {
     return (
         <div className={styles.mainContainer}>
              <div className={styles.topContainer}>
@@ -35,3 +38,5 @@ export const MainSection = () => {
         </div>
     );
 };
+
+export default MainSection;

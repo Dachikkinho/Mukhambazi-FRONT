@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { LandingCard } from "./LandingCard/LandingCard";
+
 import styles from "./TopArtist.module.scss";
 import { artists } from "@/public/script";
 import { Key } from "react";
+import LandingCard from "./LandingCard/LandingCard";
 
-export const TopArtist = () => {
+ const TopArtist = () => {
     return (
         <div>
             <div>
@@ -64,3 +65,5 @@ export const TopArtist = () => {
         </div>
     );
 };
+
+export default TopArtist;

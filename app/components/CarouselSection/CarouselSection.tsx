@@ -8,7 +8,7 @@ interface CarouselSectionProps {
     images: string[];
 }
 
-export const CarouselSection = ({ heading, icon, images }: CarouselSectionProps) => {
+ const CarouselSection = ({ heading, icon, images }: CarouselSectionProps) => {
     return (
         <div>
             <div className={styles.carouselHeading}>
@@ -25,3 +25,5 @@ export const CarouselSection = ({ heading, icon, images }: CarouselSectionProps)
         </div>
     );
 };
+
+export default CarouselSection;

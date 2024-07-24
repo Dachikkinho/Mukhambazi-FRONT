@@ -3,12 +3,12 @@ import { atom, useRecoilState } from "recoil";
 import styles from "./Albums.module.scss"
 import Link from "next/link";
 import AlbumCard from "./AlbumCard/AlbumCard";
-import { Search } from "../Header/Search/Search";
 import { albums } from "@/public/script";
+import Search from "../Header/Search/Search";
 
 
 
-export const Albums = () => {
+const Albums = () => {
 
 
     return (

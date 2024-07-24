@@ -17,7 +17,7 @@ interface LoginForm {
   rememberMe: boolean;
 }
 
-export const Login = () => {
+const Login = () => {
   useEffect(() => {
     document.title = "Log in - Chakrulos";
   }, []);

@@ -7,7 +7,7 @@ type Props = {
    height: number;
 }
 
-export const Header = ({title, icon, width, height}: Props) => {
+ const Header = ({title, icon, width, height}: Props) => {
     return (
         <div className={styles.headingCont}>
             <h5 className={styles.heading}>{title}</h5>
@@ -17,3 +17,4 @@ export const Header = ({title, icon, width, height}: Props) => {
 }
 
 
+export default Header;

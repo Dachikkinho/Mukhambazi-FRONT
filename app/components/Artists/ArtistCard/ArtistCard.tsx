@@ -7,7 +7,7 @@ type Props = {
     pfp: string,
 }
 
-export const ArtistCard = ({bgColor, name, plays, pfp}: Props) => {
+ const ArtistCard = ({bgColor, name, plays, pfp}: Props) => {
     return (
         <div className={styles.card} style={{
             backgroundColor: bgColor
@@ -20,3 +20,4 @@ export const ArtistCard = ({bgColor, name, plays, pfp}: Props) => {
         </div>
     )
 }
+export default ArtistCard;

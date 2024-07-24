@@ -1,9 +1,9 @@
 
-import { albumsState } from "@/app/(authorised)/states";
 import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import Albumsartistsv2 from "../Albumsartists/page";
 import { useSearchParams } from "next/navigation";
+import { albumsState } from "@/app/states";
 
 
 const AlbumSongs = () => {

@@ -7,7 +7,7 @@ type Props = {
     image: string
 }
 
-export const Albumcard = ({ name, lastName, plays, image }: Props) => {
+const Albumcard = ({ name, lastName, plays, image }: Props) => {
 
     return (
 
