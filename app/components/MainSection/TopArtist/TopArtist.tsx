@@ -16,6 +16,7 @@ const TopArtist = () => {
                         alt="topartist-icon"
                         width={36}
                         height={36}
+                        draggable={false}
                     />
                 </div>
             </div>
@@ -49,6 +50,7 @@ const TopArtist = () => {
                         alt="tophits-icon"
                         width={36}
                         height={36}
+                        draggable={false}
                     />
                 </div>
             </div>
@@ -82,6 +84,7 @@ const TopArtist = () => {
                         alt="profile"
                         width={36}
                         height={36}
+                        draggable={false}
                     />
                 </div>
             </div>
