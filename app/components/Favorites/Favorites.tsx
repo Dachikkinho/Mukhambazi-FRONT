@@ -18,7 +18,11 @@ const Favorites = () => {
             <div className={styles.Title}>
                 <div className={styles.headingCont}>
                     <h5 className={styles.heading}>Favorites</h5>
-                    <img src="/icons/songs-heading-icon.svg" alt="icon" draggable={false} />
+                    <img
+                        src="/icons/songs-heading-icon.svg"
+                        alt="icon"
+                        draggable={false}
+                    />
                 </div>
             </div>
             <div className={styles.Songs}>

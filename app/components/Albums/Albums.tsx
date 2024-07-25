@@ -19,7 +19,11 @@ const Albums = () => {
 
             <div className={styles.Title}>
                 <h4>Albums</h4>
-                <img src="/icons/albums-icon.svg" alt="icon" draggable={false} />
+                <img
+                    src="/icons/albums-icon.svg"
+                    alt="icon"
+                    draggable={false}
+                />
             </div>
 
             <div className={styles.AlbumsContainer}>

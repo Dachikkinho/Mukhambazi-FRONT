@@ -14,8 +14,12 @@ const Listdisabled = ({ title, date, icon, playbtn }: Props) => {
                 <div>
                     <span className={styles.span}>
                         {title}
-                        <p className={styles.paragraph}> 
-                            <img src={`icons/${icon}.svg`} alt="greenicon" draggable={false} />
+                        <p className={styles.paragraph}>
+                            <img
+                                src={`icons/${icon}.svg`}
+                                alt="greenicon"
+                                draggable={false}
+                            />
                             {date}
                         </p>
                     </span>

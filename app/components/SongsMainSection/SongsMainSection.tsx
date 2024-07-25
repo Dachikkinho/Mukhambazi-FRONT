@@ -17,7 +17,11 @@ const SongsMainSection = () => {
             <div>
                 <div className={styles.headingCont}>
                     <h5 className={styles.heading}>Songs</h5>
-                    <img src="/icons/note-circle.svg" alt="icon" draggable={false} />
+                    <img
+                        src="/icons/note-circle.svg"
+                        alt="icon"
+                        draggable={false}
+                    />
                 </div>
                 <div className={styles.songs}>
                     {songs.map((song, i) => (
