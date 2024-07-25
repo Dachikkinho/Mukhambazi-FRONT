@@ -2,33 +2,23 @@ import { useEffect, useState } from "react"
 import styles from "./AddSongButton.module.scss"
 import Listdisabled from "../Playlists/ListDisabled";
 import axios from "axios";
-
-interface Album {
-    id: number;
-    name: string;
-    description: string;
-}
+import { Album } from "./interface";
 
 interface Props {
     songId: string;
 }
 
-export function AddSongButton({songId}: Props) {
+const AddSongButton = ({songId}: Props) => {
 
     const [open, setOpen] = useState(false);
     const [playlists, setPlaylists] = useState<Album[]>([])
     const [success, setSuccess] = useState(false);
-
-    function openPopUp() {
-        setOpen(!open)
-    }
 
     // place holder upload function
 
     function upload(id: number) {
         axios.patch(`upload Link`, songId).then(res => {
             setOpen(false)
-            setSuccess(true)
         })
     }
 
@@ -36,6 +26,7 @@ export function AddSongButton({songId}: Props) {
         if (success) {
           const timer = setTimeout(() => {
             setSuccess(false);
+            setSuccess(true)
           }, 2000);
     
           return () => clearTimeout(timer);
@@ -48,18 +39,18 @@ export function AddSongButton({songId}: Props) {
             Added Succesfully!
         </div>}
 
-        <button className={styles.button} onClick={openPopUp}>
+        <button className={styles.button} onClick={() => setOpen(true)}>
             <img src="/icons/add-song.svg" alt="" className={styles.icon}/>
         </button>
 
         {open 
         &&
         <> 
-        <div className={styles.overlay} onClick={openPopUp}></div>
+        <div className={styles.overlay} onClick={() => setOpen(false)}></div>
         <div className={styles.popUp}>
             <div className={styles.top}>
                 <h2>All Playlists</h2>
-                <button onClick={openPopUp} className={styles.close}>
+                <button onClick={() => setOpen(false)} className={styles.close}>
                     <img src="/icons/close-icon.svg" alt="" className={styles.closeIcon}/>
                 </button>
             </div>
@@ -76,3 +67,5 @@ export function AddSongButton({songId}: Props) {
         </>
     )
 }
+
+export default AddSongButton;

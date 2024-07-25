@@ -8,7 +8,7 @@ type Props = {
     className?: string;
 }
 
-export const Listdisabled = ({ title, date, icon, playbtn, className }: Props) => {
+const Listdisabled = ({ title, date, icon, playbtn, className }: Props) => {
     return (
         <div className={styles.wrapper}>
             <div className={`${styles.listdisabled} ${className}`}>

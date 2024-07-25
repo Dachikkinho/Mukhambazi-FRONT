@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./CreatePopUp.module.scss"
 import { useForm } from "react-hook-form"
 import axios from "axios";
+import Done from "../Done/Done";
 
 interface Album {
     name: string;
@@ -12,7 +13,7 @@ interface Props {
     closeMenuFunction: () => void;
 }
 
-export function CreatePopUp({closeMenuFunction}: Props) {
+const CreatePopUp = ({closeMenuFunction}: Props) => {
 
     const {reset, register, formState: {errors}, handleSubmit} = useForm<Album>()
     const [success, setSuccess] = useState(false);
@@ -31,7 +32,8 @@ export function CreatePopUp({closeMenuFunction}: Props) {
         
         {success ? 
         <div className={styles.doneContainer}>
-            <p>Playlist Created Succesfully!</p>
+            <Done />
+            <p>Created Succesfully!</p>
             <button onClick={closeMenuFunction}>Close</button>
         </div> 
         : 
@@ -59,3 +61,5 @@ export function CreatePopUp({closeMenuFunction}: Props) {
         </>
     )
 }
+
+export default CreatePopUp;

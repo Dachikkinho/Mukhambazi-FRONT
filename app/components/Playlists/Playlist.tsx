@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import { CreatePopUp } from "../CreatePopUp/CreatePopUp";
+import CreatePopUp from "../CreatePopUp/CreatePopUp";
 import Header from '../Header/Header';
 import Search from '../Header/Search/Search';
 import Listactivate from './ListActivate';
@@ -12,7 +12,7 @@ interface Album {
     description: string;
 }
 
-export default function Playlist() {
+const Playlist = () => {
 
     const [create, setCreate] = useState(false)
     const [playlists, setPlaylists] = useState<Album[]>([])
@@ -26,7 +26,7 @@ export default function Playlist() {
                 <div className={styles.container}>
                     <Header title={"Playlists"} icon={"my-playlists-icon"} width={24} height={24} />
                     <button onClick={() => setCreate(true)} className={styles.newPlaylist}>
-                        <img src="/icons/add-icon.svg" alt="add" />
+                        <img src="/icons/add-icon.svg" alt="icon" />
                         New Playlist
                     </button>
                 </div>
@@ -49,3 +49,5 @@ export default function Playlist() {
     )
 
 }
+
+export default Playlist;

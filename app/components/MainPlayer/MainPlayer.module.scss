@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 1001;
+    z-index: 10;
     backdrop-filter: blur(50px) !important;
     background: $purplefirst !important;
     border: 1px solid $purplesecond !important;
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 600px) {
     .player {
-        z-index: 999;
+        z-index: 9;
     }
 }
 
