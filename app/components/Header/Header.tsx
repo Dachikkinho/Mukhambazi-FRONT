@@ -17,6 +17,7 @@ const Header = ({ title, icon, width, height }: Props) => {
                 className={styles.icon}
                 width={width}
                 height={height}
+                draggable={false}
             />
         </div>
     );

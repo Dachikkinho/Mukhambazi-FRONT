@@ -11,7 +11,7 @@ const SidebarNavItems = ({ link, img, name }: Props) => {
     return (
         <li>
             <Link href={link} className={styles.link}>
-                <img src={`/icons/${img}.svg`} alt="icon" />
+                <img src={`/icons/${img}.svg`} alt="icon" draggable={false} />
                 <p>{name}</p>
             </Link>
         </li>

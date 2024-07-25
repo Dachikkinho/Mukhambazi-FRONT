@@ -15,6 +15,7 @@ const ArtistcardHeader = ({ title, icon }: Props) => {
                 alt="icon"
                 width={28}
                 height={28}
+                draggable={false}
             />
         </div>
     );
