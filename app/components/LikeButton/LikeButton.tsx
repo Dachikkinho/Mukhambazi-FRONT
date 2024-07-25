@@ -15,9 +15,17 @@ const LikeButton = ({ liked = false }: Props) => {
             onClick={() => setIsLiked(!isLiked)}
         >
             {isLiked ? (
-                <img src="/icons/heart-full.svg" alt="heart full" />
+                <img
+                    src="/icons/heart-full.svg"
+                    alt="heart full"
+                    draggable={false}
+                />
             ) : (
-                <img src="/icons/heart-empty.svg" alt="heart empty" />
+                <img
+                    src="/icons/heart-empty.svg"
+                    alt="heart empty"
+                    draggable={false}
+                />
             )}
         </button>
     );

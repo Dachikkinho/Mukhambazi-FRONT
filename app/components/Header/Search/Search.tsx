@@ -23,6 +23,7 @@ const Search = ({ placeholder, icon, width, height }: Props) => {
                 className={styles.searchIcon}
                 width={width}
                 height={height}
+                draggable={false}
             />
         </div>
     );

@@ -17,6 +17,7 @@ const Albumcard = ({ name, lastName, plays, image }: Props) => {
                     alt="cover"
                     width={512}
                     height={256}
+                    draggable={false}
                 />
                 <div className={styles.spans}>
                     <span className={styles.firstspan}>

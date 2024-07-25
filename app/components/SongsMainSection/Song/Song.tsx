@@ -15,6 +15,7 @@ const Song = ({ name, group, length, imageSrc }: Props) => {
                 src={imageSrc}
                 alt="song cover"
                 className={styles.imagePlaceHolder}
+                draggable={false}
             />
             <div className={styles.info}>
                 <p className={styles.name}>{name}</p>

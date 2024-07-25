@@ -20,6 +20,7 @@ const ArtistCard = ({ bgColor, name, plays, pfp }: Props) => {
                     src={`/images/artistsPfps/${pfp}.png`}
                     alt=""
                     className={styles.pfp}
+                    draggable={false}
                 />
                 <p className={styles.name}>{name}</p>
                 <p className={styles.plays}>{plays} Plays</p>

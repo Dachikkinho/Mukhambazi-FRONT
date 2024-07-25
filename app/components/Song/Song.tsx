@@ -20,7 +20,7 @@ const Song = ({
 }: Props) => {
     return (
         <main className={styles.Container}>
-            <img src={banner} alt="banner" width={width} height={height} />
+            <img src={banner} alt="banner" width={width} height={height} draggable={false} />
             <div className={styles.Text}>
                 <h4 className={styles.SongName}>{songName}</h4>
                 <h5 className={styles.ArtistName}>{artistName}</h5>

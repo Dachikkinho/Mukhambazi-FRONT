@@ -15,7 +15,7 @@ const Listactivate = ({ title, date, icon, playbtn }: Props) => {
                     <span className={styles.span}>
                         {title}
                         <p className={styles.paragraph}>
-                            <img src={`icons/${icon}.svg`} alt="greenicon" />
+                            <img src={`icons/${icon}.svg`} alt="greenicon" draggable={false} />
                             {date}
                         </p>
                     </span>
@@ -25,6 +25,7 @@ const Listactivate = ({ title, date, icon, playbtn }: Props) => {
                         className={styles.image}
                         src={`icons/${playbtn}.svg`}
                         alt="icon"
+                        draggable={false}
                     />
                 </div>
             </div>
