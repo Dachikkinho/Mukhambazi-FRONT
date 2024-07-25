@@ -6,7 +6,7 @@ type Props = {
     icon: string;
     playbtn: string;
     className?: string;
-}
+};
 
 const Listdisabled = ({ title, date, icon, playbtn, className }: Props) => {
     return (
