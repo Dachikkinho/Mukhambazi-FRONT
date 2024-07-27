@@ -22,7 +22,8 @@
 .spans {
     display: flex;
     justify-content: space-between;
-    max-width: 366px;
+    max-width: 512px;
+    width: 100%;
 }
 
 .firstspan {
@@ -42,41 +43,9 @@
 }
 
 .img {
-    width: 366px;
+    max-width: 512px;
+    width: 100%;
+    object-fit: cover;
     border-radius: 15px;
     height: 256px;
-}
-
-@media screen and (min-width: 1920px) {
-    .img {
-        width: 512px;
-        height: 256px;
-        border-radius: 20px;
-        height: 256px;
-    }
-
-    .spans {
-        display: flex;
-        justify-content: space-between;
-        max-width: 512px;
-    }
-
-    .containers img {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-@media screen and (min-width: 343px) {
-    .img {
-        width: 330px;
-        border-radius: 20px;
-        height: 256px;
-    }
-
-    .spans {
-        display: flex;
-        justify-content: space-between;
-        max-width: 512px;
-    }
 }

@@ -6,6 +6,7 @@ import { Key } from 'react';
 import LandingCard from './LandingCard/LandingCard';
 
 const TopArtist = () => {
+
     return (
         <div>
             <div>
@@ -23,20 +24,21 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artists: {
+                        artist: {
                             name: string;
                             bgColor: string;
                             img: string;
                             listens: string;
+                            id: number;
                         },
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/album?album=${artists.name}`}>
+                        <Link key={index} href={`/artist?id=${artist.id}`}>
                             <LandingCard
-                                name={artists.name}
-                                bgColor={artists.bgColor}
-                                img={artists.img}
-                                plays={artists.listens}
+                                name={artist.name}
+                                bgColor={artist.bgColor}
+                                img={artist.img}
+                                plays={artist.listens}
                             />
                         </Link>
                     ),
@@ -62,10 +64,11 @@ const TopArtist = () => {
                             bgColor: string;
                             img: string;
                             listens: string;
+                            id: number;
                         },
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/album?album=${artist.name}`}>
+                        <Link key={index} href={`/artist?id=${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}
@@ -96,10 +99,11 @@ const TopArtist = () => {
                             bgColor: string;
                             img: string;
                             listens: string;
+                            id: number;
                         },
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/album?album=${artist.name}`}>
+                        <Link key={index} href={`/artist?id=${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}

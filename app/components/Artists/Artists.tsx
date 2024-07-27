@@ -8,6 +8,7 @@ import styles from './Artists.module.scss';
 import ArtistCard from './ArtistCard/ArtistCard';
 import ArtistcardHeader from './ArtistcardHeader/ArtistcardHeader';
 import Search from '../Header/Search/Search';
+import Link from 'next/link';
 
 const ArtistsPage = () => {
     return (
@@ -28,13 +29,19 @@ const ArtistsPage = () => {
                     />
                     <div className={styles.cards}>
                         {popularArtists.map((artist, i) => (
-                            <ArtistCard
-                                bgColor={artist.bg}
-                                name={artist.name}
-                                pfp={artist.pfp}
-                                plays={artist.plays}
+                            <Link
                                 key={i}
-                            />
+                                href={`/artist?id=${artist.id}`}
+                                draggable={false}
+                                className={styles.cardCont}
+                            >
+                                <ArtistCard
+                                    bgColor={artist.bg}
+                                    name={artist.name}
+                                    pfp={artist.pfp}
+                                    plays={artist.plays}
+                                />
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -46,13 +53,19 @@ const ArtistsPage = () => {
                     />
                     <div className={styles.cards}>
                         {georgianArtists.map((artist, i) => (
-                            <ArtistCard
-                                bgColor={artist.bg}
-                                name={artist.name}
-                                pfp={artist.pfp}
-                                plays={artist.plays}
+                            <Link
                                 key={i}
-                            />
+                                href={`/artist?id=${artist.id}`}
+                                draggable={false}
+                                className={styles.cardCont}
+                            >
+                                <ArtistCard
+                                    bgColor={artist.bg}
+                                    name={artist.name}
+                                    pfp={artist.pfp}
+                                    plays={artist.plays}
+                                />
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -63,13 +76,19 @@ const ArtistsPage = () => {
                     />
                     <div className={styles.cards}>
                         {europeanArtists.map((artist, i) => (
-                            <ArtistCard
-                                bgColor={artist.bg}
-                                name={artist.name}
-                                pfp={artist.pfp}
-                                plays={artist.plays}
+                            <Link
                                 key={i}
-                            />
+                                href={`/artist?id=${artist.id}`}
+                                draggable={false}
+                                className={styles.cardCont}
+                            >
+                                <ArtistCard
+                                    bgColor={artist.bg}
+                                    name={artist.name}
+                                    pfp={artist.pfp}
+                                    plays={artist.plays}
+                                />
+                            </Link>
                         ))}
                     </div>
                 </div>
