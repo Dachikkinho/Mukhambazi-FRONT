@@ -7,7 +7,11 @@ export function NextSong() {
         <div className={styles.mainCont}>
             <div className={styles.heading}>
                 <p>Next Songs</p>
-                <img src="/icons/voice-rec-square.svg" alt="" />
+                <img
+                    src="/icons/voice-rec-square.svg"
+                    alt="nextsong"
+                    draggable={false}
+                />
             </div>
             <div className={styles.container}>
                 {nextSongPlaceholder.map((song, i) => (

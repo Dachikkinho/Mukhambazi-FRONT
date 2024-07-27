@@ -15,7 +15,11 @@ const LandingCard = ({ bgColor, name, plays, img }: Props) => {
                 background: bgColor,
             }}
         >
-            <img src={`images/artistPfp/${img}.png`} alt="pfp" />
+            <img
+                src={`images/artistPfp/${img}.png`}
+                alt="pfp"
+                draggable={false}
+            />
             <h6 className={styles.name}>{name}</h6>
             <p className={styles.plays}>{plays}M Plays</p>
         </div>

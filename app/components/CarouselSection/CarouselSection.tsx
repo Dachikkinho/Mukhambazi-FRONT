@@ -18,6 +18,7 @@ const CarouselSection = ({ heading, icon, images }: CarouselSectionProps) => {
                     alt={`${heading}-icon`}
                     width={36}
                     height={36}
+                    draggable={false}
                 />
             </div>
             <Carousel
@@ -35,6 +36,7 @@ const CarouselSection = ({ heading, icon, images }: CarouselSectionProps) => {
                             className={styles.img}
                             src={image}
                             alt={`carousel-image-${index}`}
+                            draggable={false}
                         />
                     </div>
                 ))}

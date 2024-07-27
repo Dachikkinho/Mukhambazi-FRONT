@@ -13,7 +13,11 @@ const FavoriteBanner = (props: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.wrap}>
-                <img className={styles.banner} src={props.banner} />
+                <img
+                    className={styles.banner}
+                    src={props.banner}
+                    draggable={false}
+                />
                 <div className={styles.title}>
                     <h4>{props.title}</h4>
                     <LikeButton liked />
