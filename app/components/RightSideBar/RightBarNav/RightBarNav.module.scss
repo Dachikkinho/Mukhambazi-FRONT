@@ -16,11 +16,17 @@
     justify-content: center;
     border: 1.5px solid $purple-400;
     cursor: pointer;
-    transition: all 0.2s;
-}
+    transition: all 0.3s ease;
 
-.navButton:hover {
-    background-color: $gray-100;
+    &.active {
+        background-color: $purple-400;
+        border-color: $purple-600;
+        transform: scale(1.1);
+    }
+
+    &:hover {
+        background-color: $gray-100;
+    }
 }
 
 .userPfp {
@@ -30,4 +36,14 @@
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
 }
