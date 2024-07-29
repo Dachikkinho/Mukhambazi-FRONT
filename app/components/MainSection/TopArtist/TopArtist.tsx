@@ -6,7 +6,6 @@ import { Key } from 'react';
 import LandingCard from './LandingCard/LandingCard';
 
 const TopArtist = () => {
-
     return (
         <div>
             <div>
