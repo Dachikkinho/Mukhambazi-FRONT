@@ -118,7 +118,7 @@ export const artists = [
         bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis."
     },
     {
-        name: 'TravisScott',
+        name: 'Travis Scott',
         listens: '23',
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
@@ -127,7 +127,7 @@ export const artists = [
         bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis."
     },
     {
-        name: 'ImagineDragons',
+        name: 'Imagine Dragons',
         listens: '32',
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
