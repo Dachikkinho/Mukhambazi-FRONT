@@ -11,13 +11,7 @@ import {
     PLACEHOLDERPASS_OBJECT,
     PLACEHOLDERREenter_OBJECT,
 } from '@/public/script';
-
-interface RegisterForm {
-    email: string;
-    password: string;
-    reenter: string;
-    privacy: boolean;
-}
+import { RegisterForm } from '@/app/interfaces/register.interface';
 
 const Signup = () => {
     useEffect(() => {
