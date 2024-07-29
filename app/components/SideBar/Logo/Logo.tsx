@@ -7,7 +7,9 @@ const Logo = () => {
             <Link href="/">
                 <h1 className={styles.logo}>CHAKRULOS</h1>
             </Link>
-            <p className={styles.subName}>By NaVi™</p>
+            <Link href="/natusvincere">
+                <p className={styles.subName}>By NaVi™</p>
+            </Link>
         </div>
     );
 };

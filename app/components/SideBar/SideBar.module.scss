@@ -18,10 +18,10 @@
     background-image: url('/images/sidebar-image.svg');
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: contain;
+    background-size: inherit;
 
     flex-shrink: 0;
-    background-color: #4d2461;
+    background-color: #7f257d00;
     opacity: 1;
 
     mix-blend-mode: hard-light;
