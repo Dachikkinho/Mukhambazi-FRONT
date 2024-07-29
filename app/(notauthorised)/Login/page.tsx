@@ -10,12 +10,7 @@ import {
     PLACEHOLDERPASSLOGIN_OBJECT,
 } from '@/public/script';
 import Link from 'next/link';
-
-interface LoginForm {
-    email: string;
-    password: string;
-    rememberMe: boolean;
-}
+import { LoginForm } from '@/app/interfaces/login.interface';
 
 const Login = () => {
     useEffect(() => {

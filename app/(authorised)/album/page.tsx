@@ -4,16 +4,7 @@ import styles from './page.module.scss';
 import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { albums } from '@/public/script';
-
-interface Album {
-    name: string;
-    lastName: string;
-    plays: string;
-    image: string;
-    id: number;
-    songs: string[];
-    nationality: string;
-}
+import { Album } from '@/app/interfaces/albunPage.interface';
 
 const AlbumArtist = () => {
     useEffect(() => {
