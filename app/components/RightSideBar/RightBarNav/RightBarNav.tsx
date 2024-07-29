@@ -3,9 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import styles from './RightBarNav.module.scss';
 import { useRouter, usePathname } from 'next/navigation';
+import { useProfile } from '@/app/hooks/useProfile';
+
 
 export function RightBarNav() {
+    const { profileImage, name } = useProfile();
     const [isNotificationView, setIsNotificationView] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -18,6 +22,15 @@ export function RightBarNav() {
         } else {
             router.push('/');
         }
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const handleNavigation = (path: string) => {
+        router.push(path);
+        setIsDropdownOpen(false);
     };
 
     useEffect(() => {
@@ -39,13 +52,21 @@ export function RightBarNav() {
                 />
             </button>
 
-            <button className={styles.userPfp} onClick={() => router.push('')}>
-                <img
-                    src="/images/user_pfp.png"
-                    alt="User Profile"
-                    draggable={false}
-                />
-            </button>
+            <div className={styles.userMenu}>
+                <button className={styles.userPfp} onClick={toggleDropdown}>
+                    <img
+                        src={profileImage}
+                        alt="User Profile"
+                        draggable={false}
+                    />
+                </button>
+                {isDropdownOpen && (
+                    <div className={styles.dropdownMenu}>
+                        <button onClick={() => handleNavigation('/profile')}>Profile</button>
+                        <button onClick={() => handleNavigation('/login')}>Log out</button>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
