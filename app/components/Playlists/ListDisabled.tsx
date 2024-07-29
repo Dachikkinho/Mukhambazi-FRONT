@@ -5,12 +5,13 @@ type Props = {
     date: string;
     icon: string;
     playbtn: string;
+    className?: string;
 };
 
-const Listdisabled = ({ title, date, icon, playbtn }: Props) => {
+const Listdisabled = ({ title, date, icon, playbtn, className }: Props) => {
     return (
         <div className={styles.wrapper}>
-            <div className={styles.listdisabled}>
+            <div className={`${styles.listdisabled} ${className}`}>
                 <div>
                     <span className={styles.span}>
                         {title}

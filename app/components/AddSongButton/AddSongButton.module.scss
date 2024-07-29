@@ -1,0 +1,155 @@
+.button {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.254);
+    }
+
+    .icon {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+    }
+}
+
+.overlay {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.304);
+    z-index: 12;
+    cursor: default;
+    animation: fade 0.2s 0s 1 forwards;
+    
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+.popUp {
+    max-width: 400px;
+    width: 100%;
+    height: 600px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    cursor: default;
+    background-color: rgba(255, 255, 255, 0.118);
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    z-index: 13;
+    box-shadow: 0px 0px 29px -10px rgba(255, 255, 255, 0.75);
+    flex-direction: column;
+    padding: 20px;
+    animation: scale 0.5s 0s 1 forwards;
+    z-index: 13;
+
+    @keyframes scale {
+        from {
+            transform: translate(-50%, -50%) scale(0, 0);
+        }
+
+        to {
+            transform: translate(-50%, -50%) scale(1, 1);
+        }
+    }
+}
+
+.top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: all 0.2s;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.125);
+    }
+
+    .closeIcon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.playlist {
+    height: 505px;
+    overflow-y: scroll;
+}
+
+.add {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.success {
+    position: fixed;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    animation: up 2s 0s 1 forwards;
+    color: rgb(20, 216, 20);
+    z-index: 13;
+    background-color: rgba(255, 255, 255, 0.03);
+
+    @keyframes up {
+        0% {
+            opacity: 1;
+            top: -20px;
+        }
+
+        20% {
+            opacity: 1;
+            top: 20px;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        70% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
