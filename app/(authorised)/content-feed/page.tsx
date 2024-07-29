@@ -120,11 +120,13 @@ const ContentFeed: React.FC = () => {
                     <p>
                         Very soon you will be able to watch podcasts and
                         entertainment shows on our site. Please stay tuned. Kind
-                        regards 
+                        regards
                         <span>
                             {' '}
                             <Link href="/">
-                                <span className={styles.underline}>CHAKRULOS</span>{' '}
+                                <span className={styles.underline}>
+                                    CHAKRULOS
+                                </span>{' '}
                             </Link>
                         </span>
                         <img
@@ -142,7 +144,7 @@ const ContentFeed: React.FC = () => {
                             We have good news, Chakrulos | UPDATE 0.0.1 | We
                             added new Georgian, European Artists, also we added
                             more exclusive Playlists and Albums. U Need To
-                            Follow your favourite Artists and Songs's authors.
+                            Follow your favourite Artists and Song’s authors.
                             and important thing is to stay Our Best Georgian WEB
                             Songs Player!
                         </p>
@@ -160,7 +162,7 @@ const ContentFeed: React.FC = () => {
     return (
         <div className={styles.contentFeed}>
             <h2>
-                What's New on{' '}
+                What’s New on{' '}
                 <span className={styles.chakrulos}>CHAKRULOS?!</span>
             </h2>
             <p>

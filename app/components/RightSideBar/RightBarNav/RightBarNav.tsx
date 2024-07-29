@@ -39,10 +39,7 @@ export function RightBarNav() {
                 />
             </button>
 
-            <button
-                className={styles.userPfp}
-                onClick={() => router.push('')}
-            >
+            <button className={styles.userPfp} onClick={() => router.push('')}>
                 <img
                     src="/images/user_pfp.png"
                     alt="User Profile"

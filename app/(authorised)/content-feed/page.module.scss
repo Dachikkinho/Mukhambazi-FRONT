@@ -2,12 +2,11 @@
 
 .contentFeed {
     color: $white;
-    padding: 20px;    
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px $grey-1;
     animation: fadeIn 1s ease-in-out;
     margin-top: 10px;
-
 
     h2 {
         font-size: 24px;
@@ -15,7 +14,6 @@
         animation: slideIn 1s ease-out;
         font-weight: 900;
         width: 60%;
-        
     }
 
     p {
