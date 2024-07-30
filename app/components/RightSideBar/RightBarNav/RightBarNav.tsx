@@ -33,7 +33,10 @@ export function RightBarNav() {
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
                 setIsDropdownOpen(false);
             }
         };
@@ -53,7 +56,7 @@ export function RightBarNav() {
 
     return (
         <div className={styles.container}>
-            <button 
+            <button
                 className={`${styles.navButton} ${isNotificationView ? styles.active : ''}`}
                 onClick={toggleNotificationView}
             >
@@ -74,7 +77,9 @@ export function RightBarNav() {
                 </button>
                 {isDropdownOpen && (
                     <div className={styles.dropdownMenu}>
-                        <button onClick={() => handleNavigation('/login')}>Log out</button>
+                        <button onClick={() => handleNavigation('/login')}>
+                            Log out
+                        </button>
                     </div>
                 )}
             </div>

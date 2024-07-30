@@ -1,4 +1,3 @@
-
 export enum FilterType {
     Artists = 'Artists',
     Albums = 'Albums',

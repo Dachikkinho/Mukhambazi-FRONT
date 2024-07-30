@@ -5,7 +5,6 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import { FilterType } from '@/app/enums/filterType';
 
-
 const ContentFeed: React.FC = () => {
     useEffect(() => {
         document.title = 'Chakrulos - Web Player: Music for everyone';
@@ -20,8 +19,8 @@ const ContentFeed: React.FC = () => {
     const contentMapping: { [key in FilterType]?: JSX.Element } = {
         [FilterType.Artists]: (
             <p>
-                We added new Georgian Artists. This singer is unique, his
-                voice covered the whole of Georgia. You must see it in the
+                We added new Georgian Artists. This singer is unique, his voice
+                covered the whole of Georgia. You must see it in the
                 <span>
                     {' '}
                     <Link href="/artists">
@@ -40,9 +39,9 @@ const ContentFeed: React.FC = () => {
         [FilterType.Albums]: (
             <p>
                 Did you know that Pink Floyd, the British rock band at the
-                forefront of 1960s psychedelia, popularized the concept
-                album for mass rock audiences in the 1970s? Now you can see
-                Pink Floyd albums in our web player. You can check on the
+                forefront of 1960s psychedelia, popularized the concept album
+                for mass rock audiences in the 1970s? Now you can see Pink Floyd
+                albums in our web player. You can check on the
                 <span>
                     {' '}
                     <Link href="/albums">
@@ -60,9 +59,9 @@ const ContentFeed: React.FC = () => {
         ),
         [FilterType.Playlists]: (
             <p>
-                Our Web Player allows you to create a playlist with the name
-                you want and add exotic and pleasant songs. You can do all
-                this on the
+                Our Web Player allows you to create a playlist with the name you
+                want and add exotic and pleasant songs. You can do all this on
+                the
                 <span>
                     {' '}
                     <Link href="/playlist">
@@ -80,10 +79,9 @@ const ContentFeed: React.FC = () => {
         ),
         [FilterType.Songs]: (
             <p>
-                You will find more than 60,000 songs in our player.
-                Hopefully, one of these songs will suit your taste and give
-                you maximum pleasure in our beautiful web player. Please
-                enjoy.
+                You will find more than 60,000 songs in our player. Hopefully,
+                one of these songs will suit your taste and give you maximum
+                pleasure in our beautiful web player. Please enjoy.
                 <span>
                     {' '}
                     <Link href="/songs">
@@ -100,9 +98,8 @@ const ContentFeed: React.FC = () => {
         ),
         [FilterType.Podcasts]: (
             <p>
-                Very soon you will be able to watch podcasts and
-                entertainment shows on our site. Please stay tuned.
-                Kind regards,
+                Very soon you will be able to watch podcasts and entertainment
+                shows on our site. Please stay tuned. Kind regards,
                 <span>
                     {' '}
                     <Link href="/">
@@ -177,7 +174,9 @@ const ContentFeed: React.FC = () => {
                 {!activeFilter || activeFilter === FilterType.Songs ? (
                     <button
                         className={
-                            activeFilter === FilterType.Songs ? styles.active : ''
+                            activeFilter === FilterType.Songs
+                                ? styles.active
+                                : ''
                         }
                         onClick={() => toggleFilter(FilterType.Songs)}
                     >
@@ -198,14 +197,16 @@ const ContentFeed: React.FC = () => {
                 ) : null}
             </div>
             <div className={styles.content}>
-                {activeFilter ? contentMapping[activeFilter] : (
+                {activeFilter ? (
+                    contentMapping[activeFilter]
+                ) : (
                     <>
                         <p>
-                            We have good news! Chakrulos | UPDATE 0.0.1 | We added new
-                            Georgian, European Artists, as well as more exclusive
-                            Playlists and Albums. You need to follow your favorite
-                            artists and songwriters. Stay tuned with our best Georgian
-                            web songs player!
+                            We have good news! Chakrulos | UPDATE 0.0.1 | We
+                            added new Georgian, European Artists, as well as
+                            more exclusive Playlists and Albums. You need to
+                            follow your favorite artists and songwriters. Stay
+                            tuned with our best Georgian web songs player!
                         </p>
                         <img
                             src="images/spaceart.jpg"
