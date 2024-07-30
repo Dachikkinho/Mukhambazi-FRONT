@@ -1,17 +1,15 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './RightBarNav.module.scss';
 import { useRouter, usePathname } from 'next/navigation';
-import { useProfile } from '@/app/hooks/useProfile';
-
 
 export function RightBarNav() {
-    const { profileImage, name } = useProfile();
     const [isNotificationView, setIsNotificationView] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleNotificationView = () => {
         const newNotificationState = !isNotificationView;
@@ -34,6 +32,20 @@ export function RightBarNav() {
     };
 
     useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    useEffect(() => {
         if (!pathname.startsWith('/content-feed')) {
             setIsNotificationView(false);
         }
@@ -41,7 +53,7 @@ export function RightBarNav() {
 
     return (
         <div className={styles.container}>
-            <button
+            <button 
                 className={`${styles.navButton} ${isNotificationView ? styles.active : ''}`}
                 onClick={toggleNotificationView}
             >
@@ -52,17 +64,16 @@ export function RightBarNav() {
                 />
             </button>
 
-            <div className={styles.userMenu}>
+            <div className={styles.userMenu} ref={dropdownRef}>
                 <button className={styles.userPfp} onClick={toggleDropdown}>
                     <img
-                        src={profileImage}
+                        src="/icons/user.png"
                         alt="User Profile"
                         draggable={false}
                     />
                 </button>
                 {isDropdownOpen && (
                     <div className={styles.dropdownMenu}>
-                        <button onClick={() => handleNavigation('/profile')}>Profile</button>
                         <button onClick={() => handleNavigation('/login')}>Log out</button>
                     </div>
                 )}
