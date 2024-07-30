@@ -28,7 +28,7 @@ const Albums = () => {
 
             <div className={styles.AlbumsContainer}>
                 {albums.map((album, i) => (
-                    <Link href={`/album?id=${album.id}`} key={i}>
+                    <Link href={`/albums/${album.id}`} key={i}>
                         <AlbumCard
                             name={album.name}
                             lastName={album.lastName}

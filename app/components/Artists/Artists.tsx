@@ -31,7 +31,7 @@ const ArtistsPage = () => {
                         {popularArtists.map((artist, i) => (
                             <Link
                                 key={i}
-                                href={`/artist?id=${artist.id}`}
+                                href={`/artists/${artist.id}`}
                                 draggable={false}
                                 className={styles.cardCont}
                             >
@@ -55,7 +55,7 @@ const ArtistsPage = () => {
                         {georgianArtists.map((artist, i) => (
                             <Link
                                 key={i}
-                                href={`/artist?id=${artist.id}`}
+                                href={`/artists/${artist.id}`}
                                 draggable={false}
                                 className={styles.cardCont}
                             >
@@ -78,7 +78,7 @@ const ArtistsPage = () => {
                         {europeanArtists.map((artist, i) => (
                             <Link
                                 key={i}
-                                href={`/artist?id=${artist.id}`}
+                                href={`/artists/${artist.id}`}
                                 draggable={false}
                                 className={styles.cardCont}
                             >

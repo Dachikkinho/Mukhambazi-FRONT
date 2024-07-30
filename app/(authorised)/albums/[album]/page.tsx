@@ -2,7 +2,7 @@
 
 import styles from './page.module.scss';
 import { useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { albums } from '@/public/script';
 import { Album } from '@/app/interfaces/albunPage.interface';
 
@@ -11,8 +11,8 @@ const AlbumArtist = () => {
         document.title = 'Chakrulos | Artist';
     }, []);
 
-    const param = useSearchParams();
-    const id = param.get('id') || 1;
+    const param = useParams();
+    const id = param.album;
     const album = albums.find((album) => album.id === +id);
 
     if (!album) {

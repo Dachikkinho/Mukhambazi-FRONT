@@ -32,7 +32,7 @@ const TopArtist = () => {
                         },
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/artist?id=${artist.id}`}>
+                        <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}
@@ -67,7 +67,7 @@ const TopArtist = () => {
                         },
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/artist?id=${artist.id}`}>
+                        <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}
@@ -102,7 +102,7 @@ const TopArtist = () => {
                         },
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/artist?id=${artist.id}`}>
+                        <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}

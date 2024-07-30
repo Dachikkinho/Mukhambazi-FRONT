@@ -2,21 +2,13 @@
 import Song from '@/app/components/SongsMainSection/Song/Song';
 import styles from './page.module.scss';
 import Albumcard from '@/app/components/Albums/AlbumCard/AlbumCard';
-import { useSearchParams } from 'next/navigation';
-import { artists } from '@/public/script';
-
-interface Artist {
-    name: string;
-    listens: string;
-    bgColor: string;
-    img: string;
-    id: number;
-    bio: string;
-}
+import { useParams } from 'next/navigation';
+import { artists, topSongsPlaceholder } from '@/public/script';
+import { Artist } from '@/app/interfaces/artist.interface';
 
 const artist = () => {
-    const params = useSearchParams();
-    const id = params.get('id') || 0;
+    const params = useParams();
+    const id = params.artist;
 
     const getArtist: Artist = artists.filter((artist) => artist.id === +id)[0];
 
@@ -39,36 +31,15 @@ const artist = () => {
                         <img src="/icons/home-icon.svg" alt="" />
                     </div>
                     <div className={styles.topSongs}>
-                        <Song
-                            group={getArtist?.name}
-                            imageSrc="/images/song-placeholder.svg"
-                            length="2:20"
-                            name="Song"
-                        />
-                        <Song
-                            group={getArtist?.name}
-                            imageSrc="/images/song-placeholder.svg"
-                            length="2:20"
-                            name="Song"
-                        />
-                        <Song
-                            group={getArtist?.name}
-                            imageSrc="/images/song-placeholder.svg"
-                            length="2:20"
-                            name="Song"
-                        />
-                        <Song
-                            group={getArtist?.name}
-                            imageSrc="/images/song-placeholder.svg"
-                            length="2:20"
-                            name="Song"
-                        />
-                        <Song
-                            group={getArtist?.name}
-                            imageSrc="/images/song-placeholder.svg"
-                            length="2:20"
-                            name="Song"
-                        />
+                        {topSongsPlaceholder.map((song, i) => (
+                            <Song
+                                group={getArtist?.name}
+                                imageSrc={song.imageSrc}
+                                length={song.length}
+                                name={song.name}
+                                key={i}
+                            />
+                        ))}
                     </div>
                 </div>
 
