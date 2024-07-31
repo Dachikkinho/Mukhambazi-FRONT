@@ -8,6 +8,7 @@ import Listdisabled from './ListDisabled';
 import styles from './Playlist.module.scss';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
+import { removeScroll } from '@/app/helper/removeScroll';
 
 interface Album {
     name: string;
@@ -19,22 +20,19 @@ const Playlist = () => {
     const [playlists, setPlaylists] = useState<Album[]>([]);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
 
-    useEffect(() => {
-        if (popUpOpen) {
-            document.body.style.overflow = 'hidden';
-            return () => {
-                document.body.style.overflow = 'scroll';
-            };
-        }
-    }, [popUpOpen]);
+    removeScroll();
+
+    function closeFunction() {
+        setCreate(!create);
+        setPopUpOpen(!popUpOpen);
+    }
 
     return (
         <>
             {create && (
                 <CreatePopUp
                     closeMenuFunction={() => {
-                        setCreate(false);
-                        setPopUpOpen(false)
+                        closeFunction();
                     }}
                 />
             )}
@@ -55,7 +53,9 @@ const Playlist = () => {
                         height={24}
                     />
                     <button
-                        onClick={() => {setCreate(true); setPopUpOpen(true)}}
+                        onClick={() => {
+                            closeFunction();
+                        }}
                         className={styles.newPlaylist}
                     >
                         <img src="/icons/add-icon.svg" alt="icon" />

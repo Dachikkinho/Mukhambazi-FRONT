@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Album } from '../../interfaces/album.interface';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
+import { removeScroll } from '@/app/helper/removeScroll';
 
 interface Props {
     songId: string;
@@ -35,14 +36,7 @@ const AddSongButton = ({ songId }: Props) => {
 
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
 
-    useEffect(() => {
-        if (popUpOpen) {
-            document.body.style.overflow = 'hidden';
-            return () => {
-                document.body.style.overflow = 'scroll';
-            };
-        }
-    }, [popUpOpen]);
+    removeScroll()
 
     return (
         <>

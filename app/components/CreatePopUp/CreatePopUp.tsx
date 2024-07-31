@@ -27,8 +27,6 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
         });
     }
 
-    const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
-
     return (
         <>
             <div className={styles.overlay} onClick={closeMenuFunction}></div>
@@ -104,7 +102,3 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
 };
 
 export default CreatePopUp;
-function useEffect(arg0: () => (() => void) | undefined, arg1: any[]) {
-    throw new Error('Function not implemented.');
-}
-
