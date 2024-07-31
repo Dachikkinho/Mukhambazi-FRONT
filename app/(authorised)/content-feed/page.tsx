@@ -13,6 +13,8 @@ const ContentFeed = () => {
 
     const [activeFilter, setActiveFilter] = useState<FilterType | null>(null);
 
+    const filterTypes = Object.values(FilterType);
+
     return (
         <div className={styles.contentFeed}>
             <h2>
@@ -32,96 +34,17 @@ const ContentFeed = () => {
                         &times;
                     </button>
                 )}
-                {!activeFilter || activeFilter === FilterType.Artists ? (
+                {filterTypes.map((filter) => (
                     <button
-                        className={
-                            activeFilter === FilterType.Artists
-                                ? styles.active
-                                : ''
-                        }
+                        key={filter}
+                        className={activeFilter === filter ? styles.active : ''}
                         onClick={() =>
-                            toggleFilter(
-                                activeFilter,
-                                setActiveFilter,
-                                FilterType.Artists,
-                            )
+                            toggleFilter(activeFilter, setActiveFilter, filter)
                         }
                     >
-                        Artists
+                        {filter}
                     </button>
-                ) : null}
-                {!activeFilter || activeFilter === FilterType.Albums ? (
-                    <button
-                        className={
-                            activeFilter === FilterType.Albums
-                                ? styles.active
-                                : ''
-                        }
-                        onClick={() =>
-                            toggleFilter(
-                                activeFilter,
-                                setActiveFilter,
-                                FilterType.Albums,
-                            )
-                        }
-                    >
-                        Albums
-                    </button>
-                ) : null}
-                {!activeFilter || activeFilter === FilterType.Playlists ? (
-                    <button
-                        className={
-                            activeFilter === FilterType.Playlists
-                                ? styles.active
-                                : ''
-                        }
-                        onClick={() =>
-                            toggleFilter(
-                                activeFilter,
-                                setActiveFilter,
-                                FilterType.Playlists,
-                            )
-                        }
-                    >
-                        Playlists
-                    </button>
-                ) : null}
-                {!activeFilter || activeFilter === FilterType.Songs ? (
-                    <button
-                        className={
-                            activeFilter === FilterType.Songs
-                                ? styles.active
-                                : ''
-                        }
-                        onClick={() =>
-                            toggleFilter(
-                                activeFilter,
-                                setActiveFilter,
-                                FilterType.Songs,
-                            )
-                        }
-                    >
-                        Songs
-                    </button>
-                ) : null}
-                {!activeFilter || activeFilter === FilterType.Podcasts ? (
-                    <button
-                        className={
-                            activeFilter === FilterType.Podcasts
-                                ? styles.active
-                                : ''
-                        }
-                        onClick={() =>
-                            toggleFilter(
-                                activeFilter,
-                                setActiveFilter,
-                                FilterType.Podcasts,
-                            )
-                        }
-                    >
-                        Podcasts & Shows
-                    </button>
-                ) : null}
+                ))}
             </div>
             <div className={styles.content}>
                 {activeFilter ? (

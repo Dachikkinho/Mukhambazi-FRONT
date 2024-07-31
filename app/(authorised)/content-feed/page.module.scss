@@ -28,7 +28,13 @@
         margin-bottom: 20px;
         animation: fadeInUp 1.5s ease-in-out;
         gap: 5px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar {
+            display: none; 
+        }
 
         button {
             background: $grey-2;
