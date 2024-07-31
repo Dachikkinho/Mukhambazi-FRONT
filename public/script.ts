@@ -87,6 +87,8 @@ export const artists = [
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
         img: 'travis',
+        id: 1,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Imagine Dragons',
@@ -94,6 +96,8 @@ export const artists = [
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
         img: 'imagineDragons',
+        id: 2,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'TAHA',
@@ -101,6 +105,8 @@ export const artists = [
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
         img: 'taha',
+        id: 3,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'IV-Dasi',
@@ -108,6 +114,8 @@ export const artists = [
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
         img: 'dasi',
+        id: 4,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Travis Scott',
@@ -115,6 +123,8 @@ export const artists = [
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
         img: 'travis',
+        id: 5,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Imagine Dragons',
@@ -122,6 +132,8 @@ export const artists = [
         bgColor:
             'linear-gradient(90deg, rgba(227, 62, 159, 0.4) 0%, rgba(77, 37, 174, 0.4) 100%);',
         img: 'imagineDragons',
+        id: 6,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
 ];
 
@@ -203,24 +215,32 @@ export const popularArtists = [
         plays: '32M',
         pfp: 'taylor',
         bg: 'rgb(130 74 145)',
+        id: 7,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Twenty one pilots',
         plays: '31M',
         pfp: 'pilot',
         bg: 'rgb(130 74 145)',
+        id: 8,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Billie Eilish',
         plays: '51M',
         pfp: 'billie',
         bg: 'rgb(130 74 145)',
+        id: 9,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Miyagi',
         plays: '42M',
         pfp: 'miyagi',
         bg: 'rgb(130 74 145)',
+        id: 10,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
 ];
 
@@ -230,24 +250,32 @@ export const georgianArtists = [
         plays: '2M',
         pfp: 'j1-4',
         bg: 'rgb(130 74 145)',
+        id: 11,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Jgufi-Yvela',
         plays: '1M',
         pfp: 'j-yvela',
         bg: 'rgb(130 74 145)',
+        id: 12,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Jgufi-Bani',
         plays: '1M',
         pfp: 'j-bani',
         bg: 'rgb(130 74 145)',
+        id: 13,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'KAYKATA',
         plays: '1M',
         pfp: 'kaykata',
         bg: 'rgb(130 74 145)',
+        id: 14,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
 ];
 export const europeanArtists = [
@@ -256,24 +284,32 @@ export const europeanArtists = [
         plays: '2M',
         pfp: 'j1-4',
         bg: 'rgb(130 74 145)',
+        id: 15,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Jgufi-Yvelas',
         plays: '1M',
         pfp: 'j-yvela',
         bg: 'rgb(130 74 145)',
+        id: 16,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'Jgufi-Bani',
         plays: '1M',
         pfp: 'j-bani',
         bg: 'rgb(130 74 145)',
+        id: 17,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
     {
         name: 'KAYKATA',
         plays: '1M',
         pfp: 'kaykata',
         bg: 'rgb(130 74 145)',
+        id: 18,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo obcaecati sed vitae velit. Et non dolores voluptatibus itaque, ducimus fugit esse porro magni vel cum doloremque veritatis quidem culpa saepe, voluptatum quaerat nam molestiae eligendi provident eveniet hic illo modi? Quam perferendis enim aliquid cupiditate ipsum distinctio amet velit blanditiis.',
     },
 ];
 
@@ -370,4 +406,12 @@ export const albums: Album[] = [
             'Gold',
         ],
     },
+];
+
+export const topSongsPlaceholder = [
+    { imageSrc: '/images/song-placeholder.svg', length: '2:20', name: 'Song' },
+    { imageSrc: '/images/song-placeholder.svg', length: '2:20', name: 'Song' },
+    { imageSrc: '/images/song-placeholder.svg', length: '2:20', name: 'Song' },
+    { imageSrc: '/images/song-placeholder.svg', length: '2:20', name: 'Song' },
+    { imageSrc: '/images/song-placeholder.svg', length: '2:20', name: 'Song' },
 ];

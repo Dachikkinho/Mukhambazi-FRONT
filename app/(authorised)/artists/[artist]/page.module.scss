@@ -1,0 +1,85 @@
+@import "../../../Colors/Color.scss";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+    max-width: 1114px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.image {
+    max-width: 1050px;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $primaryColor;
+    width: 100%;
+    padding: 10px 0;
+    color: rgb(218, 218, 218);
+}
+
+.about {
+    color: rgb(218, 218, 218);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.contentWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.headingCont {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topSongHeading {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.content {
+    width: 100%;
+}
+
+
+.topSongs {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        padding-top: 80px;
+    }
+
+    .topSongs {
+        justify-content: center;
+    }
+}

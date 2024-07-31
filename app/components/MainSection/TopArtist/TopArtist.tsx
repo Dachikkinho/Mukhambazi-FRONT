@@ -4,6 +4,7 @@ import styles from './TopArtist.module.scss';
 import { artists } from '@/public/script';
 import { Key } from 'react';
 import LandingCard from './LandingCard/LandingCard';
+import { Artist } from '@/app/interfaces/artist.interface';
 
 const TopArtist = () => {
     return (
@@ -23,20 +24,15 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artists: {
-                            name: string;
-                            bgColor: string;
-                            img: string;
-                            listens: string;
-                        },
+                        artist: Artist,
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/album?album=${artists.name}`}>
+                        <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
-                                name={artists.name}
-                                bgColor={artists.bgColor}
-                                img={artists.img}
-                                plays={artists.listens}
+                                name={artist.name}
+                                bgColor={artist.bgColor}
+                                img={artist.img}
+                                plays={artist.listens}
                             />
                         </Link>
                     ),
@@ -57,15 +53,10 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artist: {
-                            name: string;
-                            bgColor: string;
-                            img: string;
-                            listens: string;
-                        },
+                        artist: Artist,
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/album?album=${artist.name}`}>
+                        <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}
@@ -91,15 +82,10 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artist: {
-                            name: string;
-                            bgColor: string;
-                            img: string;
-                            listens: string;
-                        },
+                        artist: Artist,
                         index: Key | null | undefined,
                     ) => (
-                        <Link key={index} href={`/album?album=${artist.name}`}>
+                        <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={artist.name}
                                 bgColor={artist.bgColor}
