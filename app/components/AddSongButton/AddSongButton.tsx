@@ -3,6 +3,8 @@ import styles from './AddSongButton.module.scss';
 import Listdisabled from '../Playlists/ListDisabled';
 import axios from 'axios';
 import { Album } from '../../interfaces/album.interface';
+import { popUpOpenState } from '@/app/states';
+import { useRecoilState } from 'recoil';
 
 interface Props {
     songId: string;
@@ -25,12 +27,22 @@ const AddSongButton = ({ songId }: Props) => {
         if (success) {
             const timer = setTimeout(() => {
                 setSuccess(false);
-                setSuccess(true);
             }, 2000);
 
             return () => clearTimeout(timer);
         }
     }, [success]);
+
+    const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
+
+    useEffect(() => {
+        if (popUpOpen) {
+            document.body.style.overflow = 'hidden';
+            return () => {
+                document.body.style.overflow = 'scroll';
+            };
+        }
+    }, [popUpOpen]);
 
     return (
         <>
@@ -38,7 +50,7 @@ const AddSongButton = ({ songId }: Props) => {
                 <div className={styles.success}>Added Succesfully!</div>
             )}
 
-            <button className={styles.button} onClick={() => setOpen(true)}>
+            <button className={styles.button} onClick={() => {setOpen(true); setPopUpOpen(true)}}>
                 <img src="/icons/add-song.svg" alt="" className={styles.icon} />
             </button>
 
@@ -46,13 +58,13 @@ const AddSongButton = ({ songId }: Props) => {
                 <>
                     <div
                         className={styles.overlay}
-                        onClick={() => setOpen(false)}
+                        onClick={() => {setOpen(false); setPopUpOpen(false)}}
                     ></div>
                     <div className={styles.popUp}>
                         <div className={styles.top}>
                             <h2>All Playlists</h2>
                             <button
-                                onClick={() => setOpen(false)}
+                                onClick={() => {setOpen(false); setPopUpOpen(false)}}
                                 className={styles.close}
                             >
                                 <img

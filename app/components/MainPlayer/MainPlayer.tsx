@@ -18,7 +18,7 @@ const MainPlayer = () => {
 
     const isMobile = useViewport(768);
 
-    const mobileControlsBottom = [RHAP_UI.MAIN_CONTROLS, RHAP_UI.VOLUME];
+    const mobileControlsBottom = [RHAP_UI.MAIN_CONTROLS];
 
     const mobileVolume = !isMobile ? RHAP_UI.VOLUME : <></>;
 

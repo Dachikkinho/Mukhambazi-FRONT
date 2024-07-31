@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Done from '../Done/Done';
 import { Album } from '@/app/interfaces/album.interface';
+import { useRecoilState } from 'recoil';
+import { popUpOpenState } from '@/app/states';
 
 interface Props {
     closeMenuFunction: () => void;
@@ -24,6 +26,8 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
             setSuccess(true);
         });
     }
+
+    const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
 
     return (
         <>
@@ -100,3 +104,7 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
 };
 
 export default CreatePopUp;
+function useEffect(arg0: () => (() => void) | undefined, arg1: any[]) {
+    throw new Error('Function not implemented.');
+}
+

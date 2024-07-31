@@ -77,3 +77,22 @@
         }
     }
 }
+
+@media screen and (max-width: 1300px) {
+    .container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        position: absolute;
+        top: 23px;
+        left: 21px;
+        z-index: 9;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+}

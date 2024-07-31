@@ -5,6 +5,11 @@ export const sideBarOpenState = atom({
     default: false,
 });
 
+export const popUpOpenState = atom({
+    key: "popUpOpen",
+    default: false
+})
+
 //albums placeholder
 export const albumsState = atom({
     key: 'album',

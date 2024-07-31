@@ -11,6 +11,10 @@ const toggleDropdown = (
     setIsDropdownOpen(!isDropdownOpen);
 };
 
+type Props = {
+    className?: string;
+};
+
 export function RightBarNav() {
     const [isNotificationView, setIsNotificationView] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
