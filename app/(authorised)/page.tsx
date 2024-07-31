@@ -6,7 +6,7 @@ import MainSection from '../components/MainSection/MainSection';
 
 const Home = () => {
     useEffect(() => {
-        document.title = 'Chakrulos';
+        document.title = 'Chakrulos - Web Player: Music for everyone';
     }, []);
     return (
         <main className={styles.main}>
