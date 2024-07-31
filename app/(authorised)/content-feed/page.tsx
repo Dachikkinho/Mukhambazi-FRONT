@@ -2,119 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from './page.module.scss';
-import Link from 'next/link';
 import { FilterType } from '@/app/enums/filterType';
+import { setTitle, toggleFilter } from '@/app/enums/utils';
+import ContentMapping from '@/app/components/Content/ContentMapping';
 
-const ContentFeed: React.FC = () => {
+const ContentFeed = () => {
     useEffect(() => {
-        document.title = 'Chakrulos - Web Player: Music for everyone';
+        setTitle('Chakrulos - Web Player: Music for everyone');
     }, []);
 
     const [activeFilter, setActiveFilter] = useState<FilterType | null>(null);
-
-    const toggleFilter = (filter: FilterType) => {
-        setActiveFilter(activeFilter === filter ? null : filter);
-    };
-
-    const contentMapping: { [key in FilterType]?: JSX.Element } = {
-        [FilterType.Artists]: (
-            <p>
-                We added new Georgian Artists. This singer is unique, his voice
-                covered the whole of Georgia. You must see it in the
-                <span>
-                    {' '}
-                    <Link href="/artists">
-                        <span className={styles.underline}>Artists</span>
-                    </Link>{' '}
-                    Page. You can check and enjoy.
-                </span>
-                <img
-                    src="images/artists.jpg"
-                    alt="art"
-                    className={styles.responsiveImage}
-                    draggable={false}
-                />
-            </p>
-        ),
-        [FilterType.Albums]: (
-            <p>
-                Did you know that Pink Floyd, the British rock band at the
-                forefront of 1960s psychedelia, popularized the concept album
-                for mass rock audiences in the 1970s? Now you can see Pink Floyd
-                albums in our web player. You can check on the
-                <span>
-                    {' '}
-                    <Link href="/albums">
-                        <span className={styles.underline}>Albums</span>
-                    </Link>{' '}
-                    Page. Please enjoy.
-                </span>
-                <img
-                    src="images/pink.jpg"
-                    alt="art"
-                    className={styles.responsiveImage}
-                    draggable={false}
-                />
-            </p>
-        ),
-        [FilterType.Playlists]: (
-            <p>
-                Our Web Player allows you to create a playlist with the name you
-                want and add exotic and pleasant songs. You can do all this on
-                the
-                <span>
-                    {' '}
-                    <Link href="/playlist">
-                        <span className={styles.underline}>Playlist</span>
-                    </Link>{' '}
-                    Page. Please enjoy.
-                </span>
-                <img
-                    src="images/playlistspiderman.jpg"
-                    alt="art"
-                    className={styles.responsiveImage}
-                    draggable={false}
-                />
-            </p>
-        ),
-        [FilterType.Songs]: (
-            <p>
-                You will find more than 60,000 songs in our player. Hopefully,
-                one of these songs will suit your taste and give you maximum
-                pleasure in our beautiful web player. Please enjoy.
-                <span>
-                    {' '}
-                    <Link href="/songs">
-                        <span className={styles.underline}>Songs</span>
-                    </Link>
-                </span>
-                <img
-                    src="images/songs.jpg"
-                    alt="art"
-                    className={styles.responsiveImage}
-                    draggable={false}
-                />
-            </p>
-        ),
-        [FilterType.Podcasts]: (
-            <p>
-                Very soon you will be able to watch podcasts and entertainment
-                shows on our site. Please stay tuned. Kind regards,
-                <span>
-                    {' '}
-                    <Link href="/">
-                        <span className={styles.underline}>CHAKRULOS</span>
-                    </Link>
-                </span>
-                <img
-                    src="images/podcasts.jpg"
-                    alt="art"
-                    className={styles.responsiveImage}
-                    draggable={false}
-                />
-            </p>
-        ),
-    };
 
     return (
         <div className={styles.contentFeed}>
@@ -142,7 +39,13 @@ const ContentFeed: React.FC = () => {
                                 ? styles.active
                                 : ''
                         }
-                        onClick={() => toggleFilter(FilterType.Artists)}
+                        onClick={() =>
+                            toggleFilter(
+                                activeFilter,
+                                setActiveFilter,
+                                FilterType.Artists,
+                            )
+                        }
                     >
                         Artists
                     </button>
@@ -154,7 +57,13 @@ const ContentFeed: React.FC = () => {
                                 ? styles.active
                                 : ''
                         }
-                        onClick={() => toggleFilter(FilterType.Albums)}
+                        onClick={() =>
+                            toggleFilter(
+                                activeFilter,
+                                setActiveFilter,
+                                FilterType.Albums,
+                            )
+                        }
                     >
                         Albums
                     </button>
@@ -166,7 +75,13 @@ const ContentFeed: React.FC = () => {
                                 ? styles.active
                                 : ''
                         }
-                        onClick={() => toggleFilter(FilterType.Playlists)}
+                        onClick={() =>
+                            toggleFilter(
+                                activeFilter,
+                                setActiveFilter,
+                                FilterType.Playlists,
+                            )
+                        }
                     >
                         Playlists
                     </button>
@@ -178,7 +93,13 @@ const ContentFeed: React.FC = () => {
                                 ? styles.active
                                 : ''
                         }
-                        onClick={() => toggleFilter(FilterType.Songs)}
+                        onClick={() =>
+                            toggleFilter(
+                                activeFilter,
+                                setActiveFilter,
+                                FilterType.Songs,
+                            )
+                        }
                     >
                         Songs
                     </button>
@@ -190,7 +111,13 @@ const ContentFeed: React.FC = () => {
                                 ? styles.active
                                 : ''
                         }
-                        onClick={() => toggleFilter(FilterType.Podcasts)}
+                        onClick={() =>
+                            toggleFilter(
+                                activeFilter,
+                                setActiveFilter,
+                                FilterType.Podcasts,
+                            )
+                        }
                     >
                         Podcasts & Shows
                     </button>
@@ -198,7 +125,7 @@ const ContentFeed: React.FC = () => {
             </div>
             <div className={styles.content}>
                 {activeFilter ? (
-                    contentMapping[activeFilter]
+                    ContentMapping[activeFilter]
                 ) : (
                     <>
                         <p>

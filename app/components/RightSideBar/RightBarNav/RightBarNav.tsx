@@ -4,6 +4,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './RightBarNav.module.scss';
 import { useRouter, usePathname } from 'next/navigation';
 
+const toggleDropdown = (
+    isDropdownOpen: boolean,
+    setIsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>,
+) => {
+    setIsDropdownOpen(!isDropdownOpen);
+};
+
 export function RightBarNav() {
     const [isNotificationView, setIsNotificationView] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -15,15 +22,7 @@ export function RightBarNav() {
         const newNotificationState = !isNotificationView;
         setIsNotificationView(newNotificationState);
 
-        if (newNotificationState) {
-            router.push('/content-feed');
-        } else {
-            router.push('/');
-        }
-    };
-
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
+        router.push(newNotificationState ? '/content-feed' : '/');
     };
 
     const handleNavigation = (path: string) => {
@@ -68,7 +67,12 @@ export function RightBarNav() {
             </button>
 
             <div className={styles.userMenu} ref={dropdownRef}>
-                <button className={styles.userPfp} onClick={toggleDropdown}>
+                <button
+                    className={styles.userPfp}
+                    onClick={() =>
+                        toggleDropdown(isDropdownOpen, setIsDropdownOpen)
+                    }
+                >
                     <img
                         src="/icons/user.png"
                         alt="User Profile"
