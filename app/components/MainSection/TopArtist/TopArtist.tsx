@@ -4,6 +4,7 @@ import styles from './TopArtist.module.scss';
 import { artists } from '@/public/script';
 import { Key } from 'react';
 import LandingCard from './LandingCard/LandingCard';
+import { Artist } from '@/app/interfaces/artist.interface';
 
 const TopArtist = () => {
     return (
@@ -23,13 +24,7 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artist: {
-                            name: string;
-                            bgColor: string;
-                            img: string;
-                            listens: string;
-                            id: number;
-                        },
+                        artist: Artist,
                         index: Key | null | undefined,
                     ) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
@@ -58,13 +53,7 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artist: {
-                            name: string;
-                            bgColor: string;
-                            img: string;
-                            listens: string;
-                            id: number;
-                        },
+                        artist: Artist,
                         index: Key | null | undefined,
                     ) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
@@ -93,13 +82,7 @@ const TopArtist = () => {
             <div className={styles.artistsWrapper}>
                 {artists.map(
                     (
-                        artist: {
-                            name: string;
-                            bgColor: string;
-                            img: string;
-                            listens: string;
-                            id: number;
-                        },
+                        artist: Artist,
                         index: Key | null | undefined,
                     ) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
