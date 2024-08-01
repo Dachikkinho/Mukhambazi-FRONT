@@ -1,11 +1,14 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CreatePopUp from '../CreatePopUp/CreatePopUp';
 import Header from '../Header/Header';
 import Search from '../Header/Search/Search';
 import Listactivate from './ListActivate';
 import Listdisabled from './ListDisabled';
 import styles from './Playlist.module.scss';
+import { popUpOpenState } from '@/app/states';
+import { useRecoilState } from 'recoil';
+import { removeScroll } from '@/app/helper/removeScroll';
 
 interface Album {
     name: string;
@@ -15,12 +18,21 @@ interface Album {
 const Playlist = () => {
     const [create, setCreate] = useState(false);
     const [playlists, setPlaylists] = useState<Album[]>([]);
+    const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
+
+    removeScroll();
+
+    function closeFunction() {
+        setCreate(!create);
+        setPopUpOpen(!popUpOpen);
+    }
+
     return (
         <>
             {create && (
                 <CreatePopUp
                     closeMenuFunction={() => {
-                        setCreate(false);
+                        closeFunction();
                     }}
                 />
             )}
@@ -41,7 +53,9 @@ const Playlist = () => {
                         height={24}
                     />
                     <button
-                        onClick={() => setCreate(true)}
+                        onClick={() => {
+                            closeFunction();
+                        }}
                         className={styles.newPlaylist}
                     >
                         <img src="/icons/add-icon.svg" alt="icon" />

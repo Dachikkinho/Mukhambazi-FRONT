@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Done from '../Done/Done';
 import { Album } from '@/app/interfaces/album.interface';
+import { useRecoilState } from 'recoil';
+import { popUpOpenState } from '@/app/states';
 
 interface Props {
     closeMenuFunction: () => void;

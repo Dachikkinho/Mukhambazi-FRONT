@@ -37,6 +37,16 @@
     }
 }
 
+.wrap {
+    display: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .wrap {
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .hamburgerMenu {
         display: flex;
