@@ -1,8 +1,8 @@
-export interface Artist {
-    name: string;
-    listens: string;
-    bgColor: string;
-    img: string;
+interface Artist {
     id: number;
-    bio: string;
+    firstName: string;
+    lastName: string;
+    biography: string;
+    image: string;
+    country: string;
 }

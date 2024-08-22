@@ -9,10 +9,42 @@ import ArtistCard from './ArtistCard/ArtistCard';
 import ArtistcardHeader from './ArtistcardHeader/ArtistcardHeader';
 import Search from '../Header/Search/Search';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import LoadingBar from 'react-top-loading-bar';
+import axios from 'axios';
 
 const ArtistsPage = () => {
+    const [artists, setArtists] = useState<Artist[]>([]);
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        axios
+            .get('http://localhost:3001/authors', {
+                onDownloadProgress: (progressEvent) => {
+                    const { loaded, total } = progressEvent;
+
+                    if (total) {
+                        const percentage = Math.floor((loaded / total) * 100);
+                        setProgress(percentage);
+                        console.log(
+                            `Downloaded: ${Math.floor((loaded / total) * 100)}%`,
+                        );
+                    }
+                },
+            })
+            .then((res) => {
+                setArtists([...res.data]);
+            });
+    }, []);
+
     return (
         <div className={styles.wrapper}>
+            <LoadingBar
+                color="#c338b5"
+                progress={progress}
+                onLoaderFinished={() => setProgress(0)}
+                loaderSpeed={600}
+            />
             <div className={styles.main}>
                 <div className={styles.topContainer}>
                     <Search
@@ -28,7 +60,7 @@ const ArtistsPage = () => {
                         icon={'popular'}
                     />
                     <div className={styles.cards}>
-                        {popularArtists.map((artist, i) => (
+                        {artists.map((artist, i) => (
                             <Link
                                 key={i}
                                 href={`/artists/${artist.id}`}
@@ -36,10 +68,10 @@ const ArtistsPage = () => {
                                 className={styles.cardCont}
                             >
                                 <ArtistCard
-                                    bgColor={artist.bg}
-                                    name={artist.name}
-                                    pfp={artist.pfp}
-                                    plays={artist.plays}
+                                    bgColor={'rgb(130 74 145)'}
+                                    name={`${artist.firstName} ${artist.lastName}`}
+                                    pfp={artist.image}
+                                    plays={'2'}
                                 />
                             </Link>
                         ))}
@@ -52,7 +84,7 @@ const ArtistsPage = () => {
                         icon={'wine-glass-solid'}
                     />
                     <div className={styles.cards}>
-                        {georgianArtists.map((artist, i) => (
+                        {artists.map((artist, i) => (
                             <Link
                                 key={i}
                                 href={`/artists/${artist.id}`}
@@ -60,10 +92,10 @@ const ArtistsPage = () => {
                                 className={styles.cardCont}
                             >
                                 <ArtistCard
-                                    bgColor={artist.bg}
-                                    name={artist.name}
-                                    pfp={artist.pfp}
-                                    plays={artist.plays}
+                                    bgColor={'rgb(130 74 145)'}
+                                    name={`${artist.firstName} ${artist.lastName}`}
+                                    pfp={artist.image}
+                                    plays={'2'}
                                 />
                             </Link>
                         ))}
@@ -75,7 +107,7 @@ const ArtistsPage = () => {
                         icon={'earth-europe-solid'}
                     />
                     <div className={styles.cards}>
-                        {europeanArtists.map((artist, i) => (
+                        {artists.map((artist, i) => (
                             <Link
                                 key={i}
                                 href={`/artists/${artist.id}`}
@@ -83,10 +115,10 @@ const ArtistsPage = () => {
                                 className={styles.cardCont}
                             >
                                 <ArtistCard
-                                    bgColor={artist.bg}
-                                    name={artist.name}
-                                    pfp={artist.pfp}
-                                    plays={artist.plays}
+                                    bgColor={'rgb(130 74 145)'}
+                                    name={`${artist.firstName} ${artist.lastName}`}
+                                    pfp={artist.image}
+                                    plays={'2'}
                                 />
                             </Link>
                         ))}

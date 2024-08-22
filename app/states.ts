@@ -10,6 +10,14 @@ export const popUpOpenState = atom({
     default: false
 })
 
+export const isPlayingState = atom({
+    key: "isPlaying",
+    default: {
+        src: '',
+        name: ''
+    }
+})
+
 //albums placeholder
 export const albumsState = atom({
     key: 'album',
