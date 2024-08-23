@@ -3,5 +3,5 @@ interface Song {
     name: string
     authorId: number
     url: string
-    authorName: string
+    author: Artist
 }

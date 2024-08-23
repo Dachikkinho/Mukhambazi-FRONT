@@ -12,10 +12,6 @@ import Link from 'next/link';
 import LoadingBar from 'react-top-loading-bar';
 import { useSearchParams } from 'next/navigation';
 
-type AuthorNames = {
-    [key: number]: string;
-};
-
 const SearchPage = () => {
     useEffect(() => {
         document.title = 'Chakrulos - Web Player: Music for everyone';
@@ -24,7 +20,6 @@ const SearchPage = () => {
     const [songs, setSongs] = useState<Song[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [authorNames, setAuthorNames] = useState<AuthorNames>({});
     const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
 
     const params = useSearchParams();
@@ -48,21 +43,7 @@ const SearchPage = () => {
             .then((res) => {
                 setSongs([...res.data.music]);
                 setAlbums([...res.data.album]);
-                const authorRequests = res.data.map((song: Song) =>
-                    axios
-                        .get(`http://localhost:3001/authors/${song.id}`)
-                        .then((res) => ({
-                            id: song.id,
-                            name: `${res.data.firstName} ${res.data.lastName}`,
-                        })),
-                );
-                Promise.all(authorRequests).then((authors) => {
-                    const authorNamesMap = authors.reduce((acc, author) => {
-                        acc[author.id] = author.name;
-                        return acc;
-                    }, {});
-                    setAuthorNames(authorNamesMap);
-                });
+
             })
             .catch((err) => {
                 console.log(err);
@@ -108,7 +89,7 @@ const SearchPage = () => {
                         {songs.map((song, i) => (
                             <Song
                                 name={song.name}
-                                group={authorNames[song.id] || 'Unknown'}
+                                group={``}
                                 length={'2:00'}
                                 imageSrc={'/images/song-placeholder.svg'}
                                 key={i}
