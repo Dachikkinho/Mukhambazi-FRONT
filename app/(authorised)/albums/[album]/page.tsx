@@ -18,9 +18,9 @@ const AlbumArtist = () => {
     const [album, setAlbum] = useState<AlbumPage>();
     const [songs, setSongs] = useState<Song[]>([]);
     const [progress, setProgress] = useState(0);
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+    const [, setIsPlaying] = useRecoilState(isPlayingState);
 
-    useState(() => {
+    useEffect(() => {
         axios
             .get(`http://localhost:3001/album/${id}`, {
                 onDownloadProgress: (progressEvent) => {
@@ -34,18 +34,16 @@ const AlbumArtist = () => {
             })
             .then((res) => {
                 setAlbum(res.data);
-                console.log(res.data);
 
                 setSongs([...res.data.musics]);
             });
-    });
+    }, []);
 
     function playMusic(src: string, name: string) {
-        const music = {
+        setIsPlaying({
             src: src,
             name: name,
-        };
-        setIsPlaying(music);
+        });
     }
 
     if (!album) {

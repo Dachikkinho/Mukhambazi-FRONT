@@ -3,14 +3,14 @@ import Song from '@/app/components/SongsMainSection/Song/Song';
 import styles from './page.module.scss';
 import Albumcard from '@/app/components/Albums/AlbumCard/AlbumCard';
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar';
 import { isPlayingState } from '@/app/states';
 import { useRecoilState } from 'recoil';
 import Link from 'next/link';
 
-const artist = () => {
+const Artist = () => {
     const params = useParams();
     const id = params.artist;
 
@@ -18,9 +18,9 @@ const artist = () => {
     const [songs, setSongs] = useState<Song[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+    const [, setIsPlaying] = useRecoilState(isPlayingState);
 
-    useState(() => {
+    useEffect(() => {
         axios
             .get(`http://localhost:3001/authors/${id}`, {
                 onDownloadProgress: (progressEvent) => {
@@ -37,14 +37,13 @@ const artist = () => {
                 setSongs([...res.data.musics]);
                 setAlbums([...res.data.album]);
             });
-    });
+    }, []);
 
     function playMusic(src: string, name: string) {
-        let music = {
+        setIsPlaying({
             src: src,
             name: name,
-        };
-        setIsPlaying(music);
+        });
     }
 
     return (
@@ -96,8 +95,8 @@ const artist = () => {
                         <img src="/icons/albums-icon.svg" alt="" />
                     </div>
                     <div className={styles.topSongs}>
-                        {albums.map((album) => (
-                            <Link href={`../albums/${album.id}`}>
+                        {albums.map((album, i) => (
+                            <Link href={`../albums/${album.id}`} key={i}>
                                 <Albumcard
                                     image="/images/songCovers/banner.png"
                                     name={`${album.name}` || ''}
@@ -113,4 +112,4 @@ const artist = () => {
     );
 };
 
-export default artist;
+export default Artist;

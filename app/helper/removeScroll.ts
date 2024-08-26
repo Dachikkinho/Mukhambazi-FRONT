@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { popUpOpenState } from "../states";
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { popUpOpenState } from '../states';
 
-export function removeScroll() {
-    const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
+export function RemoveScroll() {
+    const popUpOpen = useRecoilState(popUpOpenState)[0];
     useEffect(() => {
         if (popUpOpen) {
             document.body.style.overflow = 'hidden';

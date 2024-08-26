@@ -3,9 +3,6 @@ import styles from './CreatePopUp.module.scss';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Done from '../Done/Done';
-import { Album } from '@/app/interfaces/album.interface';
-import { useRecoilState } from 'recoil';
-import { popUpOpenState } from '@/app/states';
 
 interface Props {
     closeMenuFunction: () => void;
@@ -17,10 +14,10 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
         register,
         formState: { errors },
         handleSubmit,
-    } = useForm<Album>();
+    } = useForm<Playlist>();
     const [success, setSuccess] = useState(false);
 
-    function onSubmit(album: Album) {
+    function onSubmit(album: Playlist) {
         axios.post('http://localhost:3001/playlist', album).then(() => {
             reset();
             setSuccess(true);

@@ -25,7 +25,8 @@ const Albums = () => {
             .then((res) => {
                 setAlbums([...res.data]);
             });
-    }, []);
+    }, [axios]);
+
     return (
         <div className={styles.Container}>
             <LoadingBar

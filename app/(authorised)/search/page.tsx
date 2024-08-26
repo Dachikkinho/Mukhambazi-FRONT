@@ -20,7 +20,7 @@ const SearchPage = () => {
     const [songs, setSongs] = useState<Song[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+    const [, setIsPlaying] = useRecoilState(isPlayingState);
 
     const params = useSearchParams();
     const query = params.get('query');
@@ -34,16 +34,12 @@ const SearchPage = () => {
                     if (total) {
                         const percentage = Math.floor((loaded / total) * 100);
                         setProgress(percentage);
-                        console.log(
-                            `Downloaded: ${Math.floor((loaded / total) * 100)}%`,
-                        );
                     }
                 },
             })
             .then((res) => {
                 setSongs([...res.data.music]);
                 setAlbums([...res.data.album]);
-
             })
             .catch((err) => {
                 console.log(err);
@@ -51,11 +47,10 @@ const SearchPage = () => {
     }, [query]);
 
     function playMusic(src: string, name: string) {
-        let music = {
+        setIsPlaying({
             src: src,
             name: name,
-        };
-        setIsPlaying(music);
+        });
     }
 
     return (
@@ -72,7 +67,7 @@ const SearchPage = () => {
                     icon={'search'}
                     width={24}
                     height={24}
-                    value={query}
+                    value={query || ''}
                 />
             </div>
             {!!songs.length && (

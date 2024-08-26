@@ -14,15 +14,15 @@ export function HamburgerMenu() {
 
     return (
         <div className={styles.wrap}>
-        <RightBarNav />
-        <button
-            className={`${styles.hamburgerMenu} ${isActive && styles.active}`}
-            onClick={changeActive}
-        >
-            <div className={styles.lines}></div>
-            <div className={styles.lines}></div>
-            <div className={styles.lines}></div>
-        </button>
+            <RightBarNav />
+            <button
+                className={`${styles.hamburgerMenu} ${isActive && styles.active}`}
+                onClick={changeActive}
+            >
+                <div className={styles.lines}></div>
+                <div className={styles.lines}></div>
+                <div className={styles.lines}></div>
+            </button>
         </div>
     );
 }

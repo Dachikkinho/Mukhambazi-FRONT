@@ -7,7 +7,7 @@ type Props = {
     icon: string;
     width: number;
     height: number;
-    value?: string | null
+    value?: string;
 
     //We don't need onchage until the search algorithm is ready.
 };
@@ -19,12 +19,14 @@ const Search = ({ placeholder, icon, width, height, value }: Props) => {
     function search(value: string) {
         if (value.length > 0) {
             router.push(`/search?query=${value}`);
+        } else {
+            router.push('/');
         }
     }
-    
+
     function enter(e: React.KeyboardEvent<HTMLInputElement>) {
         if (e.key === 'Enter') {
-            search(searchText)
+            search(searchText);
         }
     }
 

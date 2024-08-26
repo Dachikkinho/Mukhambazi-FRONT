@@ -7,7 +7,6 @@ type Props = {
 };
 
 export function CurrentListening({ musicName }: Props) {
-
     return (
         <div>
             <div className={styles.headingContainer}>

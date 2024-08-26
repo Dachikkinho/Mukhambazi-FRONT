@@ -1,9 +1,3 @@
-import {
-    popularArtists,
-    georgianArtists,
-    europeanArtists,
-} from '@/public/script';
-
 import styles from './Artists.module.scss';
 import ArtistCard from './ArtistCard/ArtistCard';
 import ArtistcardHeader from './ArtistcardHeader/ArtistcardHeader';

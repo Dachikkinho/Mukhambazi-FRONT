@@ -28,7 +28,6 @@ const TopArtist = () => {
             .then((res) => {
                 setArtists([...res.data]);
                 console.log(res);
-                
             })
             .catch((err) => {
                 console.log(err);

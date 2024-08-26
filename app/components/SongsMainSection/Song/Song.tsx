@@ -7,7 +7,7 @@ type Props = {
     group: string;
     length: string;
     imageSrc: string;
-    onClick?: () => void
+    onClick?: () => void;
 };
 
 const Song = ({ name, group, length, imageSrc, onClick }: Props) => {
@@ -24,7 +24,9 @@ const Song = ({ name, group, length, imageSrc, onClick }: Props) => {
                 <p className={styles.name}>{group}</p>
                 <div className={styles.infoBottom}>
                     <p className={styles.name}>{length}</p>
-                    <button className={styles.play} onClick={onClick}>Play Now</button>
+                    <button className={styles.play} onClick={onClick}>
+                        Play Now
+                    </button>
                 </div>
             </div>
             <div className={styles.add}>

@@ -10,11 +10,14 @@ type Props = {
 };
 
 const SidebarNavItems = ({ link, img, name }: Props) => {
-
-    const [sideBarOpen, setSideBarOpen] = useRecoilState(sideBarOpenState)
+    const [, setSideBarOpen] = useRecoilState(sideBarOpenState);
 
     return (
-        <li onClick={() => {setSideBarOpen(false)}}>
+        <li
+            onClick={() => {
+                setSideBarOpen(false);
+            }}
+        >
             <Link href={link} className={styles.link}>
                 <img src={`/icons/${img}.svg`} alt="icon" draggable={false} />
                 <p>{name}</p>

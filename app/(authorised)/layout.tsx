@@ -12,7 +12,7 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const [sideBarOpen, setSideBarOpen] = useRecoilState(sideBarOpenState);
+    const sideBarOpen = useRecoilState(sideBarOpenState)[0];
 
     useEffect(() => {
         if (sideBarOpen) {

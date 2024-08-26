@@ -6,12 +6,12 @@ import { RightBarNav } from './RightBarNav/RightBarNav';
 import styles from './RightSideBar.module.scss';
 
 export function RightSideBar() {
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
+    const isPlaying = useRecoilState(isPlayingState)[0];
     return (
         <div className={styles.main}>
             <div className={styles.container}>
                 <RightBarNav />
-                <CurrentListening musicName={isPlaying.name || "Nothing"} />
+                <CurrentListening musicName={isPlaying.name || 'Nothing'} />
                 <NextSong />
             </div>
         </div>

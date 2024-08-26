@@ -10,7 +10,7 @@ import LoadingBar from 'react-top-loading-bar';
 const SongsMainSection = () => {
     const [songs, setSongs] = useState<Song[]>([]);
     const [progress, setProgress] = useState(0);
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+    const [, setIsPlaying] = useRecoilState(isPlayingState);
 
     useEffect(() => {
         axios
@@ -34,11 +34,10 @@ const SongsMainSection = () => {
     }, []);
 
     function playMusic(src: string, name: string) {
-        let music = {
+        setIsPlaying({
             src: src,
             name: name,
-        };
-        setIsPlaying(music);
+        });
     }
 
     return (

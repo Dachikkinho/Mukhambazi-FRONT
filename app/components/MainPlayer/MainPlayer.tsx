@@ -11,7 +11,7 @@ import { isPlayingState } from '@/app/states';
 
 const MainPlayer = () => {
     const [isShuffle, setIsShuffle] = useState(false);
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
+    const isPlaying = useRecoilState(isPlayingState)[0];
 
     const switchIsShuffle = () => {
         setIsShuffle(!isShuffle);
