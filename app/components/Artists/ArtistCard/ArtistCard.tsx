@@ -17,7 +17,7 @@ const ArtistCard = ({ bgColor, name, plays, pfp }: Props) => {
         >
             <div className={styles.container}>
                 <img
-                    src={`/images/artistsPfps/${pfp}.png`}
+                    src={pfp}
                     alt=""
                     className={styles.pfp}
                     draggable={false}

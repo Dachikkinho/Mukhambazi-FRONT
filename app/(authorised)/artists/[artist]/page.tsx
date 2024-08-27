@@ -3,25 +3,67 @@ import Song from '@/app/components/SongsMainSection/Song/Song';
 import styles from './page.module.scss';
 import Albumcard from '@/app/components/Albums/AlbumCard/AlbumCard';
 import { useParams } from 'next/navigation';
-import { artists, topSongsPlaceholder } from '@/public/script';
-import { Artist } from '@/app/interfaces/artist.interface';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import LoadingBar from 'react-top-loading-bar';
+import { isPlayingState } from '@/app/states';
+import { useRecoilState } from 'recoil';
+import Link from 'next/link';
 
-const artist = () => {
+const Artist = () => {
     const params = useParams();
     const id = params.artist;
 
-    const getArtist: Artist = artists.filter((artist) => artist.id === +id)[0];
+    const [artist, setArtist] = useState<Artist>();
+    const [songs, setSongs] = useState<Song[]>([]);
+    const [progress, setProgress] = useState(0);
+    const [albums, setAlbums] = useState<Album[]>([]);
+    const [, setIsPlaying] = useRecoilState(isPlayingState);
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3001/authors/${id}`, {
+                onDownloadProgress: (progressEvent) => {
+                    const { loaded, total } = progressEvent;
+
+                    if (total) {
+                        const percentage = Math.floor((loaded / total) * 100);
+                        setProgress(percentage);
+                    }
+                },
+            })
+            .then((res) => {
+                setArtist(res.data);
+                setSongs([...res.data.musics]);
+                setAlbums([...res.data.album]);
+            });
+    }, []);
+
+    function playMusic(src: string, name: string) {
+        setIsPlaying({
+            src: src,
+            name: name,
+        });
+    }
 
     return (
         <main className={styles.main}>
+            <LoadingBar
+                color="#c338b5"
+                progress={progress}
+                onLoaderFinished={() => setProgress(0)}
+                loaderSpeed={600}
+            />
             <div className={styles.top}>
                 <img
-                    src={`images/artistPfp/${getArtist?.img}.png`}
+                    src={artist?.image}
                     alt="artist image"
                     className={styles.image}
                 />
-                <h2 className={styles.heading}>{getArtist?.name}</h2>
-                <p className={styles.about}>{getArtist?.bio}</p>
+                <h2 className={styles.heading}>
+                    {artist?.firstName} {artist?.lastName}
+                </h2>
+                <p className={styles.about}>{artist?.biography}</p>
             </div>
 
             <div className={styles.content}>
@@ -31,13 +73,17 @@ const artist = () => {
                         <img src="/icons/home-icon.svg" alt="" />
                     </div>
                     <div className={styles.topSongs}>
-                        {topSongsPlaceholder.map((song, i) => (
+                        {songs.map((song, i) => (
                             <Song
-                                group={getArtist?.name}
-                                imageSrc={song.imageSrc}
-                                length={song.length}
+                                group={
+                                    `${artist?.firstName} ${artist?.lastName}` ||
+                                    ''
+                                }
+                                imageSrc={'/images/song-placeholder.svg'}
+                                length={'2:00'}
                                 name={song.name}
                                 key={i}
+                                onClick={() => playMusic(song.url, song.name)}
                             />
                         ))}
                     </div>
@@ -49,30 +95,16 @@ const artist = () => {
                         <img src="/icons/albums-icon.svg" alt="" />
                     </div>
                     <div className={styles.topSongs}>
-                        <Albumcard
-                            image="/images/songCovers/banner.png"
-                            name={getArtist?.name}
-                            lastName=""
-                            plays="20M"
-                        />
-                        <Albumcard
-                            image="/images/songCovers/banner.png"
-                            name={getArtist?.name}
-                            lastName=""
-                            plays="20M"
-                        />
-                        <Albumcard
-                            image="/images/songCovers/banner.png"
-                            name={getArtist?.name}
-                            lastName=""
-                            plays="20M"
-                        />
-                        <Albumcard
-                            image="/images/songCovers/banner.png"
-                            name={getArtist?.name}
-                            lastName=""
-                            plays="20M"
-                        />
+                        {albums.map((album, i) => (
+                            <Link href={`../albums/${album.id}`} key={i}>
+                                <Albumcard
+                                    image="/images/songCovers/banner.png"
+                                    name={`${album.name}` || ''}
+                                    lastName=""
+                                    plays={album.releaseDate}
+                                />
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -80,4 +112,4 @@ const artist = () => {
     );
 };
 
-export default artist;
+export default Artist;

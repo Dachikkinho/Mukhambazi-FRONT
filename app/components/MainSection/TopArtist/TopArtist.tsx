@@ -1,14 +1,47 @@
 import Link from 'next/link';
 
 import styles from './TopArtist.module.scss';
-import { artists } from '@/public/script';
-import { Key } from 'react';
+import { Key, useEffect, useState } from 'react';
 import LandingCard from './LandingCard/LandingCard';
-import { Artist } from '@/app/interfaces/artist.interface';
+import axios from 'axios';
+import LoadingBar from 'react-top-loading-bar';
 
 const TopArtist = () => {
+    const [artists, setArtists] = useState<Artist[]>([]);
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        axios
+            .get('http://localhost:3001/authors', {
+                onDownloadProgress: (progressEvent) => {
+                    const { loaded, total } = progressEvent;
+
+                    if (total) {
+                        const percentage = Math.floor((loaded / total) * 100);
+                        setProgress(percentage);
+                        console.log(
+                            `Downloaded: ${Math.floor((loaded / total) * 100)}%`,
+                        );
+                    }
+                },
+            })
+            .then((res) => {
+                setArtists([...res.data]);
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
+
     return (
         <div>
+            <LoadingBar
+                color="#c338b5"
+                progress={progress}
+                onLoaderFinished={() => setProgress(0)}
+                loaderSpeed={600}
+            />
             <div>
                 <div className={styles.heading}>
                     <h5>Top Artist</h5>
@@ -23,16 +56,13 @@ const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map(
-                    (
-                        artist: Artist,
-                        index: Key | null | undefined,
-                    ) => (
+                    (artist: Artist, index: Key | null | undefined) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
-                                name={artist.name}
-                                bgColor={artist.bgColor}
-                                img={artist.img}
-                                plays={artist.listens}
+                                name={`${artist.firstName} ${artist.lastName}`}
+                                bgColor={''}
+                                img={artist.image}
+                                plays={'2'}
                             />
                         </Link>
                     ),
@@ -52,16 +82,13 @@ const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map(
-                    (
-                        artist: Artist,
-                        index: Key | null | undefined,
-                    ) => (
+                    (artist: Artist, index: Key | null | undefined) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
-                                name={artist.name}
-                                bgColor={artist.bgColor}
-                                img={artist.img}
-                                plays={artist.listens}
+                                name={`${artist.firstName} ${artist.lastName}`}
+                                bgColor={''}
+                                img={artist.image}
+                                plays={'2'}
                             />
                         </Link>
                     ),
@@ -81,16 +108,13 @@ const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map(
-                    (
-                        artist: Artist,
-                        index: Key | null | undefined,
-                    ) => (
+                    (artist: Artist, index: Key | null | undefined) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
-                                name={artist.name}
-                                bgColor={artist.bgColor}
-                                img={artist.img}
-                                plays={artist.listens}
+                                name={`${artist.firstName} ${artist.lastName}`}
+                                bgColor={''}
+                                img={artist.image}
+                                plays={'2'}
                             />
                         </Link>
                     ),

@@ -1,5 +1,6 @@
-export interface Album {
+interface Album {
     id: number;
     name: string;
-    description: string;
+    artistName: string;
+    releaseDate: string;
 }

@@ -6,9 +6,17 @@ export const sideBarOpenState = atom({
 });
 
 export const popUpOpenState = atom({
-    key: "popUpOpen",
-    default: false
-})
+    key: 'popUpOpen',
+    default: false,
+});
+
+export const isPlayingState = atom({
+    key: 'isPlaying',
+    default: {
+        src: '',
+        name: '',
+    },
+});
 
 //albums placeholder
 export const albumsState = atom({

@@ -37,3 +37,10 @@
     font-size: 12px;
     color: $white;
 }
+
+.pfp {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+}

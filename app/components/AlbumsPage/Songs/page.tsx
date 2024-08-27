@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import Albumsartistsv2 from '../Albumsartists/page';

@@ -1,9 +1,6 @@
-export interface Album {
-    name: string;
-    lastName: string;
-    plays: string;
-    image: string;
+interface AlbumPage {
     id: number;
-    songs: string[];
-    nationality: string;
+    name: string;
+    artistName: string;
+    musics: Song[];
 }

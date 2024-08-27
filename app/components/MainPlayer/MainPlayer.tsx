@@ -6,9 +6,12 @@ import { useState } from 'react';
 import useViewport from '@/app/hooks/useViewport';
 import PreviousNext from './PreviousNext/PreviousNext';
 import Shuffle from './Shuffle/Shuffle';
+import { useRecoilState } from 'recoil';
+import { isPlayingState } from '@/app/states';
 
 const MainPlayer = () => {
     const [isShuffle, setIsShuffle] = useState(false);
+    const isPlaying = useRecoilState(isPlayingState)[0];
 
     const switchIsShuffle = () => {
         setIsShuffle(!isShuffle);
@@ -26,7 +29,7 @@ const MainPlayer = () => {
 
     return (
         <H5AudioPlayer
-            className={`${styles.player} ${styles.active}`}
+            className={`${styles.player} ${isPlaying.src && styles.active}`}
             customControlsSection={isMobile ? mobileControlsBottom : []}
             customProgressBarSection={[
                 mobileControls,
@@ -46,7 +49,7 @@ const MainPlayer = () => {
             ]}
             showSkipControls
             showJumpControls={false}
-            src={''}
+            src={isPlaying.src}
             customIcons={{
                 next: <PreviousNext key="next" />,
                 previous: <PreviousNext key="previous" isPrev />,
