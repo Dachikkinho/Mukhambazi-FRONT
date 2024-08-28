@@ -6,24 +6,21 @@
     height: 100vh;
     top: 0;
     padding: 20px;
-    border-right: 2px solid $thirdColor;
+    border-right: 2px solid #a93797;
     transition: all 0.6s;
     z-index: 10;
     position: sticky;
     left: 0;
     align-self: flex-start;
-
     opacity: 1;
     mix-blend-mode: hard-light;
-    background-image: url('/images/sidebar-image.svg');
+    background-image: url(/images/sidebar-image.svg);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: inherit;
-
     flex-shrink: 0;
-    background-color: #7f257dae;
+    background-color: rgba(127, 37, 125, 0);
     opacity: 1;
-
     mix-blend-mode: hard-light;
 }
 

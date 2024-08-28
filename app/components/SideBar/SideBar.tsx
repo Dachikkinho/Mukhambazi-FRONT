@@ -27,5 +27,3 @@ export function SideBar() {
         </aside>
     );
 }
-
-//ar shveba
