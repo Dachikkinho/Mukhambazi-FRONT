@@ -11,6 +11,9 @@ import { useRecoilState } from 'recoil';
 import Link from 'next/link';
 
 const Artist = () => {
+    useEffect(() => {
+        document.title = 'Chakrulos | Artist ';
+    }, []);
     const params = useParams();
     const id = params.artist;
 
