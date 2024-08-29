@@ -36,7 +36,7 @@ const Signup = () => {
     password.current = watch('password', '');
 
     const reenterPassword = useRef({});
-    reenterPassword.current = watch('reenter', '');
+    reenterPassword.current = watch('reenter', ' ');
 
     return (
         <div className={styles.main}>

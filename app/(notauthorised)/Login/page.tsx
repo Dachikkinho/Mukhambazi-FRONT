@@ -31,7 +31,7 @@ const Login = () => {
     };
 
     const password = useRef({});
-    password.current = watch('password', '');
+    password.current = watch('password', ' ');
 
     return (
         <div className={styles.main}>
