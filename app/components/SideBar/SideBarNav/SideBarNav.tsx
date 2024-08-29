@@ -1,5 +1,6 @@
 import styles from '../SideBarNav/SideBarNav.module.scss';
-import SidebarNavItems from '../SideBarNav/SidebarNavItems/SidebarNavItems';
+import SidebarNavItems from './SidebarNavItems/SidebarNavItems';
+
 
 type MapItem = {
     name: string;
