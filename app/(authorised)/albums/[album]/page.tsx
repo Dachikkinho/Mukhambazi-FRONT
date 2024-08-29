@@ -24,7 +24,7 @@ const AlbumArtist = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/album/${id}`, {
+            .get(`https://mukhambazi-back.onrender.com/album/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
