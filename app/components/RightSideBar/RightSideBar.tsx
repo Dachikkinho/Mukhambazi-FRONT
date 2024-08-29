@@ -18,4 +18,3 @@ export function RightSideBar() {
     );
 }
 
-//arc aq shveba

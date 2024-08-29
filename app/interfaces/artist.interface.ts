@@ -1,4 +1,4 @@
-export interface Artist {
+export interface Artists {
     id: number;
     firstName: string;
     lastName: string;

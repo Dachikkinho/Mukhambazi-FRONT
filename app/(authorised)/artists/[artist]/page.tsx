@@ -9,6 +9,9 @@ import LoadingBar from 'react-top-loading-bar';
 import { isPlayingState } from '@/app/states';
 import { useRecoilState } from 'recoil';
 import Link from 'next/link';
+import { Album } from '@/app/interfaces/album.interface';
+import { Music } from '@/app/interfaces/music.interface';
+import { Artists } from '@/app/interfaces/artist.interface';
 
 const Artist = () => {
     useEffect(() => {
@@ -17,8 +20,8 @@ const Artist = () => {
     const params = useParams();
     const id = params.artist;
 
-    const [artist, setArtist] = useState<Artist>();
-    const [songs, setSongs] = useState<Song[]>([]);
+    const [artist, setArtist] = useState<Artists>();
+    const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
     const [, setIsPlaying] = useRecoilState(isPlayingState);

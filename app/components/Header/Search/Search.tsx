@@ -8,8 +8,6 @@ type Props = {
     width: number;
     height: number;
     value?: string;
-
-    //We don't need onchage until the search algorithm is ready.
 };
 
 const Search = ({ placeholder, icon, width, height, value }: Props) => {

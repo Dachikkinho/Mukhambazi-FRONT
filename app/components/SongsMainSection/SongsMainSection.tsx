@@ -6,9 +6,10 @@ import axios from 'axios';
 import { useRecoilState } from 'recoil';
 import { isPlayingState } from '@/app/states';
 import LoadingBar from 'react-top-loading-bar';
+import { Music } from '@/app/interfaces/music.interface';
 
 const SongsMainSection = () => {
-    const [songs, setSongs] = useState<Song[]>([]);
+    const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [, setIsPlaying] = useRecoilState(isPlayingState);
 

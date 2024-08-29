@@ -5,9 +5,10 @@ import { Key, useEffect, useState } from 'react';
 import LandingCard from './LandingCard/LandingCard';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar';
+import { Artists } from '@/app/interfaces/artist.interface';
 
 const TopArtist = () => {
-    const [artists, setArtists] = useState<Artist[]>([]);
+    const [artists, setArtists] = useState<Artists[]>([]);
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map(
-                    (artist: Artist, index: Key | null | undefined) => (
+                    (artist: Artists, index: Key | null | undefined) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={`${artist.firstName} ${artist.lastName}`}
@@ -82,7 +83,7 @@ const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map(
-                    (artist: Artist, index: Key | null | undefined) => (
+                    (artist: Artists, index: Key | null | undefined) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={`${artist.firstName} ${artist.lastName}`}
@@ -108,7 +109,7 @@ const TopArtist = () => {
             </div>
             <div className={styles.artistsWrapper}>
                 {artists.map(
-                    (artist: Artist, index: Key | null | undefined) => (
+                    (artist: Artists, index: Key | null | undefined) => (
                         <Link key={index} href={`/artists/${artist.id}`}>
                             <LandingCard
                                 name={`${artist.firstName} ${artist.lastName}`}

@@ -6,9 +6,10 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LoadingBar from 'react-top-loading-bar';
 import axios from 'axios';
+import { Artists } from '@/app/interfaces/artist.interface';
 
 const ArtistsPage = () => {
-    const [artists, setArtists] = useState<Artist[]>([]);
+    const [artists, setArtists] = useState<Artists[]>([]);
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
