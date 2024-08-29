@@ -4,6 +4,7 @@ import Listdisabled from '../Playlists/ListDisabled';
 import axios from 'axios';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
+import { Album } from '@/app/interfaces/album.interface';
 
 interface Props {
     songId: string;
@@ -11,7 +12,7 @@ interface Props {
 
 const AddSongButton = ({ songId }: Props) => {
     const [open, setOpen] = useState(false);
-    const [playlists, setPlaylists] = useState<Album[]>([]);
+    const [ ] = useState<Album[]>([]);
     const [success, setSuccess] = useState(false);
 
     // place holder upload function

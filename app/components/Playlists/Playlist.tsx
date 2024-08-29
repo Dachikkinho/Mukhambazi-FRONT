@@ -16,7 +16,7 @@ interface Album {
 
 const Playlist = () => {
     const [create, setCreate] = useState(false);
-    const [playlists, setPlaylists] = useState<Album[]>([]);
+    const [] = useState<Album[]>([]);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
 
     function closeFunction() {

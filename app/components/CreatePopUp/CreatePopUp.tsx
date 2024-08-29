@@ -3,6 +3,7 @@ import styles from './CreatePopUp.module.scss';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Done from '../Done/Done';
+import { Playlist } from '@/app/interfaces/playlist.interface';
 
 interface Props {
     closeMenuFunction: () => void;
