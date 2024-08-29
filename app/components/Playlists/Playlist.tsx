@@ -9,14 +9,8 @@ import styles from './Playlist.module.scss';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
 
-interface Album {
-    name: string;
-    description: string;
-}
-
 const Playlist = () => {
     const [create, setCreate] = useState(false);
-    const [] = useState<Album[]>([]);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
 
     function closeFunction() {

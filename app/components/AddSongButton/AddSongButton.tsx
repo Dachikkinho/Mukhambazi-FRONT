@@ -1,27 +1,20 @@
 import { useEffect, useState } from 'react';
 import styles from './AddSongButton.module.scss';
 import Listdisabled from '../Playlists/ListDisabled';
-import axios from 'axios';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
-import { Album } from '@/app/interfaces/album.interface';
 
-interface Props {
-    songId: string;
-}
-
-const AddSongButton = ({ songId }: Props) => {
+const AddSongButton = () => {
     const [open, setOpen] = useState(false);
-    const [ ] = useState<Album[]>([]);
     const [success, setSuccess] = useState(false);
 
     // place holder upload function
 
-    function upload(id: number) {
-        axios.patch(`upload Link`, songId).then(() => {
-            setOpen(false);
-        });
-    }
+    // function upload(id: number) {
+    //     axios.patch(`upload Link`, songId).then(() => {
+    //         setOpen(false);
+    //     });
+    // }
 
     useEffect(() => {
         if (success) {
@@ -81,9 +74,9 @@ const AddSongButton = ({ songId }: Props) => {
                         <div>
                             <div className={styles.playlist}>
                                 <div
-                                    onClick={() => {
-                                        upload(0);
-                                    }}
+                                // onClick={() => {
+                                //     upload(0);
+                                // }}
                                 >
                                     <Listdisabled
                                         title={'nme'}

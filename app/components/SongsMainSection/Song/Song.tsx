@@ -30,7 +30,7 @@ const Song = ({ name, group, length, imageSrc, onClick }: Props) => {
                 </div>
             </div>
             <div className={styles.add}>
-                <AddSongButton songId={name} />
+                <AddSongButton />
             </div>
             <div className={styles.like}>
                 <LikeButton />

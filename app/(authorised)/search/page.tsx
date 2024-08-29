@@ -10,11 +10,16 @@ import { useRecoilState } from 'recoil';
 import AlbumCard from '@/app/components/Albums/AlbumCard/AlbumCard';
 import Link from 'next/link';
 import LoadingBar from 'react-top-loading-bar';
-import { useSearchParams } from 'next/navigation';
 import { Music } from '@/app/interfaces/music.interface';
 import { Album } from '@/app/interfaces/album.interface';
 
-const SearchPage = () => {
+type Props = {
+    searchParams: {
+        query: string;
+    };
+};
+
+const SearchPage = (props: Props) => {
     useEffect(() => {
         document.title = 'Chakrulos - Web Player: Music for everyone';
     }, []);
@@ -24,12 +29,9 @@ const SearchPage = () => {
     const [albums, setAlbums] = useState<Album[]>([]);
     const [, setIsPlaying] = useRecoilState(isPlayingState);
 
-    const params = useSearchParams();
-    const query = params.get('query');
-
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/search/${query}`, {
+            .get(`http://localhost:3001/search/${props.searchParams.query}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -46,7 +48,7 @@ const SearchPage = () => {
             .catch((err) => {
                 console.log(err);
             });
-    }, [query]);
+    }, [props.searchParams.query]);
 
     function playMusic(src: string, name: string) {
         setIsPlaying({
@@ -69,7 +71,7 @@ const SearchPage = () => {
                     icon={'search'}
                     width={24}
                     height={24}
-                    value={query || ''}
+                    value={props.searchParams.query || ''}
                 />
             </div>
             {!!songs.length && (
