@@ -8,7 +8,6 @@ import Listdisabled from './ListDisabled';
 import styles from './Playlist.module.scss';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
-import { RemoveScroll } from '@/app/helper/removeScroll';
 
 interface Album {
     name: string;
@@ -19,8 +18,6 @@ const Playlist = () => {
     const [create, setCreate] = useState(false);
     const [playlists, setPlaylists] = useState<Album[]>([]);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
-
-    RemoveScroll();
 
     function closeFunction() {
         setCreate(!create);

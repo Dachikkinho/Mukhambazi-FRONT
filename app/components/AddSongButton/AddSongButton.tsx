@@ -4,7 +4,6 @@ import Listdisabled from '../Playlists/ListDisabled';
 import axios from 'axios';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
-import { RemoveScroll } from '@/app/helper/removeScroll';
 
 interface Props {
     songId: string;
@@ -34,8 +33,6 @@ const AddSongButton = ({ songId }: Props) => {
     }, [success]);
 
     const [, setPopUpOpen] = useRecoilState(popUpOpenState);
-
-    RemoveScroll();
 
     return (
         <>
