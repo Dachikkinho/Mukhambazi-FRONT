@@ -18,6 +18,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <title>Chakrulos</title>
+                <meta name="description" content="Chakrulos" />
+                <meta name="author" content="Chakrulos.ge" />
+                <meta property="og:image" content="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" />
+            </head>
             <body className={inter.className}>
                 <RecoilWrap>{children}</RecoilWrap>
             </body>
