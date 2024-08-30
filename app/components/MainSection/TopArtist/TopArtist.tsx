@@ -13,7 +13,7 @@ const TopArtist = () => {
 
     useEffect(() => {
         axios
-            .get('https://mukhambazi-back.onrender.com/author', {
+            .get('https://mukhambazi-back.onrender.com/authors', {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
