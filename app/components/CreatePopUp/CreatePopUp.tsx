@@ -37,7 +37,7 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
                 </div>
             ) : (
                 <div className={styles.mainContainer}>
-                    <h2 className={styles.heading}>New playlist</h2>
+                    <h2 className={styles.heading}>New Playlist</h2>
                     <form
                         className={styles.form}
                         onSubmit={handleSubmit(onSubmit)}
