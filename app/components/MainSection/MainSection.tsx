@@ -30,7 +30,6 @@ const MainSection = () => {
                     height={24}
                 />
             </div>
-            <div className={styles.headingCont}></div>
             <div className={styles.wrapper}>
                 <CarouselSection
                     heading="Popular of the week"

@@ -1,4 +1,5 @@
 import { atom } from 'recoil';
+import { Music } from './interfaces/music.interface';
 
 export const sideBarOpenState = atom({
     key: 'sideBarOpen',
@@ -17,3 +18,16 @@ export const isPlayingState = atom({
         name: '',
     },
 });
+
+export const favSongState = atom<Music[]>({
+    key: 'favSong',
+    default: []
+})
+
+
+export const songsState = atom<Music[]>({
+    key: "songs",
+    default: [
+        
+    ]
+})

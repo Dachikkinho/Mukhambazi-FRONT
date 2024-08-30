@@ -13,11 +13,10 @@
 .topContainer {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .heading {
@@ -69,8 +68,9 @@
 
 @media screen and (max-width: 600px) {
     .main {
-        padding: 44px 12px;
+        padding: 44px 20px;
     }
+    
 }
 
 .cardCont {

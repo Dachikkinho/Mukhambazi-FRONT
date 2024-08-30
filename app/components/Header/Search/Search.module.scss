@@ -5,8 +5,6 @@
     max-width: 704px;
     width: 100%;
     align-self: center;
-    padding: 0 20px;
-    margin: 0 auto;
 }
 
 .mainSearch {
@@ -26,8 +24,8 @@
 }
 
 .searchIcon {
-    position: absolute;
-    left: 34px;
-    top: 16px;
+    position: relative;
+    left: 15px;
     cursor: pointer;
+    top: -40px;
 }

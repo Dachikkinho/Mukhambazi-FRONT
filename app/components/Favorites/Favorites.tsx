@@ -1,10 +1,28 @@
 'use client';
 import styles from './Favorites.module.scss';
-import { songs } from '@/public/script';
 import FavoriteBanner from './FavoriteBanner/FavoriteBanner';
 import Search from '../Header/Search/Search';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { favSongState, songsState } from '@/app/states';
 
 const Favorites = () => {
+    const [songs, setSongs] = useRecoilState(songsState)
+    const [favSongs, setFavSongs] = useRecoilState(favSongState)
+
+
+    useEffect(() => {
+        console.log(favSongs);
+        const favs = structuredClone(favSongs);
+
+        for (let i = 0; i < favs.length; i++) {
+            if (i + 1 < favs.length && favs[i].id + 1 !== favs[i + 1].id) {
+                favs[i + 1].id -= 1;
+                setFavSongs(favs);
+            }
+        }
+
+    }, [favSongs])
     return (
         <div className={styles.container}>
             <div className={styles.SearchBar}>
@@ -17,7 +35,7 @@ const Favorites = () => {
             </div>
             <div className={styles.Title}>
                 <div className={styles.headingCont}>
-                    <h5 className={styles.heading}>Favorites</h5>
+                    <h4>Favorites</h4>
                     <img
                         src="/icons/songs-heading-icon.svg"
                         alt="icon"
@@ -26,14 +44,10 @@ const Favorites = () => {
                 </div>
             </div>
             <div className={styles.Songs}>
-                {songs.map((song, i) => (
-                    <FavoriteBanner
-                        title={song.name}
-                        banner={song.image}
-                        key={i}
-                    />
-                ))}
-            </div>
+            {favSongs.length ? favSongs.map((song, i) => (
+                <FavoriteBanner banner={`/images/FavoriteCovers/${song.group}.png`} title={song.name} musicSrc={song.src} />
+            )) : <p className={styles.noSongs}>No Favorites Yet</p>}
+        </div>
         </div>
     );
 };

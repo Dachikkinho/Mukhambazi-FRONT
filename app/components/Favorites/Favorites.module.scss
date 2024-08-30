@@ -12,55 +12,56 @@
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-    .SearchBar {
-        padding-top: 80px;
-    }
-}
 
 .Title {
     display: flex;
-    justify-content: baseline;
-    padding-top: 32px;
+    justify-content: left;
+    padding-top: 20px;
+    margin-left: 15px;
 }
 
-.heading {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 32px;
-    color: $white;
-}
 
 .headingCont {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 16px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 28px;
+    color: $white;
 }
 
 .Songs {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-between;
+    justify-content: center;
     row-gap: 32px;
 }
-
-@media screen and (max-width: 710px) {
-    .Songs {
-        justify-content: center;
-        gap: 14px
-    }
-}
-@media screen and (max-width: 300px) {
-    .Songs {
-        justify-content: center;
-        gap: 14px
-    }
-}
-
 .noSongs {
     color: $primaryColor;
     font-size: 20px;
     font-weight: 600;
 }
+
+@media screen and (max-width: 600px) {
+   
+    .headingCont {
+        margin-left: -15px;
+    }
+
+    .noSongs {
+        margin-top: 25px;
+    }
+
+    .Title {
+        padding: 0px;
+    }
+    
+}
+
+
+
+

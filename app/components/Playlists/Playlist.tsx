@@ -37,12 +37,6 @@ const Playlist = () => {
                     />
                 </div>
                 <div className={styles.container}>
-                    <Header
-                        title={'Playlists'}
-                        icon={'my-playlists-icon'}
-                        width={24}
-                        height={24}
-                    />
                     <button
                         onClick={() => {
                             closeFunction();

@@ -10,11 +10,12 @@
 .container {
     padding: 10px 20px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     margin-top: 10px;
     flex-wrap: wrap;
     gap: 20px;
+   
 }
 
 @media screen and (max-width: 391px) {
@@ -26,7 +27,6 @@
 .wrapper {
     margin: 0 auto;
     width: 100%;
-    padding: 0 20px;
 }
 
 .newPlaylist {
@@ -204,6 +204,17 @@
 
 @media screen and (max-width: 600px) {
     .mainContainer {
-        padding: 0px 0px;
+        padding: 0px 20px;
+    }
+
+    .container {
+        padding: 10px 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 20px;
+       
     }
 }

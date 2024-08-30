@@ -72,7 +72,6 @@ const ArtistsPage = () => {
                         ))}
                     </div>
                 </div>
-
                 <div>
                     <ArtistcardHeader
                         title={'Georgian Artists'}

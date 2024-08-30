@@ -59,7 +59,7 @@ const SongsMainSection = () => {
             </div>
             <div>
                 <div className={styles.headingCont}>
-                    <h5 className={styles.heading}>Songs</h5>
+                    <h4>Songs</h4>
                     <img
                         src="/icons/note-circle.svg"
                         alt="icon"
