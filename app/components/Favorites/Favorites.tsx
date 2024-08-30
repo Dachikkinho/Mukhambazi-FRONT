@@ -7,7 +7,8 @@ import { useRecoilState } from 'recoil';
 import { favSongState, songsState } from '@/app/states';
 
 const Favorites = () => {
-    const [songs, setSongs] = useRecoilState(songsState);
+    //const [songs, setSongs] = useRecoilState(songsState);
+    const [] = useRecoilState(songsState);
     const [favSongs, setFavSongs] = useRecoilState(favSongState);
 
     useEffect(() => {
@@ -43,7 +44,8 @@ const Favorites = () => {
             </div>
             <div className={styles.Songs}>
                 {favSongs.length ? (
-                    favSongs.map((song, i) => (
+                    // favSongs.map((song, i) => (
+                    favSongs.map((song) => (
                         <FavoriteBanner
                             banner={`/images/FavoriteCovers/${song.group}.png`}
                             title={song.name}

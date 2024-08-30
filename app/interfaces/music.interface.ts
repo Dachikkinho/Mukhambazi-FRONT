@@ -2,7 +2,8 @@ import { Artists } from './artist.interface';
 
 export interface Music {
     src: string | undefined;
-    group: any;
+    group: string;
+    //group: any;
     id: number;
     name: string;
     authorId: number;
