@@ -21,13 +21,10 @@ export const isPlayingState = atom({
 
 export const favSongState = atom<Music[]>({
     key: 'favSong',
-    default: []
-})
-
+    default: [],
+});
 
 export const songsState = atom<Music[]>({
-    key: "songs",
-    default: [
-        
-    ]
-})
+    key: 'songs',
+    default: [],
+});

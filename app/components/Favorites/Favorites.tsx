@@ -7,9 +7,8 @@ import { useRecoilState } from 'recoil';
 import { favSongState, songsState } from '@/app/states';
 
 const Favorites = () => {
-    const [songs, setSongs] = useRecoilState(songsState)
-    const [favSongs, setFavSongs] = useRecoilState(favSongState)
-
+    const [songs, setSongs] = useRecoilState(songsState);
+    const [favSongs, setFavSongs] = useRecoilState(favSongState);
 
     useEffect(() => {
         console.log(favSongs);
@@ -21,8 +20,7 @@ const Favorites = () => {
                 setFavSongs(favs);
             }
         }
-
-    }, [favSongs])
+    }, [favSongs]);
     return (
         <div className={styles.container}>
             <div className={styles.SearchBar}>
@@ -44,10 +42,18 @@ const Favorites = () => {
                 </div>
             </div>
             <div className={styles.Songs}>
-            {favSongs.length ? favSongs.map((song, i) => (
-                <FavoriteBanner banner={`/images/FavoriteCovers/${song.group}.png`} title={song.name} musicSrc={song.src} />
-            )) : <p className={styles.noSongs}>No Favorites Yet</p>}
-        </div>
+                {favSongs.length ? (
+                    favSongs.map((song, i) => (
+                        <FavoriteBanner
+                            banner={`/images/FavoriteCovers/${song.group}.png`}
+                            title={song.name}
+                            musicSrc={song.src}
+                        />
+                    ))
+                ) : (
+                    <p className={styles.noSongs}>No Favorites Yet</p>
+                )}
+            </div>
         </div>
     );
 };
