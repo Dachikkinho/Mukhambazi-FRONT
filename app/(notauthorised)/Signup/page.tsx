@@ -29,7 +29,7 @@ const Signup = () => {
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
     const onRegisterFinished = () => {
-        //logic
+        //logika
     };
 
     const password = useRef({});

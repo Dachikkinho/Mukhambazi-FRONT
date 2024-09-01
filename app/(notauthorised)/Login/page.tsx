@@ -27,7 +27,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const onLoginFinished = () => {
-        //logic
+        //logika
     };
 
     const password = useRef({});

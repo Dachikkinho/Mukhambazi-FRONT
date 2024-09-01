@@ -74,14 +74,16 @@ export function RightBarNav() {
                     }
                 >
                     <img
-                        src="/icons/user.png"
+                        src="/navi.png"
                         alt="User Profile"
                         draggable={false}
+                        height={50}
+                        width={50}
                     />
                 </button>
                 {isDropdownOpen && (
                     <div className={styles.dropdownMenu}>
-                        <button onClick={() => handleNavigation('/Login')}>
+                        <button onClick={() => handleNavigation('/login')}>
                             Log out
                         </button>
                     </div>

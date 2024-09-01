@@ -28,10 +28,10 @@ const NotFound: React.FC = () => {
             <div className={styles.back}>
                 <Link href="/" className={styles.link}>
                     <img
-                        src="/icons/backtohome.svg"
+                        src="/icons/backtohome.png"
                         alt="sdsd"
-                        width={24}
-                        height={24}
+                        width={30}
+                        height={30}
                     />
                     Back to home
                 </Link>

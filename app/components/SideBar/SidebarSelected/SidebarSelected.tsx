@@ -6,24 +6,24 @@ import { useEffect, useState } from 'react';
 
 const SidebarSelected = () => {
     const path = usePathname();
-    const [position, setPosition] = useState('179px');
+    const [position, setPosition] = useState('178px');
 
     useEffect(() => {
         switch (path) {
             case '/':
-                setPosition('179px');
+                setPosition('178px');
                 break;
-            case '/artists':
-                setPosition('228px');
+            case path.startsWith('/artists') ? path : '':
+                setPosition('226px');
                 break;
             case path.startsWith('/albums') ? path : '':
                 setPosition('275px');
                 break;
+            case '/playlist':
+                setPosition('400px');
+                break;
             case '/songs':
                 setPosition('448px');
-                break;
-            case '/playlist':
-                setPosition('402px');
                 break;
             case '/favorites':
                 setPosition('496px');

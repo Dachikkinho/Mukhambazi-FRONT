@@ -4,19 +4,19 @@ import Search from '../Header/Search/Search';
 import TopArtist from './TopArtist/TopArtist';
 
 const popularImages = [
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
+    'images/songCovers/elvis.png',
+    'images/songCovers/pink.jpg',
+    'images/songCovers/thebeatles.jpg',
+    'images/songCovers/elvis.png',
+    'images/songCovers/pink.jpg',
 ];
 
 const topAlbumImages = [
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
-    'images/songCovers/eke.png',
+    'images/songCovers/thebeatles.jpg',
+    'images/songCovers/pink.jpg',
+    'images/songCovers/elvis.png',
+    'images/songCovers/pink.jpg',
+    'images/songCovers/elvis.png',
 ];
 
 const MainSection = () => {
