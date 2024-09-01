@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import AddSongButton from '../../AddSongButton/AddSongButton';
 import LikeButton from '../../LikeButton/LikeButton';
 import styles from './Song.module.scss';
@@ -5,12 +6,35 @@ import styles from './Song.module.scss';
 type Props = {
     name: string;
     group: string;
-    length: string;
     imageSrc: string;
     onClick?: () => void;
+    songUrl: string;
 };
 
-const Song = ({ name, group, length, imageSrc, onClick }: Props) => {
+const Song = ({ name, group, imageSrc, onClick, songUrl }: Props) => {
+    const [duration, setDuration] = useState<string>('');
+
+    useEffect(() => {
+        const audio = new Audio(songUrl);
+
+        const handleLoadedMetadata = () => {
+            const audioDurationInSeconds = audio.duration;
+            const minutes = Math.floor(audioDurationInSeconds / 60);
+            const seconds = Math.floor(audioDurationInSeconds % 60);
+            setDuration(`${minutes}:${seconds}`);
+        };
+
+        if (audio) {
+            audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+            return () => {
+                audio.removeEventListener(
+                    'loadedmetadata',
+                    handleLoadedMetadata,
+                );
+            };
+        }
+    }, [songUrl]);
+
     return (
         <div className={styles.container}>
             <img
@@ -23,7 +47,7 @@ const Song = ({ name, group, length, imageSrc, onClick }: Props) => {
                 <p className={styles.name}>{name}</p>
                 <p className={styles.name}>{group}</p>
                 <div className={styles.infoBottom}>
-                    <p className={styles.name}>{length}</p>
+                    <p className={styles.name}>{duration}</p>
                     <button className={styles.play} onClick={onClick}>
                         Play Now
                     </button>

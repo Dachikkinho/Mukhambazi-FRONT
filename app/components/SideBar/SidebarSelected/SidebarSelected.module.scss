@@ -51,6 +51,7 @@
         left: 50%;
         border: 2px solid $thirdColor;
         border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.214);
         backdrop-filter: blur(20px);
 
         &::before {

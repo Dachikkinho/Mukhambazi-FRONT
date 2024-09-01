@@ -1,7 +1,7 @@
 import { Artists } from './artist.interface';
 
 export interface Music {
-    src: string | undefined;
+    src: string;
     group: string;
     //group: any;
     id: number;
