@@ -19,7 +19,7 @@
     background-position: bottom;
     background-size: inherit;
     flex-shrink: 0;
-    background-color: rgba(127, 37, 125, 0);
+    background-color: rgba(102, 13, 101, 0.343);
     opacity: 1;
     mix-blend-mode: hard-light;
 }
@@ -35,10 +35,13 @@
         position: fixed;
         max-width: 100%;
         backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        background-color: rgba(69, 3, 66, 0.526);
         display: flex;
         flex-direction: column;
         align-items: center;
         left: -100%;
+        mix-blend-mode: normal;
         background-size: cover;
         opacity: 0.9;
 

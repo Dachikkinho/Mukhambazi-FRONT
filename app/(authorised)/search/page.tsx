@@ -89,7 +89,7 @@ const SearchPage = (props: Props) => {
                             <Song
                                 name={song.name}
                                 group={``}
-                                length={'2:00'}
+                                songUrl={song.url}
                                 imageSrc={'/images/song-placeholder.svg'}
                                 key={i}
                                 onClick={() => playMusic(song.url, song.name)}
