@@ -28,6 +28,7 @@ const MainSection = () => {
                     icon={'search'}
                     width={24}
                     height={24}
+                    
                 />
             </div>
             <div className={styles.wrapper}>
@@ -35,11 +36,13 @@ const MainSection = () => {
                     heading="Popular of the week"
                     icon="/icons/popular.png"
                     images={popularImages}
+                    interval={1500}
                 />
                 <CarouselSection
                     heading="Top Albums"
                     icon="/icons/topalbum.png"
                     images={topAlbumImages}
+                    interval={1500}
                 />
             </div>
             <TopArtist />
