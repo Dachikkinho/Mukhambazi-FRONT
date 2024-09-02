@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar';
 import { isPlayingState, nextSongArrState } from '@/app/states';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import { Album } from '@/app/interfaces/album.interface';
 import { Music } from '@/app/interfaces/music.interface';
@@ -25,8 +25,8 @@ const Artist = () => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
-    const [, setNextSongArr] = useRecoilState(nextSongArrState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios

@@ -3,7 +3,7 @@ import Search from '../Header/Search/Search';
 import Song from './Song/Song';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { isPlayingState, nextSongArrState } from '@/app/states';
 import LoadingBar from 'react-top-loading-bar';
 import { Music } from '@/app/interfaces/music.interface';
@@ -12,8 +12,8 @@ import { playMusic } from '@/app/utils/playMusic';
 const SongsMainSection = () => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
-    const [, setNextSongArr] = useRecoilState(nextSongArrState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios

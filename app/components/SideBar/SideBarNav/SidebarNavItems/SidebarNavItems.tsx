@@ -1,4 +1,4 @@
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import styles from './SidebarNavItems.module.scss';
 import Link from 'next/link';
 import { sideBarOpenState } from '@/app/states';
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const SidebarNavItems = ({ link, img, name }: Props) => {
-    const [, setSideBarOpen] = useRecoilState(sideBarOpenState);
+    const setSideBarOpen = useSetRecoilState(sideBarOpenState);
 
     return (
         <li

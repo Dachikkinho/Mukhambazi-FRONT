@@ -6,7 +6,7 @@ import axios from 'axios';
 import Search from '@/app/components/Header/Search/Search';
 import Song from '@/app/components/SongsMainSection/Song/Song';
 import { isPlayingState, nextSongArrState } from '@/app/states';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import AlbumCard from '@/app/components/Albums/AlbumCard/AlbumCard';
 import Link from 'next/link';
 import LoadingBar from 'react-top-loading-bar';
@@ -28,8 +28,8 @@ const SearchPage = (props: Props) => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
-    const [, setNextSongArr] = useRecoilState(nextSongArrState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
