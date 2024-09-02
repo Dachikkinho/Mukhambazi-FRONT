@@ -3,12 +3,13 @@
 import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { isPlayingState } from '@/app/states';
+import { isPlayingState, nextSongArrState } from '@/app/states';
 import axios from 'axios';
 import { useRecoilState } from 'recoil';
 import LoadingBar from 'react-top-loading-bar';
 import { AlbumPage } from '@/app/interfaces/albunPage.interface';
 import { Music } from '@/app/interfaces/music.interface';
+import { nextSong } from '@/app/interfaces/nextSong.interface';
 
 const AlbumArtist = () => {
     useEffect(() => {
@@ -21,10 +22,11 @@ const AlbumArtist = () => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [, setIsPlaying] = useRecoilState(isPlayingState);
+    const [, setNextSongArr] = useRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
-            .get(`https://mukhambazi-back.onrender.com/album/${id}`, {
+            .get(`http://localhost:3001/album/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -41,11 +43,28 @@ const AlbumArtist = () => {
             });
     }, []);
 
-    function playMusic(src: string, name: string) {
+    function playMusic(src: string, name: string, index: number) {
         setIsPlaying({
             src: src,
             name: name,
+            index: index,
         });
+
+        const songsArr: nextSong[] = [];
+
+        songs.forEach((song, i) => {
+            const songVar = {
+                id: song.id,
+                src: song.url,
+                name: song.name,
+                index: i,
+                artistName: `placeholder`,
+            };
+
+            songsArr.push(songVar);
+        });
+
+        setNextSongArr(songsArr);
     }
 
     if (!album) {
@@ -67,7 +86,9 @@ const AlbumArtist = () => {
                         <div
                             key={index}
                             className={styles.songs}
-                            onClick={() => playMusic(song.url, song.name)}
+                            onClick={() =>
+                                playMusic(song.url, song.name, index)
+                            }
                         >
                             <span></span>
                             <div className={styles.icon}>

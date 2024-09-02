@@ -6,12 +6,13 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar';
-import { isPlayingState } from '@/app/states';
+import { isPlayingState, nextSongArrState } from '@/app/states';
 import { useRecoilState } from 'recoil';
 import Link from 'next/link';
 import { Album } from '@/app/interfaces/album.interface';
 import { Music } from '@/app/interfaces/music.interface';
 import { Artists } from '@/app/interfaces/artist.interface';
+import { nextSong } from '@/app/interfaces/nextSong.interface';
 
 const Artist = () => {
     useEffect(() => {
@@ -25,10 +26,11 @@ const Artist = () => {
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
     const [, setIsPlaying] = useRecoilState(isPlayingState);
+    const [, setNextSongArr] = useRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
-            .get(`https://mukhambazi-back.onrender.com/authors/${id}`, {
+            .get(`http://localhost:3001/authors/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -45,11 +47,28 @@ const Artist = () => {
             });
     }, []);
 
-    function playMusic(src: string, name: string) {
+    function playMusic(src: string, name: string, index: number) {
         setIsPlaying({
             src: src,
             name: name,
+            index: index,
         });
+
+        const songsArr: nextSong[] = [];
+
+        songs.forEach((song, i) => {
+            const songVar = {
+                id: song.id,
+                src: song.url,
+                name: song.name,
+                index: i,
+                artistName: `placeholder`,
+            };
+
+            songsArr.push(songVar);
+        });
+
+        setNextSongArr(songsArr);
     }
 
     return (
@@ -89,7 +108,9 @@ const Artist = () => {
                                 name={song.name}
                                 songUrl={song.url}
                                 key={i}
-                                onClick={() => playMusic(song.url, song.name)}
+                                onClick={() =>
+                                    playMusic(song.url, song.name, i)
+                                }
                             />
                         ))}
                     </div>

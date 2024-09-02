@@ -21,7 +21,9 @@ const Song = ({ name, group, imageSrc, onClick, songUrl }: Props) => {
             const audioDurationInSeconds = audio.duration;
             const minutes = Math.floor(audioDurationInSeconds / 60);
             const seconds = Math.floor(audioDurationInSeconds % 60);
-            setDuration(`${minutes}:${seconds}`);
+            setDuration(
+                `${minutes > 10 ? minutes : '0' + minutes}:${seconds > 10 ? seconds : '0' + seconds}`,
+            );
         };
 
         if (audio) {
