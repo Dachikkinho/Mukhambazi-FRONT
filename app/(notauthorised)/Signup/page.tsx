@@ -149,7 +149,7 @@ const Signup = () => {
                 <div className={styles.flex}>
                     <span>
                         Already a member?{' '}
-                        <Link href="/signin">
+                        <Link href="/login">
                             <span className={styles.login}>Log in</span>
                         </Link>
                     </span>

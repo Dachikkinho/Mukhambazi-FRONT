@@ -83,7 +83,7 @@ export function RightBarNav() {
                 </button>
                 {isDropdownOpen && (
                     <div className={styles.dropdownMenu}>
-                        <button onClick={() => handleNavigation('/signin')}>
+                        <button onClick={() => handleNavigation('/login')}>
                             Log out
                         </button>
                     </div>
