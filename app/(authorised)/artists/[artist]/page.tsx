@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { Album } from '@/app/interfaces/album.interface';
 import { Music } from '@/app/interfaces/music.interface';
 import { Artists } from '@/app/interfaces/artist.interface';
-import { nextSong } from '@/app/interfaces/nextSong.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const Artist = () => {
     useEffect(() => {
@@ -46,30 +46,6 @@ const Artist = () => {
                 setAlbums([...res.data.album]);
             });
     }, []);
-
-    function playMusic(src: string, name: string, index: number) {
-        setIsPlaying({
-            src: src,
-            name: name,
-            index: index,
-        });
-
-        const songsArr: nextSong[] = [];
-
-        songs.forEach((song, i) => {
-            const songVar = {
-                id: song.id,
-                src: song.url,
-                name: song.name,
-                index: i,
-                artistName: `placeholder`,
-            };
-
-            songsArr.push(songVar);
-        });
-
-        setNextSongArr(songsArr);
-    }
 
     return (
         <main className={styles.main}>
@@ -109,7 +85,14 @@ const Artist = () => {
                                 songUrl={song.url}
                                 key={i}
                                 onClick={() =>
-                                    playMusic(song.url, song.name, i)
+                                    playMusic(
+                                        songs,
+                                        setNextSongArr,
+                                        setIsPlaying,
+                                        song.url,
+                                        song.name,
+                                        i,
+                                    )
                                 }
                             />
                         ))}

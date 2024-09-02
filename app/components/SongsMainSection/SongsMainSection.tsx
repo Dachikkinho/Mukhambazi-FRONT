@@ -7,7 +7,7 @@ import { useRecoilState } from 'recoil';
 import { isPlayingState, nextSongArrState } from '@/app/states';
 import LoadingBar from 'react-top-loading-bar';
 import { Music } from '@/app/interfaces/music.interface';
-import { nextSong } from '@/app/interfaces/nextSong.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const SongsMainSection = () => {
     const [songs, setSongs] = useState<Music[]>([]);
@@ -34,30 +34,6 @@ const SongsMainSection = () => {
                 setSongs(res.data);
             });
     }, []);
-
-    function playMusic(src: string, name: string, index: number) {
-        setIsPlaying({
-            src: src,
-            name: name,
-            index: index,
-        });
-
-        const songsArr: nextSong[] = [];
-
-        songs.forEach((song, i) => {
-            const songVar = {
-                id: song.id,
-                src: song.url,
-                name: song.name,
-                index: i,
-                artistName: `placeholder`,
-            };
-
-            songsArr.push(songVar);
-        });
-
-        setNextSongArr(songsArr);
-    }
 
     return (
         <div className={styles.mainContainer}>
@@ -92,7 +68,16 @@ const SongsMainSection = () => {
                             songUrl={song.url}
                             imageSrc={'/images/song-placeholder.svg'}
                             key={i}
-                            onClick={() => playMusic(song.url, song.name, i)}
+                            onClick={() =>
+                                playMusic(
+                                    songs,
+                                    setNextSongArr,
+                                    setIsPlaying,
+                                    song.url,
+                                    song.name,
+                                    i,
+                                )
+                            }
                         />
                     ))}
                 </div>

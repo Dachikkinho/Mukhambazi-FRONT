@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil';
 import LoadingBar from 'react-top-loading-bar';
 import { AlbumPage } from '@/app/interfaces/albunPage.interface';
 import { Music } from '@/app/interfaces/music.interface';
-import { nextSong } from '@/app/interfaces/nextSong.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const AlbumArtist = () => {
     useEffect(() => {
@@ -26,7 +26,7 @@ const AlbumArtist = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/album/${id}`, {
+            .get(`https://mukhambazi-back.onrender.com/album/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -42,30 +42,6 @@ const AlbumArtist = () => {
                 setSongs([...res.data.musics]);
             });
     }, []);
-
-    function playMusic(src: string, name: string, index: number) {
-        setIsPlaying({
-            src: src,
-            name: name,
-            index: index,
-        });
-
-        const songsArr: nextSong[] = [];
-
-        songs.forEach((song, i) => {
-            const songVar = {
-                id: song.id,
-                src: song.url,
-                name: song.name,
-                index: i,
-                artistName: `placeholder`,
-            };
-
-            songsArr.push(songVar);
-        });
-
-        setNextSongArr(songsArr);
-    }
 
     if (!album) {
         return <div>Album not found</div>;
@@ -87,7 +63,14 @@ const AlbumArtist = () => {
                             key={index}
                             className={styles.songs}
                             onClick={() =>
-                                playMusic(song.url, song.name, index)
+                                playMusic(
+                                    songs,
+                                    setNextSongArr,
+                                    setIsPlaying,
+                                    song.url,
+                                    song.name,
+                                    index,
+                                )
                             }
                         >
                             <span></span>
