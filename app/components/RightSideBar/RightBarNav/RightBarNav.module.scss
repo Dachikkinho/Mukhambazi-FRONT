@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid $purple-400;
+    border: 3px solid #733b64;
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -106,5 +106,9 @@
         button {
             transform: translate(0, 0);
         }
+    }
+
+    .navButton {
+        border: 3px solid #853976;
     }
 }
