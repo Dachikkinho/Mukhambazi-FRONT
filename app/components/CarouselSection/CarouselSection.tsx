@@ -6,7 +6,7 @@ const CarouselSection = ({
     heading,
     icon,
     images,
-    interval = 3000,
+    interval = 4000,
 }: CarouselSectionProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 

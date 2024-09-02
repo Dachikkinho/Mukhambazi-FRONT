@@ -36,13 +36,13 @@ const MainSection = () => {
                     heading="Popular of the week"
                     icon="/icons/popular.png"
                     images={popularImages}
-                    interval={1500}
+                    interval={2000}
                 />
                 <CarouselSection
                     heading="Top Albums"
                     icon="/icons/topalbum.png"
                     images={topAlbumImages}
-                    interval={1500}
+                    interval={2000}
                 />
             </div>
             <TopArtist />
