@@ -3,15 +3,17 @@ import Search from '../Header/Search/Search';
 import Song from './Song/Song';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRecoilState } from 'recoil';
-import { isPlayingState } from '@/app/states';
+import { useSetRecoilState } from 'recoil';
+import { isPlayingState, nextSongArrState } from '@/app/states';
 import LoadingBar from 'react-top-loading-bar';
 import { Music } from '@/app/interfaces/music.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const SongsMainSection = () => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
@@ -32,13 +34,6 @@ const SongsMainSection = () => {
                 setSongs(res.data);
             });
     }, []);
-
-    function playMusic(src: string, name: string) {
-        setIsPlaying({
-            src: src,
-            name: name,
-        });
-    }
 
     return (
         <div className={styles.mainContainer}>
@@ -73,7 +68,16 @@ const SongsMainSection = () => {
                             songUrl={song.url}
                             imageSrc={'/images/song-placeholder.svg'}
                             key={i}
-                            onClick={() => playMusic(song.url, song.name)}
+                            onClick={() =>
+                                playMusic(
+                                    songs,
+                                    setNextSongArr,
+                                    setIsPlaying,
+                                    song.url,
+                                    song.name,
+                                    i,
+                                )
+                            }
                         />
                     ))}
                 </div>

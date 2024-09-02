@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Search from '@/app/components/Header/Search/Search';
 import Song from '@/app/components/SongsMainSection/Song/Song';
-import { isPlayingState } from '@/app/states';
-import { useRecoilState } from 'recoil';
+import { isPlayingState, nextSongArrState } from '@/app/states';
+import { useSetRecoilState } from 'recoil';
 import AlbumCard from '@/app/components/Albums/AlbumCard/AlbumCard';
 import Link from 'next/link';
 import LoadingBar from 'react-top-loading-bar';
 import { Music } from '@/app/interfaces/music.interface';
 import { Album } from '@/app/interfaces/album.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 type Props = {
     searchParams: {
@@ -27,7 +28,8 @@ const SearchPage = (props: Props) => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
@@ -49,13 +51,6 @@ const SearchPage = (props: Props) => {
                 console.log(err);
             });
     }, [props.searchParams.query]);
-
-    function playMusic(src: string, name: string) {
-        setIsPlaying({
-            src: src,
-            name: name,
-        });
-    }
 
     return (
         <main className={styles.main}>
@@ -92,7 +87,16 @@ const SearchPage = (props: Props) => {
                                 songUrl={song.url}
                                 imageSrc={'/images/song-placeholder.svg'}
                                 key={i}
-                                onClick={() => playMusic(song.url, song.name)}
+                                onClick={() =>
+                                    playMusic(
+                                        songs,
+                                        setNextSongArr,
+                                        setIsPlaying,
+                                        song.url,
+                                        song.name,
+                                        i,
+                                    )
+                                }
                             />
                         ))}
                     </div>

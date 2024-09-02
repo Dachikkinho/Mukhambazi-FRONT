@@ -6,12 +6,13 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar';
-import { isPlayingState } from '@/app/states';
-import { useRecoilState } from 'recoil';
+import { isPlayingState, nextSongArrState } from '@/app/states';
+import { useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import { Album } from '@/app/interfaces/album.interface';
 import { Music } from '@/app/interfaces/music.interface';
 import { Artists } from '@/app/interfaces/artist.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const Artist = () => {
     useEffect(() => {
@@ -24,11 +25,12 @@ const Artist = () => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
-            .get(`https://mukhambazi-back.onrender.com/authors/${id}`, {
+            .get(`http://localhost:3001/authors/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -44,13 +46,6 @@ const Artist = () => {
                 setAlbums([...res.data.album]);
             });
     }, []);
-
-    function playMusic(src: string, name: string) {
-        setIsPlaying({
-            src: src,
-            name: name,
-        });
-    }
 
     return (
         <main className={styles.main}>
@@ -89,7 +84,16 @@ const Artist = () => {
                                 name={song.name}
                                 songUrl={song.url}
                                 key={i}
-                                onClick={() => playMusic(song.url, song.name)}
+                                onClick={() =>
+                                    playMusic(
+                                        songs,
+                                        setNextSongArr,
+                                        setIsPlaying,
+                                        song.url,
+                                        song.name,
+                                        i,
+                                    )
+                                }
                             />
                         ))}
                     </div>

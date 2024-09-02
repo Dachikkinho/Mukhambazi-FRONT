@@ -13,7 +13,7 @@ const Albums = () => {
 
     useEffect(() => {
         axios
-            .get('https://mukhambazi-back.onrender.com/album', {
+            .get('http://localhost:3001/album', {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 

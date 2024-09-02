@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './AddSongButton.module.scss';
 import Listdisabled from '../Playlists/ListDisabled';
 import { popUpOpenState } from '@/app/states';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
 const AddSongButton = () => {
     const [open, setOpen] = useState(false);
@@ -26,7 +26,7 @@ const AddSongButton = () => {
         }
     }, [success]);
 
-    const [, setPopUpOpen] = useRecoilState(popUpOpenState);
+    const setPopUpOpen = useSetRecoilState(popUpOpenState);
 
     return (
         <>

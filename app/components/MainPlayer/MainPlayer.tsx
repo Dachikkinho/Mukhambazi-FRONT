@@ -7,11 +7,12 @@ import useViewport from '@/app/hooks/useViewport';
 import PreviousNext from './PreviousNext/PreviousNext';
 import Shuffle from './Shuffle/Shuffle';
 import { useRecoilState } from 'recoil';
-import { isPlayingState } from '@/app/states';
+import { isPlayingState, nextSongArrState } from '@/app/states';
 
 const MainPlayer = () => {
     const [isShuffle, setIsShuffle] = useState(false);
-    const isPlaying = useRecoilState(isPlayingState)[0];
+    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+    const nextSongArr = useRecoilState(nextSongArrState)[0];
 
     const switchIsShuffle = () => {
         setIsShuffle(!isShuffle);
@@ -26,6 +27,18 @@ const MainPlayer = () => {
     const mobileVolume = !isMobile ? RHAP_UI.VOLUME : <></>;
 
     const mobileControls = !isMobile ? RHAP_UI.MAIN_CONTROLS : <></>;
+
+    function playNext() {
+        if (isPlaying.index + 1 < nextSongArr.length) {
+            setIsPlaying(nextSongArr[isPlaying.index + 1]);
+        }
+    }
+
+    function playPrev() {
+        if (isPlaying.index - 1 >= 0) {
+            setIsPlaying(nextSongArr[isPlaying.index - 1]);
+        }
+    }
 
     return (
         <H5AudioPlayer
@@ -47,6 +60,8 @@ const MainPlayer = () => {
                     isActive={isShuffle}
                 />,
             ]}
+            onClickNext={playNext}
+            onClickPrevious={playPrev}
             showSkipControls
             showJumpControls={false}
             src={isPlaying.src}

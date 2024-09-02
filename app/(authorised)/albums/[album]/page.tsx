@@ -3,12 +3,13 @@
 import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { isPlayingState } from '@/app/states';
+import { isPlayingState, nextSongArrState } from '@/app/states';
 import axios from 'axios';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import LoadingBar from 'react-top-loading-bar';
 import { AlbumPage } from '@/app/interfaces/albunPage.interface';
 import { Music } from '@/app/interfaces/music.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const AlbumArtist = () => {
     useEffect(() => {
@@ -20,7 +21,8 @@ const AlbumArtist = () => {
     const [album, setAlbum] = useState<AlbumPage>();
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
-    const [, setIsPlaying] = useRecoilState(isPlayingState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
         axios
@@ -41,13 +43,6 @@ const AlbumArtist = () => {
             });
     }, []);
 
-    function playMusic(src: string, name: string) {
-        setIsPlaying({
-            src: src,
-            name: name,
-        });
-    }
-
     if (!album) {
         return <div>Album not found</div>;
     }
@@ -67,7 +62,16 @@ const AlbumArtist = () => {
                         <div
                             key={index}
                             className={styles.songs}
-                            onClick={() => playMusic(song.url, song.name)}
+                            onClick={() =>
+                                playMusic(
+                                    songs,
+                                    setNextSongArr,
+                                    setIsPlaying,
+                                    song.url,
+                                    song.name,
+                                    index,
+                                )
+                            }
                         >
                             <span></span>
                             <div className={styles.icon}>
