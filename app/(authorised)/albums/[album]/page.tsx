@@ -7,9 +7,10 @@ import { isPlayingState, nextSongArrState } from '@/app/states';
 import axios from 'axios';
 import { useSetRecoilState } from 'recoil';
 import LoadingBar from 'react-top-loading-bar';
-import { AlbumPage } from '@/app/interfaces/albunPage.interface';
+
 import { Music } from '@/app/interfaces/music.interface';
 import { playMusic } from '@/app/utils/playMusic';
+import { AlbumPage } from '@/app/interfaces/albumPage.interface';
 
 const AlbumArtist = () => {
     useEffect(() => {
