@@ -7,9 +7,9 @@ import './styles/MainPlayer.scss';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Chakrulos',
+    title: 'Chakrulos - Web Player: Music for everyone',
     description:
-        'Chakrulos is a digital music service that gives you access to millions of songs',
+        'Chakrulos is a digital music service that gives you access to millions of songs.',
 };
 
 export default function RootLayout({
