@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // icon for password hidden
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './page.module.scss';
 import {
     PLACEHOLDEREMAIL_OBJECT,
@@ -13,11 +13,14 @@ import {
 } from '@/public/script';
 import { RegisterForm } from '@/app/interfaces/register.interface';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Signup = () => {
     useEffect(() => {
         document.title = 'Sign up - Chakrulos';
     }, []);
+
+    const router = useRouter();
 
     const {
         register,
@@ -29,12 +32,18 @@ const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
-    const onRegisterFinished = (values: object) => {
-        axios
-            .post('https://mukhambazi-back.onrender.com/users', values)
-            .then(() => {
-                console.log('succes');
-            });
+    const onRegisterFinished = async (values: object) => {
+        try {
+            await axios.post(
+                'https://mukhambazi-back.onrender.com/users',
+                values,
+            );
+            router.push('/login');
+        } catch (error) {
+            alert(
+                'Registration failed. Please check your details and try again.',
+            );
+        }
     };
 
     const password = useRef({});
