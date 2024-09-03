@@ -18,7 +18,7 @@ const Login = () => {
         document.title = 'Log in - Chakrulos';
     }, []);
 
-    const router = useRouter(); 
+    const router = useRouter();
 
     const {
         register,
@@ -37,7 +37,7 @@ const Login = () => {
                 values,
             );
             localStorage.setItem('user', JSON.stringify(response.data));
-            router.push('/'); 
+            router.push('/');
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 if (error.response && error.response.status === 401) {
