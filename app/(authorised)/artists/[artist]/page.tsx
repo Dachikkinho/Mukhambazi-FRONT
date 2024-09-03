@@ -30,7 +30,7 @@ const Artist = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/authors/${id}`, {
+            .get(`https://mukhambazi-back.onrender.com/authors/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 

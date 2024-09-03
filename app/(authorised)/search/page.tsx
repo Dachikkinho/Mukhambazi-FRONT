@@ -33,7 +33,7 @@ const SearchPage = (props: Props) => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/search/${props.searchParams.query}`, {
+            .get(`https://mukhambazi-back.onrender.com/search/${props.searchParams.query}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
