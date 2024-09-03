@@ -1,9 +1,9 @@
 'use client';
-
 import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 import {
     PLACEHOLDEREMAILLOGIN_OBJECT,
@@ -18,21 +18,49 @@ const Login = () => {
         document.title = 'Log in - Chakrulos';
     }, []);
 
+    const router = useRouter(); 
+
     const {
         register,
         handleSubmit,
         watch,
+        setError,
         formState: { errors },
     } = useForm<LoginForm>();
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const onLoginFinished = (values: object) => {
-        axios
-            .post('https://mukhambazi-back.onrender.com/login', values)
-            .then((r) => {
-                localStorage.setItem('user', JSON.stringify(r.data));
-            });
+    const onLoginFinished = async (values: object) => {
+        try {
+            const response = await axios.post(
+                'https://mukhambazi-back.onrender.com/login',
+                values,
+            );
+            localStorage.setItem('user', JSON.stringify(response.data));
+            router.push('/'); 
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                if (error.response && error.response.status === 401) {
+                    setError('email', {
+                        type: 'manual',
+                        message:
+                            'Incorrect email or password. Please try again.',
+                    });
+                    setError('password', {
+                        type: 'manual',
+                        message:
+                            'Incorrect email or password. Please try again.',
+                    });
+                } else {
+                    console.error(
+                        'An error occurred during login:',
+                        error.response?.data || error.message,
+                    );
+                }
+            } else {
+                console.error('An unexpected error occurred:', error);
+            }
+        }
     };
 
     const password = useRef({});
