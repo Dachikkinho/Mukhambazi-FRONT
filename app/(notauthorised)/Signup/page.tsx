@@ -12,6 +12,7 @@ import {
     PLACEHOLDERREenter_OBJECT,
 } from '@/public/script';
 import { RegisterForm } from '@/app/interfaces/register.interface';
+import axios from 'axios';
 
 const Signup = () => {
     useEffect(() => {
@@ -28,8 +29,11 @@ const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
-    const onRegisterFinished = () => {
-        //logika
+    const onRegisterFinished = (values: any) => {
+        axios.post('https://mukhambazi-back.onrender.com/users', values)
+        .then (data =>{
+           console.log('succes')
+        })
     };
 
     const password = useRef({});
