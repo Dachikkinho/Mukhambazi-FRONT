@@ -40,21 +40,34 @@ const Login = () => {
             router.push('/');
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                if (error.response && error.response.status === 401) {
-                    setError('email', {
-                        type: 'manual',
-                        message:
-                            'Incorrect email or password. Please try again.',
-                    });
-                    setError('password', {
-                        type: 'manual',
-                        message:
-                            'Incorrect email or password. Please try again.',
-                    });
+                if (error.response) {
+                    if (error.response.status === 400) {
+                        setError('email', {
+                            type: 'manual',
+                            message:
+                                'Invalid email or password. Please try again.',
+                        });
+                        setError('password', {
+                            type: 'manual',
+                            message:
+                                'Invalid email or password. Please try again.',
+                        });
+                    } else if (error.response.status === 401) {
+                        setError('email', {
+                            type: 'manual',
+                            message:
+                                'Unauthorized access. Please check your credentials.',
+                        });
+                    } else {
+                        console.error(
+                            'An error occurred during login:',
+                            error.response.data || error.message,
+                        );
+                    }
                 } else {
                     console.error(
-                        'An error occurred during login:',
-                        error.response?.data || error.message,
+                        'An unexpected error occurred:',
+                        error.message,
                     );
                 }
             } else {
