@@ -95,7 +95,7 @@ const AlbumHeader = ({ album }: { album: AlbumPage }) => (
     <div className={styles.albums}>
         <img
             className={styles.photo}
-            src={'/images/songCovers/banner.png'}
+            src={album.image}
             alt="icon"
         />
         <div>{album.name}</div>

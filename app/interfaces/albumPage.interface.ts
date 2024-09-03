@@ -5,4 +5,5 @@ export interface AlbumPage {
     name: string;
     artistName: string;
     musics: Music[];
+    image: string;
 }
