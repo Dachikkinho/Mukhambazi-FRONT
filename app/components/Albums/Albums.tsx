@@ -61,7 +61,7 @@ const Albums = () => {
                             name={album.name}
                             lastName={''}
                             plays={album.releaseDate}
-                            image={'/images/songCovers/banner.png'}
+                            image={album.image}
                         />
                     </Link>
                 ))}
