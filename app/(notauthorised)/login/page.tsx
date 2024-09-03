@@ -11,6 +11,7 @@ import {
 } from '@/public/script';
 import Link from 'next/link';
 import { LoginForm } from '@/app/interfaces/login.interface';
+import axios from 'axios';
 
 const Login = () => {
     useEffect(() => {
@@ -26,8 +27,11 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const onLoginFinished = () => {
-        //logika
+    const onLoginFinished = (values: any) => {
+        axios.post('https://mukhambazi-back.onrender.com/login', values)
+        .then (r =>{
+           localStorage.setItem('user', JSON.stringify(r.data))
+        })
     };
 
     const password = useRef({});
