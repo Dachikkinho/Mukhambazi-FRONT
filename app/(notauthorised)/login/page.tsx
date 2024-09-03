@@ -28,10 +28,11 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const onLoginFinished = (values: any) => {
-        axios.post('https://mukhambazi-back.onrender.com/login', values)
-        .then (r =>{
-           localStorage.setItem('user', JSON.stringify(r.data))
-        })
+        axios
+            .post('https://mukhambazi-back.onrender.com/login', values)
+            .then((r) => {
+                localStorage.setItem('user', JSON.stringify(r.data));
+            });
     };
 
     const password = useRef({});
@@ -57,7 +58,7 @@ const Login = () => {
                     <div className={styles.container}>
                         <span>
                             New to CHAKRULOS?{' '}
-                            <Link href="/signup">
+                            <Link href="/register">
                                 <span className={styles.signup}>Sign up</span>
                             </Link>
                         </span>

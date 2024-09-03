@@ -30,10 +30,11 @@ const Signup = () => {
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
     const onRegisterFinished = (values: any) => {
-        axios.post('https://mukhambazi-back.onrender.com/users', values)
-        .then (data =>{
-           console.log('succes')
-        })
+        axios
+            .post('https://mukhambazi-back.onrender.com/users', values)
+            .then((data) => {
+                console.log('succes');
+            });
     };
 
     const password = useRef({});
