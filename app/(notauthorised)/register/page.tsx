@@ -29,10 +29,10 @@ const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
-    const onRegisterFinished = (values: any) => {
+    const onRegisterFinished = (values: object) => {
         axios
             .post('https://mukhambazi-back.onrender.com/users', values)
-            .then((data) => {
+            .then(() => {
                 console.log('succes');
             });
     };

@@ -27,7 +27,7 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const onLoginFinished = (values: any) => {
+    const onLoginFinished = (values: object) => {
         axios
             .post('https://mukhambazi-back.onrender.com/login', values)
             .then((r) => {
