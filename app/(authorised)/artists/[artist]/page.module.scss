@@ -13,11 +13,13 @@
 }
 
 .image {
-    max-width: 1050px;
-    max-height: 500px;
+    max-width: 650px;
+    max-height: 300px;
     height: 100%;
     width: 100%;
-    border-radius: 30px;
+    border-radius: 25px;
+    border: 2px solid #28012b;
+    object-fit: cover;
 }
 
 .top {
