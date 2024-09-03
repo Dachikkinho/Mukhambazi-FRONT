@@ -108,7 +108,7 @@ const Artist = () => {
                         {albums.map((album, i) => (
                             <Link href={`../albums/${album.id}`} key={i}>
                                 <Albumcard
-                                    image="/images/songCovers/banner.png"
+                                    image={album.image}
                                     name={`${album.name}` || ''}
                                     lastName=""
                                     plays={album.releaseDate}
