@@ -31,10 +31,10 @@
 
 .cards {
     display: flex;
-    gap: 32px;
+    gap: 22px;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
     margin-bottom: 60px;
+    padding-bottom: 10px;
 }
 
 .cards * {
@@ -53,18 +53,17 @@
 }
 
 .cards::-webkit-scrollbar {
-    height: 6px;
+    height: 5px;
+    
 }
 
 .cards::-webkit-scrollbar-thumb {
-    background-color: $fiveColor;
+    background-color: #562065;
     border-radius: 20px;
-    display: none;
+    
 }
 
-.cards::-webkit-scrollbar-thumb:hover {
-    background-color: $purplelight;
-}
+
 
 @media screen and (max-width: 600px) {
     .main {

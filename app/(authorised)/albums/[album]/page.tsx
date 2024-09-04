@@ -45,7 +45,7 @@ const AlbumArtist = () => {
     }, []);
 
     if (!album) {
-        return <div>Album not found</div>;
+        return 
     }
 
     return (
