@@ -11,19 +11,23 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
     const { isAuthenticated } = useAuth();
 
     useEffect(() => {
-        const user = localStorage.getItem('user');
-        if (!user) {
-            router.push('/login');
-        } else {
-            setLoading(false);
-        }
+        const checkAuthentication = async () => {
+            const user = localStorage.getItem('user');
+            if (!user) {
+                router.push('/login');
+            } else {
+                setLoading(false);
+            }
+        };
+
+        checkAuthentication();
     }, [router]);
 
     if (loading) {
         return (
-            <div className={styles.loadingContainer}>
+            <div className={styles.fullscreenSpinner}>
                 <div className={styles.spinner}></div>
-                <p className={styles.loading}>Loading...</p>
+                <p className={styles.loading}>The platform is loading...</p>
             </div>
         );
     }
