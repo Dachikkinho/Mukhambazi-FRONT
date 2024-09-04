@@ -9,9 +9,10 @@ type Props = {
     imageSrc: string;
     onClick?: () => void;
     songUrl: string;
+    id: number;
 };
 
-const Song = ({ name, group, imageSrc, onClick, songUrl }: Props) => {
+const Song = ({ name, group, imageSrc, onClick, songUrl, id }: Props) => {
     const [duration, setDuration] = useState<string>('');
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const Song = ({ name, group, imageSrc, onClick, songUrl }: Props) => {
                 </div>
             </div>
             <div className={styles.add}>
-                <AddSongButton />
+                <AddSongButton songId={id}/>
             </div>
             <div className={styles.like}>
                 <LikeButton />

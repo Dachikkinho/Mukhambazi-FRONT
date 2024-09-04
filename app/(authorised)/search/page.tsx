@@ -87,6 +87,7 @@ const SearchPage = (props: Props) => {
                                 songUrl={song.url}
                                 imageSrc={'/images/song-placeholder.svg'}
                                 key={i}
+                                id={song.id}
                                 onClick={() =>
                                     playMusic(
                                         songs,

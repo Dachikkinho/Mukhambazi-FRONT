@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CreatePopUp from '../CreatePopUp/CreatePopUp';
 import Search from '../Header/Search/Search';
 import Listactivate from './ListActivate';
@@ -7,10 +7,24 @@ import Listdisabled from './ListDisabled';
 import styles from './Playlist.module.scss';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
+import { Playlist as PlaylistInterface } from '@/app/interfaces/playlist.interface';
+import axios from 'axios';
 
 const Playlist = () => {
     const [create, setCreate] = useState(false);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
+    const [playlists, setPlaylists] = useState<PlaylistInterface[]>([]);
+
+    useEffect(() => {
+        axios
+            .get('http://localhost:3001/playlist/user', { params: { id: 1 } })
+            .then((res) => {
+                setPlaylists(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [create, popUpOpen]);
 
     function closeFunction() {
         setCreate(!create);
@@ -47,68 +61,19 @@ const Playlist = () => {
                     </button>
                 </div>
 
-                {/* Placeholder Until Backend is ready. */}
                 <div className={styles.playlist}>
-                    <Listactivate
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
+                    {playlists.length ? (
+                        playlists.map((playlist) => (
+                            <Listdisabled
+                                title={playlist.title}
+                                date={playlist.description}
+                                icon="green"
+                                playbtn="play"
+                            />
+                        ))
+                    ) : (
+                        <p>no playlists yet!</p>
+                    )}
                 </div>
             </div>
         </>

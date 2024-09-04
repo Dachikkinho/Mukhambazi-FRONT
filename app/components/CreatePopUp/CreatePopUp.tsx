@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CreatePopUp.module.scss';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -19,10 +19,19 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
     const [success, setSuccess] = useState(false);
 
     function onSubmit(album: Playlist) {
-        axios.post('http://localhost:3001/playlist', album).then(() => {
-            reset();
-            setSuccess(true);
-        });
+        axios
+            .post('http://localhost:3001/playlist', {
+                description: album.description,
+                title: album.title,
+                userId: 1, // placeholder
+            })
+            .then(() => {
+                reset();
+                setSuccess(true);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     return (
@@ -48,7 +57,7 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
                                 type="text"
                                 className={styles.input}
                                 placeholder="Playlist Name"
-                                {...register('name', {
+                                {...register('title', {
                                     required: {
                                         value: true,
                                         message: 'Name Is Required!',
@@ -60,9 +69,9 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
                                     },
                                 })}
                             />
-                            {errors.name?.message && (
+                            {errors.title?.message && (
                                 <p className={styles.error}>
-                                    {errors.name.message}
+                                    {errors.title.message}
                                 </p>
                             )}
                         </div>

@@ -3,18 +3,31 @@ import styles from './AddSongButton.module.scss';
 import Listdisabled from '../Playlists/ListDisabled';
 import { popUpOpenState } from '@/app/states';
 import { useSetRecoilState } from 'recoil';
+import { Playlist } from '@/app/interfaces/playlist.interface';
+import axios from 'axios';
+import Link from 'next/link';
 
-const AddSongButton = () => {
+type Props = {
+    songId: number
+}
+
+const AddSongButton = ({songId}: Props) => {
     const [open, setOpen] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [playlists, setPlaylists] = useState<Playlist[]>([]);
 
     // place holder upload function
 
-    // function upload(id: number) {
-    //     axios.patch(`upload Link`, songId).then(() => {
-    //         setOpen(false);
-    //     });
-    // }
+    function upload(id: number) {
+        const playlist = playlists.filter(playlist => playlist.id === id)
+        console.log(songId);
+        
+        axios.patch(`http://localhost:3001/playlist/${id}`, {
+            musicIds: [songId]
+        }).then(() => {
+            setOpen(false);
+        });
+    }
 
     useEffect(() => {
         if (success) {
@@ -24,6 +37,12 @@ const AddSongButton = () => {
 
             return () => clearTimeout(timer);
         }
+
+        axios
+            .get('http://localhost:3001/playlist/user', { params: { id: 1 } })
+            .then((res) => {
+                setPlaylists(res.data);
+            });
     }, [success]);
 
     const setPopUpOpen = useSetRecoilState(popUpOpenState);
@@ -78,13 +97,29 @@ const AddSongButton = () => {
                                 //     upload(0);
                                 // }}
                                 >
-                                    <Listdisabled
-                                        title={'nme'}
-                                        date={'desc'}
-                                        icon="green"
-                                        playbtn="play"
-                                        className={styles.add}
-                                    />
+                                    {playlists.length ? (
+                                        playlists.map((playlist) => (
+                                            <div onClick={() => upload(playlist.id)}>
+                                                <Listdisabled
+                                                    title={playlist.title}
+                                                    date={playlist.description}
+                                                    icon="green"
+                                                    playbtn="play"
+                                                    className={styles.add}
+                                                />
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className={styles.noPlaylist}>
+                                            <p>No Playlists!</p>
+                                            <Link
+                                                href="/playlist"
+                                                className={styles.create}
+                                            >
+                                                Create One Now!
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

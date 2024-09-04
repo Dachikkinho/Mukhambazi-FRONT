@@ -1,4 +1,7 @@
 export interface Playlist {
-    name: string;
+    title: string;
     description: string;
+    musicIds: number[];
+    userId: number;
+    id: number;
 }

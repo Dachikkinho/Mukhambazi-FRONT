@@ -31,6 +31,8 @@ const SongsMainSection = () => {
                 },
             })
             .then((res) => {
+                console.log(res.data);
+                
                 setSongs(res.data);
             });
     }, []);
@@ -67,6 +69,7 @@ const SongsMainSection = () => {
                             group={`${song.author.firstName} ${song.author.lastName}`}
                             songUrl={song.url}
                             imageSrc={'/images/song-placeholder.svg'}
+                            id={song.id}
                             key={i}
                             onClick={() =>
                                 playMusic(
