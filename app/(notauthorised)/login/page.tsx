@@ -20,7 +20,6 @@ const Login = () => {
     }, []);
 
     const router = useRouter();
-
     const {
         register,
         handleSubmit,
@@ -28,12 +27,10 @@ const Login = () => {
         setError,
         formState: { errors },
     } = useForm<LoginForm>();
-
     const [showPassword, setShowPassword] = useState(false);
-
     const { login } = useAuth();
 
-    const onLoginFinished = async (values: object) => {
+    const onLoginFinished = async (values: LoginForm) => {
         try {
             const response = await axios.post(
                 'https://mukhambazi-back.onrender.com/login',
