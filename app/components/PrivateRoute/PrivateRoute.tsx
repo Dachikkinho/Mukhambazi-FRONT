@@ -7,7 +7,6 @@ import styles from './PrivateRoute.module.scss';
 
 const PrivateRoute = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(true);
-    const [authChecked, setAuthChecked] = useState(false);
     const router = useRouter();
     const { isAuthenticated } = useAuth();
 
@@ -17,8 +16,6 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
             if (!user) {
                 router.push('/login');
             } else {
-                setAuthChecked(true);
-                await new Promise((resolve) => setTimeout(resolve, 500));
                 setLoading(false);
             }
         };
@@ -42,7 +39,7 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
         );
     }
 
-    if (!authChecked || !isAuthenticated) {
+    if (!isAuthenticated) {
         return null;
     }
 
