@@ -84,6 +84,16 @@ const MainPlayer = () => {
         delta: { down: 10 },
     });
 
+    function shuffle() {
+        if (isShuffle) {
+            setIsPlaying(
+                nextSongArr[Math.floor(Math.random() * nextSongArr.length)],
+            );
+        } else {
+            playNext();
+        }
+    }
+
     return (
         <div className={styles.wrap} {...handlers}>
             <H5AudioPlayer
@@ -126,6 +136,7 @@ const MainPlayer = () => {
                 showSkipControls
                 showJumpControls={false}
                 src={isPlaying.src}
+                onEnded={shuffle}
                 customIcons={{
                     next: <PreviousNext key="next" />,
                     previous: <PreviousNext key="previous" isPrev />,
