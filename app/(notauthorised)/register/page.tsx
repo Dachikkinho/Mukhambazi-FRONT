@@ -14,6 +14,7 @@ import {
 import { RegisterForm } from '@/app/interfaces/register.interface';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import useRedirectIfAuthenticated from '@/app/useRedirectIfAuthenticated';
 
 const Signup = () => {
     useEffect(() => {
@@ -21,6 +22,7 @@ const Signup = () => {
     }, []);
 
     const router = useRouter();
+    useRedirectIfAuthenticated('/');
 
     const {
         register,
@@ -28,11 +30,10 @@ const Signup = () => {
         watch,
         formState: { errors },
     } = useForm<RegisterForm>();
-
     const [showPassword, setShowPassword] = useState(false);
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
-    const onRegisterFinished = async (values: object) => {
+    const onRegisterFinished = async (values: RegisterForm) => {
         try {
             await axios.post(
                 'https://mukhambazi-back.onrender.com/users',
@@ -50,7 +51,7 @@ const Signup = () => {
     password.current = watch('password', '');
 
     const reenterPassword = useRef({});
-    reenterPassword.current = watch('reenter', ' ');
+    reenterPassword.current = watch('reenter', '');
 
     return (
         <div className={styles.main}>
@@ -67,10 +68,9 @@ const Signup = () => {
                 className={classNames(styles.formContainer, styles.fadeIn)}
             >
                 <span className={styles.first}>
-                    Sign up to <span className={styles.second}>CHAKRULOS!</span>{' '}
+                    Sign up to <span className={styles.second}>CHAKRULOS!</span>
                     <br />
                 </span>
-
                 <div className={styles.email}>
                     <p className={styles.paragraph}>Email address</p>
                     <input
@@ -162,7 +162,7 @@ const Signup = () => {
                 </div>
                 <div className={styles.flex}>
                     <span>
-                        Already a member?{' '}
+                        Already a member?
                         <Link href="/login">
                             <span className={styles.login}>Log in</span>
                         </Link>

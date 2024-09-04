@@ -1,4 +1,5 @@
 'use client';
+
 import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
@@ -9,10 +10,11 @@ import {
     PLACEHOLDEREMAILLOGIN_OBJECT,
     PLACEHOLDERPASSLOGIN_OBJECT,
 } from '@/public/script';
-import Link from 'next/link';
 import { LoginForm } from '@/app/interfaces/login.interface';
 import axios from 'axios';
 import { useAuth } from '@/app/AuthContext';
+import useRedirectIfAuthenticated from '@/app/useRedirectIfAuthenticated';
+import Link from 'next/link';
 
 const Login = () => {
     useEffect(() => {
@@ -20,6 +22,8 @@ const Login = () => {
     }, []);
 
     const router = useRouter();
+    useRedirectIfAuthenticated('/');
+
     const {
         register,
         handleSubmit,
@@ -78,7 +82,7 @@ const Login = () => {
     };
 
     const password = useRef({});
-    password.current = watch('password', ' ');
+    password.current = watch('password', '');
 
     return (
         <div className={styles.main}>
@@ -95,11 +99,11 @@ const Login = () => {
                 className={classNames(styles.formContainer, styles.fadeIn)}
             >
                 <span className={styles.first}>
-                    Log in to <span className={styles.second}>CHAKRULOS!</span>{' '}
+                    Log in to <span className={styles.second}>CHAKRULOS!</span>
                     <br />
                     <div className={styles.container}>
                         <span>
-                            New to CHAKRULOS?{' '}
+                            New to CHAKRULOS?
                             <Link href="/register">
                                 <span className={styles.signup}>Sign up</span>
                             </Link>
@@ -144,10 +148,7 @@ const Login = () => {
                             })}
                             {...register('password', {
                                 required: 'Password is required',
-                                minLength: {
-                                    value: 6,
-                                    message: '',
-                                },
+                                minLength: { value: 6, message: '' },
                             })}
                         />
                         <button
