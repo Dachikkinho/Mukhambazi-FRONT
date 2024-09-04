@@ -22,7 +22,7 @@ const AddSongButton = ({songId}: Props) => {
         const playlist = playlists.filter(playlist => playlist.id === id)
         console.log(songId);
         
-        axios.patch(`http://localhost:3001/playlist/${id}`, {
+        axios.patch(`https://mukhambazi-back.onrender.com/playlist/${id}`, {
             musicIds: [songId]
         }).then(() => {
             setOpen(false);
@@ -39,7 +39,7 @@ const AddSongButton = ({songId}: Props) => {
         }
 
         axios
-            .get('http://localhost:3001/playlist/user', { params: { id: 1 } })
+            .get('https://mukhambazi-back.onrender.com/playlist/user', { params: { id: 1 } })
             .then((res) => {
                 setPlaylists(res.data);
             });

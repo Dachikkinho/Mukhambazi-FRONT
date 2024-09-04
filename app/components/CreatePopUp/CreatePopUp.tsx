@@ -20,7 +20,7 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
 
     function onSubmit(album: Playlist) {
         axios
-            .post('http://localhost:3001/playlist', {
+            .post('https://mukhambazi-back.onrender.com/playlist', {
                 description: album.description,
                 title: album.title,
                 userId: 1, // placeholder

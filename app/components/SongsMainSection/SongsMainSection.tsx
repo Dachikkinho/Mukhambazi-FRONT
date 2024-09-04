@@ -69,6 +69,7 @@ const SongsMainSection = () => {
                             group={`${song.author.firstName} ${song.author.lastName}`}
                             songUrl={song.url}
                             imageSrc={song.image}
+                            id={song.id}
                             key={i}
                             onClick={() =>
                                 playMusic(

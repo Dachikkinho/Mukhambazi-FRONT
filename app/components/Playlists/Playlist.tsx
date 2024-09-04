@@ -2,13 +2,13 @@
 import { useEffect, useState } from 'react';
 import CreatePopUp from '../CreatePopUp/CreatePopUp';
 import Search from '../Header/Search/Search';
-import Listactivate from './ListActivate';
 import Listdisabled from './ListDisabled';
 import styles from './Playlist.module.scss';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
 import { Playlist as PlaylistInterface } from '@/app/interfaces/playlist.interface';
 import axios from 'axios';
+import Link from 'next/link';
 
 const Playlist = () => {
     const [create, setCreate] = useState(false);
@@ -17,7 +17,9 @@ const Playlist = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/playlist/user', { params: { id: 1 } })
+            .get('https://mukhambazi-back.onrender.com/playlist/user', {
+                params: { id: 1 },
+            })
             .then((res) => {
                 setPlaylists(res.data);
             })
@@ -64,12 +66,17 @@ const Playlist = () => {
                 <div className={styles.playlist}>
                     {playlists.length ? (
                         playlists.map((playlist) => (
-                            <Listdisabled
-                                title={playlist.title}
-                                date={playlist.description}
-                                icon="green"
-                                playbtn="play"
-                            />
+                            <Link
+                                href={`playlist/${playlist.id}`}
+                                className={styles.wrap}
+                            >
+                                <Listdisabled
+                                    title={playlist.title}
+                                    date={playlist.description}
+                                    icon="green"
+                                    playbtn="play"
+                                />
+                            </Link>
                         ))
                     ) : (
                         <p>no playlists yet!</p>
