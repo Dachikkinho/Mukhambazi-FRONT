@@ -135,6 +135,7 @@ const MainPlayer = () => {
                             src="/icons/playerIcons/playing.svg"
                             className={styles.pause}
                             alt="icon"
+                            draggable={false}
                         />
                     ),
                     volume: (
@@ -143,6 +144,7 @@ const MainPlayer = () => {
                             src="/icons/playerIcons/aduioOn.svg"
                             className={styles.play}
                             alt="icon"
+                            draggable={false}
                         />
                     ),
                     volumeMute: (
@@ -151,6 +153,7 @@ const MainPlayer = () => {
                             src="/icons/playerIcons/audioOff.svg"
                             className={styles.play}
                             alt="icon"
+                            draggable={false}
                         />
                     ),
                     loopOff: (
@@ -159,6 +162,7 @@ const MainPlayer = () => {
                             src="/icons/playerIcons/repeat-single 1.svg"
                             className={styles.loop}
                             alt="icon"
+                            draggable={false}
                         />
                     ),
                 }}

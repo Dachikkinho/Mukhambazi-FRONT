@@ -26,8 +26,15 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
     if (loading) {
         return (
             <div className={styles.fullscreenSpinner}>
-                <div className={styles.spinner}></div>
-                <p className={styles.loading}>The platform is loading...</p>
+                <div className={styles.spinner}>
+                    <img
+                        className={styles.chakrulo}
+                        src="/logo.png"
+                        alt="Logo"
+                        draggable={false}
+                    />
+                </div>
+                <p className={styles.loading}>Chakrulos loading...</p>
             </div>
         );
     }

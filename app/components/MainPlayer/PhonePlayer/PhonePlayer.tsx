@@ -24,13 +24,19 @@ const PhonePlayer = ({
             className={`${styles.cont} ${open && styles.contActive} ${upNext && styles.top}`}
         >
             <button className={styles.close} onClick={closeFunc}>
-                <img src="/icons/collapse.svg" alt="" className={styles.icon} />
+                <img
+                    src="/icons/collapse.svg"
+                    alt=""
+                    className={styles.icon}
+                    draggable={false}
+                />
             </button>
             <img
                 src={image}
                 alt=""
                 className={styles.image}
                 onClick={() => openFunc()}
+                draggable={false}
             />
             <p className={styles.songName}>{name}</p>
             <p className={styles.artistName}>{artistName}</p>
