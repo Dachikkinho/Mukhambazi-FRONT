@@ -105,7 +105,7 @@ const Login = () => {
                         <span>
                             New to CHAKRULOS?
                             <Link href="/register">
-                                <span className={styles.signup}>Sign up</span>
+                                <span className={styles.signup}> Sign up</span>
                             </Link>
                         </span>
                         <span> now </span>
