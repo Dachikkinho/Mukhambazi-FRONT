@@ -164,7 +164,7 @@ const Signup = () => {
                     <span>
                         Already a member?
                         <Link href="/login">
-                            <span className={styles.login}>Log in</span>
+                            <span className={styles.login}> Log in</span>
                         </Link>
                     </span>
                 </div>

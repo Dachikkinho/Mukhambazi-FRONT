@@ -8,9 +8,6 @@ import PreviousNext from './PreviousNext/PreviousNext';
 import Shuffle from './Shuffle/Shuffle';
 import { useRecoilState } from 'recoil';
 import { isPlayingState, nextSongArrState } from '@/app/states';
-import PhonePlayer from './PhonePlayer/PhonePlayer';
-import UpNext from './UpNext/UpNext';
-import { useSwipeable } from 'react-swipeable';
 
 const MainPlayer = () => {
     const [isShuffle, setIsShuffle] = useState(false);
@@ -24,21 +21,12 @@ const MainPlayer = () => {
     // Phone Controls
 
     const isMobile = useViewport(768);
-    const isTablet = useViewport(1300);
 
-    const mobileControlsBottom = [
-        RHAP_UI.ADDITIONAL_CONTROLS,
-        RHAP_UI.MAIN_CONTROLS,
-        RHAP_UI.LOOP,
-    ];
+    const mobileControlsBottom = [RHAP_UI.MAIN_CONTROLS];
 
     const mobileVolume = !isMobile ? RHAP_UI.VOLUME : <></>;
 
     const mobileControls = !isMobile ? RHAP_UI.MAIN_CONTROLS : <></>;
-
-    const mobileLoop = !isMobile ? RHAP_UI.LOOP : <></>;
-
-    const mobileShuffle = !isMobile ? RHAP_UI.ADDITIONAL_CONTROLS : <></>;
 
     function playNext() {
         if (isPlaying.index + 1 < nextSongArr.length) {
@@ -52,125 +40,72 @@ const MainPlayer = () => {
         }
     }
 
-    function switchNextUp() {
-        setUpNext(!upNext);
-    }
-
-    const [open, setOpen] = useState(false);
-    const [upNext, setUpNext] = useState(false);
-
-    function setNextSong(index: number) {
-        setIsPlaying(nextSongArr[index]);
-    }
-
-    const handlers = useSwipeable({
-        onSwipedDown: () => {
-            if (open) {
-                setOpen(false);
-            } else if (upNext) {
-                setOpen(true);
-                setUpNext(false);
-            }
-        },
-        onSwipedUp: () => {
-            if (!open && !upNext) {
-                setOpen(true);
-            } else {
-                setUpNext(true);
-                setOpen(false);
-            }
-        },
-        preventScrollOnSwipe: true,
-        delta: { down: 10 },
-    });
-
     return (
-        <div className={styles.wrap} {...handlers}>
-            <H5AudioPlayer
-                className={`${styles.player} ${isPlaying.src && styles.active} ${open && styles.mobileOpen} ${upNext && styles.upNextPlayer}`}
-                customControlsSection={isMobile ? mobileControlsBottom : []}
-                customProgressBarSection={[
-                    isTablet ? (
-                        <PhonePlayer
-                            openFunc={() => {
-                                setOpen(true);
-                                setUpNext(false);
-                            }}
-                            closeFunc={() => setOpen(false)}
-                            artistName={isPlaying.artistName}
-                            image={isPlaying.image}
-                            name={isPlaying.name}
-                            open={open}
-                            upNext={upNext}
-                        />
-                    ) : (
-                        <></>
-                    ),
-                    mobileControls,
-                    RHAP_UI.CURRENT_TIME,
-                    RHAP_UI.PROGRESS_BAR,
-                    RHAP_UI.DURATION,
-                    mobileShuffle,
-                    mobileLoop,
-                    mobileVolume,
-                ]}
-                customAdditionalControls={[
-                    <Shuffle
-                        key="shuffle"
-                        onClick={switchIsShuffle}
-                        isActive={isShuffle}
-                    />,
-                ]}
-                onClickNext={playNext}
-                onClickPrevious={playPrev}
-                showSkipControls
-                showJumpControls={false}
-                src={isPlaying.src}
-                customIcons={{
-                    next: <PreviousNext key="next" />,
-                    previous: <PreviousNext key="previous" isPrev />,
-                    pause: (
-                        <img
-                            key="pause"
-                            src="/icons/playerIcons/playing.svg"
-                            className={styles.pause}
-                            alt="icon"
-                        />
-                    ),
-                    volume: (
-                        <img
-                            key="volume"
-                            src="/icons/playerIcons/aduioOn.svg"
-                            className={styles.play}
-                            alt="icon"
-                        />
-                    ),
-                    volumeMute: (
-                        <img
-                            key="volumeMute"
-                            src="/icons/playerIcons/audioOff.svg"
-                            className={styles.play}
-                            alt="icon"
-                        />
-                    ),
-                    loopOff: (
-                        <img
-                            key="loopOff"
-                            src="/icons/playerIcons/repeat-single 1.svg"
-                            className={styles.loop}
-                            alt="icon"
-                        />
-                    ),
-                }}
-            />
-            <UpNext
-                open={open}
-                setOpen={setOpen}
-                switchNextUp={switchNextUp}
-                upNext={upNext}
-                setNextSong={setNextSong}
-            />
-        </div>
+        <H5AudioPlayer
+            className={`${styles.player} ${isPlaying.src && styles.active}`}
+            customControlsSection={isMobile ? mobileControlsBottom : []}
+            customProgressBarSection={[
+                mobileControls,
+                RHAP_UI.CURRENT_TIME,
+                RHAP_UI.PROGRESS_BAR,
+                RHAP_UI.DURATION,
+                RHAP_UI.ADDITIONAL_CONTROLS,
+                RHAP_UI.LOOP,
+                mobileVolume,
+            ]}
+            customAdditionalControls={[
+                <Shuffle
+                    key="shuffle"
+                    onClick={switchIsShuffle}
+                    isActive={isShuffle}
+                />,
+            ]}
+            onClickNext={playNext}
+            onClickPrevious={playPrev}
+            showSkipControls
+            showJumpControls={false}
+            src={isPlaying.src}
+            customIcons={{
+                next: <PreviousNext key="next" />,
+                previous: <PreviousNext key="previous" isPrev />,
+                pause: (
+                    <img
+                        key="pause"
+                        src="/icons/playerIcons/playing.svg"
+                        className={styles.pause}
+                        alt="icon"
+                        draggable={false}
+                    />
+                ),
+                volume: (
+                    <img
+                        key="volume"
+                        src="/icons/playerIcons/aduioOn.svg"
+                        className={styles.play}
+                        alt="icon"
+                        draggable={false}
+                    />
+                ),
+                volumeMute: (
+                    <img
+                        key="volumeMute"
+                        src="/icons/playerIcons/audioOff.svg"
+                        className={styles.play}
+                        alt="icon"
+                        draggable={false}
+                    />
+                ),
+                loopOff: (
+                    <img
+                        key="loopOff"
+                        src="/icons/playerIcons/repeat-single 1.svg"
+                        className={styles.loop}
+                        alt="icon"
+                        draggable={false}
+                    />
+                ),
+            }}
+        />
     );
 };
 
