@@ -2,7 +2,7 @@ import styles from './MainSection.module.scss';
 import CarouselSection from '../CarouselSection/CarouselSection';
 import Search from '../Header/Search/Search';
 import TopArtist from './TopArtist/TopArtist';
-import PrivateRoute from '../ProtectedRoute/PrivateRoute';
+
 
 const popularImages = [
     'images/songCovers/mega.png',
