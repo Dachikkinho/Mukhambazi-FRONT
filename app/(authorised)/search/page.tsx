@@ -100,6 +100,7 @@ const SearchPage = (props: Props) => {
                                         song.url,
                                         song.name,
                                         i,
+                                        song.image,
                                     )
                                 }
                             />

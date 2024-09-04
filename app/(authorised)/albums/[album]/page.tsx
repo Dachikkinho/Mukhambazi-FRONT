@@ -71,6 +71,7 @@ const AlbumArtist = () => {
                                     song.url,
                                     song.name,
                                     index,
+                                    song.image,
                                 )
                             }
                         >

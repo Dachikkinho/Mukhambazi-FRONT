@@ -66,7 +66,7 @@ const SongsMainSection = () => {
                             name={song.name}
                             group={`${song.author.firstName} ${song.author.lastName}`}
                             songUrl={song.url}
-                            imageSrc={'/images/song-placeholder.svg'}
+                            imageSrc={song.image}
                             key={i}
                             onClick={() =>
                                 playMusic(
@@ -76,6 +76,7 @@ const SongsMainSection = () => {
                                     song.url,
                                     song.name,
                                     i,
+                                    song.image,
                                 )
                             }
                         />

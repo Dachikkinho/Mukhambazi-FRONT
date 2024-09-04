@@ -18,6 +18,8 @@ export const isPlayingState = atom({
         index: 0,
         src: '',
         name: '',
+        artistName: '',
+        image: '',
     },
 });
 
