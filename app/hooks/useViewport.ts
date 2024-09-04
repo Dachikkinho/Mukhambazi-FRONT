@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-type viewportSizes = 768 | 979 | 1280;
+type viewportSizes = 768 | 1300;
 
 export default function useViewport(size: viewportSizes) {
     const [isViewportMatch, setisViewportMatch] = useState(false);

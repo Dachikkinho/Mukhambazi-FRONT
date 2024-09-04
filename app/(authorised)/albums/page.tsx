@@ -3,6 +3,7 @@
 import Albums from '@/app/components/Albums/Albums';
 import styles from './page.module.scss';
 import { useEffect } from 'react';
+import PrivateRoute from '@/app/components/PrivateRoute/PrivateRoute';
 
 const Albumspage = () => {
     useEffect(() => {
@@ -10,9 +11,11 @@ const Albumspage = () => {
     }, []);
 
     return (
-        <main className={styles.main}>
-            <Albums />
-        </main>
+        <PrivateRoute>
+            <main className={styles.main}>
+                <Albums />
+            </main>
+        </PrivateRoute>
     );
 };
 

@@ -33,16 +33,21 @@ const SearchPage = (props: Props) => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/search/${props.searchParams.query}`, {
-                onDownloadProgress: (progressEvent) => {
-                    const { loaded, total } = progressEvent;
+            .get(
+                `https://mukhambazi-back.onrender.com/search/${props.searchParams.query}`,
+                {
+                    onDownloadProgress: (progressEvent) => {
+                        const { loaded, total } = progressEvent;
 
-                    if (total) {
-                        const percentage = Math.floor((loaded / total) * 100);
-                        setProgress(percentage);
-                    }
+                        if (total) {
+                            const percentage = Math.floor(
+                                (loaded / total) * 100,
+                            );
+                            setProgress(percentage);
+                        }
+                    },
                 },
-            })
+            )
             .then((res) => {
                 setSongs([...res.data.music]);
                 setAlbums([...res.data.album]);
@@ -96,6 +101,7 @@ const SearchPage = (props: Props) => {
                                         song.url,
                                         song.name,
                                         i,
+                                        song.image,
                                     )
                                 }
                             />

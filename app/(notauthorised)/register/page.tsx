@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // icon for password hidden
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './page.module.scss';
 import {
     PLACEHOLDEREMAIL_OBJECT,
@@ -12,11 +12,17 @@ import {
     PLACEHOLDERREenter_OBJECT,
 } from '@/public/script';
 import { RegisterForm } from '@/app/interfaces/register.interface';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import useRedirectIfAuthenticated from '@/app/useRedirectIfAuthenticated';
 
 const Signup = () => {
     useEffect(() => {
         document.title = 'Sign up - Chakrulos';
     }, []);
+
+    const router = useRouter();
+    useRedirectIfAuthenticated('/');
 
     const {
         register,
@@ -24,19 +30,28 @@ const Signup = () => {
         watch,
         formState: { errors },
     } = useForm<RegisterForm>();
-
     const [showPassword, setShowPassword] = useState(false);
     const [showReenterPassword, setShowReenterPassword] = useState(false);
 
-    const onRegisterFinished = () => {
-        //logika
+    const onRegisterFinished = async (values: RegisterForm) => {
+        try {
+            await axios.post(
+                'https://mukhambazi-back.onrender.com/users',
+                values,
+            );
+            router.push('/login');
+        } catch (error) {
+            alert(
+                'Registration failed. Please check your details and try again.',
+            );
+        }
     };
 
     const password = useRef({});
     password.current = watch('password', '');
 
     const reenterPassword = useRef({});
-    reenterPassword.current = watch('reenter', ' ');
+    reenterPassword.current = watch('reenter', '');
 
     return (
         <div className={styles.main}>
@@ -53,10 +68,9 @@ const Signup = () => {
                 className={classNames(styles.formContainer, styles.fadeIn)}
             >
                 <span className={styles.first}>
-                    Sign up to <span className={styles.second}>CHAKRULOS!</span>{' '}
+                    Sign up to <span className={styles.second}>CHAKRULOS!</span>
                     <br />
                 </span>
-
                 <div className={styles.email}>
                     <p className={styles.paragraph}>Email address</p>
                     <input
@@ -148,9 +162,9 @@ const Signup = () => {
                 </div>
                 <div className={styles.flex}>
                     <span>
-                        Already a member?{' '}
+                        Already a member?
                         <Link href="/login">
-                            <span className={styles.login}>Log in</span>
+                            <span className={styles.login}> Log in</span>
                         </Link>
                     </span>
                 </div>

@@ -1,9 +1,9 @@
 import { Artists } from './artist.interface';
 
 export interface Music {
-    src: string;
     group: string;
     //group: any;
+    image: string;
     id: number;
     name: string;
     authorId: number;

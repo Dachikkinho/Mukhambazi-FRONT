@@ -17,7 +17,7 @@ const SongsMainSection = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/music', {
+            .get('https://mukhambazi-back.onrender.com/music', {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -68,8 +68,7 @@ const SongsMainSection = () => {
                             name={song.name}
                             group={`${song.author.firstName} ${song.author.lastName}`}
                             songUrl={song.url}
-                            imageSrc={'/images/song-placeholder.svg'}
-                            id={song.id}
+                            imageSrc={song.image}
                             key={i}
                             onClick={() =>
                                 playMusic(
@@ -79,6 +78,7 @@ const SongsMainSection = () => {
                                     song.url,
                                     song.name,
                                     i,
+                                    song.image,
                                 )
                             }
                         />

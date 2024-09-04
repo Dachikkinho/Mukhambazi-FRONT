@@ -8,6 +8,7 @@
     padding: 10px 15px;
     background-color: #fff;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .rhap_container:focus:not(:focus-visible) {
@@ -29,11 +30,12 @@
 .rhap_main {
     display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
 }
 
 .rhap_stacked .rhap_controls-section {
     margin-top: 8px;
+    display: flex;
+    gap: 20px;
 }
 
 .rhap_horizontal {

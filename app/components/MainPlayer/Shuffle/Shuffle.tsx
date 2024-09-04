@@ -14,7 +14,11 @@ const Shuffle = ({ onClick, isActive }: Props) => {
                 isActive ? `${styles.button} ${styles.active}` : styles.button
             }
         >
-            <img src="/icons/playerIcons/shuffle.svg" alt="icon" />
+            <img
+                src="/icons/playerIcons/shuffle.svg"
+                alt="icon"
+                draggable={false}
+            />
         </button>
     );
 };
