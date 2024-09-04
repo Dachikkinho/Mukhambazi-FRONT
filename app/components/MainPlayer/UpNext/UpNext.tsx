@@ -21,6 +21,9 @@ const UpNext = ({
 }: Props) => {
     const isPlaying = useRecoilState(isPlayingState)[0];
     const nextSongArr = useRecoilState(nextSongArrState)[0];
+    const filteredSongs = nextSongArr.filter(
+        (_, i) => i > isPlaying.index && i <= isPlaying.index + 3,
+    );
     return (
         <div
             className={`${styles.nextSong} ${(open || upNext) && styles.visible} ${upNext && styles.active}`}
@@ -35,26 +38,19 @@ const UpNext = ({
                 Next Songs
             </p>
             <div className={styles.nextSongsWrap}>
-                {nextSongArr.filter(
-                    (_, i) => i > isPlaying.index && i <= isPlaying.index + 3,
-                ).length ? (
-                    nextSongArr
-                        .filter(
-                            (_, i) =>
-                                i > isPlaying.index && i <= isPlaying.index + 3,
-                        )
-                        .map((next, i) => (
-                            <NextSongCard
-                                key={i}
-                                className={styles.nextSongCard}
-                                arsitName={next.artistName}
-                                image={next.image}
-                                onClick={() => {
-                                    setNextSong(next.index);
-                                }}
-                                songName={next.name}
-                            />
-                        ))
+                {filteredSongs.length ? (
+                    filteredSongs.map((next, i) => (
+                        <NextSongCard
+                            key={i}
+                            className={styles.nextSongCard}
+                            arsitName={next.artistName}
+                            image={next.image}
+                            onClick={() => {
+                                setNextSong(next.index);
+                            }}
+                            songName={next.name}
+                        />
+                    ))
                 ) : (
                     <p>No More Songs!</p>
                 )}

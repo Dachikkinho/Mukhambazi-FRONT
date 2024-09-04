@@ -87,7 +87,7 @@ const MainPlayer = () => {
     return (
         <div className={styles.wrap} {...handlers}>
             <H5AudioPlayer
-                className={`${styles.player} ${isPlaying.src && styles.active} ${open && styles.mobileOpen} ${upNext && styles.upNextPlayer}`}
+                className={`${styles.player} ${true && styles.active} ${open && styles.mobileOpen} ${upNext && styles.upNextPlayer}`}
                 customControlsSection={isMobile ? mobileControlsBottom : []}
                 customProgressBarSection={[
                     isTablet ? (

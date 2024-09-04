@@ -34,7 +34,7 @@ export function playMusic(
             name: song.name,
             index: i,
             artistName: `placeholder`,
-            image: image,
+            image: song.image,
         };
 
         songsArr.push(songVar);
