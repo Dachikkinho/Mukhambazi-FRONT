@@ -13,7 +13,7 @@ const Albums = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/album', {
+            .get('https://mukhambazi-back.onrender.com/album', {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -61,7 +61,7 @@ const Albums = () => {
                             name={album.name}
                             lastName={''}
                             plays={album.releaseDate}
-                            image={'/images/songCovers/banner.png'}
+                            image={album.image}
                         />
                     </Link>
                 ))}

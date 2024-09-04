@@ -3,4 +3,5 @@ export interface Album {
     name: string;
     artistName: string;
     releaseDate: string;
+    image: string;
 }
