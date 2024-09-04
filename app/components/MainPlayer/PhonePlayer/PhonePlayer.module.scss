@@ -1,0 +1,100 @@
+.cont {
+    position: fixed;
+    z-index: 9;
+    transition: all 0.5s;
+    transform: translate(-50%, -50%);
+    left: 50px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .close {
+        transform: scale(0);
+        visibility: hidden;
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+        transition: all 0.5s;
+    }
+
+    p {
+        transform: scale(0);
+        visibility: hidden;
+        opacity: 0;
+        font-size: 0px;
+        transition: all 0.5s;
+    }
+
+    .image {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+}
+
+.close {
+    align-self: flex-end;
+    margin-bottom: 20px;
+    width: 25px;
+    display: flex;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.cont.contActive {
+    visibility: visible;
+    opacity: 1;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .close {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+        width: 25px;
+        height: 25px;
+    }
+
+    p {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .songName {
+        font-size: 30px;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+    .artistName {
+        font-size: 20px;
+        color: gray;
+    }
+
+    .image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+        transform-origin: top;
+    }
+}
+
+.cont.top {
+    img, p {
+        transform-origin: top;
+    }
+}

@@ -66,7 +66,9 @@ const SongsMainSection = () => {
                             name={song.name}
                             group={`${song.author.firstName} ${song.author.lastName}`}
                             songUrl={song.url}
-                            imageSrc={'/images/song-placeholder.svg'}
+                            imageSrc={
+                                'https://upload.wikimedia.org/wikipedia/commons/3/33/Are_You_Experienced_-_US_cover-edit.jpg'
+                            }
                             key={i}
                             onClick={() =>
                                 playMusic(
@@ -76,6 +78,7 @@ const SongsMainSection = () => {
                                     song.url,
                                     song.name,
                                     i,
+                                    'https://upload.wikimedia.org/wikipedia/commons/3/33/Are_You_Experienced_-_US_cover-edit.jpg',
                                 )
                             }
                         />

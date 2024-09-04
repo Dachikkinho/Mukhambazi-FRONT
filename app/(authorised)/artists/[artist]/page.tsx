@@ -92,6 +92,7 @@ const Artist = () => {
                                         song.url,
                                         song.name,
                                         i,
+                                        song.image,
                                     )
                                 }
                             />

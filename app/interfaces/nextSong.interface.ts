@@ -4,4 +4,5 @@ export interface nextSong {
     src: string;
     index: number;
     artistName: string;
+    image: string;
 }

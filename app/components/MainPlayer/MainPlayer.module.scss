@@ -11,9 +11,11 @@
     border: 1px solid $purplesecond !important;
     height: 116px;
     bottom: -116px;
-    transition: all 0.3s;
+    transition: all 0.5s;
     color: $white;
     gap: 10px;
+    justify-content: center;
+    padding-left: 100px;
 }
 
 @media screen and (max-width: 600px) {
@@ -84,4 +86,24 @@
 .loop {
     width: 25px;
     height: 25px;
+}
+
+.mobileOpen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 100px;
+    padding-left: 15px;
+    z-index: 11;
+}
+
+.upNextPlayer {
+    height: 15%;
+    top: 0;
+    z-index: 12;
+}
+
+.upNextPlayer .top {
+    top: 6.5vh
 }

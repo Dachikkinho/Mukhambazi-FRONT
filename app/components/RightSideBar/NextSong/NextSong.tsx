@@ -34,6 +34,7 @@ export function NextSong() {
                             isActive={false}
                             arsitName={song.artistName}
                             songName={song.name}
+                            image={song.image}
                             key={i}
                             onClick={() => setNextSong(song.index)}
                         />
