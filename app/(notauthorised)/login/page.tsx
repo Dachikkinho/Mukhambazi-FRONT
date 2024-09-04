@@ -12,6 +12,7 @@ import {
 import Link from 'next/link';
 import { LoginForm } from '@/app/interfaces/login.interface';
 import axios from 'axios';
+import { useAuth } from '@/app/AuthContext';
 
 const Login = () => {
     useEffect(() => {
@@ -30,6 +31,8 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
+    const { login } = useAuth();
+
     const onLoginFinished = async (values: object) => {
         try {
             const response = await axios.post(
@@ -37,6 +40,7 @@ const Login = () => {
                 values,
             );
             localStorage.setItem('user', JSON.stringify(response.data));
+            login();
             router.push('/');
         } catch (error) {
             if (axios.isAxiosError(error)) {

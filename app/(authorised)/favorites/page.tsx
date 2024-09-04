@@ -3,6 +3,7 @@
 import Favorites from '@/app/components/Favorites/Favorites';
 import styles from './page.module.scss';
 import { useEffect } from 'react';
+import PrivateRoute from '@/app/components/ProtectedRoute/PrivateRoute';
 
 const FavoriteSongs = () => {
     useEffect(() => {
@@ -10,9 +11,11 @@ const FavoriteSongs = () => {
     }, []);
 
     return (
-        <main className={styles.main}>
-            <Favorites />
-        </main>
+        <PrivateRoute>
+            <main className={styles.main}>
+                <Favorites />
+            </main>
+        </PrivateRoute>
     );
 };
 

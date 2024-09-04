@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { RecoilWrap } from './components/RecoilWrap/RecoilWrap';
 import './styles/MainPlayer.scss';
+import { AuthProvider } from '@/app/AuthContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,7 +38,9 @@ export default function RootLayout({
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body className={inter.className}>
-                <RecoilWrap>{children}</RecoilWrap>
+                <AuthProvider>
+                    <RecoilWrap>{children}</RecoilWrap>
+                </AuthProvider>
             </body>
         </html>
     );

@@ -3,6 +3,7 @@
 import SongsMainSection from '@/app/components/SongsMainSection/SongsMainSection';
 import styles from './page.module.scss';
 import { useEffect } from 'react';
+import PrivateRoute from '@/app/components/ProtectedRoute/PrivateRoute';
 
 const Songs = () => {
     useEffect(() => {
@@ -10,9 +11,11 @@ const Songs = () => {
     }, []);
 
     return (
-        <main className={styles.main}>
-            <SongsMainSection />
-        </main>
+        <PrivateRoute>
+            <main className={styles.main}>
+                <SongsMainSection />
+            </main>
+        </PrivateRoute>
     );
 };
 
