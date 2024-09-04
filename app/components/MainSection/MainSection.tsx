@@ -54,33 +54,31 @@ const topAlbumImages = [
 
 const MainSection = () => {
     return (
-        <PrivateRoute>
-            <div className={styles.mainContainer}>
-                <div className={styles.topContainer}>
-                    <Search
-                        placeholder={'Enter keywords to search'}
-                        icon={'search'}
-                        width={24}
-                        height={24}
-                    />
-                </div>
-                <div className={styles.wrapper}>
-                    <CarouselSection
-                        heading="Popular of the week"
-                        icon="/icons/popular.png"
-                        images={popularImages}
-                        interval={4000}
-                    />
-                    <CarouselSection
-                        heading="Top Albums"
-                        icon="/icons/topalbum.png"
-                        images={topAlbumImages}
-                        interval={4000}
-                    />
-                </div>
-                <TopArtist />
+        <div className={styles.mainContainer}>
+            <div className={styles.topContainer}>
+                <Search
+                    placeholder={'Enter keywords to search'}
+                    icon={'search'}
+                    width={24}
+                    height={24}
+                />
             </div>
-        </PrivateRoute>
+            <div className={styles.wrapper}>
+                <CarouselSection
+                    heading="Popular of the week"
+                    icon="/icons/popular.png"
+                    images={popularImages}
+                    interval={4000}
+                />
+                <CarouselSection
+                    heading="Top Albums"
+                    icon="/icons/topalbum.png"
+                    images={topAlbumImages}
+                    interval={4000}
+                />
+            </div>
+            <TopArtist />
+        </div>
     );
 };
 
