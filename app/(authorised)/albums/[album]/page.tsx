@@ -45,7 +45,7 @@ const AlbumArtist = () => {
     }, []);
 
     if (!album) {
-        return 
+        return;
     }
 
     return (
