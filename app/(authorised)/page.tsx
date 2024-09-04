@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import styles from './page.module.css';
 import MainSection from '../components/MainSection/MainSection';
-import PrivateRoute from '../components/ProtectedRoute/PrivateRoute';
+import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
 
 const Home = () => {
     useEffect(() => {

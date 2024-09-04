@@ -3,7 +3,7 @@
 import Favorites from '@/app/components/Favorites/Favorites';
 import styles from './page.module.scss';
 import { useEffect } from 'react';
-import PrivateRoute from '@/app/components/ProtectedRoute/PrivateRoute';
+import PrivateRoute from '@/app/components/PrivateRoute/PrivateRoute';
 
 const FavoriteSongs = () => {
     useEffect(() => {

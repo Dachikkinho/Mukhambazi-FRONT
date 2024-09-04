@@ -3,7 +3,7 @@
 import Albums from '@/app/components/Albums/Albums';
 import styles from './page.module.scss';
 import { useEffect } from 'react';
-import PrivateRoute from '@/app/components/ProtectedRoute/PrivateRoute';
+import PrivateRoute from '@/app/components/PrivateRoute/PrivateRoute';
 
 const Albumspage = () => {
     useEffect(() => {

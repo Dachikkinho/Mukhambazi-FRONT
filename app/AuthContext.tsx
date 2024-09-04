@@ -28,6 +28,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const login = () => {
         setIsAuthenticated(true);
+        localStorage.setItem('user', 'true');
     };
 
     const logout = () => {
