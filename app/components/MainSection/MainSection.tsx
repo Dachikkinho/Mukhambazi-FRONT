@@ -3,7 +3,6 @@ import CarouselSection from '../CarouselSection/CarouselSection';
 import Search from '../Header/Search/Search';
 import TopArtist from './TopArtist/TopArtist';
 
-
 const popularImages = [
     'images/songCovers/mega.png',
     'images/songCovers/metalica.png',
