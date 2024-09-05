@@ -48,26 +48,17 @@
     height: 256px;
 }
 
-@media screen and (width: 430px) {
+
+
+@media screen and (max-width: 576px) {
     .img {
-        max-width: 390px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 
-@media screen and (width: 375px) {
+@media screen and (max-width: 375px) {
     .img {
-        max-width: 340px;
-    }
-}
-
-@media screen and (width: 414px) {
-    .img {
-        max-width: 380px;
-    }
-}
-
-@media screen and (width: 390px) {
-    .img {
-        max-width: 370px;
+        max-width: 100%; 
     }
 }
