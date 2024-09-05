@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #733b64;
+    border: 2px solid rgba(178,53,166,.7);
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -109,6 +109,6 @@
     }
 
     .navButton {
-        border: 3px solid #853976;
+        border: 3px solid rgba(178,53,166,.7);
     }
 }
