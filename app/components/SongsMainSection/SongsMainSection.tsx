@@ -17,7 +17,7 @@ const SongsMainSection = () => {
 
     useEffect(() => {
         axios
-            .get('https://mukhambazi-back.onrender.com/music', {
+            .get('https://back.chakrulos.ge/music', {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 

@@ -34,7 +34,7 @@ const SearchPage = (props: Props) => {
     useEffect(() => {
         axios
             .get(
-                `https://mukhambazi-back.onrender.com/search/${props.searchParams.query}`,
+                `https://back.chakrulos.ge/search/${props.searchParams.query}`,
                 {
                     onDownloadProgress: (progressEvent) => {
                         const { loaded, total } = progressEvent;

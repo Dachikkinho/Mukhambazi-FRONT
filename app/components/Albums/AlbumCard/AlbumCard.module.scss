@@ -48,9 +48,30 @@
     height: 256px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (width: 430px) {
     .img {
-        width: 100%;
-        object-fit: cover;
+        max-width: 410px;
+        height: 100%;
+    }
+}
+
+@media screen and (width: 375px) {
+    .img {
+        max-width: 360px;
+        height: 100%;
+    }
+}
+
+@media screen and (width: 414px) {
+    .img {
+        max-width: 395px;
+        height: 100%;
+    }
+}
+
+@media screen and (width: 390px) {
+    .img {
+        max-width: 370px;
+        height: 100%;
     }
 }

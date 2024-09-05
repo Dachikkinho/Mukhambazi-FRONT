@@ -37,7 +37,7 @@ const Login = () => {
     const onLoginFinished = async (values: LoginForm) => {
         try {
             const response = await axios.post(
-                'https://mukhambazi-back.onrender.com/login',
+                'https://back.chakrulos.ge/login',
                 values,
             );
             localStorage.setItem('user', JSON.stringify(response.data));
