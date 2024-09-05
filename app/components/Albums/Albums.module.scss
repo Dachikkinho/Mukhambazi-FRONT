@@ -17,7 +17,6 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    margin-top: 30px;
     padding: 8px;
 }
 
@@ -91,7 +90,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
     .topContainer {
         padding: 0px 20px;
         display: flex;
