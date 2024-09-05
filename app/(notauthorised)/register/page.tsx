@@ -35,10 +35,7 @@ const Signup = () => {
 
     const onRegisterFinished = async (values: RegisterForm) => {
         try {
-            await axios.post(
-                'https://back.chakrulos.ge/users',
-                values,
-            );
+            await axios.post('https://back.chakrulos.ge/users', values);
             router.push('/login');
         } catch (error) {
             alert(
