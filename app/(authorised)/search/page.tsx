@@ -52,14 +52,9 @@ const SearchPage = (props: Props) => {
                 },
             )
             .then((res) => {
-                console.log(res);
-
                 setSongs([...res.data.music]);
                 setAlbums([...res.data.album]);
                 setArtists([...res.data.author]);
-            })
-            .catch((err) => {
-                console.log(err);
             });
     }, [props.searchParams.query]);
 
