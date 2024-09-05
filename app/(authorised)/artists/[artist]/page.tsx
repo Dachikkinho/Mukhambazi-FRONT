@@ -80,7 +80,7 @@ const Artist = () => {
                                     `${artist?.firstName} ${artist?.lastName}` ||
                                     ''
                                 }
-                                imageSrc={'/images/song-placeholder.svg'}
+                                imageSrc={song.image}
                                 name={song.name}
                                 songUrl={song.url}
                                 key={i}
