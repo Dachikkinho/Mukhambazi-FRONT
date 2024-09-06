@@ -44,11 +44,16 @@ const Song = ({ name, group, imageSrc, onClick, songUrl }: Props) => {
                 alt="song cover"
                 className={styles.imagePlaceHolder}
                 draggable={false}
+                onClick={onClick}
             />
             <div className={styles.info}>
-                <p className={styles.name}>{name}</p>
-                <p className={styles.name}>{group}</p>
-                <div className={styles.infoBottom}>
+                <p onClick={onClick} className={styles.name}>
+                    {name}
+                </p>
+                <p onClick={onClick} className={styles.name}>
+                    {group}
+                </p>
+                <div onClick={onClick} className={styles.infoBottom}>
                     <p className={styles.name}>{duration}</p>
                     <button className={styles.play} onClick={onClick}>
                         Play Now
