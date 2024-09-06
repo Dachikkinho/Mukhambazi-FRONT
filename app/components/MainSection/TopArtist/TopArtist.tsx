@@ -17,7 +17,7 @@ const TopArtist = () => {
         axios
             .all([
                 axios.get(
-                    `https://mukhambazi-back.onrender.com/authors/category/Artists`,
+                    `https://back.chakrulos.ge/authors/category/Artists`,
                     {
                         onDownloadProgress: (progressEvent) => {
                             const { loaded, total } = progressEvent;
@@ -31,36 +31,30 @@ const TopArtist = () => {
                         },
                     },
                 ),
-                axios.get(
-                    `https://mukhambazi-back.onrender.com/authors/category/Hits`,
-                    {
-                        onDownloadProgress: (progressEvent) => {
-                            const { loaded, total } = progressEvent;
+                axios.get(`https://back.chakrulos.ge/authors/category/Hits`, {
+                    onDownloadProgress: (progressEvent) => {
+                        const { loaded, total } = progressEvent;
 
-                            if (total) {
-                                const percentage = Math.floor(
-                                    (loaded / total) * 100,
-                                );
-                                setProgress(percentage);
-                            }
-                        },
+                        if (total) {
+                            const percentage = Math.floor(
+                                (loaded / total) * 100,
+                            );
+                            setProgress(percentage);
+                        }
                     },
-                ),
-                axios.get(
-                    'https://mukhambazi-back.onrender.com/authors/category/Charts',
-                    {
-                        onDownloadProgress: (progressEvent) => {
-                            const { loaded, total } = progressEvent;
+                }),
+                axios.get('https://back.chakrulos.ge/authors/category/Charts', {
+                    onDownloadProgress: (progressEvent) => {
+                        const { loaded, total } = progressEvent;
 
-                            if (total) {
-                                const percentage = Math.floor(
-                                    (loaded / total) * 100,
-                                );
-                                setProgress(percentage);
-                            }
-                        },
+                        if (total) {
+                            const percentage = Math.floor(
+                                (loaded / total) * 100,
+                            );
+                            setProgress(percentage);
+                        }
                     },
-                ),
+                }),
             ])
             .then(
                 axios.spread((artists, hits, charts) => {
