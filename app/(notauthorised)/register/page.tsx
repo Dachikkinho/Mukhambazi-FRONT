@@ -35,10 +35,7 @@ const Signup = () => {
 
     const onRegisterFinished = async (values: RegisterForm) => {
         try {
-            await axios.post(
-                'https://mukhambazi-back.onrender.com/users',
-                values,
-            );
+            await axios.post('https://back.chakrulos.ge/users', values);
             router.push('/login');
         } catch (error) {
             alert(

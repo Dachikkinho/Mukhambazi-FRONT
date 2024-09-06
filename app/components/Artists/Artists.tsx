@@ -18,7 +18,7 @@ const ArtistsPage = () => {
         axios
             .all([
                 axios.get(
-                    `https://mukhambazi-back.onrender.com/authors/category/Popular`,
+                    `https://back.chakrulos.ge/authors/category/Popular`,
                     {
                         onDownloadProgress: (progressEvent) => {
                             const { loaded, total } = progressEvent;
@@ -33,7 +33,7 @@ const ArtistsPage = () => {
                     },
                 ),
                 axios.get(
-                    `https://mukhambazi-back.onrender.com/authors/category/Georgian`,
+                    `https://back.chakrulos.ge/authors/category/Georgian`,
                     {
                         onDownloadProgress: (progressEvent) => {
                             const { loaded, total } = progressEvent;
@@ -48,7 +48,7 @@ const ArtistsPage = () => {
                     },
                 ),
                 axios.get(
-                    'https://mukhambazi-back.onrender.com/authors/category/European',
+                    'https://back.chakrulos.ge/authors/category/European',
                     {
                         onDownloadProgress: (progressEvent) => {
                             const { loaded, total } = progressEvent;

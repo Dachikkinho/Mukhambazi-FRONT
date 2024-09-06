@@ -76,8 +76,14 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .carousel {
-        max-width: 450px;
+        max-width: 435px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .carousel {
+        max-width: 435px;
     }
 }

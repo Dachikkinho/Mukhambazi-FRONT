@@ -30,7 +30,7 @@ const Artist = () => {
 
     useEffect(() => {
         axios
-            .get(`https://mukhambazi-back.onrender.com/authors/${id}`, {
+            .get(`https://back.chakrulos.ge/authors/${id}`, {
                 onDownloadProgress: (progressEvent) => {
                     const { loaded, total } = progressEvent;
 
@@ -80,7 +80,7 @@ const Artist = () => {
                                     `${artist?.firstName} ${artist?.lastName}` ||
                                     ''
                                 }
-                                imageSrc={'/images/song-placeholder.svg'}
+                                imageSrc={song.image}
                                 name={song.name}
                                 songUrl={song.url}
                                 id={song.id}
