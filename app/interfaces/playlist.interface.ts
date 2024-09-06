@@ -1,10 +1,10 @@
-import { Music } from "./music.interface";
+import { Music } from './music.interface';
 
 export interface Playlist {
     title: string;
     description: string;
     musicIds: number[];
-    musics: Music[]
+    musics: Music[];
     userId: number;
     id: number;
 }

@@ -9,6 +9,7 @@ import { useRecoilState } from 'recoil';
 import { Playlist as PlaylistInterface } from '@/app/interfaces/playlist.interface';
 import axios from 'axios';
 import Link from 'next/link';
+import { jwtDecode } from 'jwt-decode';
 
 const Playlist = () => {
     const [create, setCreate] = useState(false);
@@ -16,9 +17,13 @@ const Playlist = () => {
     const [playlists, setPlaylists] = useState<PlaylistInterface[]>([]);
 
     useEffect(() => {
+        const user = localStorage.getItem('user');
+        const id = jwtDecode<{ id: number }>(user || '');
+        console.log(id);
+
         axios
             .get('https://mukhambazi-back.onrender.com/playlist/user', {
-                params: { id: 1 },
+                params: { id: id.id },
             })
             .then((res) => {
                 setPlaylists(res.data);
@@ -65,10 +70,11 @@ const Playlist = () => {
 
                 <div className={styles.playlist}>
                     {playlists.length ? (
-                        playlists.map((playlist) => (
+                        playlists.map((playlist, i) => (
                             <Link
                                 href={`playlist/${playlist.id}`}
                                 className={styles.wrap}
+                                key={i}
                             >
                                 <Listdisabled
                                     title={playlist.title}

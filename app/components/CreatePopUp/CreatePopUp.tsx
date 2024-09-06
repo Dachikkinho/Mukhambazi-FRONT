@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './CreatePopUp.module.scss';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Done from '../Done/Done';
 import { Playlist } from '@/app/interfaces/playlist.interface';
+import { jwtDecode } from 'jwt-decode';
 
 interface Props {
     closeMenuFunction: () => void;
@@ -19,11 +20,13 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
     const [success, setSuccess] = useState(false);
 
     function onSubmit(album: Playlist) {
+        const user = localStorage.getItem('user');
+        const id = jwtDecode<{ id: number }>(user || '');
         axios
             .post('https://mukhambazi-back.onrender.com/playlist', {
                 description: album.description,
                 title: album.title,
-                userId: 1, // placeholder
+                userId: id.id,
             })
             .then(() => {
                 reset();

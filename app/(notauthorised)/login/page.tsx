@@ -40,18 +40,9 @@ const Login = () => {
                 'https://mukhambazi-back.onrender.com/login',
                 values,
             );
-            axios
-                .get('https://mukhambazi-back.onrender.com/users/me', {
-                    headers: {
-                        Authorization: `Bearer ${response.data.token}`,
-                    },
-                })
-                .then((res) => {
-                    console.log(res);
-                });
 
             localStorage.setItem('user', JSON.stringify(response.data));
-            login();
+            login(response.data.token);
             router.push('/');
         } catch (error) {
             if (axios.isAxiosError(error)) {

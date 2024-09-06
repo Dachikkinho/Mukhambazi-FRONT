@@ -6,12 +6,13 @@ import { useSetRecoilState } from 'recoil';
 import { Playlist } from '@/app/interfaces/playlist.interface';
 import axios from 'axios';
 import Link from 'next/link';
+import { jwtDecode } from 'jwt-decode';
 
 type Props = {
-    songId: number
-}
+    songId: number;
+};
 
-const AddSongButton = ({songId}: Props) => {
+const AddSongButton = ({ songId }: Props) => {
     const [open, setOpen] = useState(false);
     const [success, setSuccess] = useState(false);
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
@@ -19,14 +20,14 @@ const AddSongButton = ({songId}: Props) => {
     // place holder upload function
 
     function upload(id: number) {
-        const playlist = playlists.filter(playlist => playlist.id === id)
-        console.log(songId);
-        
-        axios.patch(`https://mukhambazi-back.onrender.com/playlist/${id}`, {
-            musicIds: [songId]
-        }).then(() => {
-            setOpen(false);
-        });
+        axios
+            .patch(`https://mukhambazi-back.onrender.com/playlist/${id}`, {
+                musicIds: [songId],
+            })
+            .then(() => {
+                setOpen(false);
+                setSuccess(true);
+            });
     }
 
     useEffect(() => {
@@ -38,8 +39,13 @@ const AddSongButton = ({songId}: Props) => {
             return () => clearTimeout(timer);
         }
 
+        const user = localStorage.getItem('user');
+        const id = jwtDecode<{ id: number }>(user || '');
+
         axios
-            .get('https://mukhambazi-back.onrender.com/playlist/user', { params: { id: 1 } })
+            .get('https://mukhambazi-back.onrender.com/playlist/user', {
+                params: { id: id.id },
+            })
             .then((res) => {
                 setPlaylists(res.data);
             });
@@ -98,8 +104,13 @@ const AddSongButton = ({songId}: Props) => {
                                 // }}
                                 >
                                     {playlists.length ? (
-                                        playlists.map((playlist) => (
-                                            <div onClick={() => upload(playlist.id)}>
+                                        playlists.map((playlist, i) => (
+                                            <div
+                                                onClick={() =>
+                                                    upload(playlist.id)
+                                                }
+                                                key={i}
+                                            >
                                                 <Listdisabled
                                                     title={playlist.title}
                                                     date={playlist.description}

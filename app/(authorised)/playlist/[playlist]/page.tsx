@@ -18,10 +18,12 @@ const Playlist = () => {
     const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
-        axios.get(`https://mukhambazi-back.onrender.com/playlist/${id}`).then((res) => {
-            setPlaylist(res.data);
-            console.log(res.data);
-        });
+        axios
+            .get(`https://mukhambazi-back.onrender.com/playlist/${id}`)
+            .then((res) => {
+                setPlaylist(res.data);
+                console.log(res.data);
+            });
     }, []);
 
     const imageExists = playlist?.musics !== undefined;
@@ -76,7 +78,9 @@ const Playlist = () => {
                 ) : (
                     <div className={styles.right}>
                         <p>No Songs Yet!</p>
-                        <Link href="/songs" className={styles.add}>Add Now!</Link>
+                        <Link href="/songs" className={styles.add}>
+                            Add Now!
+                        </Link>
                     </div>
                 )}
             </div>
