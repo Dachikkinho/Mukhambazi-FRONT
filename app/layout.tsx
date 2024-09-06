@@ -22,7 +22,7 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <meta name="author" content="chakrulos.ge" />
-                <meta property="og:image" content="/logo.png" />
+                <meta property="og:image" content="/bannerlink.jpg" />
                 <meta
                     property="og:title"
                     content="Chakrulos - Web Player: Music for everyone"
