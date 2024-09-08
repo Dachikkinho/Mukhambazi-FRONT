@@ -77,6 +77,7 @@ const SongsMainSection = () => {
                                     song.name,
                                     i,
                                     song.image,
+                                    `${song.author.firstName} ${song.author.lastName}`,
                                 )
                             }
                         />

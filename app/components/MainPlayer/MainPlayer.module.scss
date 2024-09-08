@@ -27,7 +27,7 @@
 .pause {
     width: 33px;
     height: 33px;
-    margin-bottom: -2px;
+    margin-bottom: 3px;
 }
 
 .player.active {
@@ -84,8 +84,40 @@
 }
 
 .loop {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
+
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.loopanim {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 .mobileOpen {
@@ -106,4 +138,14 @@
 
 .upNextPlayer .top {
     top: 6.5vh
+}
+
+.playing {
+    width: 39px;
+    height: 39px;
+}
+
+.low {
+    width: 14px;
+    margin-bottom: 5px;
 }

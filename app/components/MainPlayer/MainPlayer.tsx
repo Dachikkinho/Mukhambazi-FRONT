@@ -94,10 +94,17 @@ const MainPlayer = () => {
         }
     }
 
+    // const [volume, setVolume] = useState(1);
+
+    // function volumeCheck(e: React.ChangeEvent<HTMLAudioElement>) {
+    //     setVolume(e.target.volume);
+    // }cl
+
     return (
         <div className={styles.wrap} {...handlers}>
             <H5AudioPlayer
-                className={`${styles.player} ${isPlaying.src && styles.active} ${open && styles.mobileOpen} ${upNext && styles.upNextPlayer}`}
+                className={`${styles.player} ${isPlaying.src && styles.active} ${open && isTablet && styles.mobileOpen} ${upNext && styles.upNextPlayer}`}
+                // onVolumeChange={(e) => volumeCheck(e)}
                 customControlsSection={isMobile ? mobileControlsBottom : []}
                 customProgressBarSection={[
                     isTablet ? (
@@ -149,10 +156,19 @@ const MainPlayer = () => {
                             draggable={false}
                         />
                     ),
+                    play: (
+                        <img
+                            key="pause"
+                            src="/icons/playerIcons/play.svg"
+                            alt="icon"
+                            className={styles.playing}
+                            draggable={false}
+                        />
+                    ),
                     volume: (
                         <img
                             key="volume"
-                            src="/icons/playerIcons/aduioOn.svg"
+                            src="/icons/playerIcons/volume-high-solid.svg"
                             className={styles.play}
                             alt="icon"
                             draggable={false}
@@ -161,7 +177,7 @@ const MainPlayer = () => {
                     volumeMute: (
                         <img
                             key="volumeMute"
-                            src="/icons/playerIcons/audioOff.svg"
+                            src="/icons/playerIcons/volume-xmark-solid.svg"
                             className={styles.play}
                             alt="icon"
                             draggable={false}
@@ -170,21 +186,30 @@ const MainPlayer = () => {
                     loopOff: (
                         <img
                             key="loopOff"
-                            src="/icons/playerIcons/repeat-single 1.svg"
+                            src="/icons/playerIcons/repeat-off.svg"
                             className={styles.loop}
                             alt="icon"
                             draggable={false}
                         />
                     ),
+                    loop: (
+                        <img
+                            src="/icons/playerIcons/repeat.svg"
+                            alt="icon"
+                            className={styles.loopanim}
+                        />
+                    ),
                 }}
             />
-            <UpNext
-                open={open}
-                setOpen={setOpen}
-                switchNextUp={switchNextUp}
-                upNext={upNext}
-                setNextSong={setNextSong}
-            />
+            {isTablet && (
+                <UpNext
+                    open={open}
+                    setOpen={setOpen}
+                    switchNextUp={switchNextUp}
+                    upNext={upNext}
+                    setNextSong={setNextSong}
+                />
+            )}
         </div>
     );
 };
