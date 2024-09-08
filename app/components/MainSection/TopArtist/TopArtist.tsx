@@ -75,7 +75,7 @@ const TopArtist = () => {
             />
             <div>
                 <div className={styles.heading}>
-                    <h5>Top Artist</h5>
+                    <h5>Popular Artists</h5>
                     <img
                         src="/icons/topartist.png"
                         alt="topartist-icon"
