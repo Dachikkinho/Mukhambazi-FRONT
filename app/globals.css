@@ -67,7 +67,7 @@ a {
     }
 }
 
-@media only screen and (max-width: 1920px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
     body {
         transform: rotate(90deg);
         transform-origin: left top;
