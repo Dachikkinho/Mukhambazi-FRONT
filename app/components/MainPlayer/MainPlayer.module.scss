@@ -148,3 +148,9 @@
     width: 14px;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width: 600px) {
+    .pause {
+        margin-bottom: 0px;
+    }
+}

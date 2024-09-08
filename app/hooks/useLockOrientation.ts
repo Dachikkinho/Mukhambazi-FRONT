@@ -6,7 +6,7 @@ interface CustomScreenOrientation extends ScreenOrientation {
 }
 
 const useLockOrientation = () => {
-    useEffect(() => {
+    const lockOrientation = () => {
         if ('screen' in window && 'orientation' in screen) {
             (screen.orientation as CustomScreenOrientation)
                 .lock('landscape')
@@ -18,8 +18,13 @@ const useLockOrientation = () => {
                 'Screen Orientation API is not supported on this device',
             );
         }
+    };
+
+    useEffect(() => {
+        window.addEventListener('click', lockOrientation);
 
         return () => {
+            window.removeEventListener('click', lockOrientation);
             if ('screen' in window && 'orientation' in screen) {
                 (screen.orientation as CustomScreenOrientation).unlock();
             }
