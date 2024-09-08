@@ -39,6 +39,9 @@ export default function RootLayout({
                     property="twitter:title"
                     content="Chakrulos is a digital music service that gives you access to millions of songs."
                 />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="628" />
+
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body className={inter.className}>

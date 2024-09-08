@@ -75,10 +75,49 @@ a {
         height: 100vw;
         overflow-x: hidden;
         position: absolute;
+    }
+}
 
-        background-image: url('/phone.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
+@media only screen and (width: 896px) and (orientation: landscape) {
+    body {
+        transform: rotate(90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+    }
+}
+
+@media only screen and (width: 844px) and (orientation: landscape) {
+    body {
+        transform: rotate(90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+    }
+}
+
+@media only screen and (width: 932px) and (orientation: landscape) {
+    body {
+        transform: rotate(90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+    }
+}
+
+@media only screen and (width: 915px) and (orientation: landscape) {
+    body {
+        transform: rotate(90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
     }
 }
