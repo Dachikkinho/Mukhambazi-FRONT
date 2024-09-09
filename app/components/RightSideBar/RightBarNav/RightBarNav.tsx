@@ -79,7 +79,7 @@ export function RightBarNav() {
                     }
                 >
                     <img
-                        src="/navi.png"
+                        src="/user.png"
                         alt="User Profile"
                         draggable={false}
                         height={50}

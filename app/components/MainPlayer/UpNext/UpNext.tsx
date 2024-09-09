@@ -52,7 +52,9 @@ const UpNext = ({
                         />
                     ))
                 ) : (
-                    <p>No More Songs!</p>
+                    <p>
+                        No More Songs! <br></br>
+                    </p>
                 )}
             </div>
         </div>

@@ -39,6 +39,7 @@ const AlbumArtist = () => {
             })
             .then((res) => {
                 setAlbum(res.data);
+                console.log(res.data);
 
                 setSongs([...res.data.musics]);
             });
@@ -72,6 +73,7 @@ const AlbumArtist = () => {
                                     song.name,
                                     index,
                                     song.image,
+                                    `${song.author.firstName} ${song.author.lastName}`,
                                 )
                             }
                         >

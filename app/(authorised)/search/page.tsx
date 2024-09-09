@@ -105,7 +105,34 @@ const SearchPage = (props: Props) => {
                                     )
                                 }
                             />
+
                         ))}
+
+                        </div>
+                        <div className={styles.songsCont}>
+                            {songs.map((song, i) => (
+                                <Song
+                                    name={song.name}
+                                    group={`${song.author.firstName} ${song.author.lastName}`}
+                                    songUrl={song.url}
+                                    imageSrc={song.image}
+                                    key={i}
+                                    onClick={() =>
+                                        playMusic(
+                                            songs,
+                                            setNextSongArr,
+                                            setIsPlaying,
+                                            song.url,
+                                            song.name,
+                                            i,
+                                            song.image,
+                                            `${song.author.firstName} ${song.author.lastName}`,
+                                        )
+                                    }
+                                />
+                            ))}
+                        </div>
+
                     </div>
                 </div>
             )}

@@ -44,6 +44,7 @@ const Artist = () => {
                 setArtist(res.data);
                 setSongs([...res.data.musics]);
                 setAlbums([...res.data.album]);
+                console.log(res.data);
             });
     }, []);
 
@@ -94,6 +95,7 @@ const Artist = () => {
                                         song.name,
                                         i,
                                         song.image,
+                                        `${artist?.firstName} ${artist?.lastName}`,
                                     )
                                 }
                             />
