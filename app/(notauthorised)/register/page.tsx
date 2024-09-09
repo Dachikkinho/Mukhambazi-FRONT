@@ -32,15 +32,66 @@ const Signup = () => {
     } = useForm<RegisterForm>();
     const [showPassword, setShowPassword] = useState(false);
     const [showReenterPassword, setShowReenterPassword] = useState(false);
+    const [notification, setNotification] = useState<{
+        message: string;
+        type: 'success' | 'error' | 'info';
+    } | null>(null);
 
     const onRegisterFinished = async (values: RegisterForm) => {
         try {
+            setNotification({
+                message: 'Processing information...',
+                type: 'info',
+            });
             await axios.post('https://back.chakrulos.ge/users', values);
-            router.push('/login');
+            setNotification({
+                message: 'Registration successful! Redirecting to login...',
+                type: 'success',
+            });
+            setTimeout(() => {
+                router.push('/login');
+            }, 1000);
         } catch (error) {
-            alert(
-                'Registration failed. Please check your details and try again.',
-            );
+            console.error('Registration error:', error);
+
+            if (axios.isAxiosError(error)) {
+                if (error.response) {
+                    console.error(
+                        'Server Response Error:',
+                        error.response.data,
+                    );
+                    if (error.response.status === 500) {
+                        setNotification({
+                            message:
+                                'The email address is already in use. Please choose another one.',
+                            type: 'error',
+                        });
+                    } else {
+                        setNotification({
+                            message: `Server error: ${error.response.data.message || 'Please try again later.'}`,
+                            type: 'error',
+                        });
+                    }
+                } else if (error.request) {
+                    setNotification({
+                        message:
+                            'No response received from the server. Please try again later.',
+                        type: 'error',
+                    });
+                } else {
+                    setNotification({
+                        message:
+                            'Error in request setup. Please try again later.',
+                        type: 'error',
+                    });
+                }
+            } else {
+                setNotification({
+                    message:
+                        'An unexpected error occurred. Please try again later.',
+                    type: 'error',
+                });
+            }
         }
     };
 
@@ -52,6 +103,16 @@ const Signup = () => {
 
     return (
         <div className={styles.main}>
+            {notification && (
+                <div
+                    className={classNames(
+                        styles.notification,
+                        styles[notification.type],
+                    )}
+                >
+                    {notification.message}
+                </div>
+            )}
             <div className={styles.mainLogo}>
                 <img
                     className={styles.chakrulo}
