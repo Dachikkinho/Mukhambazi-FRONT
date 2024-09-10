@@ -73,9 +73,9 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
                                         message: 'Name Is Required!',
                                     },
                                     maxLength: {
-                                        value: 255,
+                                        value: 100,
                                         message:
-                                            "Name Can't Be Longer Than 255 Characters!",
+                                            "Name Can't Be Longer Than 100 Characters!",
                                     },
                                 })}
                             />
@@ -92,10 +92,14 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
                                 className={styles.input}
                                 placeholder="Playlist Description"
                                 {...register('description', {
+                                    required: {
+                                        value: true,
+                                        message: 'Description Is Required!',
+                                    },
                                     maxLength: {
-                                        value: 500,
+                                        value: 50,
                                         message:
-                                            "Description Can't Be Longer Than 500 Characters!",
+                                            "Description Can't Be Longer Than 50 Characters!",
                                     },
                                 })}
                             />

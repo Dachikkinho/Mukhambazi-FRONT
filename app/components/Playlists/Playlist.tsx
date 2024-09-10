@@ -83,7 +83,7 @@ const Playlist = () => {
                             </Link>
                         ))
                     ) : (
-                        <p>no playlists yet!</p>
+                        <p className={styles.noPlaylist}>No Playlists Yet!</p>
                     )}
                 </div>
             </div>
