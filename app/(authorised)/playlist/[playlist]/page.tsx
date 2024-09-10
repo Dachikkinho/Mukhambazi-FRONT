@@ -6,11 +6,12 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { playMusic } from '@/app/utils/playMusic';
-import { isPlayingState, nextSongArrState } from '@/app/states';
-import { useSetRecoilState } from 'recoil';
+import { isPlayingState, nextSongArrState, popUpOpenState } from '@/app/states';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import PlaylistSongCard from '../PlaylistSongCard/PlaylistSongCard';
 import DeletePopUp from '@/app/components/DeletePopUp/DeletePopUp';
+import CreatePopUp from '@/app/components/CreatePopUp/CreatePopUp';
 
 const Playlist = () => {
     const [playlist, setPlaylist] = useState<PlaylistInterface>({
@@ -26,6 +27,8 @@ const Playlist = () => {
     const setIsPlaying = useSetRecoilState(isPlayingState);
     const setNextSongArr = useSetRecoilState(nextSongArrState);
     const [deletePlaylist, setDeletePlaylist] = useState(false);
+    const [create, setCreate] = useState(false);
+    const [userId, setUserId] = useState(0);
 
     async function fetch() {
         await axios
@@ -37,7 +40,17 @@ const Playlist = () => {
 
     useEffect(() => {
         fetch();
-    }, [id]);
+        const jwt = localStorage.getItem('user');
+        axios
+            .get('https://back.chakrulos.ge/users/me', {
+                headers: {
+                    Authorization: `Bearer ${jwt}`,
+                },
+            })
+            .then((res) => {
+                setUserId(res.data.user.id);
+            });
+    }, [id, create]);
 
     return (
         <>
@@ -59,7 +72,15 @@ const Playlist = () => {
                             className={styles.image}
                         />
                     </div>
-                    <h1>{playlist?.title}</h1>
+                    <div className={styles.topHeading}>
+                        <h1>{playlist?.title}</h1>
+                        <button
+                            className={styles.edit}
+                            onClick={() => setCreate(true)}
+                        >
+                            <img src="/icons/edit-icon.svg" alt="icon" />
+                        </button>
+                    </div>
                     <p>{playlist?.description}</p>
                     <p>{playlist.musics?.length || 0} Tracks</p>
                 </div>
@@ -100,6 +121,13 @@ const Playlist = () => {
                 name={playlist.title}
                 section="playlists"
             />
+            {create && (
+                <CreatePopUp
+                    closeMenuFunction={() => setCreate(false)}
+                    userId={userId}
+                    playlistId={+id}
+                />
+            )}
         </>
     );
 };

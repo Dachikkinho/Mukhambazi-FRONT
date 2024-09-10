@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CreatePopUp.module.scss';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -8,9 +8,10 @@ import { Playlist } from '@/app/interfaces/playlist.interface';
 interface Props {
     closeMenuFunction: () => void;
     userId: number;
+    playlistId?: number;
 }
 
-const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
+const CreatePopUp = ({ closeMenuFunction, userId, playlistId }: Props) => {
     const {
         reset,
         register,
@@ -19,29 +20,59 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
     } = useForm<Playlist>();
     const [success, setSuccess] = useState(false);
 
+    useEffect(() => {
+        if (playlistId) {
+            axios
+                .get(`https://back.chakrulos.ge/playlist/${playlistId}`)
+                .then((res) => {
+                    reset(res.data);
+                });
+        }
+    }, []);
+
     function onSubmit(album: Playlist) {
         const user = localStorage.getItem('user');
-        axios
-            .post(
-                'https://back.chakrulos.ge/playlist',
-                {
-                    description: album.description,
-                    title: album.title,
-                    userId: userId,
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${user}`,
+        if (playlistId) {
+            axios
+                .patch(
+                    `https://back.chakrulos.ge/playlist/${playlistId}`,
+                    album,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${user}`,
+                        },
                     },
-                },
-            )
-            .then(() => {
-                reset();
-                setSuccess(true);
-            })
-            .catch((err) => {
-                alert(err);
-            });
+                )
+                .then(() => {
+                    reset();
+                    setSuccess(true);
+                })
+                .catch((err) => {
+                    alert(err);
+                });
+        } else {
+            axios
+                .post(
+                    'https://back.chakrulos.ge/playlist',
+                    {
+                        description: album.description,
+                        title: album.title,
+                        userId: userId,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${user}`,
+                        },
+                    },
+                )
+                .then(() => {
+                    reset();
+                    setSuccess(true);
+                })
+                .catch((err) => {
+                    alert(err);
+                });
+        }
     }
 
     return (
@@ -51,7 +82,7 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
             {success ? (
                 <div className={styles.doneContainer}>
                     <Done />
-                    <p>Created Succesfully!</p>
+                    <p>{playlistId ? 'Updated' : 'Created'} Succesfully!</p>
                     <button onClick={closeMenuFunction}>Close</button>
                 </div>
             ) : (
@@ -112,7 +143,7 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
                                 Cancel
                             </button>
                             <button className={styles.create} type="submit">
-                                Create
+                                {playlistId ? 'Update' : 'Create'}
                             </button>
                         </div>
                     </form>

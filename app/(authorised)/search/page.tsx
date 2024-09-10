@@ -126,7 +126,7 @@ const SearchPage = (props: Props) => {
                                     name={album.name}
                                     lastName={''}
                                     plays={album.releaseDate}
-                                    image={'/images/songCovers/banner.png'}
+                                    image={album.image}
                                 />
                             </Link>
                         ))}

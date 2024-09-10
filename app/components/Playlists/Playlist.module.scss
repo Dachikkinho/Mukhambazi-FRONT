@@ -226,3 +226,22 @@
 .wrap {
     width: 100%;
 }
+
+.edit {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    vertical-align: middle;
+
+    &:hover {
+        background-color: rgba(128, 128, 128, 0.297);
+    }
+}
