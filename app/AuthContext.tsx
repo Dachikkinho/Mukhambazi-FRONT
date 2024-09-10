@@ -10,7 +10,7 @@ import React, {
 
 interface AuthContextProps {
     isAuthenticated: boolean;
-    login: () => void;
+    login: (token: string) => void;
     logout: () => void;
 }
 
@@ -26,9 +26,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         }
     }, []);
 
-    const login = () => {
+    const login = (token: string) => {
         setIsAuthenticated(true);
-        localStorage.setItem('user', 'true');
+        localStorage.setItem('user', token);
     };
 
     const logout = () => {

@@ -84,17 +84,15 @@ const Artist = () => {
                                 imageSrc={song.image}
                                 name={song.name}
                                 songUrl={song.url}
+                                id={song.id}
                                 key={i}
                                 onClick={() =>
                                     playMusic(
                                         songs,
                                         setNextSongArr,
                                         setIsPlaying,
-                                        song.url,
-                                        song.name,
+                                        song,
                                         i,
-                                        song.image,
-                                        `${artist?.firstName} ${artist?.lastName}`,
                                     )
                                 }
                             />

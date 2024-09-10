@@ -24,9 +24,6 @@ const SongsMainSection = () => {
                     if (total) {
                         const percentage = Math.floor((loaded / total) * 100);
                         setProgress(percentage);
-                        console.log(
-                            `Downloaded: ${Math.floor((loaded / total) * 100)}%`,
-                        );
                     }
                 },
             })
@@ -67,17 +64,15 @@ const SongsMainSection = () => {
                             group={`${song.author.firstName} ${song.author.lastName}`}
                             songUrl={song.url}
                             imageSrc={song.image}
+                            id={song.id}
                             key={i}
                             onClick={() =>
                                 playMusic(
                                     songs,
                                     setNextSongArr,
                                     setIsPlaying,
-                                    song.url,
-                                    song.name,
+                                    song,
                                     i,
-                                    song.image,
-                                    `${song.author.firstName} ${song.author.lastName}`,
                                 )
                             }
                         />

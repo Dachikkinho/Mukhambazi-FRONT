@@ -1,4 +1,10 @@
+import { Music } from './music.interface';
+
 export interface Playlist {
-    name: string;
+    title: string;
     description: string;
+    musicIds: number[];
+    musics: Music[];
+    userId: number;
+    id: number;
 }

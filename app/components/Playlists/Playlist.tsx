@@ -1,16 +1,34 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CreatePopUp from '../CreatePopUp/CreatePopUp';
 import Search from '../Header/Search/Search';
-import Listactivate from './ListActivate';
 import Listdisabled from './ListDisabled';
 import styles from './Playlist.module.scss';
 import { popUpOpenState } from '@/app/states';
 import { useRecoilState } from 'recoil';
+import { Playlist as PlaylistInterface } from '@/app/interfaces/playlist.interface';
+import axios from 'axios';
+import Link from 'next/link';
 
 const Playlist = () => {
     const [create, setCreate] = useState(false);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
+    const [playlists, setPlaylists] = useState<PlaylistInterface[]>([]);
+    const [userId, setUserId] = useState(0);
+
+    useEffect(() => {
+        const jwt = localStorage.getItem('user');
+        axios
+            .get('https://back.chakrulos.ge/users/me', {
+                headers: {
+                    Authorization: `Bearer ${jwt}`,
+                },
+            })
+            .then((res) => {
+                setPlaylists([...res.data.playlist]);
+                setUserId(res.data.user.id);
+            });
+    }, [create, popUpOpen]);
 
     function closeFunction() {
         setCreate(!create);
@@ -24,6 +42,7 @@ const Playlist = () => {
                     closeMenuFunction={() => {
                         closeFunction();
                     }}
+                    userId={userId}
                 />
             )}
             <div className={styles.mainContainer}>
@@ -47,68 +66,25 @@ const Playlist = () => {
                     </button>
                 </div>
 
-                {/* Placeholder Until Backend is ready. */}
                 <div className={styles.playlist}>
-                    <Listactivate
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
-                    <Listdisabled
-                        title={'Jansug Kakhidze - Songs'}
-                        date={'1960-2016'}
-                        icon={'green'}
-                        playbtn={'play'}
-                    />
+                    {playlists.length ? (
+                        playlists.map((playlist, i) => (
+                            <Link
+                                href={`playlist/${playlist.id}`}
+                                className={styles.wrap}
+                                key={i}
+                            >
+                                <Listdisabled
+                                    title={playlist.title}
+                                    date={playlist.description}
+                                    icon="green"
+                                    playbtn="play"
+                                />
+                            </Link>
+                        ))
+                    ) : (
+                        <p>no playlists yet!</p>
+                    )}
                 </div>
             </div>
         </>

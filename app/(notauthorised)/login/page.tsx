@@ -49,7 +49,11 @@ const Login = () => {
             );
 
             localStorage.setItem('user', JSON.stringify(response.data));
-            login();
+
+            login(response.data.token);
+            router.push('/');
+
+            login(response.data.token);
             setNotification({
                 message: 'Login successful! Redirecting...',
                 type: 'success',
