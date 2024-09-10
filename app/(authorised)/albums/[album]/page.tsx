@@ -69,11 +69,8 @@ const AlbumArtist = () => {
                                     songs,
                                     setNextSongArr,
                                     setIsPlaying,
-                                    song.url,
-                                    song.name,
+                                    song,
                                     index,
-                                    song.image,
-                                    `${song.author.firstName} ${song.author.lastName}`,
                                 )
                             }
                         >

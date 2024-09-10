@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Done from '../Done/Done';
 import { Playlist } from '@/app/interfaces/playlist.interface';
-import { jwtDecode } from 'jwt-decode';
 
 interface Props {
     closeMenuFunction: () => void;

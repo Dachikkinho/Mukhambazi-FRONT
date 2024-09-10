@@ -6,7 +6,6 @@ import { useSetRecoilState } from 'recoil';
 import { Playlist } from '@/app/interfaces/playlist.interface';
 import axios from 'axios';
 import Link from 'next/link';
-import { jwtDecode } from 'jwt-decode';
 
 type Props = {
     songId: number;

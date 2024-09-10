@@ -2,7 +2,7 @@
 
 import { Playlist as PlaylistInterface } from '@/app/interfaces/playlist.interface';
 import axios from 'axios';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { playMusic } from '@/app/utils/playMusic';
@@ -11,7 +11,6 @@ import { useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import PlaylistSongCard from '../PlaylistSongCard/PlaylistSongCard';
 import DeletePopUp from '@/app/components/DeletePopUp/DeletePopUp';
-import Router from 'next/router';
 
 const Playlist = () => {
     const [playlist, setPlaylist] = useState<PlaylistInterface>({
@@ -71,7 +70,7 @@ const Playlist = () => {
                                 name={song.name}
                                 key={i}
                                 onClick={() =>
-                         playMusic(
+                                    playMusic(
                                         playlist.musics,
                                         setNextSongArr,
                                         setIsPlaying,
