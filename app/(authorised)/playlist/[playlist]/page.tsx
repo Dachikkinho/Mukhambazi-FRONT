@@ -33,8 +33,7 @@ const Playlist = () => {
             .get(`https://mukhambazi-back.onrender.com/playlist/${id}`)
             .then((res) => {
                 setPlaylist(res.data);
-            })
-            .finally(() => {});
+            });
     }
 
     useEffect(() => {
@@ -72,15 +71,12 @@ const Playlist = () => {
                                 name={song.name}
                                 key={i}
                                 onClick={() =>
-                                    playMusic(
+                         playMusic(
                                         playlist.musics,
                                         setNextSongArr,
                                         setIsPlaying,
-                                        song.url,
-                                        song.name,
+                                        song,
                                         i,
-                                        song.image,
-                                        `${song.author.firstName} ${song.author.lastName}`,
                                     )
                                 }
                             />

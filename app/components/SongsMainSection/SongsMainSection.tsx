@@ -29,7 +29,7 @@ const SongsMainSection = () => {
             })
             .then((res) => {
                 setSongs(res.data);
-            })
+            });
     }, []);
 
     return (
@@ -71,11 +71,8 @@ const SongsMainSection = () => {
                                     songs,
                                     setNextSongArr,
                                     setIsPlaying,
-                                    song.url,
-                                    song.name,
+                                    song,
                                     i,
-                                    song.image,
-                                    `${song.author.firstName} ${song.author.lastName}`,
                                 )
                             }
                         />

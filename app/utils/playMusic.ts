@@ -12,18 +12,15 @@ export function playMusic(
         image: string;
         artistName: string;
     }>,
-    src: string,
-    name: string,
+    song: Music,
     index: number,
-    image: string,
-    artistName: string,
 ) {
     setIsPlaying({
-        src: src,
-        name: name,
+        src: song.url,
+        name: song.name,
         index: index,
-        image: image,
-        artistName: artistName,
+        image: song.image,
+        artistName: `${song.author.firstName} ${song.author.lastName}`,
     });
 
     const songsArr: nextSong[] = [];

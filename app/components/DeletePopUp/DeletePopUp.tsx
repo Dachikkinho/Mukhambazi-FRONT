@@ -32,7 +32,7 @@ const DeletePopUp = ({
                 confirm();
             })
             .catch((err) => {
-                console.log(err);
+                alert(err);
             });
     }
 

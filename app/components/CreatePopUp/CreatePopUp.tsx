@@ -41,7 +41,7 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
                 setSuccess(true);
             })
             .catch((err) => {
-                console.log(err);
+                alert(err);
             });
     }
 

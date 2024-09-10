@@ -91,11 +91,8 @@ const Artist = () => {
                                         songs,
                                         setNextSongArr,
                                         setIsPlaying,
-                                        song.url,
-                                        song.name,
+                                        song,
                                         i,
-                                        song.image,
-                                        `${artist?.firstName} ${artist?.lastName}`,
                                     )
                                 }
                             />

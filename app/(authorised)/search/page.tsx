@@ -53,7 +53,7 @@ const SearchPage = (props: Props) => {
                 setAlbums([...res.data.album]);
             })
             .catch((err) => {
-                console.log(err);
+                alert(err);
             });
     }, [props.searchParams.query]);
 
@@ -84,55 +84,27 @@ const SearchPage = (props: Props) => {
                             draggable={false}
                         />
                     </div>
+
                     <div className={styles.songsCont}>
                         {songs.map((song, i) => (
                             <Song
                                 name={song.name}
-                                group={``}
+                                group={`${song.author.firstName} ${song.author.lastName}`}
                                 songUrl={song.url}
-                                imageSrc={'/images/song-placeholder.svg'}
-                                key={i}
+                                imageSrc={song.image}
                                 id={song.id}
+                                key={i}
                                 onClick={() =>
                                     playMusic(
                                         songs,
                                         setNextSongArr,
                                         setIsPlaying,
-                                        song.url,
-                                        song.name,
+                                        song,
                                         i,
-                                        song.image,
                                     )
                                 }
                             />
-
                         ))}
-
-                        </div>
-                        <div className={styles.songsCont}>
-                            {songs.map((song, i) => (
-                                <Song
-                                    name={song.name}
-                                    group={`${song.author.firstName} ${song.author.lastName}`}
-                                    songUrl={song.url}
-                                    imageSrc={song.image}
-                                    key={i}
-                                    onClick={() =>
-                                        playMusic(
-                                            songs,
-                                            setNextSongArr,
-                                            setIsPlaying,
-                                            song.url,
-                                            song.name,
-                                            i,
-                                            song.image,
-                                            `${song.author.firstName} ${song.author.lastName}`,
-                                        )
-                                    }
-                                />
-                            ))}
-                        </div>
-
                     </div>
                 </div>
             )}
