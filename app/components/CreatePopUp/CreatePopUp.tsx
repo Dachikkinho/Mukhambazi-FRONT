@@ -73,9 +73,9 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
                                         message: 'Name Is Required!',
                                     },
                                     maxLength: {
-                                        value: 100,
+                                        value: 20,
                                         message:
-                                            "Name Can't Be Longer Than 100 Characters!",
+                                            "Name Can't Be Longer Than 20 Characters!",
                                     },
                                 })}
                             />
@@ -97,9 +97,9 @@ const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
                                         message: 'Description Is Required!',
                                     },
                                     maxLength: {
-                                        value: 50,
+                                        value: 40,
                                         message:
-                                            "Description Can't Be Longer Than 50 Characters!",
+                                            "Description Can't Be Longer Than 40 Characters!",
                                     },
                                 })}
                             />
