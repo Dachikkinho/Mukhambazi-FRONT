@@ -16,6 +16,8 @@ const AddSongButton = ({ songId }: Props) => {
     const [success, setSuccess] = useState(false);
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
 
+    // place holder upload function
+
     function upload(id: number) {
         axios
             .patch(`https://back.chakrulos.ge/playlist/${id}`, {
@@ -51,39 +53,10 @@ const AddSongButton = ({ songId }: Props) => {
 
     const setPopUpOpen = useSetRecoilState(popUpOpenState);
 
-    const handleRename = (playlistId: number, newName: string) => {
-        axios
-            .patch(`https://back.chakrulos.ge/playlist/${playlistId}`, {
-                title: newName,
-            })
-            .then(() => {
-                console.log('Playlist renamed to:', newName);
-            });
-    };
-
-    const handlePhotoChange = (playlistId: number, newPhoto: File) => {
-        const formData = new FormData();
-        formData.append('photo', newPhoto);
-
-        axios
-            .patch(
-                `https://back.chakrulos.ge/playlist/${playlistId}`,
-                formData,
-                {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    },
-                },
-            )
-            .then(() => {
-                console.log('Photo updated for playlist ID:', playlistId);
-            });
-    };
-
     return (
         <>
             {success && (
-                <div className={styles.success}>Added Successfully!</div>
+                <div className={styles.success}>Added Succesfully!</div>
             )}
 
             <button
@@ -125,44 +98,40 @@ const AddSongButton = ({ songId }: Props) => {
 
                         <div>
                             <div className={styles.playlist}>
-                                {playlists.length ? (
-                                    playlists.map((playlist, i) => (
-                                        <div
-                                            onClick={() => upload(playlist.id)}
-                                            key={i}
-                                        >
-                                            <Listdisabled
-                                                title={playlist.title}
-                                                date={playlist.description}
-                                                icon="green"
-                                                playbtn="play"
-                                                className={styles.add}
-                                                onRename={(newName) =>
-                                                    handleRename(
-                                                        playlist.id,
-                                                        newName,
-                                                    )
+                                <div
+                                // onClick={() => {
+                                //     upload(0);
+                                // }}
+                                >
+                                    {playlists.length ? (
+                                        playlists.map((playlist, i) => (
+                                            <div
+                                                onClick={() =>
+                                                    upload(playlist.id)
                                                 }
-                                                onPhotoChange={(newPhoto) =>
-                                                    handlePhotoChange(
-                                                        playlist.id,
-                                                        newPhoto,
-                                                    )
-                                                }
-                                            />
+                                                key={i}
+                                            >
+                                                <Listdisabled
+                                                    title={playlist.title}
+                                                    date={playlist.description}
+                                                    icon="green"
+                                                    playbtn="play"
+                                                    className={styles.add}
+                                                />
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className={styles.noPlaylist}>
+                                            <p>No Playlists!</p>
+                                            <Link
+                                                href="/playlist"
+                                                className={styles.create}
+                                            >
+                                                Create One Now!
+                                            </Link>
                                         </div>
-                                    ))
-                                ) : (
-                                    <div className={styles.noPlaylist}>
-                                        <p>No Playlists!</p>
-                                        <Link
-                                            href="/playlist"
-                                            className={styles.create}
-                                        >
-                                            Create One Now!
-                                        </Link>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

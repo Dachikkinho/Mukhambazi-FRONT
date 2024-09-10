@@ -35,18 +35,6 @@ const Playlist = () => {
         setPopUpOpen(!popUpOpen);
     }
 
-    const handleRename = (id: number, newName: string) => {
-        setPlaylists((prevPlaylists) =>
-            prevPlaylists.map((playlist) =>
-                playlist.id === id ? { ...playlist, title: newName } : playlist,
-            ),
-        );
-    };
-
-    const handlePhotoChange = (id: number, newPhoto: File) => {
-        console.log(`Photo selected for playlist ${id}:`, newPhoto);
-    };
-
     return (
         <>
             {create && (
@@ -91,13 +79,6 @@ const Playlist = () => {
                                     date={playlist.description}
                                     icon="green"
                                     playbtn="play"
-                                    className={styles.listdisabled}
-                                    onRename={(newName) =>
-                                        handleRename(playlist.id, newName)
-                                    }
-                                    onPhotoChange={(newPhoto) =>
-                                        handlePhotoChange(playlist.id, newPhoto)
-                                    }
                                 />
                             </Link>
                         ))
