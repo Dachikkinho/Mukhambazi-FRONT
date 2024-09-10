@@ -4,7 +4,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './RightBarNav.module.scss';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '@/app/AuthContext';
-import { deleteCookie } from 'cookies-next';
 
 const toggleDropdown = (
     isDropdownOpen: boolean,
@@ -31,7 +30,6 @@ export function RightBarNav() {
 
     const handleLogout = () => {
         logout();
-        deleteCookie('jwt');
         router.push('/login');
     };
 

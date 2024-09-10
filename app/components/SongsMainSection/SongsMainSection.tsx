@@ -31,8 +31,6 @@ const SongsMainSection = () => {
                 },
             })
             .then((res) => {
-                console.log(res.data);
-
                 setSongs(res.data);
             });
     }, []);

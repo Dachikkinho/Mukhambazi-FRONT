@@ -1,0 +1,24 @@
+.icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.songs {
+    background-color: #280038;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}

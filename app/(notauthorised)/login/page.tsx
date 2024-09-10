@@ -15,6 +15,7 @@ import axios from 'axios';
 import { useAuth } from '@/app/AuthContext';
 import useRedirectIfAuthenticated from '@/app/useRedirectIfAuthenticated';
 import Link from 'next/link';
+import { setCookie } from 'cookies-next';
 
 const Login = () => {
     useEffect(() => {

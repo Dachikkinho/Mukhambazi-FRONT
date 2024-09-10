@@ -21,12 +21,14 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
 
     function onSubmit(album: Playlist) {
         const user = localStorage.getItem('user');
-        const id = jwtDecode<{ id: number }>(user || '');
         axios
-            .post('https://mukhambazi-back.onrender.com/playlist', {
+            .post('http://localhost:3001/playlist', {
                 description: album.description,
                 title: album.title,
-                userId: id.id,
+            }, {headers: {
+                "Authorization": `Bearer ${user}`
+            }
+
             })
             .then(() => {
                 reset();

@@ -40,11 +40,12 @@ const AddSongButton = ({ songId }: Props) => {
         }
 
         const user = localStorage.getItem('user');
-        const id = jwtDecode<{ id: number }>(user || '');
 
         axios
             .get('https://mukhambazi-back.onrender.com/playlist/user', {
-                params: { id: id.id },
+                headers: {
+                    "Authorization": `Bearer ${user}`
+                }
             })
             .then((res) => {
                 setPlaylists(res.data);

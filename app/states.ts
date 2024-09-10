@@ -25,7 +25,7 @@ export const isPlayingState = atom({
 
 export const userIdState = atom({
     key: 'userId',
-    default: NaN,
+    default: null,
 });
 
 export const nextSongArrState = atom<nextSong[]>({
