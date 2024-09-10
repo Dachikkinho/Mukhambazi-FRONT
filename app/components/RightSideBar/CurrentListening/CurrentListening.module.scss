@@ -56,11 +56,14 @@
 }
 
 .listeningName {
+    display: flex;
+    justify-content: center;
     font-family: var(--font-family);
     font-weight: 500;
     color: #ffffff;
     margin-bottom: 18px;
     margin-top: 5px;
+    width: 125%;
 }
 
 .listeningInfos {

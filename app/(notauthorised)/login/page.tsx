@@ -11,11 +11,11 @@ import {
     PLACEHOLDERPASSLOGIN_OBJECT,
 } from '@/public/script';
 import { LoginForm } from '@/app/interfaces/login.interface';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { useAuth } from '@/app/AuthContext';
 import useRedirectIfAuthenticated from '@/app/useRedirectIfAuthenticated';
 import Link from 'next/link';
-import { setCookie } from 'cookies-next';
+import Notification from '@/app/components/Notification/Notification';
 
 const Login = () => {
     useEffect(() => {
@@ -34,53 +34,79 @@ const Login = () => {
     } = useForm<LoginForm>();
     const [showPassword, setShowPassword] = useState(false);
     const { login } = useAuth();
+    const [notification, setNotification] = useState<{
+        message: string;
+        type: 'success' | 'error' | 'info';
+    } | null>(null);
 
     const onLoginFinished = async (values: LoginForm) => {
         try {
+            setNotification({ message: 'Processing login...', type: 'info' });
+
             const response = await axios.post(
                 'https://back.chakrulos.ge/login',
                 values,
             );
 
             localStorage.setItem('user', JSON.stringify(response.data));
+
             login(response.data.token);
             router.push('/');
+
+            login();
+            setNotification({
+                message: 'Login successful! Redirecting...',
+                type: 'success',
+            });
+
+            setTimeout(() => {
+                router.push('/');
+            }, 1000);
+
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                if (error.response) {
-                    if (error.response.status === 400) {
-                        setError('email', {
-                            type: 'manual',
-                            message:
-                                'Invalid email or password. Please try again.',
-                        });
-                        setError('password', {
-                            type: 'manual',
-                            message:
-                                'Invalid email or password. Please try again.',
-                        });
-                    } else if (error.response.status === 401) {
-                        setError('email', {
-                            type: 'manual',
-                            message:
-                                'Unauthorized access. Please check your credentials.',
-                        });
-                    } else {
-                        console.error(
-                            'An error occurred during login:',
-                            error.response.data || error.message,
-                        );
-                    }
+            handleLoginError(error);
+        }
+    };
+
+    const handleLoginError = (error: unknown) => {
+        if (axios.isAxiosError(error)) {
+            const axiosError = error as AxiosError;
+
+            if (axiosError.response) {
+                if (axiosError.response.status === 400) {
+                    setError('email', {
+                        type: 'manual',
+                        message: 'Invalid email or password. Please try again.',
+                    });
+                    setError('password', {
+                        type: 'manual',
+                        message: 'Invalid email or password. Please try again.',
+                    });
+                } else if (axiosError.response.status === 401) {
+                    setError('email', {
+                        type: 'manual',
+                        message:
+                            'Unauthorized access. Please check your credentials.',
+                    });
                 } else {
                     console.error(
-                        'An unexpected error occurred:',
-                        error.message,
+                        'An error occurred during login:',
+                        axiosError.response.data || axiosError.message,
                     );
                 }
             } else {
-                console.error('An unexpected error occurred:', error);
+                console.error(
+                    'An unexpected error occurred:',
+                    axiosError.message,
+                );
             }
+        } else {
+            console.error('An unknown error occurred:', error);
         }
+        setNotification({
+            message: 'Login failed. Please try again.',
+            type: 'error',
+        });
     };
 
     const password = useRef({});
@@ -88,6 +114,13 @@ const Login = () => {
 
     return (
         <div className={styles.main}>
+            {notification && (
+                <Notification
+                    message={notification.message}
+                    type={notification.type}
+                    onClose={() => setNotification(null)}
+                />
+            )}
             <div className={styles.mainLogo}>
                 <img
                     className={styles.chakrulo}

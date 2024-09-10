@@ -25,7 +25,6 @@ const NextSongCard = ({
             className={`${isActive ? activeCard : defaultCard} ${className}`}
             onClick={onClick}
         >
-            {/* image placeholder */}
             <div className={styles.circle}>
                 <img src={image} alt="" />
             </div>
