@@ -2,7 +2,7 @@
 
 import { Playlist as PlaylistInterface } from '@/app/interfaces/playlist.interface';
 import axios from 'axios';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { playMusic } from '@/app/utils/playMusic';
@@ -80,6 +80,7 @@ const Playlist = () => {
                                         song.name,
                                         i,
                                         song.image,
+                                        `${song.author.firstName} ${song.author.lastName}`,
                                     )
                                 }
                             />
@@ -98,7 +99,6 @@ const Playlist = () => {
                 open={deletePlaylist}
                 closeFunc={() => setDeletePlaylist(false)}
                 confirm={() => {
-                    Router.push('/playlist');
                     setDeletePlaylist(false);
                 }}
                 deleteString={`https://mukhambazi-back.onrender.com/playlist/${id}`}

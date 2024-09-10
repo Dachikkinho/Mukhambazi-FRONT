@@ -24,15 +24,12 @@ const SongsMainSection = () => {
                     if (total) {
                         const percentage = Math.floor((loaded / total) * 100);
                         setProgress(percentage);
-                        console.log(
-                            `Downloaded: ${Math.floor((loaded / total) * 100)}%`,
-                        );
                     }
                 },
             })
             .then((res) => {
                 setSongs(res.data);
-            });
+            })
     }, []);
 
     return (

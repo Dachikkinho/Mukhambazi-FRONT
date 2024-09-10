@@ -21,7 +21,7 @@ const AddSongButton = ({ songId }: Props) => {
 
     function upload(id: number) {
         axios
-            .patch(`https://mukhambazi-back.onrender.com/playlist/${id}`, {
+            .patch(`https://back.chakrulos.ge/playlist/${id}`, {
                 musicIds: [songId],
             })
             .then(() => {
@@ -42,13 +42,13 @@ const AddSongButton = ({ songId }: Props) => {
         const user = localStorage.getItem('user');
 
         axios
-            .get('https://mukhambazi-back.onrender.com/playlist/user', {
+            .get('https://back.chakrulos.ge/users/me', {
                 headers: {
-                    "Authorization": `Bearer ${user}`
-                }
+                    Authorization: `Bearer ${user}`,
+                },
             })
             .then((res) => {
-                setPlaylists(res.data);
+                setPlaylists([...res.data.playlist]);
             });
     }, [success]);
 

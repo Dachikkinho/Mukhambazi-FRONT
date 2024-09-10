@@ -53,7 +53,7 @@ const Login = () => {
             login(response.data.token);
             router.push('/');
 
-            login();
+            login(response.data.token);
             setNotification({
                 message: 'Login successful! Redirecting...',
                 type: 'success',
@@ -62,7 +62,6 @@ const Login = () => {
             setTimeout(() => {
                 router.push('/');
             }, 1000);
-
         } catch (error) {
             handleLoginError(error);
         }

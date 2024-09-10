@@ -1,5 +1,8 @@
+'use clients';
+
 import axios from 'axios';
 import styles from './DeletePopUp.module.scss';
+import { useRouter } from 'next/navigation';
 
 type Props = {
     name: string;
@@ -18,12 +21,14 @@ const DeletePopUp = ({
     deleteString,
     confirm,
 }: Props) => {
+    const router = useRouter();
+
     function deleteBackend() {
         axios
             .delete(deleteString)
             .then(() => {
-                console.log('delete');
-                
+                router.push('/playlist');
+
                 confirm();
             })
             .catch((err) => {

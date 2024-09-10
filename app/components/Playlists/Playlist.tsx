@@ -14,31 +14,19 @@ const Playlist = () => {
     const [create, setCreate] = useState(false);
     const [popUpOpen, setPopUpOpen] = useRecoilState(popUpOpenState);
     const [playlists, setPlaylists] = useState<PlaylistInterface[]>([]);
+    const [userId, setUserId] = useState(0);
 
     useEffect(() => {
         const jwt = localStorage.getItem('user');
-        console.log(jwt);
-
         axios
-            .get('http://localhost:3001/playlist', {
-                headers: { Authorization: `Bearer ${jwt}` },
-            })
-            .then((res) => {
-                setPlaylists(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        console.log(document.cookie);
-
-        axios
-            .get('http://localhost:3001/users/me', {
+            .get('https://back.chakrulos.ge/users/me', {
                 headers: {
                     Authorization: `Bearer ${jwt}`,
                 },
             })
             .then((res) => {
-                console.log(res);
+                setPlaylists([...res.data.playlist]);
+                setUserId(res.data.user.id);
             });
     }, [create, popUpOpen]);
 
@@ -54,6 +42,7 @@ const Playlist = () => {
                     closeMenuFunction={() => {
                         closeFunction();
                     }}
+                    userId={userId}
                 />
             )}
             <div className={styles.mainContainer}>

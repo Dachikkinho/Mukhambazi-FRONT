@@ -8,9 +8,10 @@ import { jwtDecode } from 'jwt-decode';
 
 interface Props {
     closeMenuFunction: () => void;
+    userId: number;
 }
 
-const CreatePopUp = ({ closeMenuFunction }: Props) => {
+const CreatePopUp = ({ closeMenuFunction, userId }: Props) => {
     const {
         reset,
         register,
@@ -22,14 +23,19 @@ const CreatePopUp = ({ closeMenuFunction }: Props) => {
     function onSubmit(album: Playlist) {
         const user = localStorage.getItem('user');
         axios
-            .post('http://localhost:3001/playlist', {
-                description: album.description,
-                title: album.title,
-            }, {headers: {
-                "Authorization": `Bearer ${user}`
-            }
-
-            })
+            .post(
+                'https://back.chakrulos.ge/playlist',
+                {
+                    description: album.description,
+                    title: album.title,
+                    userId: userId,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${user}`,
+                    },
+                },
+            )
             .then(() => {
                 reset();
                 setSuccess(true);
