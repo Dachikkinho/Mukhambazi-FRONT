@@ -15,7 +15,6 @@
     margin-top: 10px;
     flex-wrap: wrap;
     gap: 20px;
-   
 }
 
 @media screen and (max-width: 391px) {
@@ -115,6 +114,11 @@
     margin-top: 44px;
 }
 
+.noPlaylist {
+    color: #c338b5;
+    font-size: 20px;
+    font-weight: 600;
+}
 /* Desktop styles */
 @media (min-width: 1025px) {
     .span {
@@ -145,7 +149,6 @@
         height: 32.01px;
     }
 }
-
 
 .success {
     position: fixed;
@@ -184,7 +187,6 @@
     }
 }
 
-
 /* Tablet styles */
 @media (min-width: 601px) and (max-width: 1024px) {
     .span {
@@ -218,7 +220,6 @@
         margin-top: 10px;
         flex-wrap: wrap;
         gap: 20px;
-       
     }
 }
 
