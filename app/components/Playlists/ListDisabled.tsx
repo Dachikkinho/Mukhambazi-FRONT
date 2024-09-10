@@ -22,7 +22,7 @@ const Listdisabled = ({
 }: Props) => {
     const [editTitle, setEditTitle] = useState(false);
     const [newTitle, setNewTitle] = useState(title);
-    const [,setPhotoInput] = useState<File | null>(null);
+    const [, setPhotoInput] = useState<File | null>(null);
 
     const handleTitleChange = () => {
         if (newTitle.trim()) {
