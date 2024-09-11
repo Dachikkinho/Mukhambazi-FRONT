@@ -80,7 +80,9 @@ const AddSongButton = ({ songId }: Props) => {
                     ></div>
                     <div className={styles.popUp}>
                         <div className={styles.top}>
-                            <h2>All Playlists</h2>
+                            <h2 className={styles.allPlaylist}>
+                                All Playlists
+                            </h2>
                             <button
                                 onClick={() => {
                                     setOpen(false);
