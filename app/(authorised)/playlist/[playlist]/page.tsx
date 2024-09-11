@@ -103,7 +103,7 @@ const Playlist = () => {
                         ))
                     ) : (
                         <div className={styles.right}>
-                            <p>No Songs Yet!</p>
+                            <p className={styles.noSongs}>No Songs Yet!</p>
                             <Link href="/songs" className={styles.add}>
                                 Add Now!
                             </Link>
