@@ -13,6 +13,8 @@ import LoadingBar from 'react-top-loading-bar';
 import { Music } from '@/app/interfaces/music.interface';
 import { Album } from '@/app/interfaces/album.interface';
 import { playMusic } from '@/app/utils/playMusic';
+import LandingCard from '@/app/components/MainSection/TopArtist/LandingCard/LandingCard';
+import { Artists } from '@/app/interfaces/artist.interface';
 
 type Props = {
     searchParams: {
@@ -28,6 +30,7 @@ const SearchPage = (props: Props) => {
     const [songs, setSongs] = useState<Music[]>([]);
     const [progress, setProgress] = useState(0);
     const [albums, setAlbums] = useState<Album[]>([]);
+    const [artists, setArtists] = useState<Artists[]>([]);
     const setIsPlaying = useSetRecoilState(isPlayingState);
     const setNextSongArr = useSetRecoilState(nextSongArrState);
 
@@ -51,6 +54,8 @@ const SearchPage = (props: Props) => {
             .then((res) => {
                 setSongs([...res.data.music]);
                 setAlbums([...res.data.album]);
+                setArtists([...res.data.author]);
+                console.log(res.data);
             })
             .catch((err) => {
                 alert(err);
@@ -74,6 +79,32 @@ const SearchPage = (props: Props) => {
                     value={props.searchParams.query || ''}
                 />
             </div>
+
+            {!!artists.length && (
+                <div className={styles.sectionCont}>
+                    <div className={styles.headingCont}>
+                        <h5 className={styles.heading}>Artists</h5>
+                        <img
+                            src="/icons/artists-icon.svg"
+                            alt="icon"
+                            draggable={false}
+                        />
+                    </div>
+                    <div className={styles.songsCont}>
+                        {artists.map((artist, i) => (
+                            <Link key={i} href={`/artists/${artist.id}`}>
+                                <LandingCard
+                                    name={`${artist.firstName} ${artist.lastName}`}
+                                    bgColor={''}
+                                    img={artist.image}
+                                    plays={'2'}
+                                />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            )}
+
             {!!songs.length && (
                 <div className={styles.sectionCont}>
                     <div className={styles.headingCont}>

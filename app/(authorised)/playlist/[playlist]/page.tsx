@@ -29,6 +29,8 @@ const Playlist = () => {
     const [deletePlaylist, setDeletePlaylist] = useState(false);
     const [create, setCreate] = useState(false);
     const [userId, setUserId] = useState(0);
+    const [deleteMusic, setDeleteMusic] = useState(false);
+    const [musicId, setMusicId] = useState(0);
 
     async function fetch() {
         await axios
@@ -50,7 +52,7 @@ const Playlist = () => {
             .then((res) => {
                 setUserId(res.data.user.id);
             });
-    }, [id, create]);
+    }, [id, create, deleteMusic]);
 
     return (
         <>
@@ -87,19 +89,29 @@ const Playlist = () => {
                 <div className={styles.right}>
                     {playlist.musics?.length ? (
                         playlist.musics.map((song, i) => (
-                            <PlaylistSongCard
-                                name={song.name}
-                                key={i}
-                                onClick={() =>
-                                    playMusic(
-                                        playlist.musics,
-                                        setNextSongArr,
-                                        setIsPlaying,
-                                        song,
-                                        i,
-                                    )
-                                }
-                            />
+                            <div key={i} className={styles.musicWrap}>
+                                <PlaylistSongCard
+                                    name={song.name}
+                                    onClick={() =>
+                                        playMusic(
+                                            playlist.musics,
+                                            setNextSongArr,
+                                            setIsPlaying,
+                                            song,
+                                            i,
+                                        )
+                                    }
+                                />
+                                <button
+                                    className={styles.removeSong}
+                                    onClick={() => {
+                                        setDeleteMusic(true);
+                                        setMusicId(song.id);
+                                    }}
+                                >
+                                    <img src="/images/trash-solid.svg" alt="" />
+                                </button>
+                            </div>
                         ))
                     ) : (
                         <div className={styles.right}>
@@ -120,6 +132,16 @@ const Playlist = () => {
                 deleteString={`https://mukhambazi-back.onrender.com/playlist/${id}`}
                 name={playlist.title}
                 section="playlists"
+            />
+            <DeletePopUp
+                open={deleteMusic}
+                closeFunc={() => setDeleteMusic(false)}
+                confirm={() => {
+                    setDeleteMusic(false);
+                }}
+                deleteString={`https://mukhambazi-back.onrender.com/playlist/${id}/music/${musicId}`}
+                name={'Music'}
+                section={playlist.title}
             />
             {create && (
                 <CreatePopUp

@@ -27,7 +27,9 @@ const DeletePopUp = ({
         axios
             .delete(deleteString)
             .then(() => {
-                router.push('/playlist');
+                if (!deleteString.includes('music')) {
+                    router.push('/playlist');
+                }
 
                 confirm();
             })
