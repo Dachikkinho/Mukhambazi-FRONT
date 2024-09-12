@@ -82,7 +82,7 @@ const Playlist = () => {
                             />
                         </div>
                         <div className={styles.topHeading}>
-                            <h1>{playlist?.title}</h1>
+                            <h1 className={styles.title}>{playlist?.title}</h1>
                             <button
                                 className={styles.edit}
                                 onClick={() => setCreate(true)}

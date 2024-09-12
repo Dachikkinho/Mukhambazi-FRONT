@@ -1,8 +1,16 @@
 'use client';
 
+import { useEffect } from 'react';
 import styles from './Done.module.scss';
 
 const Done = () => {
+    const Playit = () => {
+        const audio = new Audio('/sound/new-notification-7-210334.mp3');
+        audio.play();
+    };
+    useEffect(() => {
+        Playit();
+    }, []);
     return (
         <svg
             className={styles.cont}
