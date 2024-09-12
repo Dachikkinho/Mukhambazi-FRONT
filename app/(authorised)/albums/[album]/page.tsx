@@ -11,6 +11,7 @@ import LoadingBar from 'react-top-loading-bar';
 import { Music } from '@/app/interfaces/music.interface';
 import { playMusic } from '@/app/utils/playMusic';
 import { AlbumPage } from '@/app/interfaces/albumPage.interface';
+import PrivateRoute from '@/app/components/PrivateRoute/PrivateRoute';
 
 const AlbumArtist = () => {
     useEffect(() => {
@@ -50,44 +51,46 @@ const AlbumArtist = () => {
     }
 
     return (
-        <main className={styles.main}>
-            <LoadingBar
-                color="#c338b5"
-                progress={progress}
-                onLoaderFinished={() => setProgress(0)}
-                loaderSpeed={600}
-            />
-            <div className={styles.mainContainer}>
-                <AlbumHeader album={album} />
-                <div className={styles.wrapper}>
-                    {songs.map((song, index) => (
-                        <div
-                            key={index}
-                            className={styles.songs}
-                            onClick={() =>
-                                playMusic(
-                                    songs,
-                                    setNextSongArr,
-                                    setIsPlaying,
-                                    song,
-                                    index,
-                                )
-                            }
-                        >
-                            <span></span>
-                            <div className={styles.icon}>
-                                <span>{song.name}</span>
-                                <img
-                                    className={styles.img}
-                                    src="/images/play.png"
-                                    alt="icon"
-                                />
+        <PrivateRoute>
+            <main className={styles.main}>
+                <LoadingBar
+                    color="#c338b5"
+                    progress={progress}
+                    onLoaderFinished={() => setProgress(0)}
+                    loaderSpeed={600}
+                />
+                <div className={styles.mainContainer}>
+                    <AlbumHeader album={album} />
+                    <div className={styles.wrapper}>
+                        {songs.map((song, index) => (
+                            <div
+                                key={index}
+                                className={styles.songs}
+                                onClick={() =>
+                                    playMusic(
+                                        songs,
+                                        setNextSongArr,
+                                        setIsPlaying,
+                                        song,
+                                        index,
+                                    )
+                                }
+                            >
+                                <span></span>
+                                <div className={styles.icon}>
+                                    <span>{song.name}</span>
+                                    <img
+                                        className={styles.img}
+                                        src="/images/play.png"
+                                        alt="icon"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </PrivateRoute>
     );
 };
 

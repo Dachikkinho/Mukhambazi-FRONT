@@ -13,6 +13,7 @@ import { Album } from '@/app/interfaces/album.interface';
 import { Music } from '@/app/interfaces/music.interface';
 import { Artists } from '@/app/interfaces/artist.interface';
 import { playMusic } from '@/app/utils/playMusic';
+import PrivateRoute from '@/app/components/PrivateRoute/PrivateRoute';
 
 const Artist = () => {
     useEffect(() => {
@@ -49,77 +50,79 @@ const Artist = () => {
     }, []);
 
     return (
-        <main className={styles.main}>
-            <LoadingBar
-                color="#c338b5"
-                progress={progress}
-                onLoaderFinished={() => setProgress(0)}
-                loaderSpeed={600}
-            />
-            <div className={styles.top}>
-                <img
-                    src={artist?.image}
-                    alt="artist image"
-                    className={styles.image}
+        <PrivateRoute>
+            <main className={styles.main}>
+                <LoadingBar
+                    color="#c338b5"
+                    progress={progress}
+                    onLoaderFinished={() => setProgress(0)}
+                    loaderSpeed={600}
                 />
-                <h2 className={styles.heading}>
-                    {artist?.firstName} {artist?.lastName}
-                </h2>
-                <p className={styles.about}>{artist?.biography}</p>
-            </div>
-
-            <div className={styles.content}>
-                <div className={styles.contentWrap}>
-                    <div className={styles.headingCont}>
-                        <h3 className={styles.topSongHeading}>Top Songs</h3>
-                        <img src="/icons/home-icon.svg" alt="" />
-                    </div>
-                    <div className={styles.topSongs}>
-                        {songs.map((song, i) => (
-                            <Song
-                                group={
-                                    `${artist?.firstName} ${artist?.lastName}` ||
-                                    ''
-                                }
-                                imageSrc={song.image}
-                                name={song.name}
-                                songUrl={song.url}
-                                id={song.id}
-                                key={i}
-                                onClick={() =>
-                                    playMusic(
-                                        songs,
-                                        setNextSongArr,
-                                        setIsPlaying,
-                                        song,
-                                        i,
-                                    )
-                                }
-                            />
-                        ))}
-                    </div>
+                <div className={styles.top}>
+                    <img
+                        src={artist?.image}
+                        alt="artist image"
+                        className={styles.image}
+                    />
+                    <h2 className={styles.heading}>
+                        {artist?.firstName} {artist?.lastName}
+                    </h2>
+                    <p className={styles.about}>{artist?.biography}</p>
                 </div>
 
-                <div className={styles.contentWrap}>
-                    <div className={styles.headingCont}>
-                        <h3 className={styles.topSongHeading}>Albums</h3>
-                        <img src="/icons/albums-icon.svg" alt="" />
-                    </div>
-                    <div className={styles.topSongs}>
-                        {albums.map((album, i) => (
-                            <Link href={`../albums/${album.id}`} key={i}>
-                                <Albumcard
-                                    image={album.image}
-                                    name={`${album.name}` || ''}
-                                    lastName=""
-                                    plays={album.releaseDate}
+                <div className={styles.content}>
+                    <div className={styles.contentWrap}>
+                        <div className={styles.headingCont}>
+                            <h3 className={styles.topSongHeading}>Top Songs</h3>
+                            <img src="/icons/home-icon.svg" alt="" />
+                        </div>
+                        <div className={styles.topSongs}>
+                            {songs.map((song, i) => (
+                                <Song
+                                    group={
+                                        `${artist?.firstName} ${artist?.lastName}` ||
+                                        ''
+                                    }
+                                    imageSrc={song.image}
+                                    name={song.name}
+                                    songUrl={song.url}
+                                    id={song.id}
+                                    key={i}
+                                    onClick={() =>
+                                        playMusic(
+                                            songs,
+                                            setNextSongArr,
+                                            setIsPlaying,
+                                            song,
+                                            i,
+                                        )
+                                    }
                                 />
-                            </Link>
-                        ))}
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className={styles.contentWrap}>
+                        <div className={styles.headingCont}>
+                            <h3 className={styles.topSongHeading}>Albums</h3>
+                            <img src="/icons/albums-icon.svg" alt="" />
+                        </div>
+                        <div className={styles.topSongs}>
+                            {albums.map((album, i) => (
+                                <Link href={`../albums/${album.id}`} key={i}>
+                                    <Albumcard
+                                        image={album.image}
+                                        name={`${album.name}` || ''}
+                                        lastName=""
+                                        plays={album.releaseDate}
+                                    />
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </PrivateRoute>
     );
 };
 
