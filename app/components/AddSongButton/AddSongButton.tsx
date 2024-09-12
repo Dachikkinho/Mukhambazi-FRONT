@@ -19,10 +19,19 @@ const AddSongButton = ({ songId }: Props) => {
     // place holder upload function
 
     function upload(id: number) {
+        const jwt = localStorage.getItem('user');
         axios
-            .patch(`https://back.chakrulos.ge/playlist/${id}`, {
-                musicIds: [songId],
-            })
+            .patch(
+                `https://back.chakrulos.ge/playlist/${id}`,
+                {
+                    musicIds: [songId],
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${jwt}`,
+                    },
+                },
+            )
             .then(() => {
                 setOpen(false);
                 setSuccess(true);

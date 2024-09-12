@@ -30,6 +30,7 @@ const Artist = () => {
     const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
+        const jwt = localStorage.getItem('user');
         axios
             .get(`https://back.chakrulos.ge/authors/${id}`, {
                 onDownloadProgress: (progressEvent) => {
@@ -40,12 +41,14 @@ const Artist = () => {
                         setProgress(percentage);
                     }
                 },
+                headers: {
+                    Authorization: `Bearer ${jwt}`,
+                },
             })
             .then((res) => {
                 setArtist(res.data);
                 setSongs([...res.data.musics]);
                 setAlbums([...res.data.album]);
-                console.log(res.data);
             });
     }, []);
 

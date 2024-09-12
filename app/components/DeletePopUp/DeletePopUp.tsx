@@ -24,8 +24,13 @@ const DeletePopUp = ({
     const router = useRouter();
 
     function deleteBackend() {
+        const jwt = localStorage.getItem('user');
         axios
-            .delete(deleteString)
+            .delete(deleteString, {
+                headers: {
+                    Authorization: `Bearer ${jwt}`,
+                },
+            })
             .then(() => {
                 if (!deleteString.includes('music')) {
                     router.push('/playlist');

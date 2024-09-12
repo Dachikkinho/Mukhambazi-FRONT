@@ -14,6 +14,7 @@ const TopArtist = () => {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
+        const jwt = localStorage.getItem('user');
         axios
             .all([
                 axios.get(
@@ -29,6 +30,9 @@ const TopArtist = () => {
                                 setProgress(percentage);
                             }
                         },
+                        headers: {
+                            Authorization: `Bearer ${jwt}`,
+                        },
                     },
                 ),
                 axios.get(`https://back.chakrulos.ge/authors/category/Hits`, {
@@ -42,6 +46,9 @@ const TopArtist = () => {
                             setProgress(percentage);
                         }
                     },
+                    headers: {
+                        Authorization: `Bearer ${jwt}`,
+                    },
                 }),
                 axios.get('https://back.chakrulos.ge/authors/category/Charts', {
                     onDownloadProgress: (progressEvent) => {
@@ -53,6 +60,9 @@ const TopArtist = () => {
                             );
                             setProgress(percentage);
                         }
+                    },
+                    headers: {
+                        Authorization: `Bearer ${jwt}`,
                     },
                 }),
             ])

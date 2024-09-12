@@ -15,6 +15,7 @@ const ArtistsPage = () => {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
+        const jwt = localStorage.getItem('user');
         axios
             .all([
                 axios.get(
@@ -29,6 +30,9 @@ const ArtistsPage = () => {
                                 );
                                 setProgress(percentage);
                             }
+                        },
+                        headers: {
+                            Authorization: `Bearer ${jwt}`,
                         },
                     },
                 ),
@@ -45,6 +49,9 @@ const ArtistsPage = () => {
                                 setProgress(percentage);
                             }
                         },
+                        headers: {
+                            Authorization: `Bearer ${jwt}`,
+                        },
                     },
                 ),
                 axios.get(
@@ -59,6 +66,9 @@ const ArtistsPage = () => {
                                 );
                                 setProgress(percentage);
                             }
+                        },
+                        headers: {
+                            Authorization: `Bearer ${jwt}`,
                         },
                     },
                 ),

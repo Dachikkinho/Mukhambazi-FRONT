@@ -12,6 +12,7 @@ const Albums = () => {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
+        const jwt = localStorage.getItem('user');
         axios
             .get('https://back.chakrulos.ge/album', {
                 onDownloadProgress: (progressEvent) => {
@@ -21,6 +22,9 @@ const Albums = () => {
                         const percentage = Math.floor((loaded / total) * 100);
                         setProgress(percentage);
                     }
+                },
+                headers: {
+                    Authorization: `Bearer ${jwt}`,
                 },
             })
             .then((res) => {

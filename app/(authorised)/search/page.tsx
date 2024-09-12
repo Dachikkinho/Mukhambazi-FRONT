@@ -35,6 +35,7 @@ const SearchPage = (props: Props) => {
     const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
+        const jwt = localStorage.getItem('user');
         axios
             .get(
                 `https://mukhambazi-back.onrender.com/search/${props.searchParams.query}`,
@@ -48,6 +49,9 @@ const SearchPage = (props: Props) => {
                             );
                             setProgress(percentage);
                         }
+                    },
+                    headers: {
+                        Authorization: `Bearer ${jwt}`,
                     },
                 },
             )

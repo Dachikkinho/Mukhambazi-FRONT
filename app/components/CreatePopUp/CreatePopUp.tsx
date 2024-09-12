@@ -21,9 +21,14 @@ const CreatePopUp = ({ closeMenuFunction, userId, playlistId }: Props) => {
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
+        const jwt = localStorage.getItem('user');
         if (playlistId) {
             axios
-                .get(`https://back.chakrulos.ge/playlist/${playlistId}`)
+                .get(`https://back.chakrulos.ge/playlist/${playlistId}`, {
+                    headers: {
+                        Authorization: `Bearer ${jwt}`,
+                    },
+                })
                 .then((res) => {
                     reset(res.data);
                 });
@@ -31,7 +36,7 @@ const CreatePopUp = ({ closeMenuFunction, userId, playlistId }: Props) => {
     }, []);
 
     function onSubmit(album: Playlist) {
-        const user = localStorage.getItem('user');
+        const jwt = localStorage.getItem('user');
         if (playlistId) {
             axios
                 .patch(
@@ -39,7 +44,7 @@ const CreatePopUp = ({ closeMenuFunction, userId, playlistId }: Props) => {
                     album,
                     {
                         headers: {
-                            Authorization: `Bearer ${user}`,
+                            Authorization: `Bearer ${jwt}`,
                         },
                     },
                 )
@@ -61,7 +66,7 @@ const CreatePopUp = ({ closeMenuFunction, userId, playlistId }: Props) => {
                     },
                     {
                         headers: {
-                            Authorization: `Bearer ${user}`,
+                            Authorization: `Bearer ${jwt}`,
                         },
                     },
                 )
