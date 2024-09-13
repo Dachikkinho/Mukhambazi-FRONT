@@ -106,7 +106,12 @@ const AddSongButton = ({ songId }: Props) => {
                     setPopUpOpen(true);
                 }}
             >
-                <img src="/icons/add-song.svg" alt="" className={styles.icon} />
+                <img
+                    src="/icons/add-song.svg"
+                    alt=""
+                    className={styles.icon}
+                    draggable={false}
+                />
             </button>
 
             {open && (
@@ -134,17 +139,14 @@ const AddSongButton = ({ songId }: Props) => {
                                     src="/icons/close-icon.svg"
                                     alt=""
                                     className={styles.closeIcon}
+                                    draggable={false}
                                 />
                             </button>
                         </div>
 
                         <div>
                             <div className={styles.playlist}>
-                                <div
-                                // onClick={() => {
-                                //     upload(0);
-                                // }}
-                                >
+                                <div>
                                     {playlists.length ? (
                                         playlists.map((playlist, i) => (
                                             <div

@@ -66,6 +66,7 @@ const Artist = () => {
                         src={artist?.image}
                         alt="artist image"
                         className={styles.image}
+                        draggable={false}
                     />
                     <h2 className={styles.heading}>
                         {artist?.firstName} {artist?.lastName}
@@ -77,7 +78,11 @@ const Artist = () => {
                     <div className={styles.contentWrap}>
                         <div className={styles.headingCont}>
                             <h3 className={styles.topSongHeading}>Top Songs</h3>
-                            <img src="/icons/home-icon.svg" alt="" />
+                            <img
+                                src="/icons/home-icon.svg"
+                                alt=""
+                                draggable={false}
+                            />
                         </div>
                         <div className={styles.topSongs}>
                             {songs.map((song, i) => (
@@ -108,7 +113,11 @@ const Artist = () => {
                     <div className={styles.contentWrap}>
                         <div className={styles.headingCont}>
                             <h3 className={styles.topSongHeading}>Albums</h3>
-                            <img src="/icons/albums-icon.svg" alt="" />
+                            <img
+                                src="/icons/albums-icon.svg"
+                                alt=""
+                                draggable={false}
+                            />
                         </div>
                         <div className={styles.topSongs}>
                             {albums.map((album, i) => (

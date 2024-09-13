@@ -1,6 +1,5 @@
 'use client';
 import styles from './Favorites.module.scss';
-//import FavoriteBanner from './FavoriteBanner/FavoriteBanner';
 import Search from '../Header/Search/Search';
 import { useEffect } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';

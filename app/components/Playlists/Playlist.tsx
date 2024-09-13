@@ -63,7 +63,11 @@ const Playlist = () => {
                         }}
                         className={styles.newPlaylist}
                     >
-                        <img src="/icons/add-icon.svg" alt="icon" />
+                        <img
+                            src="/icons/add-icon.svg"
+                            alt="icon"
+                            draggable={false}
+                        />
                         New Playlist
                     </button>
                 </div>

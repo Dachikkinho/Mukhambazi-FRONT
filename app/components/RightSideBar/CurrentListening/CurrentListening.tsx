@@ -32,5 +32,3 @@ export function CurrentListening({ musicName }: Props) {
 }
 
 export default CurrentListening;
-
-//arshveba aq

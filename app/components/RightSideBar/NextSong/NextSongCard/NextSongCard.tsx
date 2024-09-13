@@ -26,7 +26,7 @@ const NextSongCard = ({
             onClick={onClick}
         >
             <div className={styles.circle}>
-                <img src={image} alt="" />
+                <img src={image} alt="" draggable={false} />
             </div>
             <div>
                 <p className={styles.name}>

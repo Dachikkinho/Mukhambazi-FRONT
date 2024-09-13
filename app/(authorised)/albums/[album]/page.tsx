@@ -87,6 +87,7 @@ const AlbumArtist = () => {
                                         className={styles.img}
                                         src="/images/play.png"
                                         alt="icon"
+                                        draggable={false}
                                     />
                                 </div>
                             </div>
@@ -100,7 +101,12 @@ const AlbumArtist = () => {
 
 const AlbumHeader = ({ album }: { album: AlbumPage }) => (
     <div className={styles.albums}>
-        <img className={styles.photo} src={album.image} alt="icon" />
+        <img
+            className={styles.photo}
+            src={album.image}
+            alt="icon"
+            draggable={false}
+        />
         <div>{album.name}</div>
         {album.artistName}
     </div>

@@ -10,7 +10,12 @@ const PlaylistSongCard = ({ onClick, name }: Props) => {
         <div className={styles.songs} onClick={onClick}>
             <div className={styles.icon}>
                 <span>{name}</span>
-                <img className={styles.img} src="/images/play.png" alt="icon" />
+                <img
+                    className={styles.img}
+                    src="/images/play.png"
+                    alt="icon"
+                    draggable={false}
+                />
             </div>
         </div>
     );

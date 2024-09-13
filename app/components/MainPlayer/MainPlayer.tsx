@@ -197,6 +197,7 @@ const MainPlayer = () => {
                             src="/icons/playerIcons/repeat.svg"
                             alt="icon"
                             className={styles.loopanim}
+                            draggable={false}
                         />
                     ),
                 }}

@@ -36,14 +36,16 @@
 .Songs {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-around;
-    row-gap: 32px;
+    gap: 60px;
+    justify-content: left;
+    margin-top: 20px;
 }
 .noSongs {
     color: $primaryColor;
     font-size: 20px;
     font-weight: 600;
+    margin: 0 auto;
+
 }
 
 @media screen and (max-width: 600px) {
@@ -58,6 +60,9 @@
 
     .Title {
         padding: 0px;
+    }
+    .Songs {
+        justify-content: space-around;
     }
     
 }

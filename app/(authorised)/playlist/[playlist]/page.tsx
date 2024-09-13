@@ -69,7 +69,11 @@ const Playlist = () => {
                             className={styles.trash}
                             onClick={() => setDeletePlaylist(true)}
                         >
-                            <img src="/images/trash-solid.svg" alt="" />
+                            <img
+                                src="/images/trash-solid.svg"
+                                alt=""
+                                draggable={false}
+                            />
                         </button>
                         <div>
                             <img
@@ -88,7 +92,11 @@ const Playlist = () => {
                                 className={styles.edit}
                                 onClick={() => setCreate(true)}
                             >
-                                <img src="/icons/edit-icon.svg" alt="icon" />
+                                <img
+                                    src="/icons/edit-icon.svg"
+                                    alt="icon"
+                                    draggable={false}
+                                />
                             </button>
                         </div>
                         <p>{playlist?.description}</p>
@@ -120,6 +128,7 @@ const Playlist = () => {
                                         <img
                                             src="/images/trash-solid.svg"
                                             alt=""
+                                            draggable={false}
                                         />
                                     </button>
                                 </div>

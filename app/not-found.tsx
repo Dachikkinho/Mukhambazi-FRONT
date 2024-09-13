@@ -32,6 +32,7 @@ const NotFound: React.FC = () => {
                         alt="sdsd"
                         width={30}
                         height={30}
+                        draggable={false}
                     />
                     Back to home
                 </Link>
