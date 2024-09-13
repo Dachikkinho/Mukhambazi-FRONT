@@ -75,10 +75,11 @@ const Playlist = () => {
                             <img
                                 src={
                                     playlist?.musics?.[0]?.image ||
-                                    '/images/placeholder.png'
+                                    '/images/spaceart4k.jpg'
                                 }
                                 alt="image"
                                 className={styles.image}
+                                draggable={false}
                             />
                         </div>
                         <div className={styles.topHeading}>
