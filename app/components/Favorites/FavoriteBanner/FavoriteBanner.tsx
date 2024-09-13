@@ -7,6 +7,8 @@ type Props = {
     title: string;
     banner: string;
     musicSrc?: string;
+    id: number;
+    play: () => void;
 };
 
 const FavoriteBanner = (props: Props) => {
@@ -17,10 +19,11 @@ const FavoriteBanner = (props: Props) => {
                     className={styles.banner}
                     src={props.banner}
                     draggable={false}
+                    onClick={props.play}
                 />
                 <div className={styles.title}>
                     <h4>{props.title}</h4>
-                    <LikeButton liked />
+                    <LikeButton songId={props.id} liked />
                 </div>
             </div>
         </div>

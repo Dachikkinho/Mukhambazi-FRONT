@@ -65,7 +65,7 @@ const Song = ({ name, group, imageSrc, onClick, songUrl, id }: Props) => {
                 <AddSongButton songId={id} />
             </div>
             <div className={styles.like}>
-                <LikeButton />
+                <LikeButton songId={id} />
             </div>
         </div>
     );

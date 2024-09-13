@@ -3,24 +3,36 @@ import styles from './Favorites.module.scss';
 //import FavoriteBanner from './FavoriteBanner/FavoriteBanner';
 import Search from '../Header/Search/Search';
 import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { favSongState } from '@/app/states';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { favSongState, isPlayingState, nextSongArrState } from '@/app/states';
+import FavoriteBanner from './FavoriteBanner/FavoriteBanner';
+import axios from 'axios';
+import { Music } from '@/app/interfaces/music.interface';
+import { playMusic } from '@/app/utils/playMusic';
 
 const Favorites = () => {
-    //const [songs, setSongs] = useRecoilState(songsState);
     const [favSongs, setFavSongs] = useRecoilState(favSongState);
+    const setIsPlaying = useSetRecoilState(isPlayingState);
+    const setNextSongArr = useSetRecoilState(nextSongArrState);
 
     useEffect(() => {
-        console.log(favSongs);
-        const favs = structuredClone(favSongs);
+        const jwt = localStorage.getItem('user');
+        axios
+            .get('https://back.chakrulos.ge/users/me', {
+                headers: {
+                    Authorization: `Bearer ${jwt}`,
+                },
+            })
+            .then((res) => {
+                console.log(res);
+                const musics = res.data.favorites.map(
+                    (fav: { music: Music }) => fav.music,
+                );
+                console.log(musics);
 
-        for (let i = 0; i < favs.length; i++) {
-            if (i + 1 < favs.length && favs[i].id + 1 !== favs[i + 1].id) {
-                favs[i + 1].id -= 1;
-                setFavSongs(favs);
-            }
-        }
-    }, [favSongs]);
+                setFavSongs([...musics]);
+            });
+    }, []);
     return (
         <div className={styles.container}>
             <div className={styles.SearchBar}>
@@ -42,25 +54,31 @@ const Favorites = () => {
                 </div>
             </div>
             <div className={styles.Songs}>
-                <p className={styles.noSongs}>No Favorites Yet!</p>
+                {favSongs.length ? (
+                    favSongs.map((song, i) => (
+                        <FavoriteBanner
+                            banner={song.image}
+                            title={song.name}
+                            musicSrc={song.url}
+                            id={song.id}
+                            key={i}
+                            play={() => {
+                                playMusic(
+                                    favSongs,
+                                    setNextSongArr,
+                                    setIsPlaying,
+                                    song,
+                                    i,
+                                );
+                            }}
+                        />
+                    ))
+                ) : (
+                    <p className={styles.noSongs}>No Favorites Yet</p>
+                )}
             </div>
         </div>
     );
 };
 
 export default Favorites;
-
-//<div className={styles.Songs}>
-//{favSongs.length ? (
-// favSongs.map((song, i) => (
-//    <FavoriteBanner
-//      banner={`/images/FavoriteCovers/${song.group}.png`}
-//    title={song.name}
-//  musicSrc={song.src}
-///>
-//))
-//) : (
-//<p className={styles.noSongs}>No Favorites Yet</p>;
-//)}
-//<p className={styles.noSongs}>No Favorites Yet</p>
-//</div>
