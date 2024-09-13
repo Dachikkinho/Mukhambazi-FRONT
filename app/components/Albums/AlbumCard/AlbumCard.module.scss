@@ -46,6 +46,7 @@
     max-width: 512px;
     border-radius: 15px;
     height: 256px;
+    object-fit: cover;
 }
 
 
@@ -59,6 +60,6 @@
 
 @media screen and (max-width: 375px) {
     .img {
-        max-width: 100%; 
+        max-width: 100%;
     }
 }
