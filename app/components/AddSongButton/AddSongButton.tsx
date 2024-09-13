@@ -14,9 +14,25 @@ type Props = {
 const AddSongButton = ({ songId }: Props) => {
     const [open, setOpen] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [exists, setExists] = useState(false);
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
 
-    // place holder upload function
+    function hasDuplicateId(
+        musics: {
+            id: number;
+        }[],
+    ) {
+        const seen = new Set();
+
+        for (const music of musics) {
+            if (seen.has(music.id)) {
+                return true;
+            }
+            seen.add(music.id);
+        }
+
+        return false;
+    }
 
     function upload(id: number) {
         const jwt = localStorage.getItem('user');
@@ -32,9 +48,13 @@ const AddSongButton = ({ songId }: Props) => {
                     },
                 },
             )
-            .then(() => {
+            .then((res) => {
                 setOpen(false);
-                setSuccess(true);
+                if (hasDuplicateId(res.data.musics)) {
+                    setExists(true);
+                } else {
+                    setSuccess(true);
+                }
             });
     }
 
@@ -45,8 +65,13 @@ const AddSongButton = ({ songId }: Props) => {
             }, 2000);
 
             return () => clearTimeout(timer);
-        }
+        } else if (exists) {
+            const timer = setTimeout(() => {
+                setExists(false);
+            }, 2000);
 
+            return () => clearTimeout(timer);
+        }
         const user = localStorage.getItem('user');
 
         axios
@@ -58,7 +83,7 @@ const AddSongButton = ({ songId }: Props) => {
             .then((res) => {
                 setPlaylists([...res.data.playlists]);
             });
-    }, [success]);
+    }, [success, exists]);
 
     const setPopUpOpen = useSetRecoilState(popUpOpenState);
 
@@ -66,6 +91,12 @@ const AddSongButton = ({ songId }: Props) => {
         <>
             {success && (
                 <div className={styles.success}>Added Succesfully!</div>
+            )}
+
+            {exists && (
+                <div className={styles.exists}>
+                    Music Is Already In Playlist!
+                </div>
             )}
 
             <button

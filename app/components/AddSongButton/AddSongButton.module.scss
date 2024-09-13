@@ -194,3 +194,41 @@
 .allPlaylist {
     color: white;
 }
+
+.exists {
+    position: fixed;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    animation: up 2s 0s 1 forwards;
+    color: rgb(122, 18, 18);
+    z-index: 13;
+    background-color: rgba(255, 255, 255, 0.03);
+
+    @keyframes up {
+        0% {
+            opacity: 1;
+            top: -20px;
+        }
+
+        20% {
+            opacity: 1;
+            top: 20px;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        70% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
