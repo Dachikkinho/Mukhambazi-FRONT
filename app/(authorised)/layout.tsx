@@ -26,16 +26,7 @@ export default function RootLayout({
             };
         }
     }, [sideBarOpen]);
-
-    useEffect(() => {
-        const linkOfTheWebsiteUserCame = document.referrer;
-
-        if (linkOfTheWebsiteUserCame === 'https://admin.chakrulos.ge') {
-            logout();
-            router.push('/login');
-        }
-    }, []);
-
+    
     const router = useRouter();
     const { logout } = useAuth();
 
