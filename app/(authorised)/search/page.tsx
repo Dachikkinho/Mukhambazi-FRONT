@@ -15,6 +15,7 @@ import { Album } from '@/app/interfaces/album.interface';
 import { playMusic } from '@/app/utils/playMusic';
 import LandingCard from '@/app/components/MainSection/TopArtist/LandingCard/LandingCard';
 import { Artists } from '@/app/interfaces/artist.interface';
+import PrivateRoute from '@/app/components/PrivateRoute/PrivateRoute';
 
 type Props = {
     searchParams: {
@@ -66,127 +67,133 @@ const SearchPage = (props: Props) => {
     }, [props.searchParams.query]);
 
     return (
-        <main className={styles.main}>
-            <LoadingBar
-                color="#c338b5"
-                progress={progress}
-                onLoaderFinished={() => setProgress(0)}
-                loaderSpeed={600}
-            />
-            <div className={styles.topContainer}>
-                <Search
-                    placeholder={'Enter keywords to search'}
-                    icon={'search'}
-                    width={24}
-                    height={24}
-                    value={props.searchParams.query || ''}
+        <PrivateRoute>
+            <main className={styles.main}>
+                <LoadingBar
+                    color="#c338b5"
+                    progress={progress}
+                    onLoaderFinished={() => setProgress(0)}
+                    loaderSpeed={600}
                 />
-            </div>
-
-            {songs.length === 0 &&
-            albums.length === 0 &&
-            artists.length === 0 ? (
-                <div className={styles.nothingFOund}>
-                    <p className={styles.notFoundText}>
-                        Nothing Found For Search {props.searchParams.query} :(
-                    </p>
-                    <img
-                        src="/images/notFound.png"
-                        alt="not found"
-                        className={styles.notFoundImg}
-                        draggable={false}
+                <div className={styles.topContainer}>
+                    <Search
+                        placeholder={'Enter keywords to search'}
+                        icon={'search'}
+                        width={24}
+                        height={24}
+                        value={props.searchParams.query || ''}
                     />
                 </div>
-            ) : (
-                <>
-                    {!!artists.length && (
-                        <div className={styles.sectionCont}>
-                            <div className={styles.headingCont}>
-                                <h5 className={styles.heading}>Artists</h5>
-                                <img
-                                    src="/icons/artists-icon.svg"
-                                    alt="icon"
-                                    draggable={false}
-                                />
-                            </div>
-                            <div className={styles.songsCont}>
-                                {artists.map((artist, i) => (
-                                    <Link
-                                        key={i}
-                                        href={`/artists/${artist.id}`}
-                                    >
-                                        <LandingCard
-                                            name={`${artist.firstName} ${artist.lastName}`}
-                                            bgColor={''}
-                                            img={artist.image}
-                                            plays={artist.listens}
-                                        />
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                    {!!songs.length && (
-                        <div className={styles.sectionCont}>
-                            <div className={styles.headingCont}>
-                                <h5 className={styles.heading}>Songs</h5>
-                                <img
-                                    src="/icons/note-circle.svg"
-                                    alt="icon"
-                                    draggable={false}
-                                />
-                            </div>
 
-                            <div className={styles.songsCont}>
-                                {songs.map((song, i) => (
-                                    <Song
-                                        name={song.name}
-                                        group={`${song.author.firstName} ${song.author.lastName}`}
-                                        songUrl={song.url}
-                                        imageSrc={song.image}
-                                        id={song.id}
-                                        key={i}
-                                        onClick={() =>
-                                            playMusic(
-                                                songs,
-                                                setNextSongArr,
-                                                setIsPlaying,
-                                                song,
-                                                i,
-                                            )
-                                        }
+                {songs.length === 0 &&
+                albums.length === 0 &&
+                artists.length === 0 ? (
+                    <div className={styles.nothingFOund}>
+                        <p className={styles.notFoundText}>
+                            Nothing Found For Search {props.searchParams.query}{' '}
+                            :(
+                        </p>
+                        <img
+                            src="/images/notFound.png"
+                            alt="not found"
+                            className={styles.notFoundImg}
+                            draggable={false}
+                        />
+                    </div>
+                ) : (
+                    <>
+                        {!!artists.length && (
+                            <div className={styles.sectionCont}>
+                                <div className={styles.headingCont}>
+                                    <h5 className={styles.heading}>Artists</h5>
+                                    <img
+                                        src="/icons/artists-icon.svg"
+                                        alt="icon"
+                                        draggable={false}
                                     />
-                                ))}
+                                </div>
+                                <div className={styles.songsCont}>
+                                    {artists.map((artist, i) => (
+                                        <Link
+                                            key={i}
+                                            href={`/artists/${artist.id}`}
+                                        >
+                                            <LandingCard
+                                                name={`${artist.firstName} ${artist.lastName}`}
+                                                bgColor={''}
+                                                img={artist.image}
+                                                plays={artist.listens}
+                                            />
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    )}
-                    {!!albums.length && (
-                        <div className={styles.sectionCont}>
-                            <div className={styles.headingCont}>
-                                <h5 className={styles.heading}>Albums</h5>
-                                <img
-                                    src="/icons/albums-icon.svg"
-                                    alt="icon"
-                                    draggable={false}
-                                />
-                            </div>
-                            <div className={styles.songsCont}>
-                                {albums.map((album, i) => (
-                                    <Link href={`albums/${album.id}`} key={i}>
-                                        <AlbumCard
-                                            name={album.name}
-                                            lastName={''}
-                                            plays={album.releaseDate}
-                                            image={album.image}
+                        )}
+                        {!!songs.length && (
+                            <div className={styles.sectionCont}>
+                                <div className={styles.headingCont}>
+                                    <h5 className={styles.heading}>Songs</h5>
+                                    <img
+                                        src="/icons/note-circle.svg"
+                                        alt="icon"
+                                        draggable={false}
+                                    />
+                                </div>
+
+                                <div className={styles.songsCont}>
+                                    {songs.map((song, i) => (
+                                        <Song
+                                            name={song.name}
+                                            group={`${song.author.firstName} ${song.author.lastName}`}
+                                            songUrl={song.url}
+                                            imageSrc={song.image}
+                                            id={song.id}
+                                            key={i}
+                                            onClick={() =>
+                                                playMusic(
+                                                    songs,
+                                                    setNextSongArr,
+                                                    setIsPlaying,
+                                                    song,
+                                                    i,
+                                                )
+                                            }
                                         />
-                                    </Link>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    )}{' '}
-                </>
-            )}
-        </main>
+                        )}
+                        {!!albums.length && (
+                            <div className={styles.sectionCont}>
+                                <div className={styles.headingCont}>
+                                    <h5 className={styles.heading}>Albums</h5>
+                                    <img
+                                        src="/icons/albums-icon.svg"
+                                        alt="icon"
+                                        draggable={false}
+                                    />
+                                </div>
+                                <div className={styles.songsCont}>
+                                    {albums.map((album, i) => (
+                                        <Link
+                                            href={`albums/${album.id}`}
+                                            key={i}
+                                        >
+                                            <AlbumCard
+                                                name={album.name}
+                                                lastName={''}
+                                                plays={album.releaseDate}
+                                                image={album.image}
+                                            />
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}{' '}
+                    </>
+                )}
+            </main>
+        </PrivateRoute>
     );
 };
 
