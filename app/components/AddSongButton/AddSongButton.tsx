@@ -56,7 +56,7 @@ const AddSongButton = ({ songId }: Props) => {
                 },
             })
             .then((res) => {
-                setPlaylists([...res.data.playlist]);
+                setPlaylists([...res.data.playlists]);
             });
     }, [success]);
 

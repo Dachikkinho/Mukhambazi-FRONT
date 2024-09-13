@@ -56,7 +56,7 @@ const Playlist = () => {
                 },
             })
             .then((res) => {
-                setUserId(res.data.user.id);
+                setUserId(res.data.id);
             });
     }, [id, create, deleteMusic]);
 
