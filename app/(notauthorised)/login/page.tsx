@@ -81,10 +81,28 @@ const Login = () => {
                         message: 'Invalid email or password. Please try again.',
                     });
                 } else if (axiosError.response.status === 401) {
-                    setError('password', {
-                        type: 'manual',
-                        message: 'Your email has been banned from CHAKRULOS!',
-                    });
+                    console.log(axiosError.response);
+                    if (
+                        (axiosError.response?.data as { message?: string })
+                            ?.message === 'USER IS BLOCKED'
+                    ) {
+                        setError('password', {
+                            type: 'manual',
+                            message:
+                                'Your email has been banned from CHAKRULOS!',
+                        });
+                    } else {
+                        setError('email', {
+                            type: 'manual',
+                            message:
+                                'Invalid email or password. Please try again.',
+                        });
+                        setError('password', {
+                            type: 'manual',
+                            message:
+                                'Invalid email or password. Please try again.',
+                        });
+                    }
                 } else {
                     console.error(
                         'An error occurred during login:',
