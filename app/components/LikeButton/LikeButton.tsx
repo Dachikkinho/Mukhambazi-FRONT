@@ -39,18 +39,22 @@ const LikeButton = ({ liked, songId }: Props) => {
     function addLike() {
         const jwt = localStorage.getItem('user');
         if (!isLiked) {
-            axios.post(
-                `https://back.chakrulos.ge/favorites`,
-                {
-                    userId: userId,
-                    musicId: songId,
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${jwt}`,
+            axios
+                .post(
+                    `https://back.chakrulos.ge/favorites`,
+                    {
+                        userId: userId,
+                        musicId: songId,
                     },
-                },
-            );
+                    {
+                        headers: {
+                            Authorization: `Bearer ${jwt}`,
+                        },
+                    },
+                )
+                .catch((err) => {
+                    console.log(err);
+                });
         } else {
             setDeleted(true);
             axios.delete(`https://back.chakrulos.ge/favorites/${likedId}`, {

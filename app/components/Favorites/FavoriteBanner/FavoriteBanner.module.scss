@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    max-width: 180px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -9,18 +9,20 @@
 
 .wrap {
     width: 100%;
-    max-width: 180px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
 .banner {
-    max-width: 180px;
+    max-width: 300px;
     width: 100%;
     height: 180px;
     cursor: pointer;
     transition: all 0.2s;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .container:hover .banner {
@@ -38,4 +40,5 @@
 .title {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
