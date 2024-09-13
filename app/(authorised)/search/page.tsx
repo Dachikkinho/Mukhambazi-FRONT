@@ -59,7 +59,6 @@ const SearchPage = (props: Props) => {
                 setSongs([...res.data.music]);
                 setAlbums([...res.data.album]);
                 setArtists([...res.data.author]);
-                console.log(res.data);
             })
             .catch((err) => {
                 alert(err);
@@ -84,89 +83,108 @@ const SearchPage = (props: Props) => {
                 />
             </div>
 
-            {!!artists.length && (
-                <div className={styles.sectionCont}>
-                    <div className={styles.headingCont}>
-                        <h5 className={styles.heading}>Artists</h5>
-                        <img
-                            src="/icons/artists-icon.svg"
-                            alt="icon"
-                            draggable={false}
-                        />
-                    </div>
-                    <div className={styles.songsCont}>
-                        {artists.map((artist, i) => (
-                            <Link key={i} href={`/artists/${artist.id}`}>
-                                <LandingCard
-                                    name={`${artist.firstName} ${artist.lastName}`}
-                                    bgColor={''}
-                                    img={artist.image}
-                                    plays={artist.listens}
+            {songs.length === 0 &&
+            albums.length === 0 &&
+            artists.length === 0 ? (
+                <div className={styles.nothingFOund}>
+                    <p className={styles.notFoundText}>
+                        Nothing Found For Search {props.searchParams.query} :(
+                    </p>
+                    <img
+                        src="/images/notFound.png"
+                        alt="not found"
+                        className={styles.notFoundImg}
+                        draggable={false}
+                    />
+                </div>
+            ) : (
+                <>
+                    {!!artists.length && (
+                        <div className={styles.sectionCont}>
+                            <div className={styles.headingCont}>
+                                <h5 className={styles.heading}>Artists</h5>
+                                <img
+                                    src="/icons/artists-icon.svg"
+                                    alt="icon"
+                                    draggable={false}
                                 />
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {!!songs.length && (
-                <div className={styles.sectionCont}>
-                    <div className={styles.headingCont}>
-                        <h5 className={styles.heading}>Songs</h5>
-                        <img
-                            src="/icons/note-circle.svg"
-                            alt="icon"
-                            draggable={false}
-                        />
-                    </div>
-
-                    <div className={styles.songsCont}>
-                        {songs.map((song, i) => (
-                            <Song
-                                name={song.name}
-                                group={`${song.author.firstName} ${song.author.lastName}`}
-                                songUrl={song.url}
-                                imageSrc={song.image}
-                                id={song.id}
-                                key={i}
-                                onClick={() =>
-                                    playMusic(
-                                        songs,
-                                        setNextSongArr,
-                                        setIsPlaying,
-                                        song,
-                                        i,
-                                    )
-                                }
-                            />
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {!!albums.length && (
-                <div className={styles.sectionCont}>
-                    <div className={styles.headingCont}>
-                        <h5 className={styles.heading}>Albums</h5>
-                        <img
-                            src="/icons/albums-icon.svg"
-                            alt="icon"
-                            draggable={false}
-                        />
-                    </div>
-                    <div className={styles.songsCont}>
-                        {albums.map((album, i) => (
-                            <Link href={`albums/${album.id}`} key={i}>
-                                <AlbumCard
-                                    name={album.name}
-                                    lastName={''}
-                                    plays={album.releaseDate}
-                                    image={album.image}
+                            </div>
+                            <div className={styles.songsCont}>
+                                {artists.map((artist, i) => (
+                                    <Link
+                                        key={i}
+                                        href={`/artists/${artist.id}`}
+                                    >
+                                        <LandingCard
+                                            name={`${artist.firstName} ${artist.lastName}`}
+                                            bgColor={''}
+                                            img={artist.image}
+                                            plays={artist.listens}
+                                        />
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {!!songs.length && (
+                        <div className={styles.sectionCont}>
+                            <div className={styles.headingCont}>
+                                <h5 className={styles.heading}>Songs</h5>
+                                <img
+                                    src="/icons/note-circle.svg"
+                                    alt="icon"
+                                    draggable={false}
                                 />
-                            </Link>
-                        ))}
-                    </div>
-                </div>
+                            </div>
+
+                            <div className={styles.songsCont}>
+                                {songs.map((song, i) => (
+                                    <Song
+                                        name={song.name}
+                                        group={`${song.author.firstName} ${song.author.lastName}`}
+                                        songUrl={song.url}
+                                        imageSrc={song.image}
+                                        id={song.id}
+                                        key={i}
+                                        onClick={() =>
+                                            playMusic(
+                                                songs,
+                                                setNextSongArr,
+                                                setIsPlaying,
+                                                song,
+                                                i,
+                                            )
+                                        }
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {!!albums.length && (
+                        <div className={styles.sectionCont}>
+                            <div className={styles.headingCont}>
+                                <h5 className={styles.heading}>Albums</h5>
+                                <img
+                                    src="/icons/albums-icon.svg"
+                                    alt="icon"
+                                    draggable={false}
+                                />
+                            </div>
+                            <div className={styles.songsCont}>
+                                {albums.map((album, i) => (
+                                    <Link href={`albums/${album.id}`} key={i}>
+                                        <AlbumCard
+                                            name={album.name}
+                                            lastName={''}
+                                            plays={album.releaseDate}
+                                            image={album.image}
+                                        />
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}{' '}
+                </>
             )}
         </main>
     );

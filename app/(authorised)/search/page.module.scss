@@ -53,3 +53,25 @@
     gap: 5px;
     margin-bottom: 35px;
 }
+
+.notFoundImg {
+    max-width: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.notFoundText {
+    font-size: 20px;
+    font-weight: 700;
+    color: $primaryColor;
+    line-height: 30px;
+    text-align: center;
+}
+
+.nothingFOund {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
