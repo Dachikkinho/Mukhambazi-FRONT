@@ -81,7 +81,6 @@ const Login = () => {
                         message: 'Invalid email or password. Please try again.',
                     });
                 } else if (axiosError.response.status === 401) {
-                    console.log(axiosError.response);
                     if (
                         (axiosError.response?.data as { message?: string })
                             ?.message === 'USER IS BLOCKED'

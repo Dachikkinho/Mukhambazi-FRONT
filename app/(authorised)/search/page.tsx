@@ -101,7 +101,7 @@ const SearchPage = (props: Props) => {
                                     name={`${artist.firstName} ${artist.lastName}`}
                                     bgColor={''}
                                     img={artist.image}
-                                    plays={'2'}
+                                    plays={artist.listens}
                                 />
                             </Link>
                         ))}
