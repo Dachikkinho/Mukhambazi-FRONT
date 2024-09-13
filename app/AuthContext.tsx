@@ -10,7 +10,7 @@ import React, {
 
 interface AuthContextProps {
     isAuthenticated: boolean;
-    login: (token: string) => void;
+    login: (token: string, role: string) => void;
     logout: () => void;
 }
 
@@ -21,19 +21,22 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         const user = localStorage.getItem('user');
-        if (user) {
+        const role = localStorage.getItem('role');
+        if (user && role) {
             setIsAuthenticated(true);
         }
     }, []);
 
-    const login = (token: string) => {
+    const login = (token: string, role: string) => {
         setIsAuthenticated(true);
         localStorage.setItem('user', token);
+        localStorage.setItem('role', role);
     };
 
     const logout = () => {
         setIsAuthenticated(false);
         localStorage.removeItem('user');
+        localStorage.removeItem('role');
     };
 
     return (
