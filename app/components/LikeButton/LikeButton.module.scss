@@ -2,4 +2,9 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    transition: all 0.3s;
+
+    &:active {
+        transform: scale(0.85);
+    }
 }
