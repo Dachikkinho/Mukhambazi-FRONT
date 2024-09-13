@@ -16,12 +16,19 @@ export function NextSong() {
     return (
         <div className={styles.mainCont}>
             <div className={styles.heading}>
-                <p>Next Songs</p>
-                <img
-                    src="/icons/voice-rec-square.svg"
-                    alt="nextsong"
-                    draggable={false}
-                />
+                {!!nextSongArr.filter(
+                    (_, i) => i > isPlaying.index && i <= isPlaying.index + 3,
+                ).length && (
+                    <>
+                        {' '}
+                        <p>Next Songs</p>
+                        <img
+                            src="/icons/voice-rec-square.svg"
+                            alt="nextsong"
+                            draggable={false}
+                        />{' '}
+                    </>
+                )}
             </div>
             <div className={styles.container}>
                 {nextSongArr
