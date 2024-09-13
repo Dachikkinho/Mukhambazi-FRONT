@@ -3,7 +3,7 @@ import styles from './ArtistCard.module.scss';
 type Props = {
     bgColor: string;
     name: string;
-    plays: string;
+    plays: number;
     pfp: string;
 };
 

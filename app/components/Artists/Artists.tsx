@@ -75,6 +75,8 @@ const ArtistsPage = () => {
             ])
             .then(
                 axios.spread((popular, georgian, european) => {
+                    console.log(popular.data);
+
                     setPopular(popular.data);
                     setGeorgian(georgian.data);
                     setEuropean(european.data);
@@ -116,7 +118,7 @@ const ArtistsPage = () => {
                                     bgColor={'rgb(130 74 145)'}
                                     name={`${artist.firstName} ${artist.lastName}`}
                                     pfp={artist.image}
-                                    plays={'2'}
+                                    plays={artist.listens}
                                 />
                             </Link>
                         ))}
@@ -139,7 +141,7 @@ const ArtistsPage = () => {
                                     bgColor={'rgb(130 74 145)'}
                                     name={`${artist.firstName} ${artist.lastName}`}
                                     pfp={artist.image}
-                                    plays={'2'}
+                                    plays={artist.listens}
                                 />
                             </Link>
                         ))}
@@ -162,7 +164,7 @@ const ArtistsPage = () => {
                                     bgColor={'rgb(130 74 145)'}
                                     name={`${artist.firstName} ${artist.lastName}`}
                                     pfp={artist.image}
-                                    plays={'2'}
+                                    plays={artist.listens}
                                 />
                             </Link>
                         ))}

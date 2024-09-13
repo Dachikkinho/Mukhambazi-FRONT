@@ -103,7 +103,7 @@ const TopArtist = () => {
                                 name={`${artist.firstName} ${artist.lastName}`}
                                 bgColor={''}
                                 img={artist.image}
-                                plays={'2'}
+                                plays={artist.listens}
                             />
                         </Link>
                     ),
@@ -129,7 +129,7 @@ const TopArtist = () => {
                                 name={`${artist.firstName} ${artist.lastName}`}
                                 bgColor={''}
                                 img={artist.image}
-                                plays={'2'}
+                                plays={artist.listens}
                             />
                         </Link>
                     ),
@@ -155,7 +155,7 @@ const TopArtist = () => {
                                 name={`${artist.firstName} ${artist.lastName}`}
                                 bgColor={''}
                                 img={artist.image}
-                                plays={'2'}
+                                plays={artist.listens}
                             />
                         </Link>
                     ),

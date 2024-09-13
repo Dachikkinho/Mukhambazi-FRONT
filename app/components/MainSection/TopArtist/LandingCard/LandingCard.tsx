@@ -3,7 +3,7 @@ import styles from '../LandingCard/LandingCard.module.scss';
 type Props = {
     bgColor: string;
     name: string;
-    plays: string;
+    plays: number;
     img: string;
 };
 
@@ -17,7 +17,7 @@ const LandingCard = ({ bgColor, name, plays, img }: Props) => {
         >
             <img src={img} className={styles.pfp} alt="pfp" draggable={false} />
             <h6 className={styles.name}>{name}</h6>
-            <p className={styles.plays}>{plays}M Plays</p>
+            <p className={styles.plays}>{plays} Plays</p>
         </div>
     );
 };
