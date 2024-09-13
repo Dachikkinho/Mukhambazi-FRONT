@@ -40,13 +40,18 @@ const Song = ({ name, group, imageSrc, onClick, songUrl, id }: Props) => {
 
     return (
         <div className={styles.container}>
-            <img
-                src={imageSrc}
-                alt="song cover"
-                className={styles.imagePlaceHolder}
-                draggable={false}
-                onClick={onClick}
-            />
+            <div className={styles.imgCont}>
+                <img
+                    src={imageSrc}
+                    alt="song cover"
+                    className={styles.imagePlaceHolder}
+                    draggable={false}
+                    onClick={onClick}
+                />
+                <div className={styles.like}>
+                    <LikeButton songId={id} />
+                </div>
+            </div>
             <div className={styles.info}>
                 <p onClick={onClick} className={styles.name}>
                     {name}
@@ -63,9 +68,6 @@ const Song = ({ name, group, imageSrc, onClick, songUrl, id }: Props) => {
             </div>
             <div className={styles.add}>
                 <AddSongButton songId={id} />
-            </div>
-            <div className={styles.like}>
-                <LikeButton songId={id} />
             </div>
         </div>
     );
