@@ -71,17 +71,25 @@
     }
 }
 
+.imgCont {
+    position: relative;
+    border-radius: 10px;
+    max-width: 192px;
+    width: 100%;
+    height: 160px;
+}
+
 .infoBottom {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 .like {
     position: absolute;
     bottom: 10px;
-    left: 155px;
-    right: 0px;
+    right: 5px;
     transition: all 0.2s;
     opacity: 1;
     display: flex;
