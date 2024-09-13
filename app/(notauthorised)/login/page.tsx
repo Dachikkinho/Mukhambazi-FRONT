@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 import {
     PLACEHOLDEREMAILLOGIN_OBJECT,
@@ -22,7 +21,6 @@ const Login = () => {
         document.title = 'Log in - Chakrulos';
     }, []);
 
-    const router = useRouter();
     useRedirectIfAuthenticated('/');
 
     const {
