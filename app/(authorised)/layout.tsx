@@ -26,7 +26,7 @@ export default function RootLayout({
             };
         }
     }, [sideBarOpen]);
-    
+
     const router = useRouter();
     const { logout } = useAuth();
 
