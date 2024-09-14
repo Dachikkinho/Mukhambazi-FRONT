@@ -17,8 +17,8 @@ const Listdisabled = ({ title, date, icon, playbtn, className }: Props) => {
                         {title}
                         <p className={styles.paragraph}>
                             <img
-                                src={`icons/${icon}.svg`}
-                                alt="greenicon"
+                                src={`/icons/green.svg`}
+                                alt="greenicons"
                                 draggable={false}
                             />
                             {date}
@@ -28,7 +28,7 @@ const Listdisabled = ({ title, date, icon, playbtn, className }: Props) => {
                 <div>
                     <img
                         className={styles.image}
-                        src={`icons/${playbtn}.svg`}
+                        src={`/icons/play.svg`}
                         alt="icon"
                         draggable={false}
                     />
