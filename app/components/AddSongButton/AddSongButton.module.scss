@@ -105,6 +105,16 @@
 .playlist {
     height: 505px;
     overflow-y: scroll;
+    padding: 0 10px;
+}
+
+.playlist::-webkit-scrollbar {
+    width: 5px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background-color: #562065;
+    border-radius: 20px;
 }
 
 .add {
