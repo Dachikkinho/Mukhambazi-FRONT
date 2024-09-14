@@ -138,8 +138,10 @@ const MainPlayer = () => {
                         isActive={isShuffle}
                     />,
                 ]}
-                onClickNext={playNext}
-                onClickPrevious={playPrev}
+                onClickNext={() => {
+                    isShuffle ? shuffle() : playNext();
+                }}
+                onClickPrevious={() => (isShuffle ? shuffle() : playPrev())}
                 showSkipControls
                 showJumpControls={false}
                 src={isPlaying.src}
